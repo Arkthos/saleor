@@ -105,7 +105,7 @@ jobs:
                saleor/graphql/account/mutations/authentication \
                saleor/graphql/order/schema.py saleor/graphql/order/resolvers.py \
                saleor/graphql/order/types.py \
-            -ll -ii -f json -o security-results/bandit.json
+            -l -ii -f json -o security-results/bandit.json
           status=$?
           set -e
           printf '{"schema":"cybermarket.sast.run.v1","scanner":"bandit","version":"1.8.6","exit_code":%s,"interpretation":"alerts require manual triage"}\n' "$status" > security-results/bandit-run.json
