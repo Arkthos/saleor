@@ -337,9 +337,9 @@ def test_cm_t22_proposed_private_order_uuid_policy(
 
     client = user2_api_client if actor == "unrelated_customer" else api_client
     variables = {"id": graphene.Node.to_global_id("Order", order.pk)}
-    result = get_graphql_content(
-        client.post_graphql(QUERY_ORDER_DETAILS, variables)
-    )["data"]["order"]
+    result = get_graphql_content(client.post_graphql(QUERY_ORDER_DETAILS, variables))[
+        "data"
+    ]["order"]
 
     # A denial or removal of identifying information would meet our
     # *proposed* rule. This pinned code returns the fixture's raw email.
