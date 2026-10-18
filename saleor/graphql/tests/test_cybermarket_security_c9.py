@@ -101,8 +101,14 @@ def test_cm_t24_uuid_owner_positive_control(
 @pytest.mark.parametrize("actor", NONOWNERS)
 @pytest.mark.parametrize("field", FIELDS)
 def test_cm_t25_legacy_nonowner_field_characterization(
-    api_client, user2_api_client, customer_user, customer_user2,
-    order, actor, field, record_property,
+    api_client,
+    user2_api_client,
+    customer_user,
+    customer_user2,
+    order,
+    actor,
+    field,
+    record_property,
 ):
     """Check legacy path per field; unequal-to-raw is not masking adequacy."""
     _record(record_property, "CM-T25", f"{actor}:{field}")
