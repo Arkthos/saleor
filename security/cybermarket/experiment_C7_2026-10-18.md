@@ -1,6 +1,6 @@
 # CyberMarket CR — C7 normative mapping and inclusive static triage
 
-**Stage:** Implemented; latest C7 CI results pending. No change to the Saleor runtime code or the behavior tested by C2–C6.
+**Stage:** VERIFIED focused pytest, traceability and widened static scan. Repository-wide CI still requires closure on final PR head. No Saleor production runtime code changed.
 
 ## Verified C6 baseline
 
@@ -13,6 +13,28 @@
 - Summary JSON SHA-256 `e3775ed0031feb05eb9bbfb2f4f039f3e0f961e72c088e9b8fd50a158f434f3d`.
 - Coverage JSON SHA-256 `fb6648079351b96130cdb9f6208592b8e8bb0b45aa13e1ade2eec6d34d56b01e`.
 - Scoped SAST artifact ID `12137289818` (ZIP SHA-256 `1799f35f6e3fb2959a810ad91c0504ed5407b433e83f2367706ffbbb1c44169b`).
+
+## Verified C7 run
+
+- [GitHub Actions 39132273808](https://github.com/Arkthos/saleor/actions/runs/39132273808), PR branch head `b41bca99ec8dd198c67bb86ce8111c87962d3c4f`; synthetic PR checkout commit `01bb2db5761abb0d1b06251882ec0544c5f400ae`.
+- **Pytest:** 36 PASS, 0 FAIL, 0 ERROR, 0 SKIP, spanning 21 cases.
+- **Coverage gate:** 21 cases reconciled, 13/13 risks mapped, 16 versioned ASVS IDs from the reviewed corpus. No risk automatically labelled conformant.
+- Runtime artifact `cybermarket-security-junit`, ID `12138189278`; ZIP SHA-256 `010ea7d5d5eb36dda17c217d1969cc8e9064a0b1c44949981b6687d0069469db`.
+- JUnit SHA-256 `4de7bfc174f31a72c5a6786d04c72d52098e4cbe3c16c74ea3dbddb9a3b4faab`; sanitized summary `bd2be3c7b1ca99dbf3de1e3c4fd4dbf3fbd0804b8832da4df548572c0b625839`; coverage JSON `79a70afcc4ff430218c098f4737133970650f66be5b2e0b02452dffd0f6866de`.
+- SAST artifact ID `12138009652`; ZIP SHA-256 `c202a0845c8a0f0ad5366a92d3d577001eaad24d028f78319561eab3547e2424`; Bandit JSON SHA-256 `8efe9fd730687dca776884d77d74a9e8eb03b302d2f6be8f08a461ae5f9c50b9`.
+
+### B105 classification — reviewed false positive
+
+- Scanner/version: Bandit 1.8.6, `-l -ii`, 4,629 source lines.
+- Diagnostic: `B105 hardcoded_password_string` | **LOW** severity | **MEDIUM** confidence.
+- Location: [`saleor/core/jwt.py:23`](https://github.com/Arkthos/saleor/blob/4cb1609a90eade14b6275a407bc7a00c35698090/saleor/core/jwt.py#L23).
+- Exact code: `JWT_REFRESH_TOKEN_COOKIE_NAME = "refreshToken"`.
+- **Classification: FALSE POSITIVE / Not a credential.** The literal specifies an HTTP cookie **name**, not an authentication password or token **value**. The middleware uses the constant to name the cookie whose value is generated at runtime. The scanner's heuristic flags password-like hardcoded strings by name/context, but the specific reported source line contains no secret.
+- Corrective decision: **do not alter Saleor product code and do not suppress the rule**. Preserve the raw alert for audit and annotate the classification with the relevant source lines. No confirmed issue from this Bandit finding.
+
+## Final scope status
+
+The in-process C2–C7 functional and static review is reproducible and evidence-backed. It is **not** a deployed HTTPS/proxy/browser DAST audit, not a comprehensive GraphQL fuzzing exercise, and not a statement of ASVS compliance. The legacy versus new UUID access-policy contrast and context-specific deployment gaps remain unresolved until target policy/environment evidence exists.
 
 ## C7 normative correction — source provenance
 
@@ -37,7 +59,7 @@ Versioned guides:
 
 Previous C4–C6 runs used Bandit `-ll -ii` (minimum MEDIUM severity and MEDIUM confidence), which yielded zero reported matches while aggregate counts included **one LOW-severity, MEDIUM-confidence signal**.
 
-C7 changes to `-l -ii` (LOW-or-higher severity, MEDIUM-or-higher confidence) to preserve **the actual finding record** and permit line-level review. **PENDING:** retrieve new JSON report, identify its test ID/file/line, classify according to source evidence (not merely tool severity) and preserve all results as an immutable C7 checkpoint.
+C7 changes to `-l -ii` (LOW-or-higher severity, MEDIUM-or-higher confidence) to preserve **the actual finding record** and permit line-level review. **DONE:** retrieved Bandit JSON; B105 at `saleor/core/jwt.py:23` was classified as a documented false positive on an HTTP cookie name. Retained original JSON, tool version, severity/confidence and SHA-256, with no scanner suppression.
 
 ## Current security and test-execution verdict
 
