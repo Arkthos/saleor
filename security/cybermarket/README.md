@@ -1,6 +1,6 @@
 # CyberMarket CR — Reproducible software-security test suite
 
-**Status:** C2 8/8 verified; C3 10/10 verified; C4 21/21 verified plus scoped SAST 4,629 LOC scanned; C5 trust/delegation coverage implemented and pending a focused CI verdict. Historical checkpoints are preserved.
+**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 automated matrix-to-JUnit coverage gate and consolidated MAP/GAP/AUDIT report committed, pending own CI verification. No ASVS certification or production DAST claimed.
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
@@ -63,7 +63,7 @@ These are candidate mappings only. A passing test is **not** evidence of compreh
 
 A dedicated GitHub Actions workflow is provided:
 `.github/workflows/cybermarket-security.yaml`.
-It runs pytest against the repository's pinned `uv.lock` with isolated PostgreSQL and Valkey services; it publishes the JUnit XML, a sanitized case summary and SHA-256 checksums. A separate job invokes pinned Bandit 1.8.6 over selected authentication, JWT and order modules; its JSON report is untriaged SAST evidence, not a list of confirmed vulnerabilities.
+It runs pytest against the repository's pinned `uv.lock` with isolated PostgreSQL and Valkey services; it publishes JUnit XML, a sanitized per-case summary, a risk-coverage report (`build_coverage.py` enforces matrix/JUnit consistency), and SHA-256 checksums. A separate job invokes pinned Bandit 1.8.6 over selected authentication, JWT and order modules; its JSON report is untriaged SAST evidence, not a list of confirmed vulnerabilities.
 
 Equivalent local command (requires the repository development environment, a test PostgreSQL database, cache and the normal test settings):
 
@@ -72,6 +72,7 @@ uv sync --locked
 mkdir -p security-results
 uv run pytest saleor/graphql/tests/test_cybermarket_security_*.py -q --junitxml=security-results/cybermarket-junit.xml -o junit_family=legacy
 python security/cybermarket/summarize_junit.py --junit security-results/cybermarket-junit.xml --output security-results/cybermarket-summary.json
+python security/cybermarket/build_coverage.py --matrix security/cybermarket/test_matrix.csv --summary security-results/cybermarket-summary.json --output security-results/cybermarket-coverage.json
 ```
 
 **Do not upload usable JWTs, cookies, passwords, personal data or raw production logs.** The JUnit report contains only case and requirement identifiers in `record_property` metadata; the test source uses synthetic fixtures.
@@ -104,7 +105,7 @@ python security/cybermarket/summarize_junit.py --junit security-results/cybermar
 2. **C2 / executed:** Initial 8/8, no failures/errors/skips; original run 39127189591. Contract performance is narrow, not full ASVS compliance. The C2 checkpoint records SHA-256 and interpretation.
 3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI showed a test-oracle mismatch on CM-T07; the corrected field-masking contract passed in C3's 10/10 rerun. The new-UUID access policy still requires a documented decision. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
 4. **C4 / verified:** CM-T08–T16 and prior C2/C3 cases executed 21/21 in run 39130431874; scoped Bandit SAST executed and evidence archived.
-5. **C5 / implemented:** CM-T17–T21 target source-level R01/R02/R13, delegated permission intersection and unsigned JWT rejection. Await targeted CI; record separate run, checked-out commit and hashes. See [C5 checkpoint](experiment_C5_2026-10-18.md).
-6. **C6 / interpretation:** EvidenceSynth MAP/GAP/AUDIT, confirm normative ASVS IDs, scrutinize SAST alert filtering and reconcile in-process test results with unresolved proxy/browser and new UUID data-access risks. Commit summary and full evidence index; never assume compliance.
+5. **C5 / verified:** CM-T17–T21 include source-level R01/R02/R13, delegated permission intersection, and unsigned JWT rejection; 36/36 in [run 39131023314](https://github.com/Arkthos/saleor/actions/runs/39131023314). See [C5 checkpoint](experiment_C5_2026-10-18.md).
+6. **C6 / committed; CI pending:** [Consolidated experiment evidence](experiment_C6_2026-10-18.md) tracks 13/13 risk associations with outstanding GAP/AUDIT and a new machine-generated coverage report. Verify C6 workflow after the final documentation commit, confirm ASVS applicability and external-environment scope before any compliance claims.
 
 Do not merge while CI failures or security requirements are unresolved. The Avance 1 DOCX validated by the user remains unchanged.
