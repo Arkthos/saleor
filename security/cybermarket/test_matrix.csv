@@ -20,4 +20,4 @@ CM-T18,client_ip,forwarded_for_vs_remote_addr,R01;R02,H14,v5.0.0-6.3.1,WSTG-ATHN
 CM-T19,login_throttling,deterministic_ip_and_user_retry_delay,R02,H02,v5.0.0-6.3.1,WSTG-ATHN-03,security_contract,EXECUTED_PASS,EVIDENCE_RECORDED_REQUIREMENT_REVIEW_PENDING
 CM-T20,delegated_app_token,app_permission_intersection_with_user,R13,H15,v5.0.0-8.2.1,WSTG-ATHZ-02,security_contract,EXECUTED_PASS,EVIDENCE_RECORDED_REQUIREMENT_REVIEW_PENDING
 CM-T21,jwt_decoder,unsigned_algorithm_none_rejection,R08,H09,v5.0.0-9.1.2,WSTG-ATHN-04,security_contract,EXECUTED_PASS,EVIDENCE_RECORDED_REQUIREMENT_REVIEW_PENDING
-CM-T22,order,proposed_owner_only_uuid_privacy_for_unrelated_and_anonymous,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,proposed_policy_expected_fail,IMPLEMENTED_PENDING_CI,PROVISIONAL_POLICY_NOT_YET_APPROVED
+CM-T22,order,proposed_owner_only_uuid_privacy_for_unrelated_and_anonymous,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,proposed_policy_expected_fail,EXECUTED_XFAIL,PROPOSED_POLICY_GAP_REVIEW_PENDING
