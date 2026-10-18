@@ -55,6 +55,8 @@ jobs:
           enable-cache: true
       - name: Install locked Python dependencies
         run: uv sync --locked
+      - name: Test evidence validator regression gates
+        run: uv run pytest security/cybermarket/test_validate_evidence.py -q
       - name: Run focused tests and collect JUnit XML
         run: |
           mkdir -p security-results
