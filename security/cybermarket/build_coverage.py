@@ -7,8 +7,28 @@ It fails if the current matrix and the executed test cases drift apart.
 import argparse
 import csv
 import json
+import logging
+from typing import TypedDict
 from collections import Counter, defaultdict
 from pathlib import Path
+
+
+logger = logging.getLogger(__name__)
+
+
+class CaseReport(TypedDict):
+    """Normalized per-case row used to calculate risk coverage."""
+
+    case_id: str
+    risk_ids: list[str]
+    observation_ids: list[str]
+    asvs_ids: list[str]
+    wstg_ids: list[str]
+    evidence_type: str
+    execution_count: int
+    outcomes: dict[str, int]
+    status: str
+
 
 # Reviewed subset against pinned ASVS 5.0.0 corpus and WSTG v4.2.
 # An ID match does not demonstrate compliance with a control.
@@ -71,7 +91,7 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
             f"{missing_execution}; not mapped={missing_traceability}"
         )
 
-    case_reports = []
+    case_reports: list[CaseReport] = []
     for case_id, metadata in sorted(indexed.items()):
         results = executed[case_id]
         declared_type = metadata["evidence_type"]
@@ -145,6 +165,7 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
 
 
 def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     parser = argparse.ArgumentParser()
     parser.add_argument("--matrix", required=True, type=Path)
     parser.add_argument("--summary", required=True, type=Path)
@@ -155,10 +176,12 @@ def main() -> None:
     args.output.write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    print(
-        f"CyberMarket: {report['executions']} executions, "
-        f"{report['executed_cases']} cases, "
-        f"{report['mapped_risks']}/{report['risk_count']} risks mapped"
+    logger.info(
+        "CyberMarket: %s executions, %s cases, %s/%s risks mapped",
+        report["executions"],
+        report["executed_cases"],
+        report["mapped_risks"],
+        report["risk_count"],
     )
 
 
