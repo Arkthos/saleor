@@ -1,6 +1,6 @@
 # CyberMarket CR — C5 selected trust and delegated-permission contracts
 
-**State:** IMPLEMENTED; targeted GitHub Actions result pending.
+**State:** EXECUTED AND VERIFIED with a scoped, fixture-based runtime contract. No general security certification.
 **Research code baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090`
 **Pull request:** https://github.com/Arkthos/saleor/pull/1 (draft)
 
@@ -20,9 +20,24 @@
 
 **ASVS/WSTG mappings:** `security/cybermarket/test_matrix.csv` contains *candidate mappings requiring human validation against the normative texts*. Passing is not ASVS conformance.
 
+## Verified C5 artifacts and outcomes
+
+- GitHub Actions: [run 39131023314](https://github.com/Arkthos/saleor/actions/runs/39131023314).
+- PR branch SHA evaluated: `27f900ad937f15eaa1af06e1f1534424f88bf3ce`; GitHub PR synthetic merge SHA in source manifest: `9ef6c4ab8532fa5a7a2f3ca5102f2e0db3dba4a3`.
+- Pytest results: **36 PASS / 0 FAIL / 0 ERROR / 0 SKIP**; 21 case IDs, including C5 header, IP, throttle, app permissions and JWT algorithm checks.
+- JUnit artifact: `cybermarket-security-junit` (ID `12138276744`).
+- JUnit XML SHA-256: `7f33df6c83b6c6d91aec27c3a340665fbcb2b5bd7dfd04ff950b5b40fcdc8a7d`.
+- Sanitized summary JSON SHA-256: `25dc27f809568ef82d0303b8c3f2902b15ea5739c945c943c72b806cb8c894f6`.
+- Artifact ZIP SHA-256: `536ca63008916b3fa463526da9d1ec7f4713d5b4a516337a8637083705d78a64`.
+- Static artifact: `cybermarket-static-review` (ID `12138082357`).
+- Bandit JSON SHA-256: `b166a288e515afc011419401807f9ae75872c904ee73716fc85dac3d8b0f4da3`. Bandit 1.8.6 examined 4,629 LOC and found **zero reported medium+ severity and confidence** matches under the specified filter; one low-severity signal was present in metrics but omitted by threshold.
+- Bandit artifact ZIP SHA-256: `d5df677a083edecd0c5fc38106e34d913d321034e1996d1df9901c6873f43dd8`.
+
+These are real execution results, not a statement that all 13 risks were fully eliminated. CM-T05/06/14/17/18 are characterization-only; staff/role details remain limited to fixture code paths.
+
 ## Results gate
 
-No C5 results may be announced before verifying GitHub run ID, source/checkout commit SHA, parsed JUnit case count, outcome distribution, artifact IDs and integrity hashes. Record any failure, reproduce, determine whether test expectation, fixture, infrastructure or code caused it; do not silently rewrite observations.
+Completed. JUnit, summary, SAST JSON and artifact checksums were inspected and recorded above. Subsequent C6 documentation/workflow changes need their own validation run, not inherited PASS claims from this checkpoint.
 
 ## Remaining external-environment evidence gaps
 
