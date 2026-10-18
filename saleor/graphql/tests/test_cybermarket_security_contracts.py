@@ -208,3 +208,71 @@ def test_cm_t05_order_new_id_anonymous_field_visibility(
         order.shipping_address.street_address_1
     )
     assert result["userEmail"] == order.user_email
+def test_cm_t06_new_uuid_order_actor_matrix_characterization(
+    api_client,
+    user_api_client,
+    user2_api_client,
+    customer_user,
+    customer_user2,
+    order,
+    record_property,
+):
+    """CM-T06: compare owner, unrelated client and anonymous UUID visibility.
+
+    This test CHARACTERIZES the existing exposure; PASS does NOT mean that
+    granting access to unrelated parties satisfies the business security policy.
+    """
+    _case(record_property, "CM-T06", "R11", "H12", "characterization_only")
+    assert order.user_id == customer_user.pk
+    assert customer_user2.pk != customer_user.pk
+    assert order.use_old_id is False
+
+    variables = {"id": graphene.Node.to_global_id("Order", order.pk)}
+    expected = {
+        "userEmail": order.user_email,
+        "billingAddress": {
+            "streetAddress1": order.billing_address.street_address_1
+        },
+        "shippingAddress": {
+            "streetAddress1": order.shipping_address.street_address_1
+        },
+    }
+    for client in (user_api_client, user2_api_client, api_client):
+        response = get_graphql_content(
+            client.post_graphql(QUERY_ORDER_DETAILS, variables)
+        )
+        actual = response["data"]["order"]
+        assert actual is not None
+        # Match only the selected fields; do not print fixture PII in reports.
+        for field, value in expected.items():
+            assert actual[field] == value
+
+
+def test_cm_t07_old_id_owner_vs_nonowner_authorization(
+    api_client,
+    user_api_client,
+    user2_api_client,
+    customer_user,
+    customer_user2,
+    order,
+    record_property,
+):
+    """CM-T07: legacy-number order ID access for owner versus other actors."""
+    _case(record_property, "CM-T07", "R11", "H12", "security_contract")
+    assert order.user_id == customer_user.pk
+    assert customer_user2.pk != customer_user.pk
+    order.use_old_id = True
+    order.save(update_fields=["use_old_id"])
+
+    variables = {"id": graphene.Node.to_global_id("Order", order.number)}
+    owner_response = get_graphql_content(
+        user_api_client.post_graphql(QUERY_ORDER_DETAILS, variables)
+    )
+    owner_order = owner_response["data"]["order"]
+    assert owner_order is not None
+    assert owner_order["userEmail"] == order.user_email
+
+    assert_no_permission(
+        user2_api_client.post_graphql(QUERY_ORDER_DETAILS, variables)
+    )
+    assert_no_permission(api_client.post_graphql(QUERY_ORDER_DETAILS, variables))
