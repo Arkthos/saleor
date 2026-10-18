@@ -37,10 +37,10 @@ context for UUID possession.
 ### CM-T07 — Legacy order-number security contract
 
 Switch the same order to `use_old_id=True` and address it by the
-legacy order number. Owner A is expected to retrieve the fields; actor B
-and anonymous C are expected to be denied on the selected query.
-This is a bounded contract for legacy-ID behavior, not global proof of
-object-level security.
+legacy order number. Owner A should receive complete selected fields;
+actor B and anonymous C should receive masked email/address fields.
+This is a bounded *field-redaction* contract for legacy-ID behavior, not
+a claim that access to the whole order is denied.
 
 ## Traceability and evidence handling
 
@@ -58,7 +58,9 @@ object-level security.
 ## Status and next decisions
 
 - **IMPLEMENTED:** CM-T06 and CM-T07 code committed; README and matrix updated.
-- **PENDING:** focused test run and general CI on the final C3 commit; do not inherit C2's 8/8 verdict.
+- **OBSERVED (initial C3):** run [39128224126](https://github.com/Arkthos/saleor/actions/runs/39128224126) against original C3 source produced 10 tests: 9 PASS, 1 FAIL, 0 errors/skips. CM-T06 passed (characterization). CM-T07 failed because the test assumed full-object denial for customer B; actual response contained the order with selected email and address fields **obfuscated**. This is a test-oracle mismatch, not by itself a security finding. Original JUnit artifact ID 12136982575 (ZIP SHA-256 `dfcfec96d00d2a8d8ff5ed2049a04b843c4658b0519fafa7be62afe594fa95a1`; JUnit SHA-256 `15e2955d0f32da42c22996bfb5e0d44ad353437eb21fafdd6ca91d7f1700da29`).
+- **CORRECTED:** commit `3b8064b08b07d71e2fd3a0e8c89c572de7e36c4e` updates CM-T07 to verify that the owner receives complete selected fields and other customers/anonymous actors receive masked fields. This is a bounded field-level contract, not a general object-denial assertion.
+- **PENDING:** focused rerun of corrected C3 test code and general CI; the original C3 failure must remain recorded as historical evidence.
 - **PENDING:** EvidenceSynth MAP/GAP/AUDIT on any failing or surprising cases.
 - **PENDING:** decide authorized intended behavior for new UUIDs versus legacy numbers, including possession of ID and customer entitlement.
 - **PENDING:** staff permission matrix and field-level tests, token audience/type, cookie settings and bounded GraphQL limits.
