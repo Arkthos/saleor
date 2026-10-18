@@ -8,9 +8,9 @@ import argparse
 import csv
 import json
 import logging
-from typing import TypedDict
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import TypedDict
 
 
 logger = logging.getLogger(__name__)
