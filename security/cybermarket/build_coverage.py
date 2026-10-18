@@ -12,7 +12,6 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import TypedDict
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -126,9 +125,7 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
     for risk_num in range(1, 14):
         risk_id = f"R{risk_num:02}"
         linked = [c for c in case_reports if risk_id in c["risk_ids"]]
-        contract_count = sum(
-            c["evidence_type"] == "security_contract" for c in linked
-        )
+        contract_count = sum(c["evidence_type"] == "security_contract" for c in linked)
         characterization_count = sum(
             c["evidence_type"] == "characterization_only" for c in linked
         )
