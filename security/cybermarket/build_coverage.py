@@ -10,21 +10,36 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-
 # Reviewed subset against pinned ASVS 5.0.0 corpus and WSTG v4.2.
 # An ID match does not demonstrate compliance with a control.
 ALLOWED_ASVS_IDS = {
-    "v5.0.0-3.3.1", "v5.0.0-3.3.2", "v5.0.0-3.3.4",
-    "v5.0.0-3.5.1", "v5.0.0-4.3.1", "v5.0.0-6.1.3",
-    "v5.0.0-6.3.1", "v5.0.0-6.3.8", "v5.0.0-7.4.1",
-    "v5.0.0-8.2.1", "v5.0.0-8.2.2", "v5.0.0-8.2.3",
-    "v5.0.0-9.1.2", "v5.0.0-9.2.1", "v5.0.0-9.2.2",
+    "v5.0.0-3.3.1",
+    "v5.0.0-3.3.2",
+    "v5.0.0-3.3.4",
+    "v5.0.0-3.5.1",
+    "v5.0.0-4.3.1",
+    "v5.0.0-6.1.3",
+    "v5.0.0-6.3.1",
+    "v5.0.0-6.3.8",
+    "v5.0.0-7.4.1",
+    "v5.0.0-8.2.1",
+    "v5.0.0-8.2.2",
+    "v5.0.0-8.2.3",
+    "v5.0.0-9.1.2",
+    "v5.0.0-9.2.1",
+    "v5.0.0-9.2.2",
     "v5.0.0-9.2.3",
 }
 ALLOWED_WSTG_IDS = {
-    "WSTG-APIT-01", "WSTG-ATHN-03", "WSTG-ATHN-04",
-    "WSTG-ATHZ-02", "WSTG-ATHZ-04", "WSTG-IDNT-04",
-    "WSTG-SESS-02", "WSTG-SESS-05", "WSTG-SESS-06",
+    "WSTG-APIT-01",
+    "WSTG-ATHN-03",
+    "WSTG-ATHN-04",
+    "WSTG-ATHZ-02",
+    "WSTG-ATHZ-04",
+    "WSTG-IDNT-04",
+    "WSTG-SESS-02",
+    "WSTG-SESS-05",
+    "WSTG-SESS-06",
     "WSTG-SESS-07",
 }
 
@@ -37,12 +52,8 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
     for row in summary["cases"]:
         executed[row["case_id"]].append(row)
     indexed = {row["case_id"]: row for row in rows}
-    asvs_used = {
-        item for row in rows for item in row["asvs_ids"].split(";") if item
-    }
-    wstg_used = {
-        item for row in rows for item in row["wstg_ids"].split(";") if item
-    }
+    asvs_used = {item for row in rows for item in row["asvs_ids"].split(";") if item}
+    wstg_used = {item for row in rows for item in row["wstg_ids"].split(";") if item}
     unknown_asvs = sorted(asvs_used - ALLOWED_ASVS_IDS)
     unknown_wstg = sorted(wstg_used - ALLOWED_WSTG_IDS)
     if unknown_asvs or unknown_wstg:
@@ -92,7 +103,9 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
     for risk_num in range(1, 14):
         risk_id = f"R{risk_num:02}"
         linked = [c for c in case_reports if risk_id in c["risk_ids"]]
-        contract_count = sum(c["evidence_type"] != "characterization_only" for c in linked)
+        contract_count = sum(
+            c["evidence_type"] != "characterization_only" for c in linked
+        )
         characterization_count = len(linked) - contract_count
         coverage.append(
             {
