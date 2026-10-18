@@ -20,7 +20,6 @@ from saleor.core.jwt import (
 )
 from saleor.graphql.tests.utils import assert_no_permission, get_graphql_content
 
-
 MUTATION_CREATE = """
 mutation CyberMarketCreate($email: String!, $password: String!, $aud: String) {
   tokenCreate(email: $email, password: $password, audience: $aud) {
@@ -46,7 +45,9 @@ query CyberMarketUser($id: ID!) { user(id: $id) { id email isStaff } }
 """
 
 
-def _record(record_property, case_id, risk_ids, observation_ids, kind="security_contract"):
+def _record(
+    record_property, case_id, risk_ids, observation_ids, kind="security_contract"
+):
     for key, value in {
         "cybermarket_case_id": case_id,
         "risk_id": risk_ids,
@@ -121,9 +122,7 @@ def test_cm_t10_access_token_cannot_be_used_as_refresh(
     ]
 
 
-def test_cm_t11_refresh_preserves_audience(
-    api_client, customer_user, record_property
-):
+def test_cm_t11_refresh_preserves_audience(api_client, customer_user, record_property):
     """CM-T11: verify the audience claim remains attached on renewal."""
     _record(record_property, "CM-T11", "R08", "H05;H09")
     audience = "custom:cybermarket-lab"
@@ -164,9 +163,7 @@ def test_cm_t13_staff_permissions_partition_customer_and_staff_records(
     customer_result = get_graphql_content(
         staff_api_client.post_graphql(QUERY_USER, customer)
     )
-    staff_result = get_graphql_content(
-        staff_api_client.post_graphql(QUERY_USER, staff)
-    )
+    staff_result = get_graphql_content(staff_api_client.post_graphql(QUERY_USER, staff))
     assert customer_result["data"]["user"]["email"] == customer_user.email
     assert staff_result["data"]["user"] is None
 
@@ -175,9 +172,7 @@ def test_cm_t13_staff_permissions_partition_customer_and_staff_records(
     customer_result = get_graphql_content(
         staff_api_client.post_graphql(QUERY_USER, customer)
     )
-    staff_result = get_graphql_content(
-        staff_api_client.post_graphql(QUERY_USER, staff)
-    )
+    staff_result = get_graphql_content(staff_api_client.post_graphql(QUERY_USER, staff))
     assert customer_result["data"]["user"] is None
     assert staff_result["data"]["user"]["email"] == staff_user.email
 
