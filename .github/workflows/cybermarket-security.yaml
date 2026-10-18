@@ -4,7 +4,8 @@ on:
   pull_request:
     paths:
       - "saleor/graphql/tests/test_cybermarket_security_*.py"
-      - "security/cybermarket/**"
+      - "security/cybermarket/*.py"
+      - "security/cybermarket/test_matrix.csv"
       - ".github/workflows/cybermarket-security.yaml"
   workflow_dispatch:
 
