@@ -1,6 +1,6 @@
 # CyberMarket CR — Reproducible software-security test suite
 
-**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 coverage gate verified 36/36 with 21 case IDs / 13 mapped risks; C7 ASVS/WSTG normative corrections validated (36/36) and Bandit B105 reviewed as a cookie-name false positive. Final general repository CI review remains pending. C8 adds a **provisional** policy probe CM-T22 with two strict XFAIL variants; C8 must be executed before any verdict. No ASVS certification or production DAST claimed.
+**Status:** C8 fixture-backed suite VERIFIED: 22 identified cases, 38 invocations (36 PASS + 2 policy-specific XFAIL), 13/13 risks mapped without conformance claims. Static Bandit scan reviewed (one LOW B105 false positive). Repository-wide CI on final documentation/formatting head still requires confirmation. See [C8 checkpoint](experiment_C8_2026-10-18.md), [durable result snapshot](evidence_C8_snapshot.md) and [provisional policy](POLICY_ORDER_P01_PROVISIONAL.md).
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
@@ -77,6 +77,13 @@ python security/cybermarket/build_coverage.py --matrix security/cybermarket/test
 ```
 
 **Do not upload usable JWTs, cookies, passwords, personal data or raw production logs.** The JUnit report contains only case and requirement identifiers in `record_property` metadata; the test source uses synthetic fixtures.
+
+## C8 final evidence checkpoint
+
+- [C8 experimental workflow 39135116746](https://github.com/Arkthos/saleor/actions/runs/39135116746): 36 PASS + 2 XFAIL, zero unexpected failures, 22/22 matrix case IDs and 13/13 risks associated with evidence. The two XFAIL are **unmet provisional expectations**, not confirmed Saleor vulnerabilities.
+- [Verified hashes, run SHA and static B105 triage](experiment_C8_2026-10-18.md); [durable per-case archive](evidence_C8_snapshot.md). Raw GitHub Actions artifacts have limited retention, so keep these source-controlled records.
+- New source formatter-only corrections to three research files are committed. **Do not claim final CI accepted until linters, tests and E2E succeed on the final SHA.**
+- No actual HTTPS/proxy/browser DAST is claimed. `P-ORDER-01` is not an approved access policy.
 
 ## Current execution checkpoint
 
