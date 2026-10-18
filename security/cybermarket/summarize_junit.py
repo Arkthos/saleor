@@ -12,7 +12,6 @@ import os
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -87,9 +86,7 @@ def main() -> None:
     args.output.write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    logger.info(
-        "CyberMarket: %s cases, %s", summary["test_count"], summary["counts"]
-    )
+    logger.info("CyberMarket: %s cases, %s", summary["test_count"], summary["counts"])
 
 
 if __name__ == "__main__":
