@@ -1,9 +1,9 @@
 # CyberMarket CR — Experiment checkpoint C3 (cross-customer access)
 
-**Date:** 2026-10-18 UTC  
-**Repository / PR:** [Arkthos/saleor PR #1](https://github.com/Arkthos/saleor/pull/1) (draft)  
-**Pinned academic baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090`  
-**C2 measured implementation SHA:** `f66c7ad83a43573d862331a4c4727391d30ed651` — [8/8 successful](https://github.com/Arkthos/saleor/actions/runs/39127189591)  
+**Date:** 2026-10-18 UTC
+**Repository / PR:** [Arkthos/saleor PR #1](https://github.com/Arkthos/saleor/pull/1) (draft)
+**Pinned academic baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090`
+**C2 measured implementation SHA:** `f66c7ad83a43573d862331a4c4727391d30ed651` — [8/8 successful](https://github.com/Arkthos/saleor/actions/runs/39127189591)
 **C3 test-code commit SHA:** `95d344b7db601b6901df4bb4703f8c9b79481f23` (later commits update only traceability/docs)
 
 ## Scope and method
