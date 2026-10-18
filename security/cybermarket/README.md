@@ -1,6 +1,6 @@
 # CyberMarket CR — Security testing, cycle 1
 
-**Status:** Cycle C2 tested successfully (8/8 on initial code); C3 first run: 9 pass / 1 fail (CM-T07 expected full denial but received obfuscated fields); corrected test code pending rerun. See [C2 evidence](experiment_C2_2026-10-18.md) and [C3 status](experiment_C3_2026-10-18.md). **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
+**Status:** Cycle C2 successfully verified (8/8); C3 successfully revalidated (10/10) after correcting the CM-T07 field-masking oracle. See [C2 evidence](experiment_C2_2026-10-18.md) and [C3 evidence](experiment_C3_2026-10-18.md). See [C2 evidence](experiment_C2_2026-10-18.md) and [C3 status](experiment_C3_2026-10-18.md). **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
 ## Scope, rationale and existing coverage
 
@@ -62,7 +62,7 @@ uv run pytest saleor/graphql/tests/test_cybermarket_security_contracts.py -q --j
 ## Current execution checkpoint
 
 - **C2:** [run 39127189591](https://github.com/Arkthos/saleor/actions/runs/39127189591) passed 8/8 tests for CM-T01–T05; JUnit artifact 12136417662.
-- **C3:** [initial run 39128224126](https://github.com/Arkthos/saleor/actions/runs/39128224126) executed 10 tests: 9 PASS / 1 FAIL (CM-T07). It revealed that the legacy-number route masks fields for another customer, rather than rejecting the whole object. Test expectation was corrected in commit `3b8064b08b07d71e2fd3a0e8c89c572de7e36c4e`; corrected code awaits a fresh JUnit run. CM-T06 passed only as characterization.
+- **C3:** [initial run 39128224126](https://github.com/Arkthos/saleor/actions/runs/39128224126) produced 9 PASS / 1 FAIL due to an incorrect CM-T07 full-object-denial expectation; the code actually masked fields. After correcting the test oracle in commit `3b8064b08b07d71e2fd3a0e8c89c572de7e36c4e`, [run 39128693170](https://github.com/Arkthos/saleor/actions/runs/39128693170) produced **10 PASS / 0 FAIL / 0 ERROR / 0 SKIP**. CM-T05/CM-T06 remain characterization-only and do not establish compliant access policy.
 - Do not conflate a test **PASS** with a requirement verdict. Capture a run + commit + artifact for every claim.
 
 ## Evidence and classification
@@ -77,7 +77,7 @@ uv run pytest saleor/graphql/tests/test_cybermarket_security_contracts.py -q --j
 
 1. **C1 / implemented:** scenario IDs, code, traceability and dedicated CI workflow committed in a draft PR.
 2. **C2 / executed:** Initial 8/8, no failures/errors/skips; original run 39127189591. Contract performance is narrow, not full ASVS compliance. The C2 checkpoint records SHA-256 and interpretation.
-3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI confirmed CM-T06 as a passing characterization and failed CM-T07 due to an incorrect full-denial expectation; the corrected field-masking contract awaits rerun. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
+3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI showed a test-oracle mismatch on CM-T07; the corrected field-masking contract passed in C3's 10/10 rerun. The new-UUID access policy still requires a documented decision. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
 4. **C4 / depth:** expand token type/audience, cookie settings, login rate limits and GraphQL query-cost tests using bounded synthetic fixtures.
 5. **C5 / interpretation:** EvidenceSynth MAP/GAP/AUDIT, per-case records and regression runs. Update this document after each iteration.
 
