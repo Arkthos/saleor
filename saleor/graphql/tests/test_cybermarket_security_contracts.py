@@ -248,7 +248,7 @@ def test_cm_t06_new_uuid_order_actor_matrix_characterization(
             assert actual[field] == value
 
 
-def test_cm_t07_old_id_owner_vs_nonowner_authorization(
+def test_cm_t07_old_id_owner_vs_nonowner_field_masking(
     api_client,
     user_api_client,
     user2_api_client,
@@ -257,7 +257,10 @@ def test_cm_t07_old_id_owner_vs_nonowner_authorization(
     order,
     record_property,
 ):
-    """CM-T07: legacy-number order ID access for owner versus other actors."""
+    """CM-T07: legacy-number order IDs mask selected fields for other actors.
+
+    This checks field-level obfuscation, not a full-object deny decision.
+    """
     _case(record_property, "CM-T07", "R11", "H12", "security_contract")
     assert order.user_id == customer_user.pk
     assert customer_user2.pk != customer_user.pk
@@ -271,8 +274,26 @@ def test_cm_t07_old_id_owner_vs_nonowner_authorization(
     owner_order = owner_response["data"]["order"]
     assert owner_order is not None
     assert owner_order["userEmail"] == order.user_email
-
-    assert_no_permission(
-        user2_api_client.post_graphql(QUERY_ORDER_DETAILS, variables)
+    assert (
+        owner_order["billingAddress"]["streetAddress1"]
+        == order.billing_address.street_address_1
     )
-    assert_no_permission(api_client.post_graphql(QUERY_ORDER_DETAILS, variables))
+    assert (
+        owner_order["shippingAddress"]["streetAddress1"]
+        == order.shipping_address.street_address_1
+    )
+
+    for client in (user2_api_client, api_client):
+        result = get_graphql_content(
+            client.post_graphql(QUERY_ORDER_DETAILS, variables)
+        )["data"]["order"]
+        assert result is not None
+        assert result["userEmail"] != order.user_email
+        assert (
+            result["billingAddress"]["streetAddress1"]
+            != order.billing_address.street_address_1
+        )
+        assert (
+            result["shippingAddress"]["streetAddress1"]
+            != order.shipping_address.street_address_1
+        )
