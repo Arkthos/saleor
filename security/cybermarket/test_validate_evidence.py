@@ -1,4 +1,5 @@
 """Regression tests for CyberMarket evidence integrity gates."""
+
 import csv
 import json
 from pathlib import Path
@@ -14,21 +15,28 @@ def _fixture(tmp_path: Path):
         writer = csv.DictWriter(stream, fieldnames=["case_id", "evidence_type"])
         writer.writeheader()
         for case_id in EXPECTED_VARIANTS:
-            writer.writerow({
-                "case_id": case_id,
+            writer.writerow(
+                {
+                    "case_id": case_id,
                 "evidence_type": (
-                    "proposed_policy_expected_fail" if case_id == "CM-T22"
+                    "proposed_policy_expected_fail"
+                    if case_id == "CM-T22"
                     else "security_contract"
                 ),
-            })
+                }
+            )
     cases = [
         {
             "case_id": case_id,
             "test_function": f"test_{case_id.replace('-', '_').lower()}",
-            "variant": f"test_{case_id.replace('-', '_').lower()}[{i}]"
-            if count > 1 else "",
+            "variant": (
+                f"test_{case_id.replace('-', '_').lower()}[{i}]"
+                if count > 1
+                else ""
+            ),
             "evidence_type": (
-                "proposed_policy_expected_fail" if case_id == "CM-T22"
+                "proposed_policy_expected_fail"
+                if case_id == "CM-T22"
                 else "security_contract"
             ),
             "outcome": "XFAIL" if case_id == "CM-T22" else "PASS",
@@ -49,13 +57,15 @@ def _fixture(tmp_path: Path):
 def test_complete_manifest_passes(tmp_path):
     matrix, summary, _ = _fixture(tmp_path)
     assert validate(matrix, summary) == {
-        "cases": 27, "executions": 61, "validated": True
+        "cases": 27,
+        "executions": 61,
+        "validated": True,
     }
 
 
-@pytest.mark.parametrize("defect", [
-    "missing", "duplicate", "unsafe", "unexpected_xfail", "wrong_count"
-])
+@pytest.mark.parametrize(
+    "defect", ["missing", "duplicate", "unsafe", "unexpected_xfail", "wrong_count"]
+)
 def test_evidence_gate_rejects_invalid_results(tmp_path, defect):
     matrix, summary, payload = _fixture(tmp_path)
     if defect == "missing":
