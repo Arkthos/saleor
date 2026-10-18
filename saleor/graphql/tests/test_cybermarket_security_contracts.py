@@ -27,7 +27,6 @@ from saleor.graphql.tests.utils import (
     get_graphql_content,
 )
 
-
 QUERY_ME = """query CyberMarketMe { me { id email } }"""
 
 MUTATION_REVOKE = """
@@ -135,7 +134,12 @@ def test_cm_t02_revoke_invalidates_both_credentials(
             AccountErrorCode.JWT_INVALID_CSRF_TOKEN.name,
         ),
     ],
-    ids=["argument-no-csrf", "cookie-valid-csrf", "cookie-missing-csrf", "cookie-bad-csrf"],
+    ids=[
+        "argument-no-csrf",
+        "cookie-valid-csrf",
+        "cookie-missing-csrf",
+        "cookie-bad-csrf",
+    ],
 )
 def test_cm_t03_refresh_transport_csrf_matrix(
     api_client, customer_user, record_property, transport, csrf_input, expected_error
@@ -156,9 +160,7 @@ def test_cm_t03_refresh_transport_csrf_matrix(
     elif csrf_input == "none" and transport == "argument":
         variables["csrf"] = None
 
-    content = get_graphql_content(
-        api_client.post_graphql(MUTATION_REFRESH, variables)
-    )
+    content = get_graphql_content(api_client.post_graphql(MUTATION_REFRESH, variables))
     result = content["data"]["tokenRefresh"]
 
     if expected_error is not None:
@@ -208,6 +210,8 @@ def test_cm_t05_order_new_id_anonymous_field_visibility(
         order.shipping_address.street_address_1
     )
     assert result["userEmail"] == order.user_email
+
+
 def test_cm_t06_new_uuid_order_actor_matrix_characterization(
     api_client,
     user_api_client,
@@ -230,12 +234,8 @@ def test_cm_t06_new_uuid_order_actor_matrix_characterization(
     variables = {"id": graphene.Node.to_global_id("Order", order.pk)}
     expected = {
         "userEmail": order.user_email,
-        "billingAddress": {
-            "streetAddress1": order.billing_address.street_address_1
-        },
-        "shippingAddress": {
-            "streetAddress1": order.shipping_address.street_address_1
-        },
+        "billingAddress": {"streetAddress1": order.billing_address.street_address_1},
+        "shippingAddress": {"streetAddress1": order.shipping_address.street_address_1},
     }
     for client in (user_api_client, user2_api_client, api_client):
         response = get_graphql_content(
