@@ -3,8 +3,8 @@
 import argparse
 import csv
 import json
-import sys
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -98,7 +98,9 @@ def main() -> None:
     parser.add_argument("--matrix", required=True, type=Path)
     parser.add_argument("--summary", required=True, type=Path)
     args = parser.parse_args()
-    sys.stdout.write(json.dumps(validate(args.matrix, args.summary), sort_keys=True) + "\n")
+    sys.stdout.write(
+        json.dumps(validate(args.matrix, args.summary), sort_keys=True) + "\n"
+    )
 
 
 if __name__ == "__main__":
