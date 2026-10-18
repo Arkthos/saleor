@@ -68,8 +68,13 @@ jobs:
               --junit security-results/cybermarket-junit.xml \
               --output security-results/cybermarket-summary.json \
               --commit "${{ github.sha }}"
+            python security/cybermarket/build_coverage.py \
+              --matrix security/cybermarket/test_matrix.csv \
+              --summary security-results/cybermarket-summary.json \
+              --output security-results/cybermarket-coverage.json
             cd security-results
-            sha256sum cybermarket-junit.xml cybermarket-summary.json > SHA256SUMS
+            sha256sum cybermarket-junit.xml cybermarket-summary.json \
+              cybermarket-coverage.json > SHA256SUMS
           fi
       - name: Upload evidence on success or failure
         if: always()
