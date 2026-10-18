@@ -34,13 +34,16 @@ def summarize(junit: Path, commit: str) -> dict:
                 p.get("name"): p.get("value")
                 for p in test.findall("./properties/property")
             }
+            skipped = test.find("skipped")
             verdict = (
                 "ERROR"
                 if test.find("error") is not None
                 else "FAIL"
                 if test.find("failure") is not None
+                else "XFAIL"
+                if skipped is not None and skipped.get("type") == "pytest.xfail"
                 else "SKIP"
-                if test.find("skipped") is not None
+                if skipped is not None
                 else "PASS"
             )
             name = (test.get("name") or "").split("[", 1)[0]
@@ -59,7 +62,7 @@ def summarize(junit: Path, commit: str) -> dict:
             )
     counts = {
         kind: sum(case["outcome"] == kind for case in cases)
-        for kind in ("PASS", "FAIL", "ERROR", "SKIP")
+        for kind in ("PASS", "FAIL", "ERROR", "SKIP", "XFAIL")
     }
     return {
         "schema": "cybermarket.junit.summary.v1",
@@ -68,7 +71,7 @@ def summarize(junit: Path, commit: str) -> dict:
         "test_count": len(cases),
         "counts": counts,
         "cases": sorted(cases, key=lambda x: (x["case_id"], x["variant"])),
-        "note": "Runtime outcomes only; PASS is not ASVS security conformance.",
+        "note": "Runtime outcomes only; PASS is not ASVS conformance; XFAIL is an unmet provisional policy.",
     }
 
 
