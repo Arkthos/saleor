@@ -69,6 +69,9 @@ jobs:
               --junit security-results/cybermarket-junit.xml \
               --output security-results/cybermarket-summary.json \
               --commit "${{ github.sha }}"
+            python security/cybermarket/validate_evidence.py \
+              --matrix security/cybermarket/test_matrix.csv \
+              --summary security-results/cybermarket-summary.json
             python security/cybermarket/build_coverage.py \
               --matrix security/cybermarket/test_matrix.csv \
               --summary security-results/cybermarket-summary.json \
@@ -76,6 +79,9 @@ jobs:
             cd security-results
             sha256sum cybermarket-junit.xml cybermarket-summary.json \
               cybermarket-coverage.json > SHA256SUMS
+          else
+            echo "Missing focused JUnit: cannot certify evidence completeness" >&2
+            exit 1
           fi
       - name: Upload evidence on success or failure
         if: always()
