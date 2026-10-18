@@ -112,6 +112,9 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
                     "OBSERVED_NOT_CERTIFIED"
                     if declared_type == "characterization_only"
                     and outcomes == {"PASS": len(results)}
+                    else "PROPOSED_POLICY_XFAIL_NOT_CONFORMANT"
+                    if declared_type == "proposed_policy_expected_fail"
+                    and outcomes == {"XFAIL": len(results)}
                     else "CONTRACT_PASSED_REVIEW_PENDING"
                     if outcomes == {"PASS": len(results)}
                     else "REQUIRES_INVESTIGATION"
@@ -124,18 +127,26 @@ def produce_coverage(matrix_path: Path, summary_path: Path) -> dict:
         risk_id = f"R{risk_num:02}"
         linked = [c for c in case_reports if risk_id in c["risk_ids"]]
         contract_count = sum(
-            c["evidence_type"] != "characterization_only" for c in linked
+            c["evidence_type"] == "security_contract" for c in linked
         )
-        characterization_count = len(linked) - contract_count
+        characterization_count = sum(
+            c["evidence_type"] == "characterization_only" for c in linked
+        )
+        proposed_policy_count = sum(
+            c["evidence_type"] == "proposed_policy_expected_fail" for c in linked
+        )
         coverage.append(
             {
                 "risk_id": risk_id,
                 "cases": [c["case_id"] for c in linked],
                 "contracts": contract_count,
                 "characterizations": characterization_count,
+                "unmet_proposed_policy_cases": proposed_policy_count,
                 "classification": (
                     "UNTESTED"
                     if not linked
+                    else "PROPOSED_POLICY_GAP_REVIEW_PENDING"
+                    if proposed_policy_count
                     else "CHARACTERIZED_ONLY"
                     if not contract_count
                     else "MIXED_EVIDENCE_REVIEW_PENDING"
