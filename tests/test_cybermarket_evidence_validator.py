@@ -81,5 +81,7 @@ def test_evidence_gate_rejects_invalid_results(tmp_path, defect):
     elif defect == "wrong_count":
         payload["test_count"] -= 1
     summary.write_text(json.dumps(payload), encoding="utf-8")
-    with pytest.raises(ValueError, match="(variant|outcome|test_count|identifier|non-PASS)"):
+    with pytest.raises(
+        ValueError, match="(variant|outcome|test_count|identifier|non-PASS)"
+    ):
         validate(matrix, summary)
