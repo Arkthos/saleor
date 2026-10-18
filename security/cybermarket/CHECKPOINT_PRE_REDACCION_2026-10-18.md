@@ -1,52 +1,35 @@
-# HANDOFF — Pre-drafting checkpoint: CyberMarket CR
+# CHECKPOINT DEFINITIVO — CyberMarket CR, antes de redacción
 
-**STOP POINT: BEFORE ACADEMIC ANALYSIS AND WRITING. NO DRAFT HAS BEEN STARTED.**
+**Estado:** fase experimental C2–C9 CERRADA dentro del alcance sintético CI; análisis técnico de resultados auditado; **redacción académica NO iniciada**. Fecha: 2026-10-18.
 
-Date: 2026-10-18. Repository: https://github.com/Arkthos/saleor/pull/1, branch `research/cybermarket-security-tests-v1`. Do not merge PR #1 or change Saleor product code or the user-approved Avance 1.
+## Reanudación rápida
 
-## Verified experimental baseline
+Repositorio: `Arkthos/saleor`; PR #1 draft; rama `research/cybermarket-security-tests-v1`. **Documento canónico de resultados:** [INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md](INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md). Complementos: [experiment_C9_final_2026-10-18.md](experiment_C9_final_2026-10-18.md), [test_matrix.csv](test_matrix.csv), [POLICY_ORDER_P01_PROVISIONAL.md](POLICY_ORDER_P01_PROVISIONAL.md), [C10_live_validation_plan.md](C10_live_validation_plan.md).
 
-- Tested source SHA: `55efe73188a31c495da14f9b11687ec71c15af07`.
-- C2–C9 research suite: **27 distinct CM-T01–CM-T27 cases, 61 pytest invocations, 59 PASS, 2 expected XFAIL, 0 unexpected failures**, 13 mapped hypothetical risk IDs.
-- Focused security run: https://github.com/Arkthos/saleor/actions/runs/39144176073 SUCCESS. JUnit artifact ID `12142658762`, digest `sha256:5388e596ad14d052f716d7b861092112095a24b694c0f0f5bf59af0fa9f6ba9a`. Static review ID `12142880893`, digest `sha256:7139fc6bb1ad4c07da3e06304d4c8f7c6d5b94d7247f367b99ac55d498e45b90`.
-- Linters https://github.com/Arkthos/saleor/actions/runs/39144176064 SUCCESS; E2E https://github.com/Arkthos/saleor/actions/runs/39144176063 SUCCESS; changelog https://github.com/Arkthos/saleor/actions/runs/39144176134 SUCCESS.
-- General tests https://github.com/Arkthos/saleor/actions/runs/39144176059 **IN PROGRESS at checkpoint creation**. Check final status before claiming all-green.
-- Subsequent documentation commits: matrix `890de781bf6980a80687c5c0e6bfbeee772fd10a`; C9 report `0ab674b09f35ce6e6da04054b2a2d3987ccf6bb4`. **These are not the tested SHA.**
+**Tested branch SHA:** `63cadee4e9a1b43bfc07103aecbfeb61fbc33112`; checkout/merge SHA `98645a24a56e9764e48fdefeea6b2e9a4095ad4a`. Later commits containing the analysis/report/checkpoint are documentation-only and **are not themselves the tested baseline**.
 
-## Key conclusions and limitations
+## All checks verified
 
-- Known order UUID yields unmasked synthetic email/billing/shipping street for anonymous and unrelated authenticated actors; owner controls also succeed (CM-T23/T24).
-- Legacy order-number path yields exact `obfuscate_email` / `obfuscate_string` outputs (CM-T25/T27), retaining limited original information.
-- Missing UUID returns no order (CM-T26).
-- Two strict XFAIL in CM-T22 record an unmet **provisional CyberMarket-specific** owner-only expectation, not a confirmed Saleor vulnerability.
-- No UUID enumeration/guessability finding; no official Saleor policy breach, no ASVS certification, no live deployment/HTTP-HTTPS/browser DAST. Remaining staff/app field-specific permission and invalid-ID scenarios are future work.
-- C10 live validation plan is **documentation for classmates**, not completed tests.
+- General tests [39144885841](https://github.com/Arkthos/saleor/actions/runs/39144885841): SUCCESS; 17,613 PASS, 2 expected XFAIL, 0 FAIL/ERROR.
+- Focused CyberMarket [39144885995](https://github.com/Arkthos/saleor/actions/runs/39144885995): SUCCESS; 59 PASS, 2 expected XFAIL, 0 FAIL/ERROR/SKIP.
+- Linters [39144885812](https://github.com/Arkthos/saleor/actions/runs/39144885812): SUCCESS.
+- E2E [39144885821](https://github.com/Arkthos/saleor/actions/runs/39144885821): SUCCESS.
+- Changelog [39144885986](https://github.com/Arkthos/saleor/actions/runs/39144885986): SUCCESS.
+- Historical cancelled general run 39144176059 superseded by successful 39144885841; never label cancelled run successful.
 
-## Documents to read on resumption
+**Traceability:** 27 unique case IDs, 61 invocations, 26 contract PASS, 33 characterization PASS, 2 expected provisional-policy XFAIL; 13 risks mapped, all `NO_DETERMINADO`. The general run includes the focused cases; do not double-count.
 
-1. `security/cybermarket/experiment_C9_final_2026-10-18.md`
-2. `security/cybermarket/evidence_C9_snapshot.md`
-3. `security/cybermarket/test_matrix.csv`
-4. `security/cybermarket/C9_closure_matrix.md`
-5. `security/cybermarket/POLICY_ORDER_P01_PROVISIONAL.md`
-6. `security/cybermarket/C10_live_validation_plan.md`
-7. `security/cybermarket/README.md`
-8. `security/cybermarket/experiment_C8_2026-10-18.md`
+**Artifact ZIP IDs / SHA256:** focused 12142029921 / `b8c38641cab220debac6c0d806b74141016f1baa0ad109caeb02647f0ac5412e`; static 12143311107 / `de680b13d3b1fc5ddd35970d8e999f97c4d65fffea4fda802515ede9c4b8e37f`; general 12143532461 / `809f7933869efe42bd1114e6a44d1d55f1c6df66b3d0560c31f55f8d17aae54a`. Independent per-file SHA256SUMS validation and full case inventory recorded in canonical report. Artifacts are retention-limited; raw ZIPs should be copied to long-term storage if required.
 
-## Next session — exact resumption sequence
+## Conclusions and decision boundaries
 
-1. Read this checkpoint and verify the final general-tests workflow result and all relevant final PR-head checks. Document any cancellation as such, not success.
-2. If required, audit individual JUnit variants and per-file SHA256SUMS; append a verified immutable archival summary. Preserve historic runs and avoid rerunning unnecessarily.
-3. Freeze experiment findings and explicitly classify observation / security contract / provisional-policy gap / unknown.
-4. **Only after the user explicitly asks to start writing**, begin academic analysis and writing, applying EvidenceSynth/Tutor/Humanizer: claim-evidence proximity, evidence versus inference, APA 7, natural synthesis and limitations.
-5. Keep C10 as an actionable handoff for classmates. Do not assert live results or deploy without separate decision.
+- Known UUID order queries exposed original **synthetic** email and two street fields to unrelated/anonymous actors; legacy number path obfuscated them; owner and missing-ID controls characterized.
+- Two strict XFAIL cover proposed owner-only **email** policy for two actors. P-ORDER-01 is unapproved; no official Saleor violation, practical UUID guessing, or live exploit established.
+- Bandit B105 cookie-name `refreshToken` signal reviewed as false positive, not suppressed.
+- Live HTTPS/browser/proxy deployment, CORS, frontend identifier leakage, malformed IDs and exhaustive staff/app field permissions are **out of scope** for C2–C9 and deferred to classmate-executable C10. No live result exists.
 
-## Academic writing guardrails
+## Next-session instruction
 
-- Do not overwrite Avance 1.
-- Do not infer an exploitable vulnerability from a fixture characterization or from XFAIL.
-- Cite GitHub run, source SHA and evidence for each technical conclusion.
-- No unsupported numerical coverage or certification claims.
-- Preserve a clear boundary between research findings and hypothetical risks.
+**Begin with academic analysis/writing ONLY when user asks.** Use canonical closure report and matrix; apply EvidenceSynth, Tutor and Humanizer, with claim-level provenance, APA 7, distinction of observation/inference/normative requirement, and explicit limitations. Do not overwrite approved Avance 1. Independently plan classmate C10 live deployment using existing guide when requested. Do not modify Saleor functional code or merge PR #1.
 
-**This checkpoint deliberately ends BEFORE drafting.**
+**Stop here: immediately before drafting.**
