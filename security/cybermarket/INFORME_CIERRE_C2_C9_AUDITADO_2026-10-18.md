@@ -79,3 +79,19 @@ Totals: **27 unique IDs, 61 variants, 26 contract PASS, 33 characterization PASS
 All 27 scoped cases executed and reconciled, and the complete CI checks passed on the same tested SHA. **C2–C9 can be frozen as a completed synthetic CI experiment.** No production or live deployment, HTTPS, CORS, browser cookies, reverse proxy, frontend UUID sharing, malformed identifiers, exhaustive staff/app permissions, scale abuse or approved P-ORDER-01 were evaluated. These are explicitly *out of scope*, to be addressed in the separately documented C10 classmate lab, not disguised as unresolved C9 failures.
 
 This document records research evidence and interpretation, **not the academic manuscript**. Do not alter approved Avance 1, Saleor product code or merge PR #1.
+
+
+## Post-remediation CI revalidation (2026-10-18)
+
+This is a later, independently checked execution of the **experimental QA harness**; it supersedes the earlier tested branch SHA for CI status, but does not change the earlier security interpretation.
+
+- PR #1 remains open and draft. Tested branch HEAD: `6722e120a90d39dc34ef83a4b53ce4dd064fd5df`; Actions checkout/merge SHA embedded in the evidence: `a88da0ae6a01471ad3f1737e5936529fe6f7d286` (do not confuse the two).
+- Linters [39155789280](https://github.com/Arkthos/saleor/actions/runs/39155789280): **SUCCESS** (Ruff, Ruff format, mypy, deptry, Semgrep, migrations and GraphQL schema).
+- Focused GraphQL and SAST [39155789357](https://github.com/Arkthos/saleor/actions/runs/39155789357): **SUCCESS**; evidence-validator regression gates **6 PASS**; focused **59 PASS, 2 expected XFAIL, 0 FAIL/ERROR/SKIP**, 61 executions, 27 case IDs, 3 warnings. The two strict XFAIL concern unapproved P-ORDER-01, not an established Saleor vulnerability.
+- General [39155789296](https://github.com/Arkthos/saleor/actions/runs/39155789296): **SUCCESS**, **17,613 PASS, 2 expected XFAIL, 0 FAIL/ERROR**, 34 warnings, 17,615 JUnit testcases. Focused cases are included, not additional.
+- E2E [39155789292](https://github.com/Arkthos/saleor/actions/runs/39155789292): **SUCCESS**, 211 PASS, 3 warnings. Changelog [39155789376](https://github.com/Arkthos/saleor/actions/runs/39155789376): **SUCCESS**. Deployment/load publication skipped, outside C2–C9.
+- Independently downloaded and SHA256-verified artifact ZIPs and their embedded `SHA256SUMS`: focused artifact **12146918425**, ZIP `983aae404ad5c29155575a642cfb26a427477c6dd5a6d317dd1190c273200e44`, JUnit `6cef50dc3d21f61a5bcc1e7541cf6461206a5d704c82d001932daec0d807a13d`; SAST artifact **12147131033**, ZIP `83b590fdabd328955cc0fd89533e69aa5e4ae9424e445986a1330fd53601051f`; general JUnit artifact **12147144111**, ZIP `ed5ec8f271df32887fe4457be06073691ed8441edb4891777bb2423ef5f91f40`, XML `3266fd55c8839b2b09334b9c93adde2a1d3e3821b4c0dca911c86998ebbc956e`.
+- Artifact XML independently parsed: focused 61 testcases, 0 failures/errors, 2 `pytest.xfail`; general 17,615 testcases, 0 failures/errors, 2 `pytest.xfail`. Summary and coverage JUnit hashes match. All 13 mapped risks still carry `NO_DETERMINADO` security verdicts.
+- Scoped Bandit 1.8.6 produced the same **LOW B105** alert on the `refreshToken` cookie-name constant; reviewed as a false positive, **not** a clean zero-finding scan.
+
+**Evidence-integrity residual:** the current validator checks that the sum of reported outcome counts equals the case count, but not that the reported PASS/XFAIL histogram matches individual cases. Independent XML/JSON inspection above reconciled the actual distribution, so this does not invalidate the audited run; strengthening this gate remains a non-product QA improvement. Formal requirement approval, live browser/HTTPS/proxy behavior and C10 remain external/out-of-scope. This appendix is an evidence record, not authorization to start academic writing or merge the PR.
