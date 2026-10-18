@@ -125,3 +125,11 @@ python security/cybermarket/build_coverage.py --matrix security/cybermarket/test
 7. **C7 / verified:** [Normative audit and SAST triage](experiment_C7_2026-10-18.md) documents 36/36 PASS in [run 39132273808](https://github.com/Arkthos/saleor/actions/runs/39132273808); ASVS/WSTG IDs enforced by the checked allowlist. Bandit B105 on the literal cookie name `refreshToken` was reviewed and classified **false positive**, with original report and hashes preserved. Final repo-wide CI and independent policy verdicts are still pending.
 
 Do not merge while CI failures or security requirements are unresolved. The Avance 1 DOCX validated by the user remains unchanged.
+
+## Current research status — audited C2–C9 closure (2026-10-18)
+
+**The earlier C7 status above is historical.** C2–C9 synthetic CI experiments are complete and independently audited. On tested branch SHA `63cadee4e9a1b43bfc07103aecbfeb61fbc33112`, general tests [39144885841](https://github.com/Arkthos/saleor/actions/runs/39144885841), focused GraphQL security [39144885995](https://github.com/Arkthos/saleor/actions/runs/39144885995), linters [39144885812](https://github.com/Arkthos/saleor/actions/runs/39144885812), E2E [39144885821](https://github.com/Arkthos/saleor/actions/runs/39144885821) and changelog [39144885986](https://github.com/Arkthos/saleor/actions/runs/39144885986) all finished SUCCESS.
+
+General suite: **17,613 PASS + 2 expected XFAIL**. Focused subset: **59 PASS + 2 expected XFAIL**, 27 case IDs / 61 variants / 13 mapped risks; no unexpected failures. Risk verdicts remain `NO_DETERMINADO`; proposed P-ORDER-01 is not an authoritative Saleor policy. The source-controlled report preserves independently verified artifact hashes and per-case interpretations.
+
+**Read first:** [Audited closure report](INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md) → [Final pre-writing checkpoint](CHECKPOINT_PRE_REDACCION_2026-10-18.md) → [Test matrix](test_matrix.csv). For future teammate-executed deployment see [C10 live validation plan](C10_live_validation_plan.md). No live deployment has been performed. This PR stays draft and unmerged; approved Avance 1 and functional Saleor code were not modified in this closure.
