@@ -2,7 +2,7 @@
 
 **Scope:** pinned Saleor fork implementation, pytest/Django/GraphQL fixture-backed checks and selected Python Bandit static scan. This is **not** an academic manuscript or a production penetration-test report.
 
-**Pinned Saleor baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090`  
+**Pinned Saleor baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090`
 **Source:** [Arkthos/saleor PR #1](https://github.com/Arkthos/saleor/pull/1), draft.
 
 ## Immutable execution chronology
