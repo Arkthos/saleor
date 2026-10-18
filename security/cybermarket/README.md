@@ -133,3 +133,11 @@ Do not merge while CI failures or security requirements are unresolved. The Avan
 General suite: **17,613 PASS + 2 expected XFAIL**. Focused subset: **59 PASS + 2 expected XFAIL**, 27 case IDs / 61 variants / 13 mapped risks; no unexpected failures. Risk verdicts remain `NO_DETERMINADO`; proposed P-ORDER-01 is not an authoritative Saleor policy. The source-controlled report preserves independently verified artifact hashes and per-case interpretations.
 
 **Read first:** [Audited closure report](INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md) → [Final pre-writing checkpoint](CHECKPOINT_PRE_REDACCION_2026-10-18.md) → [Test matrix](test_matrix.csv). For future teammate-executed deployment see [C10 live validation plan](C10_live_validation_plan.md). No live deployment has been performed. This PR stays draft and unmerged; approved Avance 1 and functional Saleor code were not modified in this closure.
+
+## Software engineering assurance review and live deployment handoff
+
+- [Detailed C2–C9 engineering/assurance review](REPORTE_INGENIERIA_ASEGURAMIENTO_C2_C9_2026-10-18.md): 27 case-by-case interpretations, 13 risk analyses, software harness weaknesses QA-01–QA-11, explicit normative decision boundary and source provenance.
+- [C10 team execution roadmap](C10_live_validation_roadmap_team_handoff.md): gated isolated deployment, owners, LIVE-01–LIVE-07, evidence schema, teardown, checkpoints and acceptance criteria.
+- The [matrix](test_matrix.csv) now records all 16 contracts as `REVIEWED_LOCAL_ORACLE_PASS_NORMATIVE_NOT_ADJUDICATED`, 10 characterizations as `REVIEWED_OBSERVED_NO_SECURITY_VERDICT` and the 2-variant CM-T22 as `REVIEWED_PROVISIONAL_POLICY_MISMATCH_NOT_APPROVED`. These are reviewed evidence states, **not** formal ASVS conformity decisions. Historic `REVIEW_PENDING` strings in older snapshots/derived coverage describe the earlier state and are not rewritten retroactively.
+
+**No C10 deployment has been performed.** The engineering review documents actionable harness improvements; it does not claim those changes have been implemented. Preserve the original tested SHA and rerun/inspect CI on the current PR HEAD after documentation and matrix updates.
