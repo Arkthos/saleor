@@ -1,6 +1,6 @@
 # CyberMarket CR — Reproducible software-security test suite
 
-**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 automated matrix-to-JUnit coverage gate and consolidated MAP/GAP/AUDIT report committed, pending own CI verification. No ASVS certification or production DAST claimed.
+**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 coverage gate verified 36/36 with 21 case IDs / 13 mapped risks; C7 ASVS/WSTG normative corrections and low-severity Bandit triage are implemented and pending CI verification. No ASVS certification or production DAST claimed.
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
@@ -95,8 +95,8 @@ python security/cybermarket/build_coverage.py --matrix security/cybermarket/test
 
 - These checks run **in-process Django/GraphQL requests** against isolated fixture-backed services. They are dynamic behavioral/integration tests but **not** an external-browser DAST scan and do not demonstrate actual HTTPS/proxy isolation.
 - C4 covers more of token creation, refresh, user-permission partitioning and GraphQL query boundaries. It does not prove missing risks R01 (intermediaries), R02 (effective throttling behind proxy), or R13 (delegated app permissions). These need independent controls and test protocols.
-- Bandit 1.8.6 scanned 4,629 lines of selected Python code in [C4 run 39130431874](https://github.com/Arkthos/saleor/actions/runs/39130431874), with no reported matches meeting both medium-or-greater severity and confidence (`-ll -ii`). This is filtered scanning, not vulnerability clearance; artifacts and SHA-256 are in [C4 evidence](experiment_C4_2026-10-18.md).
-- Requirement ASVS/WSTG associations in the matrix are **candidates to validate against the normative standard text**, never conformance claims.
+- Bandit 1.8.6 scanned 4,629 lines of selected Python code in [C4 run 39130431874](https://github.com/Arkthos/saleor/actions/runs/39130431874) with `-ll -ii`, showing no matches above that initial filter; C7 uses `-l -ii` to capture the LOW-severity signal for assessment. Scanner findings are never automatically classified as vulnerabilities. See [C7 evidence](experiment_C7_2026-10-18.md).
+- C7 verifies that the ASVS/WSTG identifiers in the matrix come from a reviewed, versioned subset and rejects out-of-catalog IDs. Applicability and control conformity still require individual human judgment.
 - Generated evidence expires after GitHub retention; selected results, hashes, SHA and interpretations must be committed as checkpoints with no tokens or production data.
 
 ## Checkpoints / next iterations
@@ -106,6 +106,7 @@ python security/cybermarket/build_coverage.py --matrix security/cybermarket/test
 3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI showed a test-oracle mismatch on CM-T07; the corrected field-masking contract passed in C3's 10/10 rerun. The new-UUID access policy still requires a documented decision. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
 4. **C4 / verified:** CM-T08–T16 and prior C2/C3 cases executed 21/21 in run 39130431874; scoped Bandit SAST executed and evidence archived.
 5. **C5 / verified:** CM-T17–T21 include source-level R01/R02/R13, delegated permission intersection, and unsigned JWT rejection; 36/36 in [run 39131023314](https://github.com/Arkthos/saleor/actions/runs/39131023314). See [C5 checkpoint](experiment_C5_2026-10-18.md).
-6. **C6 / committed; CI pending:** [Consolidated experiment evidence](experiment_C6_2026-10-18.md) tracks 13/13 risk associations with outstanding GAP/AUDIT and a new machine-generated coverage report. Verify C6 workflow after the final documentation commit, confirm ASVS applicability and external-environment scope before any compliance claims.
+6. **C6 / verified:** [Consolidated experiment evidence](experiment_C6_2026-10-18.md) and [run 39131644653](https://github.com/Arkthos/saleor/actions/runs/39131644653) verify 36/36, 21/21 case mappings and 13/13 mapped risks with **no automatic security conformity decisions**.
+7. **C7 / implemented, validation pending:** [Normative audit and SAST triage](experiment_C7_2026-10-18.md) correct preliminary ASVS/WSTG IDs and enforces a reviewed-ID allowlist. Bandit threshold expanded to capture LOW+ severity / MEDIUM+ confidence. Inspect, classify and record any scanner result; do not merge while CI is incomplete.
 
 Do not merge while CI failures or security requirements are unresolved. The Avance 1 DOCX validated by the user remains unchanged.
