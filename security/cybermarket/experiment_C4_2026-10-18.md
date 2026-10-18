@@ -1,6 +1,6 @@
 # CyberMarket CR — C4 test implementation and evidence checkpoint
 
-**State:** IMPLEMENTED; first targeted CI run required before any claim of success.
+**State:** EXECUTED AND VERIFIED for the scoped C4 focused workflow. This is an execution verdict, not full ASVS compliance.
 **Date:** 2026-10-18 UTC.
 **Source baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (Saleor).
 **PR:** https://github.com/Arkthos/saleor/pull/1 (draft).
@@ -37,6 +37,22 @@ The focused pytest workflow writes a `cybermarket-junit.xml` and a deterministic
 For each evaluation: preserve workflow run URL and ID, tested commit, artifact IDs, SHA-256, tool versions, expected/observed behavior, limitations, and reasons for fixing test harness versus production code.
 
 **Critical:** CM-T05 and CM-T06 are characterization tests and CM-T14 is configuration characterization. A green result is NOT an ASVS conformance decision. New-UUID order field disclosure remains a pending security-policy question (R11/H12).
+
+## Verified C4 runtime and SAST evidence
+
+- Workflow: [CyberMarket GraphQL security evidence #39130431874](https://github.com/Arkthos/saleor/actions/runs/39130431874).
+- PR branch head associated with this execution: `0a5d3539e1b2e6b5841d0dcf09e9472f05c9bf1f`; GitHub's PR synthetic checkout/merge commit recorded in the JUnit summary as `7767beaef5e3d06d02ded614af23325e3c849cbd`. These are distinct GitHub refs; do not silently collapse them.
+- Focused pytest: **21 executions / 21 PASS / 0 FAIL / 0 ERROR / 0 SKIP**, across 16 identified cases CM-T01–T16.
+- JUnit artifact: `cybermarket-security-junit`, ID `12138186188`.
+- JUnit XML SHA-256: `68eba0f4595a82b02465154916453b5666d668673439cf46614724255dc0ef46`.
+- Sanitized summary SHA-256: `64e7bee10df5179eb4fc4d697610eb006a4dfadbb0e6058607c10d42fca26572`.
+- Artifact ZIP SHA-256: `71c167f2b05d238cd6a527038b9f55d5e21233bcf5c8f18b64c9a743304db269`.
+- SAST artifact: `cybermarket-static-review`, ID `12137616867`.
+- Bandit 1.8.6: finished with exit code 0; **4,629 lines measured**, 0 reported matches at the specified medium-or-greater severity **and** confidence threshold, one low-severity signal present in aggregated metrics but not reported under `-ll -ii`.
+- Bandit JSON SHA-256: `e2867e7a1a6d10f5c75d744245f64f18b2e6f28b60b989e48983e88395addcae`.
+- Static artifact ZIP SHA-256: see retained artifact, do not treat a zero count as evidence of no vulnerabilities.
+
+**Interpretation:** This verifies the behavior of selected code paths and SAST scan execution. It does **not** prove correct use of proxies, configured production values, cross-origin browser behavior, an exhaustive risk assessment or ASVS compliance. CM-T05/CM-T06/CM-T14 remain characterization-only.
 
 ## Follow-on after C4
 
