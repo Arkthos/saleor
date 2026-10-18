@@ -1,6 +1,6 @@
 # CyberMarket CR — Reproducible software-security test suite
 
-**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 coverage gate verified 36/36 with 21 case IDs / 13 mapped risks; C7 ASVS/WSTG normative corrections validated (36/36) and Bandit B105 reviewed as a cookie-name false positive. Final general repository CI review remains pending. No ASVS certification or production DAST claimed.
+**Status:** C2 8/8, C3 10/10, C4 21/21, C5 36/36 validated as raw fixture-backed executions; Bandit scanned 4,629 LOC. C6 coverage gate verified 36/36 with 21 case IDs / 13 mapped risks; C7 ASVS/WSTG normative corrections validated (36/36) and Bandit B105 reviewed as a cookie-name false positive. Final general repository CI review remains pending. C8 adds a **provisional** policy probe CM-T22 with two strict XFAIL variants; C8 must be executed before any verdict. No ASVS certification or production DAST claimed.
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
@@ -39,6 +39,7 @@ The test in `saleor/graphql/tests/test_cybermarket_security_contracts.py` adds *
 | CM-T19 | Check bounded login delay algorithm thresholds | R02/H02 | Contract; 6 variants, not production throttling |
 | CM-T20 | Verify app delegated token permission intersections | R13/H15 | Contract; overlap/disjoint variants |
 | CM-T21 | Reject unsigned JWT algorithm | R08/H09 | Narrow contract |
+| CM-T22 | Probe proposed CyberMarket CR owner-only order-UUID privacy for unrelated/anonymous actors | R11/H12 | **Provisional policy**: strict XFAIL expected, not Saleor nonconformance |
 
 **IMPORTANT on CM-T05 / CM-T06:** In this pinned Saleor revision, pre-existing upstream tests
 `test_query_order_fields_order_with_new_id_by_anonymous_user` and
@@ -90,6 +91,13 @@ python security/cybermarket/build_coverage.py --matrix security/cybermarket/test
 - A `FAIL` may represent a test/environment defect; a `PASS` in CM-T05 or CM-T06 **characterizes an exposure** rather than proving authorization. Cross-customer results remain security-policy ambiguous until authorized product requirements are known.
 - Any potential security deviation must be manually replicated, scoped and tied to an applicable ASVS requirement before it can be called a confirmed finding.
 - Keep `H01–H15` as documentary observations and `R01–R13` as hypothetical risks until backed by tests. Record uncertainties separately.
+
+## Proposed policy and failed expectations (C8)
+
+- [P-ORDER-01: PROPOSED, not approved](POLICY_ORDER_P01_PROVISIONAL.md) specifies a stricter owner-only PII policy for the fictional CyberMarket CR scenario. It does **not** override Saleor's intended semantics or establish a vulnerability.
+- CM-T22 is deliberately `pytest.mark.xfail(strict=True)` for unrelated/anonymous requests with a known new order UUID. XFAIL records the proposed requirement gap and must be reported distinctly from PASS/SKIP.
+- `summarize_junit.py` and `build_coverage.py` preserve `XFAIL` and `PROPOSED_POLICY_GAP_REVIEW_PENDING`; strict XPASS produces a failing pipeline so the requirement must be reevaluated.
+- **No production-code correction** will be made until the intended access policy is authorized and the exposure independently verified.
 
 ## Scope and honest coverage boundaries
 
