@@ -3,7 +3,7 @@ name: CyberMarket GraphQL security evidence
 on:
   pull_request:
     paths:
-      - "saleor/graphql/tests/test_cybermarket_security_contracts.py"
+      - "saleor/graphql/tests/test_cybermarket_security_*.py"
       - "security/cybermarket/**"
       - ".github/workflows/cybermarket-security.yaml"
   workflow_dispatch:
@@ -57,14 +57,67 @@ jobs:
       - name: Run focused tests and collect JUnit XML
         run: |
           mkdir -p security-results
-          uv run pytest saleor/graphql/tests/test_cybermarket_security_contracts.py \
+          uv run pytest saleor/graphql/tests/test_cybermarket_security_*.py \
             -q --junitxml=security-results/cybermarket-junit.xml \
             -o junit_family=legacy
+      - name: Create sanitized experiment summary
+        if: always()
+        run: |
+          if [ -f security-results/cybermarket-junit.xml ]; then
+            python security/cybermarket/summarize_junit.py \
+              --junit security-results/cybermarket-junit.xml \
+              --output security-results/cybermarket-summary.json \
+              --commit "${{ github.sha }}"
+            cd security-results
+            sha256sum cybermarket-junit.xml cybermarket-summary.json > SHA256SUMS
+          fi
       - name: Upload evidence on success or failure
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: cybermarket-security-junit
+          path: security-results/
+          if-no-files-found: warn
+          retention-days: 30
+
+  scoped-static-security:
+    name: Scoped Python SAST evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+      - name: Scan selected security-sensitive Python files
+        shell: bash
+        run: |
+          mkdir -p security-results
+          set +e
+          uv tool run --from bandit==1.8.6 bandit \
+            -r saleor/core/auth.py saleor/core/auth_backend.py \
+               saleor/core/jwt.py saleor/core/jwt_manager.py \
+               saleor/graphql/account/mutations/authentication \
+               saleor/graphql/order/schema.py saleor/graphql/order/resolvers.py \
+               saleor/graphql/order/types.py \
+            -ll -ii -f json -o security-results/bandit.json
+          status=$?
+          set -e
+          printf '{"schema":"cybermarket.sast.run.v1","scanner":"bandit","version":"1.8.6","exit_code":%s,"interpretation":"alerts require manual triage"}\n' "$status" > security-results/bandit-run.json
+          if [ "$status" -gt 1 ]; then
+            echo "Bandit failed to complete (exit $status)"
+            exit "$status"
+          fi
+      - name: Hash static scan evidence
+        if: always()
+        run: |
+          cd security-results
+          sha256sum *.json > SHA256SUMS
+      - name: Upload static evidence on all outcomes
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: cybermarket-static-review
           path: security-results/
           if-no-files-found: warn
           retention-days: 30
