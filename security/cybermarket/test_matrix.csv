@@ -4,5 +4,5 @@ CM-T02,tokensDeactivateAll;me;tokenRefresh,customer_and_anonymous,R07,H08,v5.0.0
 CM-T03,tokenRefresh,anonymous_cookie_or_explicit,R06,H05;H06;H07,v5.0.0-3.5.1;v5.0.0-9.2.2,WSTG-SESS-05,security_contract,EXECUTED_PASS,EVIDENCE_RECORDED_REQUIREMENT_REVIEW_PENDING
 CM-T04,order,customer_no_manage_orders,R09,H12,v5.0.0-8.2.1,WSTG-ATHZ-02,security_contract,EXECUTED_PASS,EVIDENCE_RECORDED_REQUIREMENT_REVIEW_PENDING
 CM-T05,order,anonymous_new_uuid,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,characterization_only,EXECUTED_PASS,NO_DETERMINADO_CHARACTERIZATION
-CM-T06,order,owner_vs_other_customer_vs_anonymous_new_uuid,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,characterization_only,IMPLEMENTED_NOT_EXECUTED,NO_DETERMINADO
-CM-T07,order,owner_vs_other_customer_vs_anonymous_legacy_number,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,security_contract,IMPLEMENTED_NOT_EXECUTED,NO_DETERMINADO
+CM-T06,order,owner_vs_other_customer_vs_anonymous_new_uuid,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,characterization_only,EXECUTED_PASS,NO_DETERMINADO_CHARACTERIZATION
+CM-T07,order,owner_vs_other_customer_vs_anonymous_legacy_number,R11,H12,v5.0.0-8.2.2;v5.0.0-8.2.3,WSTG-ATHZ-04,security_contract,ASSUMPTION_MISMATCH_CORRECTED_RERUN_PENDING,NO_DETERMINADO
