@@ -7,6 +7,7 @@ Each pytest invocation emits its own actor/field identifier in JUnit.
 import graphene
 import pytest
 
+from saleor.core.anonymize import obfuscate_email, obfuscate_string
 from saleor.graphql.tests.utils import get_graphql_content
 
 QUERY = """
@@ -137,3 +138,29 @@ def test_cm_t26_missing_uuid_no_order(
     assert str(order.pk) != missing
     result = _query(client, graphene.Node.to_global_id("Order", missing))
     assert result is None
+
+
+@pytest.mark.parametrize("actor", NONOWNERS)
+@pytest.mark.parametrize("field", FIELDS)
+def test_cm_t27_legacy_exact_mask_characterization(
+    api_client,
+    user2_api_client,
+    customer_user,
+    customer_user2,
+    order,
+    actor,
+    field,
+    record_property,
+):
+    """Verify exact residual legacy masking, not merely changed strings."""
+    _record(record_property, "CM-T27", f"{actor}:{field}")
+    assert order.user_id == customer_user.pk
+    assert customer_user2.pk != order.user_id
+    order.use_old_id = True
+    order.save(update_fields=["use_old_id"])
+    client = user2_api_client if actor == "unrelated_customer" else api_client
+    result = _query(client, graphene.Node.to_global_id("Order", order.number))
+    assert result is not None
+    raw = _expected(order, field)
+    expected = obfuscate_email(raw) if field == "userEmail" else obfuscate_string(raw)
+    assert _value(result, field) == expected
