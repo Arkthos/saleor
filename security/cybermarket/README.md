@@ -1,6 +1,6 @@
 # CyberMarket CR — Security testing, cycle 1
 
-**Status:** Cycle C2 tested successfully (8/8 on initial code); C3 actor-matrix scenarios implemented, validation pending. See [C2 evidence](experiment_C2_2026-10-18.md) and [C3 status](experiment_C3_2026-10-18.md). **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
+**Status:** Cycle C2 tested successfully (8/8 on initial code); C3 first run: 9 pass / 1 fail (CM-T07 expected full denial but received obfuscated fields); corrected test code pending rerun. See [C2 evidence](experiment_C2_2026-10-18.md) and [C3 status](experiment_C3_2026-10-18.md). **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
 ## Scope, rationale and existing coverage
 
@@ -22,7 +22,7 @@ The test in `saleor/graphql/tests/test_cybermarket_security_contracts.py` adds *
 | CM-T04 | `order(externalReference:)` requires `MANAGE_ORDERS` | R09 / H12 | Security contract |
 | CM-T05 | Observe full address/email disclosure from `order(id: UUID)` to anonymous request | R11 / H12 | **Characterization only**, not proof of compliant security |
 | CM-T06 | Compare same new-UUID order fields as owner, unrelated customer and anonymous actor | R11 / H12 | **Characterization only**, expected exposure is not approved policy |
-| CM-T07 | Compare old-number order access as owner, unrelated customer and anonymous actor | R11 / H12 | Security contract on legacy-ID branch |
+| CM-T07 | Compare old-number order fields as owner, unrelated customer and anonymous actor | R11 / H12 | Security contract: owner sees full fields, other actors see masked fields |
 
 **IMPORTANT on CM-T05 / CM-T06:** In this pinned Saleor revision, pre-existing upstream tests
 `test_query_order_fields_order_with_new_id_by_anonymous_user` and
@@ -62,7 +62,7 @@ uv run pytest saleor/graphql/tests/test_cybermarket_security_contracts.py -q --j
 ## Current execution checkpoint
 
 - **C2:** [run 39127189591](https://github.com/Arkthos/saleor/actions/runs/39127189591) passed 8/8 tests for CM-T01–T05; JUnit artifact 12136417662.
-- **C3:** CM-T06 and CM-T07 were added in a subsequent commit. Their results must be obtained from a new CI run, not inherited from C2.
+- **C3:** [initial run 39128224126](https://github.com/Arkthos/saleor/actions/runs/39128224126) executed 10 tests: 9 PASS / 1 FAIL (CM-T07). It revealed that the legacy-number route masks fields for another customer, rather than rejecting the whole object. Test expectation was corrected in commit `3b8064b08b07d71e2fd3a0e8c89c572de7e36c4e`; corrected code awaits a fresh JUnit run. CM-T06 passed only as characterization.
 - Do not conflate a test **PASS** with a requirement verdict. Capture a run + commit + artifact for every claim.
 
 ## Evidence and classification
@@ -77,7 +77,7 @@ uv run pytest saleor/graphql/tests/test_cybermarket_security_contracts.py -q --j
 
 1. **C1 / implemented:** scenario IDs, code, traceability and dedicated CI workflow committed in a draft PR.
 2. **C2 / executed:** Initial 8/8, no failures/errors/skips; original run 39127189591. Contract performance is narrow, not full ASVS compliance. The C2 checkpoint records SHA-256 and interpretation.
-3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. Await CI; do not call tests successful before running. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
+3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI confirmed CM-T06 as a passing characterization and failed CM-T07 due to an incorrect full-denial expectation; the corrected field-masking contract awaits rerun. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
 4. **C4 / depth:** expand token type/audience, cookie settings, login rate limits and GraphQL query-cost tests using bounded synthetic fixtures.
 5. **C5 / interpretation:** EvidenceSynth MAP/GAP/AUDIT, per-case records and regression runs. Update this document after each iteration.
 
