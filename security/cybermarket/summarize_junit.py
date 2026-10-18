@@ -7,9 +7,13 @@ tracebacks, requests, JWTs, cookie values, account email or response bodies.
 import argparse
 import hashlib
 import json
+import logging
 import os
 from pathlib import Path
 from xml.etree import ElementTree as ET
+
+
+logger = logging.getLogger(__name__)
 
 
 def sha256(path: Path) -> str:
@@ -69,6 +73,7 @@ def summarize(junit: Path, commit: str) -> dict:
 
 
 def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     parser = argparse.ArgumentParser()
     parser.add_argument("--junit", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -79,7 +84,9 @@ def main() -> None:
     args.output.write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    print(f"CyberMarket: {summary['test_count']} cases, {summary['counts']}")
+    logger.info(
+        "CyberMarket: %s cases, %s", summary["test_count"], summary["counts"]
+    )
 
 
 if __name__ == "__main__":
