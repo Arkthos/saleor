@@ -1,6 +1,6 @@
 # CyberMarket CR — Reproducible software-security test suite
 
-**Status:** C2 8/8 verified; C3 10/10 verified; C4 deterministic cases and scoped SAST have been implemented and await CI validation. Historical results remain immutable in their own experiment checkpoints.
+**Status:** C2 8/8 verified; C3 10/10 verified; C4 21/21 verified plus scoped SAST 4,629 LOC scanned; C5 trust/delegation coverage implemented and pending a focused CI verdict. Historical checkpoints are preserved.
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).
 
@@ -34,6 +34,11 @@ The test in `saleor/graphql/tests/test_cybermarket_security_contracts.py` adds *
 | CM-T14 | Characterize cookie flags with DEBUG true/false | R06/H07 | **Characterization only**; two variants |
 | CM-T15 | Bound two GraphQL aliases against configured limit 1 | R12/H13 | Contract; no stress testing |
 | CM-T16 | Reject mutation count above configured limit | R12/H13 | Contract; no mutation execution |
+| CM-T17 | Characterize special versus standard authorization header precedence | R01/H01 | Characterization only; 3 variants |
+| CM-T18 | Characterize forwarded IP parsing and remote address fallback | R01/R02/H14 | Characterization only; 3 variants |
+| CM-T19 | Check bounded login delay algorithm thresholds | R02/H02 | Contract; 6 variants, not production throttling |
+| CM-T20 | Verify app delegated token permission intersections | R13/H15 | Contract; overlap/disjoint variants |
+| CM-T21 | Reject unsigned JWT algorithm | R08/H09 | Narrow contract |
 
 **IMPORTANT on CM-T05 / CM-T06:** In this pinned Saleor revision, pre-existing upstream tests
 `test_query_order_fields_order_with_new_id_by_anonymous_user` and
@@ -89,7 +94,7 @@ python security/cybermarket/summarize_junit.py --junit security-results/cybermar
 
 - These checks run **in-process Django/GraphQL requests** against isolated fixture-backed services. They are dynamic behavioral/integration tests but **not** an external-browser DAST scan and do not demonstrate actual HTTPS/proxy isolation.
 - C4 covers more of token creation, refresh, user-permission partitioning and GraphQL query boundaries. It does not prove missing risks R01 (intermediaries), R02 (effective throttling behind proxy), or R13 (delegated app permissions). These need independent controls and test protocols.
-- The Bandit scan covers selected Python code only. Rule matches demand manual confirmation; a zero finding count does not establish secure software.
+- Bandit 1.8.6 scanned 4,629 lines of selected Python code in [C4 run 39130431874](https://github.com/Arkthos/saleor/actions/runs/39130431874), with no reported matches meeting both medium-or-greater severity and confidence (`-ll -ii`). This is filtered scanning, not vulnerability clearance; artifacts and SHA-256 are in [C4 evidence](experiment_C4_2026-10-18.md).
 - Requirement ASVS/WSTG associations in the matrix are **candidates to validate against the normative standard text**, never conformance claims.
 - Generated evidence expires after GitHub retention; selected results, hashes, SHA and interpretations must be committed as checkpoints with no tokens or production data.
 
@@ -98,8 +103,8 @@ python security/cybermarket/summarize_junit.py --junit security-results/cybermar
 1. **C1 / implemented:** scenario IDs, code, traceability and dedicated CI workflow committed in a draft PR.
 2. **C2 / executed:** Initial 8/8, no failures/errors/skips; original run 39127189591. Contract performance is narrow, not full ASVS compliance. The C2 checkpoint records SHA-256 and interpretation.
 3. **C3 / implementation:** CM-T06 compares owner/peer/anonymous for new UUID, observational only; CM-T07 checks legacy-number ownership. The initial CI showed a test-oracle mismatch on CM-T07; the corrected field-masking contract passed in C3's 10/10 rerun. The new-UUID access policy still requires a documented decision. Staff-permission cases and a business decision on new-UUID privacy remain outstanding.
-4. **C4 / implementation:** CM-T08–T16 implemented to cover auth, audience, role partitioning, cookie flags, alias and mutation limits; CI verdict pending. Scoped Bandit SAST added. Analyze unexpected results before updating test oracles.
-5. **C5 / validation:** inspect targeted JUnit and sanitized manifest, verify SAST results, resolve lint and CI, then add scoped tests for missing R01/R02/R13 where reliable.
-6. **C6 / interpretation:** EvidenceSynth MAP/GAP/AUDIT and security control evidence states with unresolved risks explicitly listed. No premature findings. Update per-cycle checkpoint with immutable run IDs and hashes.
+4. **C4 / verified:** CM-T08–T16 and prior C2/C3 cases executed 21/21 in run 39130431874; scoped Bandit SAST executed and evidence archived.
+5. **C5 / implemented:** CM-T17–T21 target source-level R01/R02/R13, delegated permission intersection and unsigned JWT rejection. Await targeted CI; record separate run, checked-out commit and hashes. See [C5 checkpoint](experiment_C5_2026-10-18.md).
+6. **C6 / interpretation:** EvidenceSynth MAP/GAP/AUDIT, confirm normative ASVS IDs, scrutinize SAST alert filtering and reconcile in-process test results with unresolved proxy/browser and new UUID data-access risks. Commit summary and full evidence index; never assume compliance.
 
 Do not merge while CI failures or security requirements are unresolved. The Avance 1 DOCX validated by the user remains unchanged.
