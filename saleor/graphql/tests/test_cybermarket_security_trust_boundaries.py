@@ -52,9 +52,7 @@ def test_cm_t18_forwarded_client_ip_precedence(
 ):
     """CM-T18: document first valid forwarded IP and REMOTE_ADDR fallback."""
     _record(record_property, "CM-T18", "R01;R02", "H14", "characterization_only")
-    request = rf.get(
-        "/", HTTP_X_FORWARDED_FOR=forwarded, REMOTE_ADDR="192.0.2.10"
-    )
+    request = rf.get("/", HTTP_X_FORWARDED_FOR=forwarded, REMOTE_ADDR="192.0.2.10")
     assert get_client_ip(request) == expected_source
 
 
