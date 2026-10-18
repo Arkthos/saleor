@@ -1,6 +1,6 @@
 # CyberMarket CR — C8 policy-sensitive acceptance and CI gates
 
-**State:** IMPLEMENTED; **DO NOT REPORT AS VERIFIED until a C8 JUnit and repository CI results are inspected.**
+**State:** FOCUSED C8 VERIFIED (36 PASS + 2 XFAIL); repository-wide CI REVALIDATION PENDING after Ruff-only corrections.
 **Baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (unmodified Saleor product).
 **PR:** https://github.com/Arkthos/saleor/pull/1 (draft).
 
@@ -44,3 +44,29 @@ The **in-process suite** may be accepted once G1–G6 and G8 pass and G7's absen
 - The `CM-T22` policy decision must remain provisional until CyberMarket CR's hypothetical owner/security stakeholders confirm its intended rule.
 
 **Change control:** No merge, production-code adjustment, broad active DAST or academic manuscript drafting in this cycle.
+
+## Verified C8 execution and proof integrity
+
+- **PR-head tested:** `e7db02c49697dbf666f3151371f89a635ff6a13c`; Actions PR checkout merge SHA: `613accc94dc4dd8e9d00fc49ed5d7c4e366d2254`.
+- **Workflow:** [CyberMarket security evidence run 39135116746](https://github.com/Arkthos/saleor/actions/runs/39135116746), conclusion SUCCESS.
+- **Pytest results:** 38 execution records, 36 PASS, **2 XFAIL** (both CM-T22 actor variants), 0 FAIL, 0 ERROR, 0 SKIP.
+- **Coverage:** 22/22 case IDs reconciled, R01–R13 mapped; R11 classified as `PROPOSED_POLICY_GAP_REVIEW_PENDING` with security verdict **NO_DETERMINADO**, NOT confirmed Saleor nonconformance.
+- **Runtime artifact:** 12139890289; ZIP SHA-256 `f7bd0a3ba8e8caa9c318c883acc49d5461fa01d6299fc71a02fe4e270e5a388f`.
+- **JUnit SHA-256:** `5367a3918e1a213ae52eee9d223960bbb083e40eebfbc341b1d094407d3d1d9c`.
+- **Sanitized summary SHA-256:** `7a80b4b33b4bd3ac50d068b28d51fd34dbd2fc599021c87341622f125f3459fd`.
+- **Coverage SHA-256:** `3c5253676592685db7a9e38879c3d18a2d0a3e92c347b2eb78e4316bde0d4a5c`.
+- **Manifest validation:** all three digests in `SHA256SUMS` independently matched the extracted files.
+- **Bandit:** success; artifact 12139701187, ZIP SHA-256 `bfb94b2a58258de440025287ab4e5c6b4b2c47f761aa7a9d708e5d165c003df4`. One diagnostic B105, LOW severity/MEDIUM confidence, `saleor/core/jwt.py:23`, same documented cookie-name false positive.
+
+### CI review and correction record
+
+- The C8 full linter run [39135116761](https://github.com/Arkthos/saleor/actions/runs/39135116761) was **not accepted**. Ruff detected only autoformat adjustments in three research files; mypy, deptry, Semgrep, uv-lock, migrations and GraphQL schema passed.
+- Applied exactly the formatter's line changes, with no production-code changes, no test-oracle changes and no semantic evidence-generator changes. Commits: `47a2e9f8103c88f5b550f4d0f4de56ca33e90f61`, `bf632caa682f017210693bf4a13636e4797ae752`, `d4d48e389b4253719f8a2b7c1e2b14ae4df743aa`.
+- The matrix and this checkpoint were then updated to record **EXECUTED_XFAIL**. A final all-checks CI cycle must complete on the new PR head before the *technical PR* is accepted; prior focused JUnit remains valid for the unchanged test behavior.
+- CI general unit/E2E results should be recorded from the newest complete final-head run, not inherited from cancelled intermediate commits.
+
+### Conserved interpretation
+
+The 2 XFAILs are **unmet provisional expectations** under P-ORDER-01, not evidence that Saleor's own access policy was violated. The suite itself and the product's security posture are different acceptance targets. The proposed policy requires stakeholder approval; absent a representative HTTP/TLS/proxy/browser environment, production controls remain outside verified scope.
+
+Long-term summary: see `evidence_C8_snapshot.md` for a durable, in-repository per-case record; raw JUnit/SAST remain accessible through GitHub Actions only during their configured artifact retention window.
