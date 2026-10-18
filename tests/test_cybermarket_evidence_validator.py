@@ -18,11 +18,11 @@ def _fixture(tmp_path: Path):
             writer.writerow(
                 {
                     "case_id": case_id,
-                "evidence_type": (
-                    "proposed_policy_expected_fail"
-                    if case_id == "CM-T22"
-                    else "security_contract"
-                ),
+                    "evidence_type": (
+                        "proposed_policy_expected_fail"
+                        if case_id == "CM-T22"
+                        else "security_contract"
+                    ),
                 }
             )
     cases = [
@@ -30,9 +30,7 @@ def _fixture(tmp_path: Path):
             "case_id": case_id,
             "test_function": f"test_{case_id.replace('-', '_').lower()}",
             "variant": (
-                f"test_{case_id.replace('-', '_').lower()}[{i}]"
-                if count > 1
-                else ""
+                f"test_{case_id.replace('-', '_').lower()}[{i}]" if count > 1 else ""
             ),
             "evidence_type": (
                 "proposed_policy_expected_fail"
