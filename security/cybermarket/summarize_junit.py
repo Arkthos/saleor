@@ -3,6 +3,7 @@
 Only predefined test metadata and outcomes are exported. No assertion
 tracebacks, requests, JWTs, cookie values, account email or response bodies.
 """
+
 import argparse
 import hashlib
 import json
@@ -42,7 +43,9 @@ def summarize(junit: Path, commit: str) -> dict:
             cases.append(
                 {
                     "case_id": props.get("cybermarket_case_id", "UNMAPPED"),
-                    "variant": test.get("name", "") if "[" in test.get("name", "") else "",
+                    "variant": test.get("name", "")
+                    if "[" in test.get("name", "")
+                    else "",
                     "test_function": name,
                     "risk_ids": props.get("risk_id", ""),
                     "observation_ids": props.get("observation_id", ""),
