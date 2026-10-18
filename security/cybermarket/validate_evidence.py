@@ -55,7 +55,7 @@ def validate(matrix: Path, summary: Path) -> dict:
     ):
         raise ValueError("Matrix case IDs do not match reviewed expected set")
     cases = data["cases"]
-    counts = Counter()
+    counts: Counter[str] = Counter()
     variants: set[tuple[str, str]] = set()
     for case in cases:
         case_id = case["case_id"]
