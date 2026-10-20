@@ -40,3 +40,17 @@ Registrar PASS, FAIL, ERROR, SKIP, XFAIL, XPASS, BLOCKED por test y por gate. Lo
 7. Checkpoint previo a redacción y handoff reproducible de C10.
 
 **Regla de cierre:** ningún informe se llamará «definitivo» mientras haya gates obligatorios sin ejecutar o sin justificación de exclusión, o falten evidencias verificadas. El informe C2–C9 existente es un cierre parcial del experimento, no la entrega integral del curso.
+
+## 6. Actualización curricular — semana 7 (2026-10-20)
+
+**Checkpoint vinculante de planificación (sin resultados nuevos):** [CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md](CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md).
+
+Se analizaron los materiales docentes de semana 7 sobre análisis estático (control, datos, fallas e interfaces), análisis dinámico (caja negra, blanca y gris) y pruebas unitarias (aislamiento, límites, errores, mocks/stubs). No sustituyen el plan de aseguramiento: **refinan la tipología de evidencia**.
+
+- **W7-A/P0:** clasificar los 27 casos C2–C9 por nivel, técnica, dependencias, oráculo y alcance; no presentar integración como test unitario.
+- **W7-B/P0:** proponer y ejecutar pruebas unitarias aisladas específicas (`CM-Uxx`, todavía no implementadas) con resultado JUnit y trazabilidad.
+- **W7-C–D/P1:** ampliar la revisión estática y evaluar métricas de calidad/cobertura solo cuando puedan medirse realmente.
+- **W7-E/P1:** mantener C10 como validación de HTTP/HTTPS/navegador/proxy autorizada, pendiente de ejecución.
+- **W7-F/P2:** consolidar bibliografía técnica verificada y aplicar EvidenceSynth antes de cualquier redacción académica.
+
+El [cierre experimental C2–C9](INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md) permanece vigente **únicamente en su alcance fixture-backed**. No hay pruebas nuevas en este checkpoint. La semana 8 aborda integración y software; el programa sitúa la entrega del Avance 2 en semana 9. Fechas y rúbrica de entrega deben cotejarse al retomar.
