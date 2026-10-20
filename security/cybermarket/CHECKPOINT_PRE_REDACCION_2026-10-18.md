@@ -33,3 +33,7 @@ Repositorio: `Arkthos/saleor`; PR #1 draft; rama `research/cybermarket-security-
 **Begin with academic analysis/writing ONLY when user asks.** Use canonical closure report and matrix; apply EvidenceSynth, Tutor and Humanizer, with claim-level provenance, APA 7, distinction of observation/inference/normative requirement, and explicit limitations. Do not overwrite approved Avance 1. Independently plan classmate C10 live deployment using existing guide when requested. Do not modify Saleor functional code or merge PR #1.
 
 **Stop here: immediately before drafting.**
+
+## Addendum prospectivo — contenidos de semana 7 (2026-10-20)
+
+**No modifica la validación C2–C9 de arriba.** Se agregó el plan [CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md](CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md) con una taxonomía explícita de análisis estático, unitarias aisladas, integración, dinámica/DAST y regresión, junto con backlog W7-A–W7-F. Es **un checkpoint de planificación**, no una ejecución ni una reapertura del cierre C9. Cuando se retome el proyecto, consultar primero el documento nuevo, el plan maestro y el handoff C10; no redactar el Avance 2 hasta solicitud expresa.
