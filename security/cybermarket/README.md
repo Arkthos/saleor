@@ -141,3 +141,9 @@ General suite: **17,613 PASS + 2 expected XFAIL**. Focused subset: **59 PASS + 2
 - The [matrix](test_matrix.csv) now records all 16 contracts as `REVIEWED_LOCAL_ORACLE_PASS_NORMATIVE_NOT_ADJUDICATED`, 10 characterizations as `REVIEWED_OBSERVED_NO_SECURITY_VERDICT` and the 2-variant CM-T22 as `REVIEWED_PROVISIONAL_POLICY_MISMATCH_NOT_APPROVED`. These are reviewed evidence states, **not** formal ASVS conformity decisions. Historic `REVIEW_PENDING` strings in older snapshots/derived coverage describe the earlier state and are not rewritten retroactively.
 
 **No C10 deployment has been performed.** The engineering review documents actionable harness improvements; it does not claim those changes have been implemented. Preserve the original tested SHA and rerun/inspect CI on the current PR HEAD after documentation and matrix updates.
+
+## Checkpoint semana 7 — ampliación futura por capas (2026-10-20)
+
+**[Leer el checkpoint de estrategia multinivel](CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md).** Se conservaron las tres lecturas docentes (análisis estático, dinámico y unitario), los acuerdos de investigación complementaria, la distinción entre niveles de pruebas y el backlog **W7-A–W7-F**. La continuación recomendada es **clasificar los casos existentes**, después añadir pruebas unitarias aisladas y ampliar revisión estática; C10 sigue planificado para un despliegue aislado y autorizado.
+
+**Estado:** prospectivo / NO EJECUTADO. No sustituye el cierre C2–C9, no cambia los resultados JUnit ni autoriza P-ORDER-01. El texto del checkpoint identifica los SHA experimentados y la prohibición de inferir CI verde para commits documentales posteriores.
