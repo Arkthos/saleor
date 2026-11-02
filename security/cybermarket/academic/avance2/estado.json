@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.13",
+  "roadmap_version": "1.14",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "VALIDACION_TECNICA_BLOQUEADA_POR_CI",
+  "status": "VALIDACION_TECNICA_EN_EJECUCION",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.13",
+    "version": "1.14",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_13"
+    "status": "GUARDADA_VERSION_1_14"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "VT-01",
-  "next_action": "Maintainer restores workflow execution and runs e2e.yml against research/cybermarket-security-tests-v1; resume by inspecting resulting source SHA and downloading artifacts.",
+  "next_action": "Supervisar run 41512875410, resolver fallos y conservar artefactos; no generar entregable.",
   "open_items": [
     {
       "id": "D-02",
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.13",
+  "last_replicated_document_version": "1.14",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -302,7 +302,7 @@
     {
       "id": "VT-01",
       "title": "Entorno y revalidación integrada actual",
-      "status": "BLOQUEADA_CI_DESHABILITADO",
+      "status": "EN_EJECUCION",
       "preparation_status": "COMPLETADA",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/preflight.json",
@@ -341,6 +341,16 @@
     "message": "Workflows are not currently being run on this fork due to the scale of GitHub Actions usage. A repository maintainer can choose to re-enable these.",
     "observed_signed_in": false,
     "connector_dispatch_available": false,
-    "local_postgresql_or_docker_available": false
+    "local_postgresql_or_docker_available": false,
+    "resolved": true,
+    "resolution": "Actions re-enabled in authenticated maintainer browser; manual dispatch verified by run ID."
+  },
+  "technical_execution": {
+    "run_id": 41512875410,
+    "tested_source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
+    "workflow": "e2e.yml",
+    "event": "workflow_dispatch",
+    "status": "IN_PROGRESS",
+    "new_deliverable_generated": false
   }
 }

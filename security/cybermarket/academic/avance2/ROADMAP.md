@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.13. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica abierta, bloqueada por workflows deshabilitados en GitHub; entregable pausado. **Siguiente etapa:** VT-01.
+**Versión:** 1.14. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -246,7 +246,7 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-**Bloqueo actual verificado:** GitHub deshabilitó los workflows del fork por escala de uso. Un mantenedor debe reactivar la ejecución y lanzar **e2e suite**, rama `research/cybermarket-security-tests-v1`. El conjunto técnico ya está preparado. Los siete casos LIVE siguen NOT_EXECUTED hasta obtener resultados reales.
+**Ejecución activa:** Actions reactivado mediante la sesión de mantenedor. [Run 41512875410](https://github.com/Arkthos/saleor/actions/runs/41512875410), workflow e2e.yml, SHA probado `1c87cf5c36a8cba9922525d5b461df3d6948b450`. Revisar resultados y corregir hasta cerrar VT-01–06; entregable pausado. Los casos no adquieren PASS por haber iniciado el job.
 
 Por instrucción del usuario, completar todas las pruebas técnicas necesarias antes de generar otra versión del entregable. Se reabren A2-05/A2-06 y queda pendiente el reanálisis de A2-07. A2-08/A2-09/A2-10 quedan pausadas. Los PDF anteriores se conservan como fotografías del alcance anterior; no son una entrega técnicamente definitiva.
 
@@ -288,3 +288,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — VT-00 completada:** entregable pausado; A2-05/A2-06 reabiertas. Se comprobó el HEAD 34891bfd y se preparó un checkout limpio. El entorno sigue sin Docker/PostgreSQL y no admite cambio de UID; se prioriza un laboratorio efímero en CI con servicios reales. El workflow focal no seleccionaba las unidades nuevas de tests/; se corrige su cobertura y sus rutas de activación. No hay nueva ejecución integrada declarada todavía.
 
 **2026-11-02 — VT-01 preparación completada, ejecución BLOQUEADA:** implementadas 25 variantes C10 y workflow integral manual en e2e.yml. Ruff, formato, AST, YAML, lockfile y colección verificados. Smoke local HTTP/HTTPS con CA válida y teardown aprobado tras corregir un fallo inicial de cierre. No son resultados de casos GraphQL con DB ni del navegador. GitHub muestra workflows deshabilitados por escala de uso; requiere reactivación del mantenedor. Consultar [preflight](evidencia/revalidacion_tecnica/preflight.json) y [laboratorio](../../live/README.md). No se genera otro entregable hasta cerrar el gate técnico.
+
+**2026-11-02 — Bloqueo CI resuelto, validación en curso:** comprobados los guards de tareas programadas heredadas en el fork; Actions reactivado en sesión autenticada. Despachado manualmente e2e.yml sobre rama de investigación. Run 41512875410, fuente 1c87cf5. No hay resultados finales todavía y no se genera otro entregable.

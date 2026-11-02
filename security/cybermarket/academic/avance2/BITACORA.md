@@ -101,3 +101,7 @@ Usuario ordena completar todas las pruebas necesarias antes de generar entregabl
 Conjunto C10 implementado; 25 variantes recolectadas sin ejecutarlas, Ruff/formato/AST/YAML/lockfile correctos. Smoke real HTTP y HTTPS contra health sin DB: ambos 200, CA verificada y teardown final aprobado. Intento inicial de teardown HTTPS falló y quedó registrado; se corrigieron tiempos de cierre y conexiones. Se amplió e2e.yml con job integral manual y artefactos depurados. Sin modificaciones funcionales del producto.
 
 Se cerró/reabrió el mismo PR borrador para comprobar activación; no hubo runs nuevos. La UI pública confirmó la causa: workflows deshabilitados en el fork por escala de uso, no un resultado de tests. Navegador sin sesión de mantenedor; conector sin dispatch. Se requiere reactivación y lanzamiento del mantenedor. No se marca ningún LIVE PASS. Entregable sigue pausado.
+
+## 2026-11-02 — CI reactivado, roadmap 1.14
+
+Acceso local autenticado al repositorio permitió confirmar el bloqueo y reactivar Actions. Se revisaron guards del fork en jobs programados para no lanzar despliegues heredados. Despachado workflow e2e.yml sobre research/cybermarket-security-tests-v1; run 41512875410 IN_PROGRESS, fuente 1c87cf5. Se conserva por separado la fuente probada y el commit documental. Ningún LIVE se declara aprobado todavía.

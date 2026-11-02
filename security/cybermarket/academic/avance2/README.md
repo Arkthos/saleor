@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** VALIDACIÓN TÉCNICA BLOQUEADA POR CI DESHABILITADO. Generación de entregable pausada hasta cerrar VT-01–VT-06. Los informes previos son fotografías del alcance anterior. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
+**Estado:** VALIDACIÓN TÉCNICA EN EJECUCIÓN. Generación de entregable pausada hasta cerrar VT-01–VT-06. Los informes previos son fotografías del alcance anterior. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
 
 ## Accesos principales
 
@@ -39,4 +39,4 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 
 ## Revalidación técnica en curso
 
-[Laboratorio C10 y ejecución](../../live/README.md), [preflight real](evidencia/revalidacion_tecnica/preflight.json). Preparación lista; integración y navegador pendientes de reactivar Actions.
+[Laboratorio C10 y ejecución](../../live/README.md), [preflight real](evidencia/revalidacion_tecnica/preflight.json). Actions reactivado; integración y navegador en run 41512875410, pendientes de resultados revisados.
