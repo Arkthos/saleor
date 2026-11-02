@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.17",
+  "roadmap_version": "1.18",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "VALIDACION_TECNICA_CORRIGIENDO_HARNESS",
+  "status": "VALIDACION_TECNICA_RETEST_C10_Y_LINTERS",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.17",
+    "version": "1.18",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_17"
+    "status": "GUARDADA_VERSION_1_18"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "VT-01",
-  "next_action": "Supervisar CI tras corrección de alias DB por hilo; C10 mantiene fallos del intento 02 hasta retest.",
+  "next_action": "Ejecutar retest C10 de 26 variantes y comprobar regresión general, E2E y linters del mismo origen.",
   "open_items": [
     {
       "id": "D-02",
@@ -51,8 +51,8 @@
     },
     {
       "id": "D-05",
-      "item": "Integración nueva y C10 no ejecutados",
-      "impact": "Continuidad técnica delimitada en el informe; no se presenta como verificación del despliegue."
+      "item": "C10 ejecutado con 23 PASS / 2 FAIL; correcciones preparadas, retest pendiente",
+      "impact": "No cerrar gate hasta completar C10, estática y regresión actuales."
     }
   ],
   "stages": [
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.17",
+  "last_replicated_document_version": "1.18",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -350,18 +350,18 @@
     "tested_source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
     "workflow": "e2e.yml",
     "event": "workflow_dispatch",
-    "status": "IN_PROGRESS",
+    "status": "RETEST_PENDING",
     "new_deliverable_generated": false,
-    "technical_job_status": "FAILED_SETUP",
-    "failure_evidence": "evidencia/revalidacion_tecnica/intento_01_setup.json",
-    "latest_run": 41513993787,
-    "branch_head_sha": "94383be68eea7e6bcc7c7b609710d5d68fec761f",
-    "tested_checkout_sha": "03b3de3e1be39f1c4d796186284cfd5ebeaa86f6",
+    "technical_job_status": "FAILED_2_CASES",
+    "failure_evidence": "evidencia/revalidacion_tecnica/intento_03_summary.json",
+    "latest_run": 41515853470,
+    "branch_head_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
+    "tested_checkout_sha": "9395ab489056290d62ec885b40aa00bca2baffa5",
     "focal_pass": 59,
     "focal_xfail": 2,
     "units_validator_pass": 42,
-    "live_pass": 1,
-    "live_fail": 24,
+    "live_pass": 23,
+    "live_fail": 2,
     "e2e_independent_pass": 211
   }
 }

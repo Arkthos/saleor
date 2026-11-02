@@ -14,6 +14,7 @@ import time
 import uuid
 from contextlib import contextmanager
 from copy import deepcopy
+from urllib.parse import urlsplit
 
 import graphene
 import pytest
@@ -58,19 +59,38 @@ def record(record_property, case, variant, result, status=200):
         record_property(key, value)
 
 
+def local_request(method, url, **kwargs):
+    target = urlsplit(url)
+    assert target.scheme in ["http", "https"]
+    assert target.hostname == "127.0.0.1"
+    assert target.port is not None
+    assert kwargs.get("verify", True) is not False
+    with requests.Session() as client:
+        client.trust_env = False
+        return client.request(method, url, timeout=15, allow_redirects=False, **kwargs)
+
+
 def post(base, query, variables=None, token=None, session=None, verify=True, **headers):
-    assert base.startswith(("http://127.0.0.1:", "https://127.0.0.1:"))
-    client = session or requests
+    target = urlsplit(base)
+    assert target.hostname == "127.0.0.1"
+    assert target.port is not None
+    assert verify is not False
     if token:
         headers["Authorization"] = f"Bearer {token}"
-    response = client.post(
-        base + "/graphql/",
-        json={"query": query, "variables": variables or {}},
-        headers=headers,
-        timeout=15,
-        verify=verify,
-        allow_redirects=False,
-    )
+    payload = {"query": query, "variables": variables or {}}
+    if session is None:
+        response = local_request(
+            "POST", base + "/graphql/", json=payload, headers=headers, verify=verify
+        )
+    else:
+        response = session.post(
+            base + "/graphql/",
+            json=payload,
+            headers=headers,
+            timeout=15,
+            verify=verify,
+            allow_redirects=False,
+        )
     assert response.status_code == 200, f"Unexpected HTTP status {response.status_code}"
     return response, response.json()
 
@@ -93,6 +113,19 @@ def lab_config(settings, transactional_db, record_property):
     settings.PLUGINS = []
     settings.EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
     settings.CELERY_TASK_ALWAYS_EAGER = True
+    # saleor.tests.settings inserts a SQL-routing diagnostic absent from the
+    # product middleware profile. Its behavior is retained in a separate case.
+    settings.MIDDLEWARE = [
+        item
+        for item in settings.MIDDLEWARE
+        if item != "saleor.core.db.connection.restrict_writer_middleware"
+    ]
+    assert "django.middleware.security.SecurityMiddleware" in settings.MIDDLEWARE
+    assert "saleor.core.middleware.jwt_refresh_token_middleware" in settings.MIDDLEWARE
+    record_property(
+        "live_middleware_profile",
+        "product profile; test-only writer guard compared separately",
+    )
     # Pytest initializes its FakeDbReplicaConnection in the calling thread only.
     # Real ASGI request threads need both genuine aliases bound to the test DB.
     writer = settings.DATABASE_CONNECTION_DEFAULT_NAME
@@ -254,16 +287,24 @@ def tls_material(tmp_path):
     return ca_path, cert_path, key_path
 
 
-def test_live_01_health_and_real_http(http_service, record_property):
-    health = requests.get(http_service + "/health/", timeout=10)
+def test_live_01_health_and_real_http(http_service, settings, record_property):
+    health = local_request("GET", http_service + "/health/")
     assert health.status_code == 200
     _, result = post(http_service, "query{__typename}")
-    assert result == {"data": {"__typename": "Query"}}
-    response = requests.post(
+    assert result == {
+        "data": {"__typename": "Query"},
+        "extensions": {
+            "cost": {
+                "maximumAvailable": settings.GRAPHQL_QUERY_MAX_COMPLEXITY,
+                "requestedQueryCost": 0,
+            }
+        },
+    }
+    response = local_request(
+        "POST",
         http_service + "/graphql/",
         data="{",
         headers={"Content-Type": "application/json"},
-        timeout=10,
     )
     assert response.status_code == 400
     record(record_property, "LIVE-01", "health-valid-malformed", "REACHABLE", 200)
@@ -418,6 +459,7 @@ def test_live_06_https_cookie_csrf(
 
     ca, cert, key = tls_material
     with serving(application, cert, key) as base, requests.Session() as session:
+        session.trust_env = False
         _, body = post(
             base,
             CREATE,
@@ -459,14 +501,14 @@ def test_live_06_origins_and_forwarded_scheme(http_service, settings, record_pro
         ("https://allowed.cybermarket.test", 200),
         ("https://denied.cybermarket.test", 400),
     ]:
-        response = requests.options(
+        response = local_request(
+            "OPTIONS",
             http_service + "/graphql/",
             headers={
                 "Origin": origin,
                 "Access-Control-Request-Method": "POST",
                 "Access-Control-Request-Headers": "Content-Type",
             },
-            timeout=10,
         )
         assert response.status_code == status
         assert response.headers.get("Access-Control-Allow-Origin") == (
@@ -474,17 +516,14 @@ def test_live_06_origins_and_forwarded_scheme(http_service, settings, record_pro
         )
     settings.SECURE_SSL_REDIRECT = True
     with serving(importlib.reload(saleor_asgi).application) as redirect_base:
-        response = requests.get(
-            redirect_base + "/graphql/", timeout=10, allow_redirects=False
-        )
+        response = local_request("GET", redirect_base + "/graphql/")
         assert response.status_code == 301
         assert response.headers["Location"].startswith("https://")
         # This deliberately characterizes direct-header trust before a sanitizing ingress.
-        forwarded = requests.get(
+        forwarded = local_request(
+            "GET",
             redirect_base + "/graphql/",
             headers={"X-Forwarded-Proto": "https"},
-            timeout=10,
-            allow_redirects=False,
         )
         assert forwarded.status_code == 405
     record(
@@ -545,3 +584,37 @@ def test_live_07_legitimate_id_and_revocation(
         "owner-list-peer-list-shared-id-revocation",
         "CAPABILITY_PERSISTS",
     )
+
+
+def test_live_05_strict_writer_diagnostic(
+    lab_config,
+    synthetic_order,
+    staff_user,
+    app_with_token,
+    permission_manage_orders,
+    settings,
+    record_property,
+):
+    """Preserve the test-only routing diagnostic without changing product policy."""
+    staff_user.user_permissions.add(permission_manage_orders)
+    app_with_token.permissions.add(permission_manage_orders)
+    token = create_access_token_for_app(app_with_token, staff_user)
+    before = Order.objects.count()
+    settings.MIDDLEWARE = [
+        "saleor.core.db.connection.restrict_writer_middleware",
+        *settings.MIDDLEWARE,
+    ]
+    with serving(importlib.reload(saleor_asgi).application) as base:
+        _, result = post(
+            base, EXTERNAL, {"ref": synthetic_order.external_reference}, token
+        )
+    assert result["data"] == {"order": None}
+    assert len(result["errors"]) == 1
+    assert result["errors"][0]["message"] == "Internal Server Error"
+    assert result["errors"][0]["path"] == ["order"]
+    assert (
+        result["errors"][0]["extensions"]["exception"]["code"]
+        == "UnsafeWriterAccessError"
+    )
+    assert Order.objects.count() == before
+    record(record_property, "LIVE-05", "strict-writer-profile", "TEST_GUARD_DIAGNOSTIC")

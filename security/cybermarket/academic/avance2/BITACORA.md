@@ -117,3 +117,7 @@ Para evitar dependencia del despacho por navegador, se activa el laboratorio tam
 ## 2026-11-02 — Corrección del intento 02, roadmap 1.17
 
 Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. XML verificados: focal 59 PASS/2 XFAIL, unidades/validadores 42 PASS y C10 1 PASS/24 FAIL. Causa de C10: alias replica no apuntaba a test DB en hilos ASGI; se corrige configuración del laboratorio, sin tocar producto o expectativas de acceso. Se añaden mensajes/path exactos a negativos de permisos y revocación. 48 coincidencias de Semgrep pertenecen a ejemplos de .semgrep; se conserva salida original y se excluye esa carpeta de ejemplos. E2E 211 PASS del run 41512875410 archivado y verificado. Nuevo retest pendiente.
+
+## VT: intento 03 y correcciones para retest
+
+**2026-11-02 — Intento 03 conservado; retest preparado:** focal 59 PASS/2 XFAIL y unidades/validadores 42 PASS. HTTP/HTTPS/navegador 23 PASS/2 FAIL: se completa el contrato exacto de coste GraphQL y se distingue middleware normal del producto frente al guard de routing exclusivo de pruebas. Se añade un diagnóstico independiente que conserva ese error exacto; quedan 26 variantes para retest. Cliente HTTP acotado compatible con Semgrep, sin exclusión del código; evidencia estática inmutable excluida solo de reescrituras whitespace/EOF. E2E del mismo run terminó SUCCESS. Ruff, formato y Semgrep sobre seis archivos del harness aprobados localmente. Regresión general y linters siguen por comprobar. No cambia código funcional ni se genera entregable.

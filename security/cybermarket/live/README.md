@@ -16,11 +16,15 @@ The lab job installs locked Saleor dependencies plus an explicitly pinned Playwr
 | LIVE-02 | UUID, owner/peer/anonymous, three fields each | Exact synthetic values; characterization, not policy approval |
 | LIVE-03 | Legacy ID, same actor/field matrix | Independent literal masks and owner positive control |
 | LIVE-04 | Missing UUID/legacy ID, wrong type, malformed global ID | No order and no changed row counts; exact malformed-ID diagnostic |
-| LIVE-05 | Anonymous/customer/staff/app/delegated user-app permissions | Eight variants, exact permission/code and data absence plus unchanged rows |
+| LIVE-05 | Anonymous/customer/staff/app/delegated user-app permissions | Eight permission variants plus a strict-writer diagnostic; exact permission/code and data absence plus unchanged rows |
 | LIVE-06 | HTTPS refresh cookie, missing/invalid/valid CSRF; actual Chromium across two origins | CA verification enabled, Secure/HttpOnly/SameSite, JS invisibility and CORS browser enforcement. Direct forwarded-proto handling is characterized as an ingress trust boundary |
 | LIVE-07 | Authenticated owner's order list, peer list, ID sharing, token revocation and reuse | The ID is obtained through a legitimate API flow. No external storefront was deployed; bearer-capability policy remains unapproved |
 
-Pytest successfully collected **25 planned variants** from these two modules. Collection is not execution. They use actual TCP ASGI requests, not Django's test client. The optional probe page exists only in the test wrapper for the browser's origin and is never added to Saleor product routes.
+The initial 25 variants executed with **23 PASS / 2 FAIL** in run 41515853470. Their output is preserved. The corrections add a strict-writer diagnostic, giving **26 planned variants pending the next CI run**. They use actual TCP ASGI requests, not Django's test client. The optional probe page exists only in the test wrapper for the browser's origin and is never added to Saleor product routes.
+
+The product middleware profile excludes only `restrict_writer_middleware`, which `saleor.tests.settings` adds as a SQL-routing diagnostic. SecurityMiddleware and JWT refresh-cookie middleware remain asserted. A separate real-HTTP case retains the stricter guard and its exact error; no product permissions or implementation are changed. Both genuine database aliases point to the disposable pytest database before serving threads start. This validates request-thread behavior, not physical replication.
+
+The HTTP client uses a bounded requests Session, rejects non-loopback targets, disables environment proxies and requires TLS verification. Raw immutable SAST/CI evidence is exempt only from whitespace/EOF rewriting; source remains checked.
 
 ## Safety and fidelity
 

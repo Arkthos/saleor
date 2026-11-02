@@ -1,0 +1,44 @@
+{
+  "run_id": 41515853470,
+  "job_id": 125519111481,
+  "branch_head_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
+  "tested_checkout_sha": "9395ab489056290d62ec885b40aa00bca2baffa5",
+  "focal": {
+    "total": 61,
+    "pass": 59,
+    "failure": 0,
+    "error": 0,
+    "skipped": 2
+  },
+  "independent_units_and_validators": {
+    "total": 42,
+    "pass": 42,
+    "failure": 0,
+    "error": 0,
+    "skipped": 0
+  },
+  "live": {
+    "total": 25,
+    "pass": 23,
+    "failure": 2,
+    "error": 0,
+    "skipped": 0
+  },
+  "artifact_id": 13176000391,
+  "archive_sha256": "ae01f9b9a66bbe6ba35fce43ada62343b0b9dcde9ea5f186491a96fd14120bb7",
+  "inner_checksums_verified": true,
+  "corrections_pending_retest": [
+    {
+      "case": "LIVE-01",
+      "cause": "Oracle omitted legitimate extensions.cost metadata.",
+      "correction": "Assert the complete response including requestedQueryCost=0 and configured maximumAvailable."
+    },
+    {
+      "case": "LIVE-05 delegated-with-overlap",
+      "cause": "saleor.tests.settings inserts restrict_writer_middleware, absent from normal product middleware. Permission queryset reads writer; strict test routing guard yields UnsafeWriterAccessError.",
+      "correction": "Run core C10 with product middleware, keeping SecurityMiddleware and JWT cookie middleware. Add a separate strict-writer diagnostic asserting exact error, absent order and unchanged rows."
+    }
+  ],
+  "functional_product_change": false,
+  "new_planned_variants": 26
+}

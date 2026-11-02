@@ -422,4 +422,3 @@ uv run pytest tests/test_cybermarket_security_units.py \
 ```
 
 El validador y las sumas permiten revisar coherencia y bytes; no adjudican cumplimiento de ASVS. Para ampliar la evaluación se deben conservar precondiciones, oráculo, versión, resultado bruto y límite interpretativo de cada caso.
-

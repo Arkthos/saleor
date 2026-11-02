@@ -1,0 +1,26 @@
+{
+  "schema": "cybermarket.technical.preflight.v2",
+  "date": "2026-11-02",
+  "source_parent_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
+  "checks": {
+    "ruff_check": "PASS",
+    "ruff_format": "PASS",
+    "semgrep": {
+      "rules_source": ".semgrep/",
+      "explicit_python_files": 6,
+      "findings": 0,
+      "errors": 0
+    },
+    "end_of_file_selected": "PASS",
+    "bounded_loopback_session_smoke": "PASS_HTTP_HTTPS_CA_TEARDOWN"
+  },
+  "pending": "CI repetition of 26 variants, full general regression and pre-commit",
+  "file_sha256": {
+    "security/cybermarket/live/tests/test_http_security.py": "391e517260ef42df86b2c3855fc2d6efc1ca398c47cd65d9f79a626320336e9f",
+    "security/cybermarket/live/tests/__init__.py": "2c5bcf1c99ce698cdb3a24dc8fe40d967c8c8e9e1b8f5758d46374fefd2d4787",
+    "security/cybermarket/live/tests/test_browser_transport.py": "52fe2c78f805795411e352fb63645546a43c606bfca92e8b11a679243563907f",
+    "security/cybermarket/live/tests/sanitize_evidence.py": "d1a79ae56f04dc29bf979bda5483c70643913b601df729f3430eafb09f104ceb",
+    "security/cybermarket/live/tests/conftest.py": "08cace96a5e740adaba10f221a2334213d5d626695148da664fb4e0920b12eca",
+    "security/cybermarket/live/tests/collect_environment.py": "2f6e2ec661a53ae3fefa537b3e2e70f084555ea49da0d5be59ca2b4f3576c58f"
+  }
+}
