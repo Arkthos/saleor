@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** A2-06 cerrada; siguiente A2-07. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
+**Estado:** A2-07 cerrada; siguiente A2-08. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
 
 ## Accesos principales
 

@@ -69,3 +69,9 @@ Productos: evidencia/resultados_ejecucion.md, evidencia/resultados_ci_manifest.j
 C10 excluido de la ejecución de este avance por recursos comprobados; LIVE-01–07 permanecen NOT_EXECUTED. La dinámica existente se limita a CI histórico verificado y unidades locales; no se afirman propiedades de HTTP/HTTPS, navegador, proxy o frontend. Se cierra la decisión de alcance, no una validación desplegada.
 
 Productos: evidencia/decision_c10.md. Estado: COMPLETADA. Siguiente etapa: A2-07. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-07, roadmap 1.8
+
+Analizadas tres capas de evidencia y elaborados catorce hallazgos sustantivos con recomendación y verificación propuesta, vinculados a H/R y casos. Se distinguen controles positivos, caracterización y brechas; no se inventan CVSS, correcciones de producto o aprobación de P-ORDER-01. Límites de CI integrado y C10 conservados.
+
+Productos: evidencia/hallazgos_avance2.csv, evidencia/hallazgos_avance2.json, evidencia/analisis_resultados.md. Estado: COMPLETADA. Siguiente etapa: A2-08. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
