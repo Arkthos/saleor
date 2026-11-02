@@ -1,0 +1,27 @@
+{
+  "run_id": 41517858482,
+  "job_id": 125526234857,
+  "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+  "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+  "total": 17615,
+  "pass": 17613,
+  "xfail": 2,
+  "failure": 0,
+  "error": 0,
+  "other_skipped": 0,
+  "artifact_id": 13176439237,
+  "original_archive_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
+  "original_internal_manifest_present": false,
+  "original_archive_digest_verified": true,
+  "sanitized_archive_sha256": "c98342b5cf286f11d5c107a168c1ec36ceaa49e1b570172ba6f3b44fdd776a05",
+  "sanitization": {
+    "original_artifact_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
+    "original_xml_sha256": "78e785d55b9b955ba44d7c4dc9bb97d02bc6a42ad0b8d1dd1e92ab3f9c0104ad",
+    "redacted_email_occurrences": 85,
+    "method": "Email values replaced by nonreversible SHA-256 labels; testcase counts and outcomes preserved; original retained separately",
+    "JWT_matches": 0,
+    "private_key_matches": 0
+  },
+  "duration_seconds": 1050.22,
+  "focal_is_subset": true
+}

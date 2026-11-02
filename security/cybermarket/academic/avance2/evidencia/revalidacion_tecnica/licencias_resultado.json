@@ -28,5 +28,12 @@
   "artifact_digests": {
     "head": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
     "base": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711"
-  }
+  },
+  "source_fingerprints": {
+    "text_unidecode_1_3_readme_sha256": "36c543976acf07b2da4bbfa6ba062f5a25bd7655cd7bbaf1639b33844d225251",
+    "grant_0_2_9_check_go_sha256": "a6ee2cea69fee9f7a0dcd44f9e10c05db3f1ab3589b903011650884eb82ccfd2"
+  },
+  "grant_input_source": "https://github.com/anchore/grant/blob/v0.2.9/cmd/grant/cli/command/check.go",
+  "all_normalized_entries_identical_on_base_and_head": true,
+  "normalized_entries_sha256": "9da23c5aea0fb55b3d6aecbfdd9b9e3b8528fee1a059c2ab8ec68dad396f9875"
 }

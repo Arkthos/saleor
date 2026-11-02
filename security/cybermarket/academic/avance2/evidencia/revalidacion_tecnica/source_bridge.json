@@ -1,0 +1,30 @@
+{
+  "product_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+  "tested_branch_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+  "evidence_checkpoint_sha": "577773f842518ce903c3a5cd7d768be51c9f7c3a",
+  "baseline_to_tested_changed_files": 112,
+  "functional_saleor_paths_changed": [],
+  "tested_to_checkpoint_paths": [
+    "security/cybermarket/academic/avance2/BITACORA.md",
+    "security/cybermarket/academic/avance2/MATRIZ_RUBRICA.csv",
+    "security/cybermarket/academic/avance2/README.md",
+    "security/cybermarket/academic/avance2/ROADMAP.md",
+    "security/cybermarket/academic/avance2/estado.json",
+    "security/cybermarket/academic/avance2/evidencia/decision_c10.md",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/e2e_41515853470_summary.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/e2e_41517858406_summary.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/estatica_intento_03.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/estatica_retest_04.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_resultado.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/linters_retest_04.json",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/e2e_41515853470/original.zip",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/e2e_41517858406/original.zip",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias/grant_base/original.zip",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias/grant_head/original.zip",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+    "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/retest_04_summary.json",
+    "security/cybermarket/live/README.md"
+  ],
+  "tested_to_checkpoint_only_evidence_docs": true,
+  "interpretation": "Current CI belongs to tested SHA and PR merge checkout. Later documentation commits are not declared tested. No functional saleor/ source file changed against baseline."
+}

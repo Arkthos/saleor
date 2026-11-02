@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.21",
+  "roadmap_version": "1.22",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "ESTATICA_C10_LISTOS_REGRESION_GENERAL_EN_CURSO",
+  "status": "PRUEBAS_SEGURIDAD_COMPLETAS_CORRIGIENDO_CONTROL_LICENCIAS",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.21",
+    "version": "1.22",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_21"
+    "status": "GUARDADA_VERSION_1_22"
   },
-  "last_completed_stage": "VT-02",
-  "next_stage": "VT-06",
-  "next_action": "Revisar XML de regresión general 41517858482; mantener control heredado de licencias en revisión y entregable pausado.",
+  "last_completed_stage": "VT-06",
+  "next_stage": "VT-07",
+  "next_action": "Ejecutar corrección acotada de licencias: alternativa Artistic declarada y hash del wheel fijado, pruebas negativas y stdin explícito.",
   "open_items": [
     {
       "id": "D-02",
@@ -51,13 +51,13 @@
     },
     {
       "id": "D-05",
-      "item": "C10 completado: 26 PASS; regresión general, E2E y linters actuales pendientes de conciliación",
-      "impact": "Gate técnico global abierto; informe pausado."
+      "item": "Pruebas de seguridad previstas ejecutadas y conciliadas; control de licencias en retest",
+      "impact": "No generar entregable hasta cerrar el control final."
     },
     {
       "id": "D-06",
-      "item": "Control heredado de licencias FAILED_REVIEW_REQUIRED",
-      "impact": "Dos entradas GPL de text-unidecode 1.3 idénticas en base/HEAD y error stdin del analizador; conservar alerta sin afirmar infracción."
+      "item": "Selección documentada de Artistic para text-unidecode 1.3, hash exacto del lockfile; reglas GPL preservadas y stdin corregido",
+      "impact": "Seis controles locales aprobados. Falta retest CI y control negativo GPL real."
     }
   ],
   "stages": [
@@ -279,7 +279,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.21",
+  "last_replicated_document_version": "1.22",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -358,7 +358,21 @@
     {
       "id": "VT-06",
       "title": "Regresión general E2E evidencia y cierre de laboratorio",
-      "status": "EN_EJECUCION"
+      "status": "COMPLETADA_EJECUCION_SEGURIDAD",
+      "completed_on": "2026-11-02",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/general_41517858482_summary.json",
+        "evidencia/revalidacion_tecnica/e2e_41517858406_summary.json"
+      ]
+    },
+    {
+      "id": "VT-07",
+      "title": "Corrección acotada del control heredado de licencias",
+      "status": "RETEST_PREPARADO",
+      "evidence_refs": [
+        "security/cybermarket/tools/normalize_license_selection.py",
+        "tests/test_cybermarket_license_selection.py"
+      ]
     }
   ],
   "technical_blocker": {
@@ -372,11 +386,11 @@
     "resolution": "Actions re-enabled in authenticated maintainer browser; manual dispatch verified by run ID."
   },
   "technical_execution": {
-    "run_id": 41512875410,
-    "tested_source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
+    "run_id": 41517858406,
+    "tested_source_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
     "workflow": "e2e.yml",
-    "event": "workflow_dispatch",
-    "status": "C10_SUCCESS_OTHER_GATES_PENDING",
+    "event": "pull_request",
+    "status": "SECURITY_TESTS_COMPLETE_LICENSE_RETEST_PENDING",
     "new_deliverable_generated": false,
     "technical_job_status": "SUCCESS",
     "failure_evidence": "evidencia/revalidacion_tecnica/intento_03_summary.json",
@@ -391,7 +405,35 @@
     "e2e_independent_pass": 211,
     "result_evidence": "evidencia/revalidacion_tecnica/retest_04_summary.json",
     "e2e_run": 41517858406,
-    "linters": "SUCCESS"
+    "linters": "SUCCESS",
+    "initial_run_id": 41512875410,
+    "general_regression": {
+      "run_id": 41517858482,
+      "job_id": 125526234857,
+      "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+      "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+      "total": 17615,
+      "pass": 17613,
+      "xfail": 2,
+      "failure": 0,
+      "error": 0,
+      "other_skipped": 0,
+      "artifact_id": 13176439237,
+      "original_archive_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
+      "original_internal_manifest_present": false,
+      "original_archive_digest_verified": true,
+      "sanitized_archive_sha256": "c98342b5cf286f11d5c107a168c1ec36ceaa49e1b570172ba6f3b44fdd776a05",
+      "sanitization": {
+        "original_artifact_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
+        "original_xml_sha256": "78e785d55b9b955ba44d7c4dc9bb97d02bc6a42ad0b8d1dd1e92ab3f9c0104ad",
+        "redacted_email_occurrences": 85,
+        "method": "Email values replaced by nonreversible SHA-256 labels; testcase counts and outcomes preserved; original retained separately",
+        "JWT_matches": 0,
+        "private_key_matches": 0
+      },
+      "duration_seconds": 1050.22,
+      "focal_is_subset": true
+    }
   },
   "technical_license_check": {
     "run_id": 41517859635,

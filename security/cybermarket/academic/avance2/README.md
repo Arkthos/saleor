@@ -46,3 +46,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 **C10 revisado:** [26 PASS](evidencia/revalidacion_tecnica/retest_04_summary.json), run 41517858406; [SAST actual](evidencia/revalidacion_tecnica/estatica_retest_04.json). VT-02/06 pendientes. [Licencias heredadas](evidencia/revalidacion_tecnica/licencias_resultado.json) requieren revisión.
 
 **VT-02 completada:** [Linters y diez hooks aprobados](evidencia/revalidacion_tecnica/linters_retest_04.json); [E2E actual 211 PASS](evidencia/revalidacion_tecnica/e2e_41517858406_summary.json). VT-06 espera regresión general.
+
+**VT-06 completada:** [Regresión general 17.613 PASS/2 XFAIL](evidencia/revalidacion_tecnica/general_41517858482_summary.json), sin fallos inesperados. VT-07 prueba selección declarada Artistic acotada al wheel fijado y conserva la denegación GPL.

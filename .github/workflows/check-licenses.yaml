@@ -1,50 +1,135 @@
 name: Check Licenses
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
+    types: [opened, synchronize]
     paths:
-      # Self
-      - ".github/workflows/check-licenses.yaml"
-      # Python Ecosystem
-      - "**/pyproject.toml"
-      - "**/setup.py"
-      - "**/requirements*.txt"
-      - "**/Pipfile.lock"
-      - "**/uv.lock"
-      # JS/TS Ecosystem
-      - "**/package.json"
-      - "**/pnpm-lock.yaml"
-      - "**/package-lock.json"
-
+      - .github/workflows/check-licenses.yaml
+      - security/cybermarket/tools/normalize_license_selection.py
+      - tests/test_cybermarket_license_selection.py
+      - '**/pyproject.toml'
+      - '**/setup.py'
+      - '**/requirements*.txt'
+      - '**/Pipfile.lock'
+      - '**/uv.lock'
+      - '**/package.json'
+      - '**/pnpm-lock.yaml'
+      - '**/package-lock.json'
 permissions: {}
-
 jobs:
-  default:
+  licenses:
+    name: License policy (${{ matrix.source }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     permissions:
       contents: read
-      pull-requests: write
-    uses: saleor/saleor-internal-actions/.github/workflows/run-license-check.yaml@692d3282b8edb0d64aecacb110b3732af71e9f6e # v1.13.1
-    with:
-      # List of ecosystems to scan.
-      ecosystems: >-
-        python
-        javascript
-      # Grant rules (https://github.com/anchore/grant/blob/4362dc22cf5ea9baeccfa59b2863879afe0c30d7/README.md#usage)
-      rules: |
-        # Explicitly allow LGPL as "*GPL*" rule will cause to reject them otherwise.
-        - pattern: "*lgpl*"
-          name: "allow-lgpl"
-          mode: "allow"
-          reason: "LGPL is allowed."
-        - pattern: "*gpl*"
-          name: "deny-gpl"
-          mode: "deny"
-          reason: "GPL licenses are not compatible with BSD-3-Clause"
-        - pattern: "*proprietary*"
-          name: "deny-proprietary"
-          mode: "deny"
-          reason: >-
-            Proprietary licenses are not compatible with BSD-3-Clause.
-            They need to be reviewed on a case-by-case basis.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - source: base
+            ref: ${{ github.event.pull_request.base.sha }}
+          - source: head
+            ref: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Checkout validation tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          python-version: '3.12'
+      - name: Check selection boundaries
+        run: uvx --from pytest==9.0.3 pytest -c /dev/null --noconftest -o pythonpath=. tests/test_cybermarket_license_selection.py -q --junitxml=license-units.xml
+      - name: Checkout analyzed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ matrix.ref }}
+          path: analyzed-source
+      - name: Generate original SBOM
+        uses: saleor/saleor-internal-actions/sbom-generator@63874d11a102a6998c380bc5cfbcd88f7965971f
+        with:
+          project_path: ${{ github.workspace }}/analyzed-source
+          sbom_path: ${{ github.workspace }}/bom.original.json
+          ecosystems: python javascript
+      - name: Record declared alternative for exact locked wheel
+        run: |
+          python3 security/cybermarket/tools/normalize_license_selection.py \
+            bom.original.json bom.selected.json license-selection.json
+      - name: Checkout verified Grant installer
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: saleor/saleor-internal-actions
+          ref: 63874d11a102a6998c380bc5cfbcd88f7965971f
+          path: license-tools
+          sparse-checkout: grant-license-checker/scripts
+      - name: Install checksum-verified Grant 0.2.9
+        run: bash license-tools/grant-license-checker/scripts/download-grant.sh
+      - name: Apply original license rules to one explicit stdin input
+        id: policy
+        continue-on-error: ${{ matrix.source == 'base' }}
+        run: |
+          cat > license-rules.yaml <<'RULES'
+          rules:
+            - pattern: '*lgpl*'
+              name: allow-lgpl
+              mode: allow
+              reason: LGPL is allowed.
+            - pattern: '*gpl*'
+              name: deny-gpl
+              mode: deny
+              reason: GPL licenses are not compatible with BSD-3-Clause
+            - pattern: '*proprietary*'
+              name: deny-proprietary
+              mode: deny
+              reason: Proprietary licenses are not compatible with BSD-3-Clause. They need to be reviewed on a case-by-case basis.
+          RULES
+          ./.grant/grant check - --config=license-rules.yaml --show-packages -o json < bom.selected.json > grant.json
+      - name: Prove unrelated GPL-only metadata remains rejected
+        run: |
+          python3 - <<'PYCODE'
+          import json
+          from pathlib import Path
+          data = {'bomFormat': 'CycloneDX', 'specVersion': '1.6', 'version': 1, 'components': [{'type': 'library', 'name': 'cybermarket-gpl-negative-control', 'version': '1', 'licenses': [{'license': {'id': 'GPL-2.0-only'}}]}]}
+          Path('gpl-negative-control.json').write_text(json.dumps(data))
+          PYCODE
+          if ./.grant/grant check - --config=license-rules.yaml --show-packages -o json < gpl-negative-control.json > gpl-negative-result.json; then
+            echo 'GPL negative control unexpectedly passed' >&2
+            exit 1
+          fi
+          python3 - <<'PYCODE'
+          import json
+          from pathlib import Path
+          results = json.loads(Path('gpl-negative-result.json').read_text())['results']
+          assert len(results) == 1
+          assert results[0]['passed'] is False
+          assert results[0]['reasons'] == ['deny-gpl: license denied by policy']
+          PYCODE
+      - name: Record source and outcome
+        if: always()
+        env:
+          ANALYZED_REF: ${{ matrix.ref }}
+          POLICY_OUTCOME: ${{ steps.policy.outcome }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          data = {'analyzed_sha': os.environ['ANALYZED_REF'], 'policy_outcome': os.environ['POLICY_OUTCOME']}
+          Path('license-environment.json').write_text(json.dumps(data, indent=2) + '\n')
+          files = [Path(name) for name in ['bom.original.json', 'bom.selected.json', 'license-selection.json', 'license-rules.yaml', 'grant.json', 'license-environment.json', 'license-units.xml', 'gpl-negative-control.json', 'gpl-negative-result.json'] if Path(name).is_file()]
+          Path('SHA256SUMS').write_text(''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}\n' for p in files))
+          PY
+      - name: Preserve original SBOM selected metadata policy and result
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: cybermarket-license-${{ matrix.source }}
+          path: |
+            bom.original.json
+            bom.selected.json
+            license-selection.json
+            license-rules.yaml
+            grant.json
+            license-environment.json
+            license-units.xml
+            gpl-negative-control.json
+            gpl-negative-result.json
+            SHA256SUMS
+          retention-days: 30

@@ -133,3 +133,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT-02 — estática y calidad actuales
 
 **2026-11-02 — VT-02 completada:** SAST actual revisado y pre-commit completo SUCCESS en run 41517858278/job 125526067035: whitespace, EOF, Ruff, formato, mypy, deptry, Semgrep, uv-lock, migraciones y esquema GraphQL. E2E actual 211 PASS verificado desde XML y hashes, run 41517858406. Se conserva procedencia Playwright 1.56.0/Chromium 141.0.7390.37 build 1194. Queda VT-06 esperando regresión general y conciliación; control heredado de licencias en revisión, sin cambiar reglas ni adjudicar infracción. Entregable pausado.
+
+## VT-06 — regresión actual / VT-07 — corrección del control final
+
+**2026-11-02 — VT-06 completada; VT-07 en preparación de retest:** regresión actual 17.613 PASS/2 XFAIL, 0 fallos/errores en 1.050,22 s, reconciliada desde XML. Suite focal es subconjunto. Archivo público depura 85 correos de etiquetas de fixtures conservando huellas/identidad de casos y resultados; original queda separado. Para el último control heredado se selecciona la alternativa Artistic que ofrece el autor de text-unidecode 1.3, solo con hash de wheel del lockfile y declaración presente; no se modifica la política GPL. Seis pruebas verifican rechazo de metadatos no confirmados y conservación de GPL ajeno. Grant recibirá una única entrada stdin y un control negativo GPL real. CI pendiente; entregable pausado.
