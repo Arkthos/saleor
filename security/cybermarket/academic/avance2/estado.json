@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.10",
+  "roadmap_version": "1.11",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "DESARROLLO_EN_CURSO",
+  "status": "LISTO_PARA_REVISION_GRUPAL",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,24 +30,29 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.10",
+    "version": "1.11",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_10"
+    "status": "GUARDADA_VERSION_1_11"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "A2-10",
-  "next_action": "Continuar A2-10 conforme al roadmap y alcance documentado.",
+  "next_action": "Revisión real del grupo del PDF y autoría; resolver comentarios, cargar en campus y conservar comprobante verificable antes del cierre.",
   "open_items": [
     {
       "id": "D-02",
-      "item": "Roles y disponibilidad reales del grupo",
-      "impact": "Asignación de ejecución y revisión pendiente."
+      "item": "Revisión real del grupo y confirmación de autoría",
+      "impact": "Pendiente humano para cerrar entrega; no se inventan revisiones ni roles."
     },
     {
       "id": "D-03",
-      "item": "Estado de adopción de P-ORDER-01",
-      "impact": "Mantener juicio normativo provisional; no bloquea caracterización."
+      "item": "P-ORDER-01 sigue provisional",
+      "impact": "Límite técnico expreso, sin vulnerabilidad oficial atribuida ni cambio de política inferido."
+    },
+    {
+      "id": "D-05",
+      "item": "Integración nueva y C10 no ejecutados",
+      "impact": "Continuidad técnica delimitada en el informe; no se presenta como verificación del despliegue."
     }
   ],
   "stages": [
@@ -244,22 +249,30 @@
     {
       "id": "A2-10",
       "title": "Revisión grupal y entrega",
-      "status": "PENDIENTE",
+      "status": "EN_CURSO",
       "depends_on": [
         "A2-09"
       ],
       "planned_outputs": [
         "manuscrito/entrega/manifest.json"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "manuscrito/entrega/manifest.json",
+        "manuscrito/entrega/INSTRUCCIONES_ENTREGA.md"
+      ],
       "completed_on": null,
-      "target_date": "2026-11-08"
+      "target_date": "2026-11-08",
+      "preparation_status": "COMPLETADA",
+      "pending_human_actions": [
+        "Revisión y autoría del grupo",
+        "Carga y comprobante del campus"
+      ]
     }
   ],
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
-  "delivery_status": "PDF_Y_EDITABLE_LISTOS_PARA_REVISION",
-  "last_replicated_document_version": "1.10",
+  "delivery_status": "PREPARADO_NO_ENTREGADO",
+  "last_replicated_document_version": "1.11",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -275,5 +288,6 @@
     "docx_library_id": "libfile_4ebf709873288191b44e058ed83df0ef",
     "public_pdf": "manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf",
     "pages": 13
-  }
+  },
+  "delivery_manifest": "manuscrito/entrega/manifest.json"
 }

@@ -87,3 +87,7 @@ Productos: manuscrito/INFORME_AVANCE2.md, manuscrito/REFERENCIAS_IEEE.json, manu
 Auditoría documental, técnica y visual completada. PDF de trece páginas y Word de revisión guardados; versión pública sin nombres personales en GitHub. Se conciliaron doce citas, catorce hallazgos, 23 requisitos, nueve checksums y los XML. Guía de defensa disponible. Revalidación integrada nueva y C10 siguen sin ejecutarse; revisión grupal y campus pendientes.
 
 Productos: manuscrito/auditoria_final.md, manuscrito/auditoria_final.json, manuscrito/GUIA_DEFENSA.md, manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf. Estado: COMPLETADA. Siguiente etapa: A2-10. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-10, roadmap 1.11
+
+Preparación de entrega terminada con PDF de trece páginas, editable, fuente, auditoría, guía de defensa y manifest de hashes. Versión congelada avance2-revision-2026-11-02-v1. PDF privado y Word guardados; PDF público con nombre del equipo en GitHub. A2-10 EN_CURSO: revisión grupal y campus pendientes. No se atribuyen aprobación, reunión, contribuciones individuales o entrega inexistentes.

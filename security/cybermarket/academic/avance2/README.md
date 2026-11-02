@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** A2-09 cerrada; siguiente A2-10. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
+**Estado:** A2-00 a A2-09 completadas; preparación de A2-10 terminada. Revisión grupal y carga al campus pendientes. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
 
 ## Accesos principales
 
@@ -27,3 +27,12 @@ No publicar por defecto los PDF docentes/libros originales ni Word con datos per
 Guardar productos, comprobar criterios, actualizar roadmap/estado/matriz/bitácora, publicar el commit y actualizar la copia del roadmap en el proyecto. Si se interrumpe, registrar estado parcial. Las reglas persistentes están en [AGENTS.md](../../../../AGENTS.md) y en [la decisión documental](../../../../docs/adr/0011-cybermarket-academic-evidence-and-roadmap.md).
 
 No se usa un issue tracker para estas actividades. Este archivo es el índice de productos académicos, no una nueva cola de incidencias.
+
+## Productos para revisión
+
+- [Informe completo en Markdown](manuscrito/INFORME_AVANCE2.md).
+- [PDF público de revisión](manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf).
+- [Auditoría de rúbrica y evidencia](manuscrito/auditoria_final.md).
+- [Guía de defensa](manuscrito/GUIA_DEFENSA.md).
+- [Archivos privados e instrucciones de entrega](manuscrito/entrega/INSTRUCCIONES_ENTREGA.md).
+- [Versión y hashes](manuscrito/entrega/manifest.json).
