@@ -12,13 +12,13 @@ Palabras clave: autenticación, autorización, GraphQL, pruebas de seguridad, de
 
 La segunda entrega documenta las fases de desarrollo y pruebas mediante tres apartados exigidos por la consigna: codificación segura, análisis estático y dinámico, y pruebas de seguridad. El requisito adicional de al menos diez hallazgos con recomendaciones se atiende con un catálogo de catorce observaciones técnicas diferenciadas [1]. El propósito es explicar qué se examinó, cómo se obtuvo cada resultado y qué decisiones permite, sin identificar la cantidad de tests con la calidad o la seguridad del producto.
 
-El primer avance estableció el problema, la arquitectura conceptual, los actores, trece escenarios de riesgo y quince observaciones estáticas. También delimitó las operaciones tokenCreate, tokenRefresh, tokensDeactivateAll, me, user y order [2]. Esa delimitación se conserva. CyberMarket CR es un contexto empresarial ficticio; Saleor y el fork investigado son artefactos reales. No se atribuyen incidentes, clientes, pérdidas o aprobaciones de una empresa existente al escenario académico.
+El primer avance estableció el problema, la arquitectura conceptual, los actores, trece escenarios de riesgo y quince observaciones estáticas. También delimitó las operaciones tokenCreate, tokenRefresh, tokensDeactivateAll, me, user y order [2]. Esa delimitación se conserva. El código base se distribuye bajo BSD-3-Clause; se verificó LICENSE en el commit de referencia [3]. La autorización del usuario para trabajar en su fork y los datos sintéticos delimitan la actividad realizada. No se realizaron pruebas sobre servicios de terceros. CyberMarket CR es un contexto empresarial ficticio; Saleor y el fork investigado son artefactos reales. No se atribuyen incidentes, clientes, pérdidas o aprobaciones de una empresa existente al escenario académico.
 
-El objetivo general se mantiene: evaluar los mecanismos de autenticación, gestión de tokens y autorización de las seis operaciones mediante requisitos trazables, revisión técnica y verificación controlada, para formular recomendaciones sustentadas. Sus tres objetivos específicos se desarrollan mediante la caracterización de arquitectura y amenazas, el examen técnico de controles y la documentación de al menos diez observaciones con recomendaciones y verificación de mitigaciones técnicamente viables. El informe responde a esos objetivos con productos y límites localizables, sin reformularlos para acomodar los resultados.
+El objetivo general se mantiene: evaluar los mecanismos de autenticación, gestión de tokens y autorización en seis operaciones seleccionadas de la API GraphQL de un fork versionado de Saleor, mediante requisitos de seguridad trazables, revisión técnica y procedimientos de verificación controlados, para identificar riesgos y formular recomendaciones fundamentadas en evidencia para el escenario ficticio CyberMarket CR. Sus tres objetivos específicos se desarrollan mediante la caracterización de arquitectura y amenazas, el examen técnico de controles y la documentación de al menos diez observaciones con recomendaciones y verificación de mitigaciones técnicamente viables. El informe responde a esos objetivos con productos y límites localizables, sin reformularlos para acomodar los resultados.
 
-Según lo comunicado por el grupo, no se han recibido correcciones del profesor. Los ajustes de esta entrega corresponden a la continuidad de la investigación: actualizar el estado experimental, precisar los instrumentos aplicados, clasificar pruebas y contrastar resultados con criterios explícitos. El Word presentado se conserva; esta entrega es una versión nueva. Su estilo de citación es IEEE, admitido por la consigna. El programa y el manual aportan el marco de metodología y discusión de resultados [3].
+Según lo comunicado por el grupo, no se han recibido correcciones del profesor. Los ajustes de esta entrega corresponden a la continuidad de la investigación: actualizar el estado experimental, precisar los instrumentos aplicados, clasificar pruebas y contrastar resultados con criterios explícitos. El Word presentado se conserva; esta entrega es una versión nueva. Su estilo de citación es IEEE, admitido por la consigna. El programa y el manual aportan el marco de metodología y discusión de resultados [4].
 
-El ciclo de vida se emplea como relación entre decisiones de requisitos, implementación, verificación y tratamiento. SSDF 1.1 propone integrar prácticas de desarrollo seguro en los modelos de ciclo de vida [4]. En este caso, ese referente organiza la relación entre productos y evidencia; el estudio no pretende evaluar exhaustivamente todas sus prácticas ni certificar la madurez de un proceso empresarial.
+El ciclo de vida se emplea como relación entre decisiones de requisitos, implementación, verificación y tratamiento. SSDF 1.1 propone integrar prácticas de desarrollo seguro en los modelos de ciclo de vida [5]. En este caso, ese referente organiza la relación entre productos y evidencia; el estudio no pretende evaluar exhaustivamente todas sus prácticas ni certificar la madurez de un proceso empresarial.
 
 ## II Metodología y condiciones de evaluación
 
@@ -26,13 +26,13 @@ El ciclo de vida se emplea como relación entre decisiones de requisitos, implem
 
 Se realizó una evaluación técnica controlada, descriptiva y evaluativa de artefactos de software. La muestra es intencional: seis operaciones de identidad y acceso, más los componentes que intervienen directamente en su validación. Las utilidades de IP, ofuscación o comparación de tokens se incorporan por esa dependencia, sin convertir el estudio en una auditoría de todos los módulos comerciales de Saleor.
 
-La relación amenaza, requisito, comprobación y evidencia se construyó mediante una adaptación documental de actividades de ingeniería de requisitos. SQUARE aporta pasos para acordar definiciones y metas, elaborar artefactos, evaluar riesgos y obtener requisitos [5]. No se declara ejecución íntegra de su proceso ni entrevistas con stakeholders reales. Las decisiones del caso ficticio deben permanecer identificadas como supuestos o propuestas hasta que el grupo adopte un criterio concreto.
+La relación amenaza, requisito, comprobación y evidencia se construyó mediante una adaptación documental de actividades de ingeniería de requisitos. SQUARE aporta pasos para acordar definiciones y metas, elaborar artefactos, evaluar riesgos y obtener requisitos [6]. No se declara ejecución íntegra de su proceso ni entrevistas con stakeholders reales. Las decisiones del caso ficticio deben permanecer identificadas como supuestos o propuestas hasta que el grupo adopte un criterio concreto.
 
-ASVS 5.0.0 define los requisitos usados como referencia [6]. WSTG 4.2 orienta procedimientos que se adaptaron a las operaciones GraphQL seleccionadas [7]. La adaptación no crea equivalencias oficiales entre sus IDs: una prueba puede aportar solo parte de la evidencia necesaria para un requisito y un mismo requisito puede necesitar análisis documental, inspección de código y varias ejecuciones.
+ASVS 5.0.0 define los requisitos usados como referencia [7]. WSTG 4.2 orienta procedimientos que se adaptaron a las operaciones GraphQL seleccionadas [8]. La adaptación no crea equivalencias oficiales entre sus IDs: una prueba puede aportar solo parte de la evidencia necesaria para un requisito y un mismo requisito puede necesitar análisis documental, inspección de código y varias ejecuciones.
 
 ### B Versiones y configuración
 
-El producto base es Arkthos/saleor en 4cb1609a90eade14b6275a407bc7a00c35698090 [8]. Al iniciar la preparación de esta entrega, la rama de investigación tenía HEAD 6af5fbad0101d3261055b2bcb089df3255fc1053. Su comparación con la base mostró 49 archivos distintos relacionados con pruebas, herramientas de evidencia, workflow e instrucciones o documentación; no había cambios en el código funcional del producto. Los commits documentales posteriores y los tests nuevos se identifican por separado en los manifiestos.
+El producto base es Arkthos/saleor en 4cb1609a90eade14b6275a407bc7a00c35698090 [3]. Al iniciar la preparación de esta entrega, la rama de investigación tenía HEAD 6af5fbad0101d3261055b2bcb089df3255fc1053. Su comparación con la base mostró 49 archivos distintos relacionados con pruebas, herramientas de evidencia, workflow e instrucciones o documentación; no había cambios en el código funcional del producto. Los commits documentales posteriores y los tests nuevos se identifican por separado en los manifiestos.
 
 La ejecución integrada histórica de referencia corresponde al run 39443927080, branch SHA c442099bc0ebee5194a6e58354944563e92e0d28 y checkout de integración b0604014dab69125a4a535f1ece5828be99ea3c8 [9]. Su log registra CPython 3.12.15, Django 5.2.17, Graphene 2.1.9, graphql-core 2.3.2, PyJWT 2.14.0 y pytest 9.0.3, con PostgreSQL 15-alpine y Valkey 8.1-alpine. Se conservaron los digests observados de imágenes; las etiquetas de un workflow no garantizan por sí solas que una ejecución posterior use los mismos bytes.
 
@@ -56,7 +56,7 @@ Los principios de privilegios mínimos y mediación completa ayudan a examinar d
 
 La cadena de autenticación ofrece un ejemplo de por qué importa el contexto. is_saleor_token decodifica sin verificar firma para clasificar el propietario del token. load_user_from_request llama después a jwt_decode y comprueba tipo, usuario y clave por usuario antes de aceptar la identidad. Reportar aceptación de tokens sin firma a partir de la primera llamada aislada omitiría el control posterior. La revisión se apoyó en la cadena y en pruebas negativas concretas, no en la mera aparición de una opción con nombre sensible.
 
-BaseMutation.mutate consulta check_permissions antes de perform_mutation. La implementación base permite continuar si no hay permisos declarados, como punto de extensión. H10 identifica ese comportamiento, pero su evaluación requiere revisar Meta.permissions, sobreescrituras y validaciones de cada operación. La recomendación es hacer explícitos los contratos de acceso y sus excepciones; no etiquetar automáticamente como vulnerabilidad toda mutación sin permisos en su metaclase.
+BaseMutation.mutate consulta check_permissions antes de perform_mutation. La implementación base permite continuar si no hay permisos declarados, como punto de extensión. H10 del primer avance identifica ese comportamiento, pero su evaluación requiere revisar Meta.permissions, sobreescrituras y validaciones de cada operación. La recomendación es hacer explícitos los contratos de acceso y sus excepciones; no etiquetar automáticamente como vulnerabilidad toda mutación sin permisos en su metaclase.
 
 ### B Validación de datos y estados
 
@@ -283,17 +283,17 @@ El siguiente trabajo técnico debe resolver criterios de negocio y completar la 
 
 [2] Equipo CyberMarket CR, “Análisis del diseño seguro de autenticación y autorización en Saleor: aplicación al escenario CyberMarket CR”, primer avance presentado, CY-703 Seguridad de Software, Universidad Fidélitas, 2026.
 
-[3] Universidad Fidélitas, “Programa del curso Seguridad de Software de 14 semanas” y “Manual de Trabajo Final de investigación grupal”, materiales de CY-703, s. f.
+[3] Arkthos, “saleor”, repositorio de código fuente, base 4cb1609a90eade14b6275a407bc7a00c35698090. Disponible: https://github.com/Arkthos/saleor/tree/4cb1609a90eade14b6275a407bc7a00c35698090
 
-[4] M. Souppaya, K. Scarfone y D. Dodson, Secure Software Development Framework SSDF Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities, NIST SP 800-218, feb. 2022. doi: 10.6028/NIST.SP.800-218. Disponible: https://csrc.nist.gov/pubs/sp/800/218/final
+[4] Universidad Fidélitas, “Programa del curso Seguridad de Software de 14 semanas” y “Manual de Trabajo Final de investigación grupal”, materiales de CY-703, s. f.
 
-[5] N. R. Mead, E. D. Hough y T. R. Stehney II, Security Quality Requirements Engineering SQUARE Methodology, CMU/SEI-2005-TR-009, Software Engineering Institute, nov. 2005. Disponible: https://insights.sei.cmu.edu/documents/751/2005_005_001_14594.pdf
+[5] M. Souppaya, K. Scarfone y D. Dodson, Secure Software Development Framework SSDF Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities, NIST SP 800-218, feb. 2022. doi: 10.6028/NIST.SP.800-218. Disponible: https://csrc.nist.gov/pubs/sp/800/218/final
 
-[6] OWASP Foundation, Application Security Verification Standard, versión 5.0.0, mayo 2025. Disponible: https://github.com/OWASP/ASVS/releases/tag/v5.0.0
+[6] N. R. Mead, E. D. Hough y T. R. Stehney II, Security Quality Requirements Engineering SQUARE Methodology, CMU/SEI-2005-TR-009, Software Engineering Institute, nov. 2005. Disponible: https://insights.sei.cmu.edu/documents/751/2005_005_001_14594.pdf
 
-[7] OWASP Foundation, Web Security Testing Guide, versión 4.2, 2020. Disponible: https://owasp.org/www-project-web-security-testing-guide/v42/
+[7] OWASP Foundation, Application Security Verification Standard, versión 5.0.0, mayo 2025. Disponible: https://github.com/OWASP/ASVS/releases/tag/v5.0.0
 
-[8] Arkthos, “saleor”, repositorio de código fuente, base 4cb1609a90eade14b6275a407bc7a00c35698090. Disponible: https://github.com/Arkthos/saleor/tree/4cb1609a90eade14b6275a407bc7a00c35698090
+[8] OWASP Foundation, Web Security Testing Guide, versión 4.2, 2020. Disponible: https://owasp.org/www-project-web-security-testing-guide/v42/
 
 [9] Proyecto CyberMarket CR, “Evidencia C2–C9 y JUnit focal”, GitHub Actions, ejecución 39443927080, 20 oct. 2026, branch SHA c442099bc0ebee5194a6e58354944563e92e0d28. Disponible: https://github.com/Arkthos/saleor/actions/runs/39443927080. Archivos originales recuperados y verificados en evidencia/historica_2026-10-20.
 
@@ -374,29 +374,29 @@ Estos son los 23 requisitos seleccionados, no el estándar completo. La disposic
 
 | ASVS 5.0.0 | Área y criterio resumido | Casos históricos explícitos | Alcance y límite |
 |---|---|---|---|
-| 3.3.1 | Cookies. Atributo Secure y nomenclatura de cookie aplicable | T14 | Flags y nombre observables; no hay validación HTTPS real. Evaluar requisito de prefijo y arquitectura cliente sin inferir vulnerabilidad. |
-| 3.3.2 | Cookies. SameSite de acuerdo con finalidad y origen | T14 | Se observa SameSite por DEBUG; falta política de cliente/origen y navegador. |
-| 3.3.4 | Cookies. HttpOnly para cookies de sesión y medios de transporte | T14 | Se comprueba HttpOnly; no se evalúa exhaustivamente el transporte alternativo del mismo valor. |
-| 3.5.1 | CSRF. Validación de origen para funciones sensibles si no depende del preflight CORS | T03 | CSRF condicionado a cookie comprobado en fixtures; no validación universal de origen/CORS. |
-| 4.3.1 | GraphQL. Se han definido y evaluado límites de complejidad para queries seleccionadas | T15, T16 | Dos umbrales configurados no son cobertura completa de costo/profundidad ni prueba de carga. |
-| 6.1.1 | Autenticación. Política de defensa contra automatización documentada | — | El algoritmo existe; falta política de antiabuso y bloqueo malicioso del caso. |
-| 6.1.3 | Autenticación. Vías de autenticación documentadas y distinguidas | T17 | Vías observadas no equivalen a inventario exhaustivo de canales y fortaleza de autenticación. |
-| 6.3.1 | Autenticación. Control ante intentos repetidos conforme a política | T18, T19 | Backoff aislado y parsing IP no prueban resistencia distribuida o proxy confiable. |
-| 6.3.8 | Autenticación. No revelar cuentas válidas en fallos de autenticación | T09 | Código de error común no cubre tiempos, registro o recuperación de contraseña. |
-| 7.1.1 | Sesiones. Política de tiempo inactivo/absoluto documentada | — | TTL emitido no es política documentada de inactividad y vida absoluta. |
-| 7.2.1 | Sesiones. Validación backend de token de sesión | — | Validación backend observada en rutas; no revisión exhaustiva de todos los receptores. |
-| 7.3.2 | Sesiones. Duración máxima absoluta y reautenticación según riesgo | — | Renovación y TTL no prueban reautenticación tras vida absoluta; mantener pendiente. |
-| 7.4.1 | Sesiones. Revocación eficaz tras terminación | T02 | Se reutilizan credenciales anteriores tras revocación en rutas elegidas; no todas las vías del producto. |
-| 8.1.1 | Autorización. Decisiones de función y datos documentadas | — | Matriz técnica parcial; política de campos/UUID sigue provisional. |
-| 8.2.1 | Autorización. Permisos de operación comprobados en backend | T04, T20 | Permisos en funciones elegidas; H10 exige revisión de la base y rutas completas, no solo consulta de pedido. |
-| 8.2.2 | Autorización. Control de acceso a objeto individual | T01, T05, T06, T07, T12, T13, T22, T23, T24, T25, T26, T27 | Contratos de usuarios y caracterización de pedidos deben interpretarse con autoridad distinta. |
-| 8.2.3 | Autorización. Control de acceso a campos protegidos | T01, T05, T06, T07, T13, T22, T23, T24, T25, T26, T27 | Valores de campos y ofuscación observados; no matriz exhaustiva de autorizaciones por campo. |
-| 8.3.1 | Autorización. Decisión en servicio confiable y no en cliente | — | Controles backend identificados; no se infiere cobertura de todos los servicios o clientes. |
-| 9.1.1 | JWT. Validación firma antes de confiar en payload | — | Rechazar alg none no demuestra rechazo de una firma alterada; añadir prueba directa significativa. |
-| 9.1.2 | JWT. Algoritmos permitidos conforme a contexto | T21 | Un algoritmo no firmado rechazado; falta caracterización completa de algoritmos/contextos y confusión de claves. |
-| 9.2.1 | JWT. Validación de vigencia temporal | T08 | Se comprueba emisión exp/iat; añadir rechazo de token expirado y futuro nbf, no equiparar emisión a verificación. |
-| 9.2.2 | JWT. Validación propósito/tipo de token | T03, T08, T10 | Access no aceptado como refresh en ruta elegida; no todas las clases/receptores. |
-| 9.2.3 | JWT. Audiencia por receptor/servicio si aplica | T08, T11 | Se conserva aud; verify_aud=False por defecto no es validación contra receptor esperado; decisión por servicio pendiente. |
+| 3.3.1 | Cookies. Atributo Secure y nomenclatura de cookie aplicable | T14 | Aplicable parcial. Flags y nombre observables; no hay validación HTTPS real. Evaluar requisito de prefijo y arquitectura cliente sin inferir vulnerabilidad. |
+| 3.3.2 | Cookies. SameSite de acuerdo con finalidad y origen | T14 | Aplicable parcial. Se observa SameSite por DEBUG; falta política de cliente/origen y navegador. |
+| 3.3.4 | Cookies. HttpOnly para cookies de sesión y medios de transporte | T14 | Aplicable parcial. Se comprueba HttpOnly; no se evalúa exhaustivamente el transporte alternativo del mismo valor. |
+| 3.5.1 | CSRF. Validación de origen para funciones sensibles si no depende del preflight CORS | T03 | Aplicable parcial. CSRF por cookie comprobado históricamente; unidades nuevas comparan secretos con máscaras válidas. Origen y CORS en navegador no verificados. Unidades: CM-U04. |
+| 4.3.1 | GraphQL. Se han definido y evaluado límites de complejidad para queries seleccionadas | T15, T16 | Aplicable parcial. Dos umbrales configurados no son cobertura completa de costo/profundidad ni prueba de carga. |
+| 6.1.1 | Autenticación. Política de defensa contra automatización documentada | — | Documental pendiente. El algoritmo existe; falta política de antiabuso y bloqueo malicioso del caso. |
+| 6.1.3 | Autenticación. Vías de autenticación documentadas y distinguidas | T17 | Documental parcial. Precedencia y bordes de cabeceras comprobados. Falta inventario exhaustivo de canales y contrato del borde. Unidades: CM-U09. |
+| 6.3.1 | Autenticación. Control ante intentos repetidos conforme a política | T18, T19 | Aplicable parcial. Selección de IP y bordes de backoff ampliados con unidades. No prueba resistencia distribuida, caché operativa o proxy confiable. Unidades: CM-U08, CM-U10. |
+| 6.3.8 | Autenticación. No revelar cuentas válidas en fallos de autenticación | T09 | Aplicable parcial. Código de error común no cubre tiempos, registro o recuperación de contraseña. |
+| 7.1.1 | Sesiones. Política de tiempo inactivo/absoluto documentada | — | Documental pendiente. TTL emitido no es política documentada de inactividad y vida absoluta. |
+| 7.2.1 | Sesiones. Validación backend de token de sesión | — | Aplicable parcial. Validación backend observada en rutas; no revisión exhaustiva de todos los receptores. |
+| 7.3.2 | Sesiones. Duración máxima absoluta y reautenticación según riesgo | — | Aplicable pendiente. Renovación y TTL no prueban reautenticación tras vida absoluta; mantener pendiente. |
+| 7.4.1 | Sesiones. Revocación eficaz tras terminación | T02 | Aplicable parcial. Se reutilizan credenciales anteriores tras revocación en rutas elegidas; no todas las vías del producto. |
+| 8.1.1 | Autorización. Decisiones de función y datos documentadas | — | Documental parcial. Matriz técnica parcial; política de campos/UUID sigue provisional. |
+| 8.2.1 | Autorización. Permisos de operación comprobados en backend | T04, T20 | Aplicable parcial. Permisos en funciones elegidas; H10 exige revisión de la base y rutas completas, no solo consulta de pedido. |
+| 8.2.2 | Autorización. Control de acceso a objeto individual | T01, T05, T06, T07, T12, T13, T22, T23, T24, T25, T26, T27 | Aplicable parcial. Contratos y caracterización por actor conservados. Unidades de máscara amplían el helper; no adjudican la política provisional de acceso al objeto. Unidades: CM-U05, CM-U06, CM-U07. |
+| 8.2.3 | Autorización. Control de acceso a campos protegidos | T01, T05, T06, T07, T13, T22, T23, T24, T25, T26, T27 | Aplicable parcial. Valores de campos y máscaras observados, con expectativas literales nuevas. Falta política de información residual y matriz exhaustiva de campos. Unidades: CM-U05, CM-U06, CM-U07. |
+| 8.3.1 | Autorización. Decisión en servicio confiable y no en cliente | — | Aplicable parcial. Controles backend identificados; no se infiere cobertura de todos los servicios o clientes. |
+| 9.1.1 | JWT. Validación firma antes de confiar en payload | — | Aplicable parcial. Se añadió rechazo de firma HS256 alterada con control positivo. No cubre todos los algoritmos, claves y receptores. Unidades: CM-U01. |
+| 9.1.2 | JWT. Algoritmos permitidos conforme a contexto | T21 | Aplicable parcial. Un algoritmo no firmado rechazado; falta caracterización completa de algoritmos/contextos y confusión de claves. |
+| 9.2.1 | JWT. Validación de vigencia temporal | T08 | Aplicable parcial. Emisión exp/iat histórica y rechazo de exp pasado/nbf futuro en unidades con reloj fijo. No equivale a una sesión completa ni a todos los receptores. Unidades: CM-U02, CM-U03. |
+| 9.2.2 | JWT. Validación propósito/tipo de token | T03, T08, T10 | Aplicable parcial. Access no aceptado como refresh en ruta elegida; no todas las clases/receptores. |
+| 9.2.3 | JWT. Audiencia por receptor/servicio si aplica | T08, T11 | Aplicabilidad condicional. Se conserva aud; verify_aud=False por defecto no es validación contra receptor esperado; decisión por servicio pendiente. |
 
 ## Anexo D Archivos y reproducción
 
@@ -414,10 +414,10 @@ El paquete de evidencia contiene los ZIP originales y los resultados locales. El
 El comando de verificación aislada ejecutado fue el siguiente. SECRET_KEY se configura con un valor sintético de laboratorio; nunca se conserva un secreto de una instalación real.
 
 ```text
-uv run pytest tests/test_cybermarket_security_units.py
-  security/cybermarket/test_validate_evidence.py
-  tests/test_cybermarket_evidence_validator.py
-  --noconftest -q -n 0 --tb=short
+uv run pytest tests/test_cybermarket_security_units.py \
+  security/cybermarket/test_validate_evidence.py \
+  tests/test_cybermarket_evidence_validator.py \
+  --noconftest -q -n 0 --tb=short \
   --junitxml=isolated.xml -o junit_family=legacy
 ```
 

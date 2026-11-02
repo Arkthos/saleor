@@ -81,3 +81,9 @@ Productos: evidencia/hallazgos_avance2.csv, evidencia/hallazgos_avance2.json, ev
 Manuscrito integrado con metodología, tres apartados obligatorios, catorce hallazgos, doce referencias IEEE y anexos de instrumentos, 27 casos históricos, diez unidades nuevas y 23 requisitos. Se corrigieron dos localizadores de código sin alterar evidencia bruta.
 
 Productos: manuscrito/INFORME_AVANCE2.md, manuscrito/REFERENCIAS_IEEE.json, manuscrito/generar_docx.py. Estado: COMPLETADA. Siguiente etapa: A2-09. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-09, roadmap 1.10
+
+Auditoría documental, técnica y visual completada. PDF de trece páginas y Word de revisión guardados; versión pública sin nombres personales en GitHub. Se conciliaron doce citas, catorce hallazgos, 23 requisitos, nueve checksums y los XML. Guía de defensa disponible. Revalidación integrada nueva y C10 siguen sin ejecutarse; revisión grupal y campus pendientes.
+
+Productos: manuscrito/auditoria_final.md, manuscrito/auditoria_final.json, manuscrito/GUIA_DEFENSA.md, manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf. Estado: COMPLETADA. Siguiente etapa: A2-10. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.

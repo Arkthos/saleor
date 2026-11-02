@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.9",
+  "roadmap_version": "1.10",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.9",
+    "version": "1.10",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_9"
+    "status": "GUARDADA_VERSION_1_10"
   },
-  "last_completed_stage": "A2-08",
-  "next_stage": "A2-09",
-  "next_action": "Continuar A2-09 conforme al roadmap y alcance documentado.",
+  "last_completed_stage": "A2-09",
+  "next_stage": "A2-10",
+  "next_action": "Continuar A2-10 conforme al roadmap y alcance documentado.",
   "open_items": [
     {
       "id": "D-02",
@@ -224,7 +224,7 @@
     {
       "id": "A2-09",
       "title": "Auditoría y PDF",
-      "status": "PENDIENTE",
+      "status": "COMPLETADA",
       "depends_on": [
         "A2-08"
       ],
@@ -232,8 +232,13 @@
         "manuscrito/auditoria_final.md",
         "manuscrito/Avance2_revision.pdf"
       ],
-      "evidence_refs": [],
-      "completed_on": null,
+      "evidence_refs": [
+        "manuscrito/auditoria_final.md",
+        "manuscrito/auditoria_final.json",
+        "manuscrito/GUIA_DEFENSA.md",
+        "manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf"
+      ],
+      "completed_on": "2026-11-02",
       "target_date": "2026-11-07"
     },
     {
@@ -253,8 +258,8 @@
   ],
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
-  "delivery_status": "MANUSCRITO_EN_AUDITORIA",
-  "last_replicated_document_version": "1.9",
+  "delivery_status": "PDF_Y_EDITABLE_LISTOS_PARA_REVISION",
+  "last_replicated_document_version": "1.10",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -264,5 +269,11 @@
     "remote_ci_revalidation": "NO_EJECUTADA_EN_HEAD_NUEVO",
     "local_docker_available": false,
     "format_fix": "Siete líneas sin espacios finales; validación local, sin claim de pre-commit completo."
+  },
+  "deliverable_files": {
+    "pdf_library_id": "libfile_f7e6586107e481918200193ed8021350",
+    "docx_library_id": "libfile_4ebf709873288191b44e058ed83df0ef",
+    "public_pdf": "manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf",
+    "pages": 13
   }
 }
