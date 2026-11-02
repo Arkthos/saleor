@@ -1,0 +1,16 @@
+{
+  "run_id": 41515854889,
+  "failed_jobs": [
+    125519528278,
+    125519576421
+  ],
+  "phase": "Install Python Dependencies in external grant-license-checker",
+  "root_cause": "Python 3.15 selected by >3.12; locked pydantic-core 2.41.5 uses PyO3 0.26 supporting only up to 3.14. No license verdict produced.",
+  "old_reusable_sha": "d7b612674c6d2c0c04c9e946e5decfc483e2795a",
+  "fixed_reusable_sha": "692d3282b8edb0d64aecacb110b3732af71e9f6e",
+  "source_comparison": "https://github.com/saleor/saleor-internal-actions/compare/d7b612674c6d2c0c04c9e946e5decfc483e2795a...692d3282b8edb0d64aecacb110b3732af71e9f6e",
+  "verified_upstream_change": "v1.13.1 pins pydantic >=2.14.0 and locked pydantic-core 2.50.1 with Python 3.15 wheels; nested action reference updated.",
+  "status": "RETEST_PENDING",
+  "product_uv_lock_modified": false,
+  "license_rules_modified": false
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.18",
+  "roadmap_version": "1.19",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
@@ -30,10 +30,10 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.18",
+    "version": "1.19",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_18"
+    "status": "GUARDADA_VERSION_1_19"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "VT-01",
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.18",
+  "last_replicated_document_version": "1.19",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -363,5 +363,21 @@
     "live_pass": 23,
     "live_fail": 2,
     "e2e_independent_pass": 211
+  },
+  "technical_license_check": {
+    "run_id": 41515854889,
+    "failed_jobs": [
+      125519528278,
+      125519576421
+    ],
+    "phase": "Install Python Dependencies in external grant-license-checker",
+    "root_cause": "Python 3.15 selected by >3.12; locked pydantic-core 2.41.5 uses PyO3 0.26 supporting only up to 3.14. No license verdict produced.",
+    "old_reusable_sha": "d7b612674c6d2c0c04c9e946e5decfc483e2795a",
+    "fixed_reusable_sha": "692d3282b8edb0d64aecacb110b3732af71e9f6e",
+    "source_comparison": "https://github.com/saleor/saleor-internal-actions/compare/d7b612674c6d2c0c04c9e946e5decfc483e2795a...692d3282b8edb0d64aecacb110b3732af71e9f6e",
+    "verified_upstream_change": "v1.13.1 pins pydantic >=2.14.0 and locked pydantic-core 2.50.1 with Python 3.15 wheels; nested action reference updated.",
+    "status": "RETEST_PENDING",
+    "product_uv_lock_modified": false,
+    "license_rules_modified": false
   }
 }

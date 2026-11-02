@@ -40,3 +40,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 ## Revalidación técnica en curso
 
 [Laboratorio C10 y ejecución](../../live/README.md), [preflight real](evidencia/revalidacion_tecnica/preflight.json). Actions reactivado. Último laboratorio revisado: run 41515853470, 23 PASS/2 FAIL; [intento 03](evidencia/revalidacion_tecnica/intento_03_summary.json) y ZIP conservados. Correcciones y diagnóstico adicional preparados; 26 variantes pendientes de retest. E2E de ese run SUCCESS; regresión y linters por comprobar.
+
+[Control heredado de licencias](evidencia/revalidacion_tecnica/licencias_setup.json): corrección de compatibilidad upstream fijada por SHA; resultado pendiente.

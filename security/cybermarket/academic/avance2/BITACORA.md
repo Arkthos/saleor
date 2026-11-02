@@ -121,3 +121,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT: intento 03 y correcciones para retest
 
 **2026-11-02 — Intento 03 conservado; retest preparado:** focal 59 PASS/2 XFAIL y unidades/validadores 42 PASS. HTTP/HTTPS/navegador 23 PASS/2 FAIL: se completa el contrato exacto de coste GraphQL y se distingue middleware normal del producto frente al guard de routing exclusivo de pruebas. Se añade un diagnóstico independiente que conserva ese error exacto; quedan 26 variantes para retest. Cliente HTTP acotado compatible con Semgrep, sin exclusión del código; evidencia estática inmutable excluida solo de reescrituras whitespace/EOF. E2E del mismo run terminó SUCCESS. Ruff, formato y Semgrep sobre seis archivos del harness aprobados localmente. Regresión general y linters siguen por comprobar. No cambia código funcional ni se genera entregable.
+
+## VT: entorno de revisión de licencias
+
+**2026-11-02 — Control heredado de licencias:** ambos análisis fallaron antes de emitir veredicto: Python 3.15 frente a PyO3/pydantic-core antiguo. Se revisó la comparación upstream y se fija el workflow reutilizable v1.13.1 por SHA 692d3282, que incorpora soporte compatible. Reglas LGPL/GPL/proprietary y uv.lock de Saleor permanecen iguales. Retest pendiente; no se declara revisión de licencias aprobada.
