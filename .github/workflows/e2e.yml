@@ -176,7 +176,7 @@ jobs:
           set -e
           printf '{"exit_code":%s,"interpretation":"manual review required"}\n' "$bandit_status" > technical-results/bandit-run.json
           if [ "$bandit_status" -gt 1 ]; then exit "$bandit_status"; fi
-          uv tool run --from semgrep==1.153.0 semgrep scan --config .semgrep --metrics off --disable-version-check --json --output technical-results/semgrep.json
+          uv tool run --from semgrep==1.153.0 semgrep scan --config .semgrep --exclude=.semgrep/ --metrics off --disable-version-check --json --output technical-results/semgrep.json
       - name: Linters and schema checks
         if: ${{ !cancelled() && steps.lab_install.outcome == 'success' && github.event_name == 'workflow_dispatch' && inputs.include_regression }}
         run: uv run pre-commit run --all-files --show-diff-on-failure

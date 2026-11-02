@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.16. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
+**Versión:** 1.17. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -294,3 +294,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — Intento técnico 01 conservado:** job 125508906856 falló instalando Playwright 1.56.0 sobre ubuntu-latest, que resolvió a Ubuntu 26.04. Ningún C10 se ejecutó. Se fija Ubuntu 24.04 y se conserva evidencia incluso si el setup falla; la suite E2E del mismo run es independiente. Próximo: nueva ejecución del laboratorio, sin repetir E2E si ya aprobó sin cambios en su código.
 
 **2026-11-02 — Activación automática del laboratorio:** C10 corre también para pull_request en el fork, con runner Ubuntu 24.04. La regresión general y linters se obtienen de los workflows existentes; el job de laboratorio solo los repite si se solicita include_regression en una ejecución manual. Esto evita repetir la suite completa por cada corrección del harness. Nuevos resultados pendientes de revisión.
+
+**2026-11-02 — Intento 02 conservado y harness corregido:** focal 59 PASS/2 XFAIL, unidades/validadores 42 PASS; C10 1 PASS/24 FAIL. Los hilos ASGI abrían el alias replica sobre la base sin esquema, porque el fake de pytest solo aplica al hilo principal. Se enlazan ambos alias reales a la base test antes de servir y se restaura configuración al cerrar. No se debilitan aserciones de autorización. Semgrep ampliado detectó 48 ejemplos deliberados en .semgrep; se conserva su salida y se excluyen los archivos de prueba de reglas en el retest, como hace pre-commit. E2E independiente 211 PASS verificado desde XML y hashes.

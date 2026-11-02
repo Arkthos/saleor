@@ -13,6 +13,7 @@ import threading
 import time
 import uuid
 from contextlib import contextmanager
+from copy import deepcopy
 
 import graphene
 import pytest
@@ -22,7 +23,9 @@ from cryptography import x509
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.x509.oid import ExtendedKeyUsageOID, NameOID
+from django.conf import settings as django_settings
 from django.core.cache import cache
+from django.db import connections
 
 import saleor.asgi as saleor_asgi
 from saleor.account.models import User
@@ -81,7 +84,7 @@ def value(payload, field):
 
 
 @pytest.fixture
-def lab_config(settings, transactional_db):
+def lab_config(settings, transactional_db, record_property):
     settings.DEBUG = False
     settings.PLAYGROUND_ENABLED = False
     settings.ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
@@ -90,9 +93,37 @@ def lab_config(settings, transactional_db):
     settings.PLUGINS = []
     settings.EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
     settings.CELERY_TASK_ALWAYS_EAGER = True
+    # Pytest initializes its FakeDbReplicaConnection in the calling thread only.
+    # Real ASGI request threads need both genuine aliases bound to the test DB.
+    writer = settings.DATABASE_CONNECTION_DEFAULT_NAME
+    replica = settings.DATABASE_CONNECTION_REPLICA_NAME
+    database = connections[writer].settings_dict["NAME"]
+    assert database.startswith("test_"), "Only a disposable pytest database is allowed"
+    original_connections = {
+        alias: connections.databases[alias] for alias in [writer, replica]
+    }
+    original_settings = {
+        alias: django_settings.DATABASES[alias] for alias in [writer, replica]
+    }
+    for alias in [writer, replica]:
+        configuration = deepcopy(connections[writer].settings_dict)
+        configuration["TEST"]["MIRROR"] = writer if alias == replica else None
+        connections.databases[alias] = configuration
+        django_settings.DATABASES[alias] = configuration
+    assert all(
+        connections.databases[alias]["NAME"] == database for alias in [writer, replica]
+    )
+    record_property(
+        "lab_database_binding", "both aliases use disposable pytest database"
+    )
     cache.clear()
-    yield
-    cache.clear()
+    try:
+        yield
+    finally:
+        cache.clear()
+        for alias in [writer, replica]:
+            connections.databases[alias] = original_connections[alias]
+            django_settings.DATABASES[alias] = original_settings[alias]
 
 
 @contextmanager
@@ -363,6 +394,11 @@ def test_live_05_entitlements(
         assert (
             result["errors"][0]["extensions"]["exception"]["code"] == "PermissionDenied"
         )
+        assert (
+            result["errors"][0]["message"]
+            == "To access this path, you need one of the following permissions: MANAGE_ORDERS"
+        )
+        assert result["errors"][0]["path"] == ["order"]
     assert (Order.objects.count(), User.objects.count()) == before
     record(record_property, "LIVE-05", _case, "ALLOWED" if allowed else "DENIED")
 
@@ -486,6 +522,11 @@ def test_live_07_legitimate_id_and_revocation(
     assert stale["data"]["me"] is None
     assert len(stale["errors"]) == 1
     assert stale["errors"][0]["extensions"]["exception"]["code"] == "InvalidTokenError"
+    assert (
+        stale["errors"][0]["message"]
+        == "Invalid token. Create new one by using tokenCreate mutation."
+    )
+    assert stale["errors"][0]["path"] == ["me"]
     _, refresh = post(
         http_service,
         REFRESH,

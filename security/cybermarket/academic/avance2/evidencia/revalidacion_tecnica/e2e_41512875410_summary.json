@@ -1,0 +1,15 @@
+{
+  "run_id": 41512875410,
+  "job_id": 125508906258,
+  "artifact_id": 13173762719,
+  "source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
+  "pass": 211,
+  "fail": 0,
+  "error": 0,
+  "skip": 0,
+  "warnings_in_log": 3,
+  "archive_sha256": "d8e017bedf4130b2191469c743b81da7e0af7d2d15e2eac1920a46748544a7d7",
+  "inner_checksums_verified": true,
+  "scope": "Existing Saleor e2e suite; separate from C10 new probes",
+  "new_c10_cases_executed": 0
+}

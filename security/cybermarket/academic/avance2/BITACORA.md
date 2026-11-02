@@ -113,3 +113,7 @@ Run 41512875410: preparación del laboratorio falló por Ubuntu 26.04 no soporta
 ## 2026-11-02 — C10 automático, roadmap 1.16
 
 Para evitar dependencia del despacho por navegador, se activa el laboratorio también en eventos pull_request. Runner ubuntu-24.04 y artefactos en fallos de setup conservados. General y linters quedan en sus workflows existentes sobre la misma fuente; opción include_regression permite repetirlos manualmente cuando corresponde. No se omiten pruebas requeridas ni se marca éxito de un job pendiente.
+
+## 2026-11-02 — Corrección del intento 02, roadmap 1.17
+
+Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. XML verificados: focal 59 PASS/2 XFAIL, unidades/validadores 42 PASS y C10 1 PASS/24 FAIL. Causa de C10: alias replica no apuntaba a test DB en hilos ASGI; se corrige configuración del laboratorio, sin tocar producto o expectativas de acceso. Se añaden mensajes/path exactos a negativos de permisos y revocación. 48 coincidencias de Semgrep pertenecen a ejemplos de .semgrep; se conserva salida original y se excluye esa carpeta de ejemplos. E2E 211 PASS del run 41512875410 archivado y verificado. Nuevo retest pendiente.
