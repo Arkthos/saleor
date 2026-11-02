@@ -45,3 +45,9 @@ Cada entrada debe identificar fecha, etapa, solicitud/objetivo, productos, cambi
 Conciliados los 23 ASVS y la unión de doce WSTG; se separan mappings históricos de relaciones nuevas, siete instrumentos y oráculos por familia. P-ORDER-01 permanece provisional y todos los dictámenes normativos NO_DETERMINADO. No hay pruebas nuevas en esta fase documental.
 
 Productos: evidencia/trazabilidad_avance2.csv, evidencia/tecnicas_avance2.csv, evidencia/criterios_y_oraculos.md. Estado: COMPLETADA. Siguiente etapa: A2-03. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-03, roadmap 1.4
+
+Revisión aplicada de trece puntos en control/datos/fallas/interfaces; Bandit 1.8.6 produjo una alerta B105 revisada como falso positivo y Semgrep 1.153.0 cero hallazgos en cinco reglas/21 archivos. Se conservan reportes y hashes; no se afirma seguridad global, SCA o CI completo.
+
+Productos: evidencia/revision_codificacion.md, evidencia/revision_manual.csv, evidencia/analisis_estatico.md, evidencia/estatica/run_manifest.json. Estado: COMPLETADA. Siguiente etapa: A2-04. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
