@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.24",
+  "roadmap_version": "1.25",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "PRUEBAS_Y_LICENCIAS_COMPLETAS_REVISANDO_CALIDAD_FINAL",
+  "status": "CONCILIACION_FINAL_CONTROL_REVISION_EXTERNA",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.24",
+    "version": "1.25",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_24"
+    "status": "GUARDADA_VERSION_1_25"
   },
   "last_completed_stage": "VT-07",
   "next_stage": "CONCILIACION_FINAL_TECNICA",
-  "next_action": "Conciliar linters y retests automáticos del control final; archivar originales y derivadas; mantener PDF/Word pausados.",
+  "next_action": "Verificar que el control externo se omite por identidad interna del repo y que los controles de política continúan aprobados. Conciliar CI final.",
   "open_items": [
     {
       "id": "D-02",
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.24",
+  "last_replicated_document_version": "1.25",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -463,5 +463,11 @@
     },
     "prior_status": "FAILED_REVIEW_REQUIRED",
     "result_evidence": "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json"
+  },
+  "technical_external_review_gate": {
+    "requirement": "External repository contributions require Licenses Reviewed maintainer label",
+    "predicate": "head.repo.full_name != github.repository",
+    "reason": "repo.fork is true for Arkthos/saleor itself and does not identify whether a PR is external",
+    "no_review_label_added": true
   }
 }

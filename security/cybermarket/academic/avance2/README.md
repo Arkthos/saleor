@@ -52,3 +52,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 VT-07 corrigió sys.path de la colección aislada; el primer run 41521406564 se conserva como intento sin análisis del SBOM.
 
 **VT-07 completada:** [Licencias y negativo GPL verificados](evidencia/revalidacion_tecnica/licencias_retest_02_summary.json). Todos los bloques previstos tienen evidencia; resta conciliación final de calidad actual.
+
+El control de revisión de licencias de contribuciones externas se conserva; la identidad del repositorio distingue las ramas internas de este fork, sin añadir etiquetas ni aprobar en nombre de otra persona.

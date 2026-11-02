@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.24. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** conciliación técnica final.
+**Versión:** 1.25. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** conciliación técnica final.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -311,3 +311,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — VT-07 intento inicial conservado:** la colección aislada con uvx y config /dev/null no incorporaba la raíz del repositorio al sys.path. ModuleNotFoundError: security; aún no se analizó el SBOM. Se fija PYTHONPATH al workspace, sin instalar el producto ni sus servicios. La misma invocación se reproduce localmente antes del nuevo CI. No cambia la selección Artistic ni la política de licencias.
 
 **2026-11-02 — VT-07 completada:** run 41521562337, selección Artistic-1.0-Perl del autor limitada a text-unidecode 1.3 y hash del wheel del lockfile. Base y HEAD: 502 entradas aprobadas, cero rechazadas; seis pruebas de límites aprobadas en cada fuente y control GPL ajeno denegado por la regla original. Stdin único eliminó el error espurio. Archivos originales y derivadas públicas con procedencia/hashes verificados; reglas LGPL/GPL/proprietary iguales. Se conserva el fallo de colección inicial. No se inventa aprobación grupal ni conformidad jurídica global. Conciliación final de calidad en curso; no se genera PDF/Word.
+
+**2026-11-02 — Revisión final del control externo:** se conserva el requisito de etiqueta de mantenedor Licenses Reviewed para contribuciones de otro repositorio. Se identifica externo por head.repo.full_name distinto de github.repository; repo.fork también es verdadero para este fork y no distingue sus propias ramas internas. No se añade etiqueta ni se inventa aprobación humana. Las reglas LGPL/GPL/proprietary y sus negativos siguen iguales. Se verificará el nuevo condicional en CI antes del cierre global.

@@ -102,6 +102,11 @@ jobs:
           assert results[0]['passed'] is False
           assert results[0]['reasons'] == ['deny-gpl: license denied by policy']
           PYCODE
+      - name: Require maintainer review for an external repository contribution
+        if: matrix.source == 'head' && github.event.pull_request.head.repo.full_name != github.repository && !contains(github.event.pull_request.labels.*.name, 'Licenses Reviewed')
+        run: |
+          echo 'An external repository contribution requires the Licenses Reviewed maintainer label.' >&2
+          exit 1
       - name: Record source and outcome
         if: always()
         env:
