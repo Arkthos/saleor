@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.2. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** planificación y línea base documentadas; conciliación de requisitos pendiente. **Etapas cerradas:** A2-00 y A2-01. **Siguiente etapa:** A2-02.
+**Versión:** 1.3. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** desarrollo autónomo autorizado en curso. **Etapas cerradas:** A2-00, A2-01, A2-02. **Siguiente etapa:** A2-03.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -94,7 +94,7 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 |---|---|---|---|
 | A2-00 | Rúbrica interpretada, roadmap y archivo documental publicados | Ninguna | COMPLETADA al publicar este paquete |
 | A2-01 | Línea base, condiciones de uso, recursos y calendario | A2-00 | COMPLETADA |
-| A2-02 | Conciliación de requisitos, instrumentos y oráculos | A2-01 | PENDIENTE |
+| A2-02 | Conciliación de requisitos, instrumentos y oráculos | A2-01 | COMPLETADA |
 | A2-03 | Revisión de codificación segura y análisis estático | A2-02 | PENDIENTE |
 | A2-04 | Plan de pruebas clasificado y selección de ampliaciones | A2-02 | PENDIENTE |
 | A2-05 | Ejecución/revalidación CI y conservación de evidencia | A2-03, A2-04 | PENDIENTE |
@@ -246,6 +246,10 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-Iniciar A2-02: conciliar los 23 ASVS y once WSTG iniciales con la matriz de 27 casos, asignar disposición a cada requisito y definir autoridad/oráculos por actor, operación y campo. Mantener la política P-ORDER-01 provisional hasta una decisión explícita. Los nombres y disponibilidad del grupo pueden incorporarse cuando el usuario los facilite; no bloquean este trabajo documental. Seguir el calendario hasta el domingo 8 a las 18:00, hora de Costa Rica.
+Continuar A2-03 conforme a sus criterios de salida. El usuario autorizó avanzar autónomamente todas las etapas preparatorias, guardando productos y reportando cada cierre. La revisión final del grupo y una carga real al campus no se simulan.
 
 **Referencias de continuidad:** [rúbrica original](https://chatgpt.com/library?file_id=libfile_a78770eba870819187a82a9dd430bbe6&account_id=personal), [primer avance presentado](https://chatgpt.com/library?file_id=libfile_df58994acdec819181215cec7155ca14&account_id=personal), [matriz histórica de pruebas](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/test_matrix.csv), [cierre experimental](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md), [plan de semana 7](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md), [plan C10](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/C10_live_validation_roadmap_team_handoff.md), [contexto curricular](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Contexto_Curricular_CY703_2026-11-02.md) y [revisión del checkpoint](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Revision_Checkpoint_CyberMarket_2026-11-02.md). Los dos últimos informes preceden a la recepción de la rúbrica específica: su antigua ausencia queda resuelta en esta planificación.
+
+## 11. Cierres del desarrollo autónomo
+
+**A2-02, 2026-11-02 — COMPLETADA:** Conciliados los 23 ASVS y la unión de doce WSTG; se separan mappings históricos de relaciones nuevas, siete instrumentos y oráculos por familia. P-ORDER-01 permanece provisional y todos los dictámenes normativos NO_DETERMINADO. No hay pruebas nuevas en esta fase documental. Productos: [trazabilidad_avance2.csv](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/trazabilidad_avance2.csv); [tecnicas_avance2.csv](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/tecnicas_avance2.csv); [criterios_y_oraculos.md](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/criterios_y_oraculos.md).

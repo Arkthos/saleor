@@ -39,3 +39,9 @@ Cierre: A2-01 COMPLETADA como preparación, con límites explícitos. Se actuali
 ## Formato para las próximas entradas
 
 Cada entrada debe identificar fecha, etapa, solicitud/objetivo, productos, cambios en evidencia o criterios, comprobaciones realmente ejecutadas, resultados y límites, decisiones, referencias al commit/run cuando existan, estado y punto exacto de reanudación. Añadir entradas; no reescribir el pasado para atribuirle conocimiento posterior.
+
+## 2026-11-02 — A2-02, roadmap 1.3
+
+Conciliados los 23 ASVS y la unión de doce WSTG; se separan mappings históricos de relaciones nuevas, siete instrumentos y oráculos por familia. P-ORDER-01 permanece provisional y todos los dictámenes normativos NO_DETERMINADO. No hay pruebas nuevas en esta fase documental.
+
+Productos: evidencia/trazabilidad_avance2.csv, evidencia/tecnicas_avance2.csv, evidencia/criterios_y_oraculos.md. Estado: COMPLETADA. Siguiente etapa: A2-03. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.

@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** planificación y línea base documentadas, A2-00 y A2-01 cerradas. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json) antes de continuar. La siguiente etapa es A2-02. La rúbrica específica recibida el 2026-11-02 reemplaza la antigua incertidumbre sobre los requisitos de esta entrega.
+**Estado:** A2-02 cerrada; siguiente A2-03. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
 
 ## Accesos principales
 
