@@ -91,3 +91,7 @@ Productos: manuscrito/auditoria_final.md, manuscrito/auditoria_final.json, manus
 ## 2026-11-02 — A2-10, roadmap 1.11
 
 Preparación de entrega terminada con PDF de trece páginas, editable, fuente, auditoría, guía de defensa y manifest de hashes. Versión congelada avance2-revision-2026-11-02-v1. PDF privado y Word guardados; PDF público con nombre del equipo en GitHub. A2-10 EN_CURSO: revisión grupal y campus pendientes. No se atribuyen aprobación, reunión, contribuciones individuales o entrega inexistentes.
+
+## 2026-11-02 — VT-00 reapertura, roadmap 1.12
+
+Usuario ordena completar todas las pruebas necesarias antes de generar entregable. Se pausa generación, se reabren integración/C10 y se define VT-01–06. Checkout limpio desde 34891bfd. Capacidades locales: UID 0 sin capacidades, sin Docker/PostgreSQL; unshare no permite mapa UID. No se eluden las restricciones. Se amplía el workflow focal para incluir unidades nuevas. Ningún resultado histórico se transfiere al HEAD nuevo.

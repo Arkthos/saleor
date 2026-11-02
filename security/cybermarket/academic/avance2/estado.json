@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.11",
+  "roadmap_version": "1.12",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "LISTO_PARA_REVISION_GRUPAL",
+  "status": "VALIDACION_TECNICA_REABIERTA",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.11",
+    "version": "1.12",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_11"
+    "status": "GUARDADA_VERSION_1_12"
   },
   "last_completed_stage": "A2-09",
-  "next_stage": "A2-10",
-  "next_action": "Revisión real del grupo del PDF y autoría; resolver comentarios, cargar en campus y conservar comprobante verificable antes del cierre.",
+  "next_stage": "VT-01",
+  "next_action": "Ejecutar integración actual y C10 en laboratorio controlado; conservar resultados y corregir fallos antes de generar otra versión académica.",
   "open_items": [
     {
       "id": "D-02",
@@ -152,7 +152,7 @@
     {
       "id": "A2-05",
       "title": "Ejecución y archivo CI",
-      "status": "COMPLETADA",
+      "status": "REABIERTA",
       "depends_on": [
         "A2-03",
         "A2-04"
@@ -167,12 +167,13 @@
         "evidencia/historica_2026-10-20/archivo_verificado_manifest.json"
       ],
       "completed_on": "2026-11-02",
-      "target_date": "2026-11-04"
+      "target_date": "2026-11-04",
+      "prior_completion_scope": "Cierre anterior limitado; no acredita integración nueva ni C10."
     },
     {
       "id": "A2-06",
       "title": "Validación desplegada o exclusión motivada",
-      "status": "COMPLETADA",
+      "status": "REABIERTA",
       "depends_on": [
         "A2-04",
         "A2-05"
@@ -184,12 +185,13 @@
         "evidencia/decision_c10.md"
       ],
       "completed_on": "2026-11-02",
-      "target_date": "2026-11-05"
+      "target_date": "2026-11-05",
+      "prior_completion_scope": "Cierre anterior limitado; no acredita integración nueva ni C10."
     },
     {
       "id": "A2-07",
       "title": "Análisis y diez hallazgos como mínimo",
-      "status": "COMPLETADA",
+      "status": "PENDIENTE_REANALISIS",
       "depends_on": [
         "A2-03",
         "A2-05",
@@ -210,7 +212,7 @@
     {
       "id": "A2-08",
       "title": "Manuscrito y anexos",
-      "status": "COMPLETADA",
+      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
       "depends_on": [
         "A2-07"
       ],
@@ -229,7 +231,7 @@
     {
       "id": "A2-09",
       "title": "Auditoría y PDF",
-      "status": "COMPLETADA",
+      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
       "depends_on": [
         "A2-08"
       ],
@@ -249,7 +251,7 @@
     {
       "id": "A2-10",
       "title": "Revisión grupal y entrega",
-      "status": "EN_CURSO",
+      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
       "depends_on": [
         "A2-09"
       ],
@@ -271,8 +273,8 @@
   ],
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
-  "delivery_status": "PREPARADO_NO_ENTREGADO",
-  "last_replicated_document_version": "1.11",
+  "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
+  "last_replicated_document_version": "1.12",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -289,5 +291,43 @@
     "public_pdf": "manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf",
     "pages": 13
   },
-  "delivery_manifest": "manuscrito/entrega/manifest.json"
+  "delivery_manifest": "manuscrito/entrega/manifest.json",
+  "technical_reopening": {
+    "requested_by_user": true,
+    "source_head": "34891bfd8683b0364fa26b841aae8db3e48b25e7",
+    "artifact_generation_allowed": false,
+    "gate": "No generar nuevo entregable hasta cerrar toda la validación técnica necesaria."
+  },
+  "technical_stages": [
+    {
+      "id": "VT-01",
+      "title": "Entorno y revalidación integrada actual",
+      "status": "EN_CURSO"
+    },
+    {
+      "id": "VT-02",
+      "title": "Estática y comprobaciones de calidad actualizadas",
+      "status": "PENDIENTE"
+    },
+    {
+      "id": "VT-03",
+      "title": "HTTP real actores campos y límites de acceso",
+      "status": "PENDIENTE"
+    },
+    {
+      "id": "VT-04",
+      "title": "HTTPS navegador CSRF cookies CORS proxy",
+      "status": "PENDIENTE"
+    },
+    {
+      "id": "VT-05",
+      "title": "Ciclo legítimo de UUID y seguridad de estado",
+      "status": "PENDIENTE"
+    },
+    {
+      "id": "VT-06",
+      "title": "Regresión general E2E evidencia y cierre de laboratorio",
+      "status": "PENDIENTE"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** A2-00 a A2-09 completadas; preparación de A2-10 terminada. Revisión grupal y carga al campus pendientes. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
+**Estado:** VALIDACIÓN TÉCNICA REABIERTA. Generación de entregable pausada hasta cerrar VT-01–VT-06. Los informes previos son fotografías del alcance anterior. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
 
 ## Accesos principales
 

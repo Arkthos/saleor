@@ -5,6 +5,8 @@ on:
     paths:
       - "saleor/graphql/tests/test_cybermarket_security_*.py"
       - "security/cybermarket/*.py"
+      - "tests/test_cybermarket_security_units.py"
+      - "tests/test_cybermarket_evidence_validator.py"
       - "security/cybermarket/test_matrix.csv"
       - ".github/workflows/cybermarket-security.yaml"
   workflow_dispatch:
@@ -57,6 +59,13 @@ jobs:
         run: uv sync --locked
       - name: Test evidence validator regression gates
         run: uv run pytest security/cybermarket/test_validate_evidence.py -q
+      - name: Run new security unit properties
+        run: |
+          mkdir -p security-results
+          uv run pytest tests/test_cybermarket_security_units.py \
+            tests/test_cybermarket_evidence_validator.py -q -n 0 \
+            --junitxml=security-results/cybermarket-units.xml \
+            -o junit_family=legacy
       - name: Run focused tests and collect JUnit XML
         run: |
           mkdir -p security-results
