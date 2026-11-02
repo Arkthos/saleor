@@ -70,3 +70,113 @@ jobs:
           display-options: fEX
           fail-on-empty: true
           title: E2E core test results
+
+      - name: Sanitize E2E evidence
+        if: always()
+        run: |
+          mkdir -p technical-results
+          if [ -f e2e-test-results.xml ]; then cp e2e-test-results.xml technical-results/e2e.xml; fi
+          uv run python security/cybermarket/live/tests/sanitize_evidence.py
+      - name: Preserve E2E JUnit
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: cybermarket-current-e2e-evidence
+          path: technical-results/
+          if-no-files-found: error
+          retention-days: 30
+
+  cybermarket-technical-completion:
+    name: CyberMarket current integration and C10 loopback lab
+    if: github.event_name == 'workflow_dispatch' && github.repository == 'Arkthos/saleor'
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    permissions:
+      contents: read
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_PASSWORD: saleor
+          POSTGRES_USER: saleor
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      cache:
+        image: valkey/valkey:8.1-alpine
+        ports: ['6379:6379']
+        options: >-
+          --health-cmd "valkey-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URL: postgres://saleor:saleor@127.0.0.1:5432/saleor
+      CACHE_URL: redis://127.0.0.1:6379/0
+      SECRET_KEY: cybermarket-disposable-ci-bootstrap-only
+      ALLOWED_CLIENT_HOSTS: 127.0.0.1,localhost
+      SEND_USAGE_TELEMETRY: 'False'
+      CYBERMARKET_SOURCE_SHA: ${{ github.sha }}
+      CC: gcc
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          python-version: '3.12'
+          enable-cache: true
+      - name: Install laboratory dependencies
+        id: lab_install
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev libnss3-tools
+          uv sync --locked
+          uv run --with playwright==1.56.0 python -m playwright install --with-deps chromium
+      - name: Capture source dependency and service provenance
+        run: |
+          mkdir -p technical-results
+          uv run python security/cybermarket/live/tests/collect_environment.py
+          docker image inspect $(docker inspect --format '{{.Image}}' '${{ job.services.postgres.id }}') --format '{{json .RepoDigests}}' > technical-results/postgres-digests.json
+          docker image inspect $(docker inspect --format '{{.Image}}' '${{ job.services.cache.id }}') --format '{{json .RepoDigests}}' > technical-results/cache-digests.json
+      - name: Focused integration and independent units
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: |
+          uv run pytest saleor/graphql/tests/test_cybermarket_security_*.py -q -n 0 --reuse-db --junitxml=technical-results/focused.xml -o junit_family=legacy
+      - name: Independent unit and evidence-validator regression
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: |
+          uv run pytest tests/test_cybermarket_security_units.py tests/test_cybermarket_evidence_validator.py security/cybermarket/test_validate_evidence.py --noconftest -q -n 0 --junitxml=technical-results/units.xml -o junit_family=legacy
+      - name: Execute real HTTP HTTPS and browser C10 probes
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: |
+          uv run --with playwright==1.56.0 pytest security/cybermarket/live/tests/test_http_security.py security/cybermarket/live/tests/test_browser_transport.py -q -n 0 --reuse-db --allow-hosts=127.0.0.1,localhost,::1 --junitxml=technical-results/live.xml -o junit_family=legacy --tb=short
+      - name: General regression against current checkout
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: |
+          uv run pytest -m 'not e2e' -q -n 4 --reuse-db --junitxml=technical-results/general.xml -o junit_family=legacy --tb=short
+      - name: Current scoped static analysis
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: |
+          set +e
+          uv tool run --from bandit==1.8.6 bandit -r saleor/core/auth.py saleor/core/auth_backend.py saleor/core/jwt.py saleor/core/jwt_manager.py saleor/graphql/account/mutations/authentication saleor/graphql/order/schema.py saleor/graphql/order/resolvers.py saleor/graphql/order/types.py -l -ii -f json -o technical-results/bandit.json
+          bandit_status=$?
+          set -e
+          printf '{"exit_code":%s,"interpretation":"manual review required"}\n' "$bandit_status" > technical-results/bandit-run.json
+          if [ "$bandit_status" -gt 1 ]; then exit "$bandit_status"; fi
+          uv tool run --from semgrep==1.153.0 semgrep scan --config .semgrep --metrics off --disable-version-check --json --output technical-results/semgrep.json
+      - name: Linters and schema checks
+        if: ${{ !cancelled() && steps.lab_install.outcome == 'success' }}
+        run: uv run pre-commit run --all-files --show-diff-on-failure
+      - name: Sanitize and hash evidence on every outcome
+        if: always()
+        run: uv run python security/cybermarket/live/tests/sanitize_evidence.py
+      - name: Preserve technical evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: cybermarket-current-technical-evidence
+          path: technical-results/
+          if-no-files-found: error
+          retention-days: 30

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.12",
+  "roadmap_version": "1.13",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "VALIDACION_TECNICA_REABIERTA",
+  "status": "VALIDACION_TECNICA_BLOQUEADA_POR_CI",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.12",
+    "version": "1.13",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_12"
+    "status": "GUARDADA_VERSION_1_13"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "VT-01",
-  "next_action": "Ejecutar integración actual y C10 en laboratorio controlado; conservar resultados y corregir fallos antes de generar otra versión académica.",
+  "next_action": "Maintainer restores workflow execution and runs e2e.yml against research/cybermarket-security-tests-v1; resume by inspecting resulting source SHA and downloading artifacts.",
   "open_items": [
     {
       "id": "D-02",
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.12",
+  "last_replicated_document_version": "1.13",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -302,7 +302,12 @@
     {
       "id": "VT-01",
       "title": "Entorno y revalidación integrada actual",
-      "status": "EN_CURSO"
+      "status": "BLOQUEADA_CI_DESHABILITADO",
+      "preparation_status": "COMPLETADA",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/preflight.json",
+        "security/cybermarket/live/README.md"
+      ]
     },
     {
       "id": "VT-02",
@@ -329,5 +334,13 @@
       "title": "Regresión general E2E evidencia y cierre de laboratorio",
       "status": "PENDIENTE"
     }
-  ]
+  ],
+  "technical_blocker": {
+    "source": "Visible GitHub Actions repository page",
+    "url": "https://github.com/Arkthos/saleor/actions",
+    "message": "Workflows are not currently being run on this fork due to the scale of GitHub Actions usage. A repository maintainer can choose to re-enable these.",
+    "observed_signed_in": false,
+    "connector_dispatch_available": false,
+    "local_postgresql_or_docker_available": false
+  }
 }

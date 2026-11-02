@@ -216,7 +216,8 @@ test.cmd="pytest --reuse-db"
 test.help = "Run tests with db reuse to speed up testing time"
 
 [tool.deptry]
-extend_exclude = ["conftest\\.py", ".*/conftest\\.py", ".*/tests/.*"]
+# This optional document generator uses the artifact runtime, not Saleor dependencies.
+extend_exclude = ['conftest\.py', '.*/conftest\.py', '.*/tests/.*', 'security/cybermarket/academic/avance2/manuscrito/generar_docx\.py']
 
 [tool.deptry.package_module_name_map]
 graphql-core = "graphql"

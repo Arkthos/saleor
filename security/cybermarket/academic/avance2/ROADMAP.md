@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.11. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** listo para revisión grupal; preparación técnica y documental terminada; entrega no realizada. **Etapas cerradas:** A2-00, A2-01, A2-02, A2-03, A2-04, A2-05, A2-06, A2-07, A2-08, A2-09. **Siguiente etapa:** A2-10.
+**Versión:** 1.13. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica abierta, bloqueada por workflows deshabilitados en GitHub; entregable pausado. **Siguiente etapa:** VT-01.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -68,7 +68,9 @@ Los resultados anteriores pertenecen a sus SHAs y runs. Un commit documental de 
 
 La frase histórica de que no hubo pruebas deja de describir el estado global actual; permanece válida como fotografía de la primera etapa. El segundo avance narrará las ejecuciones posteriores con precisión temporal. Las mejoras internas detectadas no deben presentarse como observaciones del profesor.
 
-## 5. Productos exigidos y criteubierta |
+## 5. Productos exigidos y criterio de aceptación
+
+| ID | Obligación | Producto de la entrega | Criterio para considerarla cubierta |
 |---|---|---|---|
 | R1 | Atender retroalimentación del avance 1 | Nota de continuidad y registro de ajustes | Se indica que no hay retroalimentación recibida; si llega, se procesa cada observación sin inventarla |
 | R2 | Buenas prácticas de codificación segura | Revisión aplicada de componentes relevantes | Cada práctica incluye fundamento, implementación observada, evidencia, limitación y recomendación |
@@ -244,6 +246,8 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
+**Bloqueo actual verificado:** GitHub deshabilitó los workflows del fork por escala de uso. Un mantenedor debe reactivar la ejecución y lanzar **e2e suite**, rama `research/cybermarket-security-tests-v1`. El conjunto técnico ya está preparado. Los siete casos LIVE siguen NOT_EXECUTED hasta obtener resultados reales.
+
 Por instrucción del usuario, completar todas las pruebas técnicas necesarias antes de generar otra versión del entregable. Se reabren A2-05/A2-06 y queda pendiente el reanálisis de A2-07. A2-08/A2-09/A2-10 quedan pausadas. Los PDF anteriores se conservan como fotografías del alcance anterior; no son una entrega técnicamente definitiva.
 
 | Bloque | Objetivo | Criterio de cierre |
@@ -282,3 +286,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 ## 12. Reapertura técnica solicitada por el usuario
 
 **2026-11-02 — VT-00 completada:** entregable pausado; A2-05/A2-06 reabiertas. Se comprobó el HEAD 34891bfd y se preparó un checkout limpio. El entorno sigue sin Docker/PostgreSQL y no admite cambio de UID; se prioriza un laboratorio efímero en CI con servicios reales. El workflow focal no seleccionaba las unidades nuevas de tests/; se corrige su cobertura y sus rutas de activación. No hay nueva ejecución integrada declarada todavía.
+
+**2026-11-02 — VT-01 preparación completada, ejecución BLOQUEADA:** implementadas 25 variantes C10 y workflow integral manual en e2e.yml. Ruff, formato, AST, YAML, lockfile y colección verificados. Smoke local HTTP/HTTPS con CA válida y teardown aprobado tras corregir un fallo inicial de cierre. No son resultados de casos GraphQL con DB ni del navegador. GitHub muestra workflows deshabilitados por escala de uso; requiere reactivación del mantenedor. Consultar [preflight](evidencia/revalidacion_tecnica/preflight.json) y [laboratorio](../../live/README.md). No se genera otro entregable hasta cerrar el gate técnico.

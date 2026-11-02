@@ -95,3 +95,9 @@ Preparación de entrega terminada con PDF de trece páginas, editable, fuente, a
 ## 2026-11-02 — VT-00 reapertura, roadmap 1.12
 
 Usuario ordena completar todas las pruebas necesarias antes de generar entregable. Se pausa generación, se reabren integración/C10 y se define VT-01–06. Checkout limpio desde 34891bfd. Capacidades locales: UID 0 sin capacidades, sin Docker/PostgreSQL; unshare no permite mapa UID. No se eluden las restricciones. Se amplía el workflow focal para incluir unidades nuevas. Ningún resultado histórico se transfiere al HEAD nuevo.
+
+## 2026-11-02 — VT-01 preparación, roadmap 1.13
+
+Conjunto C10 implementado; 25 variantes recolectadas sin ejecutarlas, Ruff/formato/AST/YAML/lockfile correctos. Smoke real HTTP y HTTPS contra health sin DB: ambos 200, CA verificada y teardown final aprobado. Intento inicial de teardown HTTPS falló y quedó registrado; se corrigieron tiempos de cierre y conexiones. Se amplió e2e.yml con job integral manual y artefactos depurados. Sin modificaciones funcionales del producto.
+
+Se cerró/reabrió el mismo PR borrador para comprobar activación; no hubo runs nuevos. La UI pública confirmó la causa: workflows deshabilitados en el fork por escala de uso, no un resultado de tests. Navegador sin sesión de mantenedor; conector sin dispatch. Se requiere reactivación y lanzamiento del mantenedor. No se marca ningún LIVE PASS. Entregable sigue pausado.
