@@ -1,0 +1,565 @@
+{
+  "cases": [
+    {
+      "case_id": "CM-T01",
+      "evidence_type": "security_contract",
+      "observation_ids": "H11",
+      "outcome": "PASS",
+      "risk_ids": "R10",
+      "test_function": "test_cm_t01_me_anonymous_and_authenticated",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T02",
+      "evidence_type": "security_contract",
+      "observation_ids": "H08",
+      "outcome": "PASS",
+      "risk_ids": "R07",
+      "test_function": "test_cm_t02_revoke_invalidates_both_credentials",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T03",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05-H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t03_refresh_transport_csrf_matrix",
+      "variant": "test_cm_t03_refresh_transport_csrf_matrix[argument-no-csrf]"
+    },
+    {
+      "case_id": "CM-T03",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05-H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t03_refresh_transport_csrf_matrix",
+      "variant": "test_cm_t03_refresh_transport_csrf_matrix[cookie-bad-csrf]"
+    },
+    {
+      "case_id": "CM-T03",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05-H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t03_refresh_transport_csrf_matrix",
+      "variant": "test_cm_t03_refresh_transport_csrf_matrix[cookie-missing-csrf]"
+    },
+    {
+      "case_id": "CM-T03",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05-H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t03_refresh_transport_csrf_matrix",
+      "variant": "test_cm_t03_refresh_transport_csrf_matrix[cookie-valid-csrf]"
+    },
+    {
+      "case_id": "CM-T04",
+      "evidence_type": "security_contract",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R09",
+      "test_function": "test_cm_t04_order_external_reference_requires_manage_orders",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T05",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t05_order_new_id_anonymous_field_visibility",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T06",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t06_new_uuid_order_actor_matrix_characterization",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T07",
+      "evidence_type": "security_contract",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t07_old_id_owner_vs_nonowner_field_masking",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T08",
+      "evidence_type": "security_contract",
+      "observation_ids": "H03;H04;H09",
+      "outcome": "PASS",
+      "risk_ids": "R04;R08",
+      "test_function": "test_cm_t08_create_token_audience_and_expiry",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T09",
+      "evidence_type": "security_contract",
+      "observation_ids": "H03",
+      "outcome": "PASS",
+      "risk_ids": "R03",
+      "test_function": "test_cm_t09_token_create_invalid_credentials",
+      "variant": "test_cm_t09_token_create_invalid_credentials[known]"
+    },
+    {
+      "case_id": "CM-T09",
+      "evidence_type": "security_contract",
+      "observation_ids": "H03",
+      "outcome": "PASS",
+      "risk_ids": "R03",
+      "test_function": "test_cm_t09_token_create_invalid_credentials",
+      "variant": "test_cm_t09_token_create_invalid_credentials[unknown]"
+    },
+    {
+      "case_id": "CM-T10",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05;H09",
+      "outcome": "PASS",
+      "risk_ids": "R05",
+      "test_function": "test_cm_t10_access_token_cannot_be_used_as_refresh",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T11",
+      "evidence_type": "security_contract",
+      "observation_ids": "H05;H09",
+      "outcome": "PASS",
+      "risk_ids": "R08",
+      "test_function": "test_cm_t11_refresh_preserves_audience",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T12",
+      "evidence_type": "security_contract",
+      "observation_ids": "H11",
+      "outcome": "PASS",
+      "risk_ids": "R10",
+      "test_function": "test_cm_t12_user_query_requires_privileges",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T13",
+      "evidence_type": "security_contract",
+      "observation_ids": "H11",
+      "outcome": "PASS",
+      "risk_ids": "R10",
+      "test_function": "test_cm_t13_staff_permissions_partition_customer_and_staff_records",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T14",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t14_refresh_cookie_flags_by_debug_setting",
+      "variant": "test_cm_t14_refresh_cookie_flags_by_debug_setting[False-True-None]"
+    },
+    {
+      "case_id": "CM-T14",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H07",
+      "outcome": "PASS",
+      "risk_ids": "R06",
+      "test_function": "test_cm_t14_refresh_cookie_flags_by_debug_setting",
+      "variant": "test_cm_t14_refresh_cookie_flags_by_debug_setting[True-False-Lax]"
+    },
+    {
+      "case_id": "CM-T15",
+      "evidence_type": "security_contract",
+      "observation_ids": "H13",
+      "outcome": "PASS",
+      "risk_ids": "R12",
+      "test_function": "test_cm_t15_graphql_alias_limit_denies_excess",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T16",
+      "evidence_type": "security_contract",
+      "observation_ids": "H13",
+      "outcome": "PASS",
+      "risk_ids": "R12",
+      "test_function": "test_cm_t16_graphql_mutation_count_limit_denies_excess",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T17",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H01",
+      "outcome": "PASS",
+      "risk_ids": "R01",
+      "test_function": "test_cm_t17_authentication_header_precedence",
+      "variant": "test_cm_t17_authentication_header_precedence[None-Basic ignored-None]"
+    },
+    {
+      "case_id": "CM-T17",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H01",
+      "outcome": "PASS",
+      "risk_ids": "R01",
+      "test_function": "test_cm_t17_authentication_header_precedence",
+      "variant": "test_cm_t17_authentication_header_precedence[None-JWT fallback-fallback]"
+    },
+    {
+      "case_id": "CM-T17",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H01",
+      "outcome": "PASS",
+      "risk_ids": "R01",
+      "test_function": "test_cm_t17_authentication_header_precedence",
+      "variant": "test_cm_t17_authentication_header_precedence[preferred-Bearer fallback-preferred]"
+    },
+    {
+      "case_id": "CM-T18",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H14",
+      "outcome": "PASS",
+      "risk_ids": "R01;R02",
+      "test_function": "test_cm_t18_forwarded_client_ip_precedence",
+      "variant": "test_cm_t18_forwarded_client_ip_precedence[198.51.100.20, 203.0.113.22-198.51.100.20]"
+    },
+    {
+      "case_id": "CM-T18",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H14",
+      "outcome": "PASS",
+      "risk_ids": "R01;R02",
+      "test_function": "test_cm_t18_forwarded_client_ip_precedence",
+      "variant": "test_cm_t18_forwarded_client_ip_precedence[203.0.113.42-203.0.113.42]"
+    },
+    {
+      "case_id": "CM-T18",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H14",
+      "outcome": "PASS",
+      "risk_ids": "R01;R02",
+      "test_function": "test_cm_t18_forwarded_client_ip_precedence",
+      "variant": "test_cm_t18_forwarded_client_ip_precedence[untrusted-not-an-ip-192.0.2.10]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[1-0-1]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[1-10-3600]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[1-3-4]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[100-1-3600]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[11-0-2]"
+    },
+    {
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "observation_ids": "H02",
+      "outcome": "PASS",
+      "risk_ids": "R02",
+      "test_function": "test_cm_t19_throttling_delay_algorithm",
+      "variant": "test_cm_t19_throttling_delay_algorithm[21-0-4]"
+    },
+    {
+      "case_id": "CM-T20",
+      "evidence_type": "security_contract",
+      "observation_ids": "H15",
+      "outcome": "PASS",
+      "risk_ids": "R13",
+      "test_function": "test_cm_t20_delegated_application_permission_intersection",
+      "variant": "test_cm_t20_delegated_application_permission_intersection[disjoint]"
+    },
+    {
+      "case_id": "CM-T20",
+      "evidence_type": "security_contract",
+      "observation_ids": "H15",
+      "outcome": "PASS",
+      "risk_ids": "R13",
+      "test_function": "test_cm_t20_delegated_application_permission_intersection",
+      "variant": "test_cm_t20_delegated_application_permission_intersection[overlap]"
+    },
+    {
+      "case_id": "CM-T21",
+      "evidence_type": "security_contract",
+      "observation_ids": "H09",
+      "outcome": "PASS",
+      "risk_ids": "R08",
+      "test_function": "test_cm_t21_unsigned_jwt_is_not_accepted",
+      "variant": ""
+    },
+    {
+      "case_id": "CM-T22",
+      "evidence_type": "proposed_policy_expected_fail",
+      "observation_ids": "H12",
+      "outcome": "XFAIL",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t22_proposed_private_order_uuid_policy",
+      "variant": "test_cm_t22_proposed_private_order_uuid_policy[anonymous]"
+    },
+    {
+      "case_id": "CM-T22",
+      "evidence_type": "proposed_policy_expected_fail",
+      "observation_ids": "H12",
+      "outcome": "XFAIL",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t22_proposed_private_order_uuid_policy",
+      "variant": "test_cm_t22_proposed_private_order_uuid_policy[unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[billingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[billingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[shippingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[shippingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[userEmail-anonymous]"
+    },
+    {
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t23_uuid_nonowner_field_characterization",
+      "variant": "test_cm_t23_uuid_nonowner_field_characterization[userEmail-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T24",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t24_uuid_owner_positive_control",
+      "variant": "test_cm_t24_uuid_owner_positive_control[billingAddress.streetAddress1]"
+    },
+    {
+      "case_id": "CM-T24",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t24_uuid_owner_positive_control",
+      "variant": "test_cm_t24_uuid_owner_positive_control[shippingAddress.streetAddress1]"
+    },
+    {
+      "case_id": "CM-T24",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t24_uuid_owner_positive_control",
+      "variant": "test_cm_t24_uuid_owner_positive_control[userEmail]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[billingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[billingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[shippingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[shippingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[userEmail-anonymous]"
+    },
+    {
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t25_legacy_nonowner_field_characterization",
+      "variant": "test_cm_t25_legacy_nonowner_field_characterization[userEmail-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T26",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t26_missing_uuid_no_order",
+      "variant": "test_cm_t26_missing_uuid_no_order[anonymous]"
+    },
+    {
+      "case_id": "CM-T26",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t26_missing_uuid_no_order",
+      "variant": "test_cm_t26_missing_uuid_no_order[unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[billingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[billingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[shippingAddress.streetAddress1-anonymous]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[shippingAddress.streetAddress1-unrelated_customer]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[userEmail-anonymous]"
+    },
+    {
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "observation_ids": "H12",
+      "outcome": "PASS",
+      "risk_ids": "R11",
+      "test_function": "test_cm_t27_legacy_exact_mask_characterization",
+      "variant": "test_cm_t27_legacy_exact_mask_characterization[userEmail-unrelated_customer]"
+    }
+  ],
+  "counts": {
+    "ERROR": 0,
+    "FAIL": 0,
+    "PASS": 59,
+    "SKIP": 0,
+    "XFAIL": 2
+  },
+  "junit_sha256": "60c5168a3bba6657827c576f7ea0638ba55dd7dbf9d2e6e85dd5a06eef6f3a40",
+  "note": "Runtime outcomes only; PASS is not ASVS conformance; XFAIL is an unmet provisional policy.",
+  "schema": "cybermarket.junit.summary.v1",
+  "source_commit": "b0604014dab69125a4a535f1ece5828be99ea3c8",
+  "test_count": 61
+}

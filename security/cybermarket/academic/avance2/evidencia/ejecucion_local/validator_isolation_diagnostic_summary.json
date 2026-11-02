@@ -1,0 +1,7 @@
+{
+  "source_diagnostic": "validator_isolation_diagnostic.xml",
+  "testcases": 12,
+  "failures": 0,
+  "errors": 0,
+  "reason": "Validators isolated using --noconftest"
+}

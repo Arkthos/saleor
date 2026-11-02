@@ -1,0 +1,59 @@
+[
+  {
+    "archive": "cybermarket-security-junit_39443927080.zip",
+    "sha256_verified": "9df3dd37e29191e7b5de7eeb71d2c3e72e3622f377fc4fd87ba68e6ff978a892",
+    "bytes": 6190,
+    "component_checksums_verified": 3,
+    "files": [
+      "SHA256SUMS",
+      "cybermarket-coverage.json",
+      "cybermarket-junit.xml",
+      "cybermarket-summary.json"
+    ],
+    "xml_stats": [
+      {
+        "name": "cybermarket-junit.xml",
+        "testcases": 61,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 2,
+        "skip_types": {
+          "pytest.xfail": 2
+        }
+      }
+    ]
+  },
+  {
+    "archive": "cybermarket-static-review_39443927080.zip",
+    "sha256_verified": "a36dca8030e8a363bfe46ee4fc7f4fdaff942cc88a72b78dff3da18af8c411ee",
+    "bytes": 1265,
+    "component_checksums_verified": 2,
+    "files": [
+      "SHA256SUMS",
+      "bandit.json",
+      "bandit-run.json"
+    ],
+    "xml_stats": []
+  },
+  {
+    "archive": "pytest-results_39443927003.zip",
+    "sha256_verified": "767ba4d59e2f142e0509b7c23e63f47f232fd415c72e8998e26d4a9395bc07c6",
+    "bytes": 298475,
+    "component_checksums_verified": 0,
+    "files": [
+      "test-results.xml"
+    ],
+    "xml_stats": [
+      {
+        "name": "test-results.xml",
+        "testcases": 17615,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 2,
+        "skip_types": {
+          "pytest.xfail": 2
+        }
+      }
+    ]
+  }
+]

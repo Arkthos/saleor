@@ -7,11 +7,12 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
     hooks:
+      # Preserve byte-level hashes of archived machine-generated evidence.
       - id: trailing-whitespace
-        exclude: ^templates/templated_email/compiled/
+        exclude: ^(templates/templated_email/compiled/|security/cybermarket/academic/avance2/evidencia/(ejecucion_local|historica_2026-10-20)/)
         exclude_types: [svg, graphql]
       - id: end-of-file-fixer
-        exclude: ^templates/templated_email/compiled/
+        exclude: ^(templates/templated_email/compiled/|security/cybermarket/academic/avance2/evidencia/(ejecucion_local|historica_2026-10-20)/)
         exclude_types: [svg]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit

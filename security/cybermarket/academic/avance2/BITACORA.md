@@ -57,3 +57,9 @@ Productos: evidencia/revision_codificacion.md, evidencia/revision_manual.csv, ev
 Clasificados los 27 casos históricos por cuerpo/dependencias y documentada la dependencia de fixtures globales. Diseñadas diez unidades CM-U para firma, exp, nbf, CSRF, ofuscación y bordes; oráculos independientes y resultados todavía no ejecutados en este cierre de diseño.
 
 Productos: evidencia/plan_pruebas.md, evidencia/clasificacion_pruebas.csv. Estado: COMPLETADA. Siguiente etapa: A2-05. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-05, roadmap 1.6
+
+Ejecutadas 30 variantes de diez unidades y doce invocaciones de validadores: 42 PASS sin warnings en la corrida final. Recuperados/verificados tres ZIP históricos y checksums internos disponibles; XML focal 59 PASS/2 XFAIL y general 17613 PASS/2 XFAIL reconciliados. Se preservan intentos iniciales y límites; no hay revalidación integrada nueva ni despliegue.
+
+Productos: evidencia/resultados_ejecucion.md, evidencia/resultados_ci_manifest.json, evidencia/ejecucion_local/isolated.xml, evidencia/historica_2026-10-20/archivo_verificado_manifest.json. Estado: COMPLETADA. Siguiente etapa: A2-06. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.

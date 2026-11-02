@@ -1,0 +1,210 @@
+{
+  "errors": [
+    {
+      "filename": "./saleor/core/auth.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/core/auth_backend.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/core/jwt.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/core/jwt_manager.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/graphql/order/resolvers.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/graphql/order/schema.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "./saleor/graphql/order/types.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/__init__.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/create_token.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/deactivate_all_user_tokens.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/external_authentication_url.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/external_logout.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/external_obtain_access_tokens.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/external_refresh.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/external_verify.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/password_change.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/refresh_token.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/request_password_reset.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/set_password.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/utils.py",
+      "reason": "exception while scanning file"
+    },
+    {
+      "filename": "saleor/graphql/account/mutations/authentication/verify_token.py",
+      "reason": "exception while scanning file"
+    }
+  ],
+  "generated_at": "2026-10-20T14:58:10Z",
+  "metrics": {
+    "./saleor/core/auth.py": {
+      "loc": 11,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/core/auth_backend.py": {
+      "loc": 138,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/core/jwt.py": {
+      "loc": 199,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/core/jwt_manager.py": {
+      "loc": 191,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/graphql/order/resolvers.py": {
+      "loc": 112,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/graphql/order/schema.py": {
+      "loc": 304,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./saleor/graphql/order/types.py": {
+      "loc": 2825,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 4629,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/__init__.py": {
+      "loc": 26,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/create_token.py": {
+      "loc": 108,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/deactivate_all_user_tokens.py": {
+      "loc": 22,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/external_authentication_url.py": {
+      "loc": 38,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/external_logout.py": {
+      "loc": 30,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/external_obtain_access_tokens.py": {
+      "loc": 53,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/external_refresh.py": {
+      "loc": 51,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/external_verify.py": {
+      "loc": 37,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/password_change.py": {
+      "loc": 61,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/refresh_token.py": {
+      "loc": 129,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/request_password_reset.py": {
+      "loc": 95,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/set_password.py": {
+      "loc": 85,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/utils.py": {
+      "loc": 68,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "saleor/graphql/account/mutations/authentication/verify_token.py": {
+      "loc": 46,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": []
+}
