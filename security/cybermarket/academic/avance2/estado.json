@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.6",
+  "roadmap_version": "1.7",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.6",
+    "version": "1.7",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_6"
+    "status": "GUARDADA_VERSION_1_7"
   },
-  "last_completed_stage": "A2-05",
-  "next_stage": "A2-06",
-  "next_action": "Continuar A2-06 conforme al roadmap y alcance documentado.",
+  "last_completed_stage": "A2-06",
+  "next_stage": "A2-07",
+  "next_action": "Continuar A2-07 conforme al roadmap y alcance documentado.",
   "open_items": [
     {
       "id": "D-02",
@@ -172,7 +172,7 @@
     {
       "id": "A2-06",
       "title": "Validación desplegada o exclusión motivada",
-      "status": "PENDIENTE",
+      "status": "COMPLETADA",
       "depends_on": [
         "A2-04",
         "A2-05"
@@ -180,8 +180,10 @@
       "planned_outputs": [
         "evidencia/decision_c10.md"
       ],
-      "evidence_refs": [],
-      "completed_on": null,
+      "evidence_refs": [
+        "evidencia/decision_c10.md"
+      ],
+      "completed_on": "2026-11-02",
       "target_date": "2026-11-05"
     },
     {
@@ -249,7 +251,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": false,
   "delivery_status": "NO_PREPARADA",
-  "last_replicated_document_version": "1.6",
+  "last_replicated_document_version": "1.7",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {

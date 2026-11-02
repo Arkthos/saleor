@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.6. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** desarrollo autónomo autorizado en curso. **Etapas cerradas:** A2-00, A2-01, A2-02, A2-03, A2-04, A2-05. **Siguiente etapa:** A2-06.
+**Versión:** 1.7. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** desarrollo autónomo autorizado en curso. **Etapas cerradas:** A2-00, A2-01, A2-02, A2-03, A2-04, A2-05, A2-06. **Siguiente etapa:** A2-07.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -98,7 +98,7 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 | A2-03 | Revisión de codificación segura y análisis estático | A2-02 | COMPLETADA |
 | A2-04 | Plan de pruebas clasificado y selección de ampliaciones | A2-02 | COMPLETADA |
 | A2-05 | Ejecución/revalidación CI y conservación de evidencia | A2-03, A2-04 | COMPLETADA |
-| A2-06 | Validación HTTP seleccionada o exclusión motivada del despliegue | A2-04, A2-05 | PENDIENTE |
+| A2-06 | Validación HTTP seleccionada o exclusión motivada del despliegue | A2-04, A2-05 | COMPLETADA |
 | A2-07 | Interpretación, mínimo diez hallazgos y recomendaciones | A2-03, A2-05, resolución A2-06 | PENDIENTE |
 | A2-08 | Borrador completo, tablas, figuras y referencias | A2-07 | PENDIENTE |
 | A2-09 | Auditoría de rúbrica/evidencia y PDF revisado | A2-08 | PENDIENTE |
@@ -246,7 +246,7 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-Continuar A2-06 conforme a sus criterios de salida. El usuario autorizó avanzar autónomamente todas las etapas preparatorias, guardando productos y reportando cada cierre. La revisión final del grupo y una carga real al campus no se simulan.
+Continuar A2-07 conforme a sus criterios de salida. El usuario autorizó avanzar autónomamente todas las etapas preparatorias, guardando productos y reportando cada cierre. La revisión final del grupo y una carga real al campus no se simulan.
 
 **Referencias de continuidad:** [rúbrica original](https://chatgpt.com/library?file_id=libfile_a78770eba870819187a82a9dd430bbe6&account_id=personal), [primer avance presentado](https://chatgpt.com/library?file_id=libfile_df58994acdec819181215cec7155ca14&account_id=personal), [matriz histórica de pruebas](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/test_matrix.csv), [cierre experimental](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md), [plan de semana 7](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md), [plan C10](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/C10_live_validation_roadmap_team_handoff.md), [contexto curricular](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Contexto_Curricular_CY703_2026-11-02.md) y [revisión del checkpoint](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Revision_Checkpoint_CyberMarket_2026-11-02.md). Los dos últimos informes preceden a la recepción de la rúbrica específica: su antigua ausencia queda resuelta en esta planificación.
 
@@ -259,3 +259,5 @@ Continuar A2-06 conforme a sus criterios de salida. El usuario autorizó avanzar
 **A2-04, 2026-11-02 — COMPLETADA:** Clasificados los 27 casos históricos por cuerpo/dependencias y documentada la dependencia de fixtures globales. Diseñadas diez unidades CM-U para firma, exp, nbf, CSRF, ofuscación y bordes; oráculos independientes y resultados todavía no ejecutados en este cierre de diseño. Productos: [plan_pruebas.md](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/plan_pruebas.md); [clasificacion_pruebas.csv](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/clasificacion_pruebas.csv).
 
 **A2-05, 2026-11-02 — COMPLETADA:** Ejecutadas 30 variantes de diez unidades y doce invocaciones de validadores: 42 PASS sin warnings en la corrida final. Recuperados/verificados tres ZIP históricos y checksums internos disponibles; XML focal 59 PASS/2 XFAIL y general 17613 PASS/2 XFAIL reconciliados. Se preservan intentos iniciales y límites; no hay revalidación integrada nueva ni despliegue. Productos: [resultados_ejecucion.md](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/resultados_ejecucion.md); [resultados_ci_manifest.json](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/resultados_ci_manifest.json); [isolated.xml](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/ejecucion_local/isolated.xml); [archivo_verificado_manifest.json](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/archivo_verificado_manifest.json).
+
+**A2-06, 2026-11-02 — COMPLETADA:** C10 excluido de la ejecución de este avance por recursos comprobados; LIVE-01–07 permanecen NOT_EXECUTED. La dinámica existente se limita a CI histórico verificado y unidades locales; no se afirman propiedades de HTTP/HTTPS, navegador, proxy o frontend. Se cierra la decisión de alcance, no una validación desplegada. Productos: [decision_c10.md](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/decision_c10.md).

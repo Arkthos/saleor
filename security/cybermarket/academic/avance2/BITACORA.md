@@ -63,3 +63,9 @@ Productos: evidencia/plan_pruebas.md, evidencia/clasificacion_pruebas.csv. Estad
 Ejecutadas 30 variantes de diez unidades y doce invocaciones de validadores: 42 PASS sin warnings en la corrida final. Recuperados/verificados tres ZIP históricos y checksums internos disponibles; XML focal 59 PASS/2 XFAIL y general 17613 PASS/2 XFAIL reconciliados. Se preservan intentos iniciales y límites; no hay revalidación integrada nueva ni despliegue.
 
 Productos: evidencia/resultados_ejecucion.md, evidencia/resultados_ci_manifest.json, evidencia/ejecucion_local/isolated.xml, evidencia/historica_2026-10-20/archivo_verificado_manifest.json. Estado: COMPLETADA. Siguiente etapa: A2-06. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-06, roadmap 1.7
+
+C10 excluido de la ejecución de este avance por recursos comprobados; LIVE-01–07 permanecen NOT_EXECUTED. La dinámica existente se limita a CI histórico verificado y unidades locales; no se afirman propiedades de HTTP/HTTPS, navegador, proxy o frontend. Se cierra la decisión de alcance, no una validación desplegada.
+
+Productos: evidencia/decision_c10.md. Estado: COMPLETADA. Siguiente etapa: A2-07. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
