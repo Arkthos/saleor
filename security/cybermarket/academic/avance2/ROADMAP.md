@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.1. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** planificación establecida; desarrollo de la entrega pendiente. **Etapa cerrada:** A2-00. **Siguiente etapa:** A2-01.
+**Versión:** 1.2. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** planificación y línea base documentadas; conciliación de requisitos pendiente. **Etapas cerradas:** A2-00 y A2-01. **Siguiente etapa:** A2-02.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -8,7 +8,7 @@
 
 Desarrollar un informe grupal PDF que documente las fases de desarrollo y pruebas del software seleccionado, con los apartados obligatorios de codificación segura, análisis estático y dinámico, y pruebas de seguridad. Debe incluir al menos diez hallazgos con recomendaciones, resultados trazables, bibliografía y una explicación suficiente para defender las decisiones del grupo.
 
-Este roadmap integra lo ya presentado y probado; no convierte los planes existentes en resultados ni inicia por sí mismo todas las ejecuciones previstas. La tarea de esta versión es planificar y establecer continuidad documental. La ejecución y la redacción de las fases posteriores se realizarán al avanzar el proyecto.
+Este roadmap integra lo ya presentado y probado; no convierte los planes existentes en resultados ni inicia por sí mismo todas las ejecuciones previstas. Esta versión incorpora el cierre de A2-01 y mantiene la continuidad documental. La ejecución y la redacción de las fases posteriores se realizarán al avanzar el proyecto.
 
 **Orden de autoridad:** consigna específica del segundo avance recibida el 2 de noviembre → programa y manual → materiales docentes pertinentes → primer avance presentado → código/evidencia versionados → notas y planes históricos. Una diferencia entre fuentes debe registrarse y resolverse para el punto concreto; no se elimina silenciosamente.
 
@@ -93,7 +93,7 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 | Etapa | Producto principal | Dependencia | Estado inicial |
 |---|---|---|---|
 | A2-00 | Rúbrica interpretada, roadmap y archivo documental publicados | Ninguna | COMPLETADA al publicar este paquete |
-| A2-01 | Línea base, condiciones de uso, recursos y calendario | A2-00 | PENDIENTE |
+| A2-01 | Línea base, condiciones de uso, recursos y calendario | A2-00 | COMPLETADA |
 | A2-02 | Conciliación de requisitos, instrumentos y oráculos | A2-01 | PENDIENTE |
 | A2-03 | Revisión de codificación segura y análisis estático | A2-02 | PENDIENTE |
 | A2-04 | Plan de pruebas clasificado y selección de ampliaciones | A2-02 | PENDIENTE |
@@ -117,6 +117,8 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 **Resolver:** fallo documental de espacios finales y su revalidación pertinente; localizar artefactos históricos necesarios antes de depender de su disponibilidad. No volver a ejecutar todas las suites solo para corregir un documento si no aporta evidencia; distinguir checks de formato de la posterior revalidación experimental.
 
 **Productos:** evidencia/linea_base.md, manifiesto de fuentes/entorno, calendario y roles en estado.json. **Cierre:** versiones y recursos identificados, autorización del entorno documentada, riesgos de acceso/retención anotados y siguiente fase ejecutable. La fecha del plan está fijada por el usuario; el reparto de responsabilidades aún debe registrar personas y disponibilidad reales.
+
+**Cierre registrado de A2-01 (2026-11-02):** se comprobaron originales/hashes, baseline y diferencias del fork, configuración y versiones de la ejecución histórica, estado de CI y disponibilidad de artefactos. Se retiraron espacios finales de siete líneas del checkpoint de semana 7 y se comprobó localmente que el texto restante se conserva. El HEAD documental de entrada no tiene runs asociados; no hay nueva ejecución del producto ni revalidación completa remota. Esa comprobación y el archivo independiente de artefactos siguen para A2-05. La ausencia de Docker local y los roles grupales todavía sin asignar no bloquean A2-02. [Informe de línea base](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/linea_base.md) y [manifiesto](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/evidencia/linea_base_manifest.json).
 
 ### A2-02 — Conciliar requisitos, riesgos y expectativas
 
@@ -198,7 +200,7 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 
 | Fecha objetivo | Etapas | Resultado esperado al cierre de la jornada |
 |---|---|---|
-| Lunes 2 de noviembre | A2-00; A2-01–02 | Plan publicado; preparar baseline, recursos, requisitos y oráculos. Solo A2-00 está cerrada al actualizar este calendario. |
+| Lunes 2 de noviembre | A2-00; A2-01–02 | Plan publicado; preparar baseline, recursos, requisitos y oráculos. A2-00 y A2-01 cerradas; A2-02 permanece pendiente al actualizar este calendario. |
 | Martes 3 de noviembre | A2-03–04 | Revisión de codificación/estática y plan de pruebas clasificado, con ampliaciones justificadas |
 | Miércoles 4 de noviembre | A2-05 | Ejecución/revalidación pertinente, resultados reconciliados y evidencia conservada |
 | Jueves 5 de noviembre | A2-06–07 | Resolver C10 con alcance viable o exclusión motivada; catálogo de diez o más hallazgos y recomendaciones sustentados |
@@ -244,6 +246,6 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-Iniciar A2-01: comprobar HEAD/CI al retomar, aplicar el calendario hasta el domingo 8 a las 18:00 y registrar responsables cuando estén disponibles, fijar entorno y procedencia, y preparar la conciliación de A2-02. No empezar por volver a redactar la justificación del avance 1 ni ejecutar automáticamente todo C10.
+Iniciar A2-02: conciliar los 23 ASVS y once WSTG iniciales con la matriz de 27 casos, asignar disposición a cada requisito y definir autoridad/oráculos por actor, operación y campo. Mantener la política P-ORDER-01 provisional hasta una decisión explícita. Los nombres y disponibilidad del grupo pueden incorporarse cuando el usuario los facilite; no bloquean este trabajo documental. Seguir el calendario hasta el domingo 8 a las 18:00, hora de Costa Rica.
 
 **Referencias de continuidad:** [rúbrica original](https://chatgpt.com/library?file_id=libfile_a78770eba870819187a82a9dd430bbe6&account_id=personal), [primer avance presentado](https://chatgpt.com/library?file_id=libfile_df58994acdec819181215cec7155ca14&account_id=personal), [matriz histórica de pruebas](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/test_matrix.csv), [cierre experimental](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md), [plan de semana 7](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md), [plan C10](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/C10_live_validation_roadmap_team_handoff.md), [contexto curricular](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Contexto_Curricular_CY703_2026-11-02.md) y [revisión del checkpoint](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Revision_Checkpoint_CyberMarket_2026-11-02.md). Los dos últimos informes preceden a la recepción de la rúbrica específica: su antigua ausencia queda resuelta en esta planificación.

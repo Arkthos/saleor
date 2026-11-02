@@ -26,6 +26,16 @@ Se actualizaron ROADMAP.md y estado.json con la fecha y metas diarias hasta la e
 
 Validación: calendario y día de semana comprobados, zona horaria y conversión UTC verificadas; versiones coincidentes y estados preservados. Esta actualización no crea recordatorios ni confirma una carga al campus.
 
+## 2026-11-02 — A2-01: línea base y condiciones de trabajo, roadmap 1.2
+
+Por solicitud de avanzar la siguiente etapa, se comprobó el PR abierto/draft, HEAD de entrada 6af5fbad0101d3261055b2bcb089df3255fc1053 y comparación con el producto base. Se revisaron configuración/workflows, licencia, logs históricos de tests y lint y metadatos de artefactos; se recalcularon hashes de los originales disponibles.
+
+Productos: evidencia/linea_base.md y evidencia/linea_base_manifest.json. Se eliminaron exclusivamente espacios finales de las líneas 3–8 y 86 del checkpoint de semana 7, conservando el texto normalizado. Comprobación local de formato/EOF; no se ejecutaron pre-commit completo o pruebas nuevas del producto. El HEAD de entrada tiene cero runs asociados; la revalidación del nuevo SHA queda explícita para A2-05.
+
+Se registró disponibilidad por API, tamaños, digests y expiraciones de cuatro artefactos históricos, sin declarar descarga/hash independiente. CI histórico: Python 3.12.15, Django 5.2.17 y servicios/digests en manifiesto; entorno local: Python 3.12.14, sin Docker. El reparto entre integrantes permanece sin asignar y no bloquea conciliación documental.
+
+Cierre: A2-01 COMPLETADA como preparación, con límites explícitos. Se actualizan roadmap, estado, matriz de rúbrica, índices y copia del proyecto. Siguiente acción: A2-02, conciliación de requisitos e instrumentos y definición de oráculos. No se aprobó P-ORDER-01 ni se cerraron dictámenes de riesgo; no se modificó código funcional ni se fusionó el PR.
+
 ## Formato para las próximas entradas
 
 Cada entrada debe identificar fecha, etapa, solicitud/objetivo, productos, cambios en evidencia o criterios, comprobaciones realmente ejecutadas, resultados y límites, decisiones, referencias al commit/run cuando existan, estado y punto exacto de reanudación. Añadir entradas; no reescribir el pasado para atribuirle conocimiento posterior.

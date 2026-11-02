@@ -4,7 +4,7 @@
 
 Start with [Avance 2 roadmap](academic/avance2/ROADMAP.md) and
 [academic work index](academic/avance2/README.md). The specific rubric has been read;
-planning stage A2-00 is documented and A2-01 is next. IEEE is retained.
+A2-00 and A2-01 are documented; A2-02 is next. IEEE is retained.
 Historical C2–C9 evidence records 27 IDs/61 variants, 59 PASS + 2 expected XFAIL;
 all 13 risk verdicts remain NO_DETERMINADO. C10 and week-7 expansions are plans.
 On the planning input SHA c442099bc0ebee5194a6e58354944563e92e0d28, the latest lint

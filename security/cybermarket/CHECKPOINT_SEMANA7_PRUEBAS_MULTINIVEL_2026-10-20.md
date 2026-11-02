@@ -1,11 +1,11 @@
 # CHECKPOINT — Semana 7: estrategia de pruebas multinivel (2026-10-20)
 
-**Proyecto:** CY-703 Seguridad de Software · CyberMarket CR (escenario ficticio) · fork `Arkthos/saleor`.  
-**Propósito:** preservar una decisión metodológica y un plan de continuación; **NO** es un resultado de pruebas, un nuevo avance académico ni una ampliación ya ejecutada.  
-**Estado de este checkpoint:** DOCUMENTADO / PENDIENTE DE IMPLEMENTACIÓN.  
-**Repositorio/PR:** [Arkthos/saleor PR #1](https://github.com/Arkthos/saleor/pull/1), rama `research/cybermarket-security-tests-v1`, PR en borrador y sin merge.  
-**Commit Saleor fijado para investigación:** `4cb1609a90eade14b6275a407bc7a00c35698090`.  
-**HEAD observado al planear este checkpoint:** `b2a30a2900280b7c169133858857abebf53923c4` (metadatos y documentación posteriores pueden variar; volver a consultar GitHub).  
+**Proyecto:** CY-703 Seguridad de Software · CyberMarket CR (escenario ficticio) · fork `Arkthos/saleor`.
+**Propósito:** preservar una decisión metodológica y un plan de continuación; **NO** es un resultado de pruebas, un nuevo avance académico ni una ampliación ya ejecutada.
+**Estado de este checkpoint:** DOCUMENTADO / PENDIENTE DE IMPLEMENTACIÓN.
+**Repositorio/PR:** [Arkthos/saleor PR #1](https://github.com/Arkthos/saleor/pull/1), rama `research/cybermarket-security-tests-v1`, PR en borrador y sin merge.
+**Commit Saleor fijado para investigación:** `4cb1609a90eade14b6275a407bc7a00c35698090`.
+**HEAD observado al planear este checkpoint:** `b2a30a2900280b7c169133858857abebf53923c4` (metadatos y documentación posteriores pueden variar; volver a consultar GitHub).
 **Avance 1:** validado por el usuario; no modificarlo ni reinterpretarlo retrospectivamente.
 
 ## 1. Origen del ajuste: materiales nuevos y conversación académica
@@ -83,4 +83,4 @@ Evidencia registrada para el **SHA experimentado** `63cadee4e9a1b43bfc07103aecbf
 
 ### Prompt sugerido para reanudar
 
-> Continuemos CyberMarket CR desde `security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md`. Lee el cierre C2–C9, `PLAN_MAESTRO_SEGURIDAD_SOFTWARE_CY703.md`, `test_matrix.csv` y el plan C10. Verifica HEAD, PR #1 y CI. Ejecuta W7-A y luego W7-B con checkpoints y evidencias, no redactes el Avance 2 ni alteres Avance 1, no fusiones la rama, distingue pruebas unitarias/integración/SAST/DAST y no declares conformidad por un PASS. 
+> Continuemos CyberMarket CR desde `security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md`. Lee el cierre C2–C9, `PLAN_MAESTRO_SEGURIDAD_SOFTWARE_CY703.md`, `test_matrix.csv` y el plan C10. Verifica HEAD, PR #1 y CI. Ejecuta W7-A y luego W7-B con checkpoints y evidencias, no redactes el Avance 2 ni alteres Avance 1, no fusiones la rama, distingue pruebas unitarias/integración/SAST/DAST y no declares conformidad por un PASS.

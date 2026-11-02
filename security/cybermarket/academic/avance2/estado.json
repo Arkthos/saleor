@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.1",
+  "roadmap_version": "1.2",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "PLANIFICACION_DOCUMENTADA",
+  "status": "LINEA_BASE_DOCUMENTADA",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.1",
+    "version": "1.2",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_1"
+    "status": "GUARDADA_VERSION_1_2"
   },
-  "last_completed_stage": "A2-00",
-  "next_stage": "A2-01",
-  "next_action": "Iniciar A2-01 y A2-02 según calendario: fijar baseline/entorno y responsables reales; fecha límite 2026-11-08 18:00 America/Costa_Rica.",
+  "last_completed_stage": "A2-01",
+  "next_stage": "A2-02",
+  "next_action": "Conciliar 23 ASVS, 11 WSTG, H/R y matriz de casos; documentar autoridad y oráculos sin adjudicar cumplimiento por PASS.",
   "open_items": [
     {
       "id": "D-02",
@@ -79,15 +79,18 @@
     {
       "id": "A2-01",
       "title": "Línea base y organización",
-      "status": "PENDIENTE",
+      "status": "COMPLETADA",
       "depends_on": [
         "A2-00"
       ],
       "planned_outputs": [
         "evidencia/linea_base.md"
       ],
-      "evidence_refs": [],
-      "completed_on": null,
+      "evidence_refs": [
+        "evidencia/linea_base.md",
+        "evidencia/linea_base_manifest.json"
+      ],
+      "completed_on": "2026-11-02",
       "target_date": "2026-11-02"
     },
     {
@@ -229,7 +232,15 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": false,
   "delivery_status": "NO_PREPARADA",
-  "last_replicated_document_version": "1.1",
+  "last_replicated_document_version": "1.2",
   "due_at_utc": "2026-11-09T00:00:00Z",
-  "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica."
+  "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
+  "baseline_review": {
+    "input_branch_sha": "6af5fbad0101d3261055b2bcb089df3255fc1053",
+    "manifest": "evidencia/linea_base_manifest.json",
+    "new_product_tests_executed": false,
+    "remote_ci_revalidation": "PENDIENTE_A2_05",
+    "local_docker_available": false,
+    "format_fix": "Siete líneas sin espacios finales; validación local, sin claim de pre-commit completo."
+  }
 }

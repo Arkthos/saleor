@@ -1,0 +1,184 @@
+{
+  "schema": "cybermarket.avance2.baseline.v1",
+  "stage_id": "A2-01",
+  "observed_at_utc": "2026-11-02T15:19:27Z",
+  "input_branch_sha": "6af5fbad0101d3261055b2bcb089df3255fc1053",
+  "product_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+  "branch": "research/cybermarket-security-tests-v1",
+  "pr_number": 1,
+  "pr_state": "OPEN_DRAFT",
+  "compare_to_baseline": {
+    "ahead_by": 121,
+    "changed_file_count": 49,
+    "product_functional_changes": false,
+    "note": "Archivos comparados: pruebas, workflow de investigación y documentación; no cambios en código funcional del producto."
+  },
+  "source_blobs": [
+    {
+      "path": ".github/workflows/cybermarket-security.yaml",
+      "git_blob_sha": "a9a5c0c0ecaec9312926bfcd3186b88a620e8e6f",
+      "size": 5277
+    },
+    {
+      "path": ".github/workflows/linters.yaml",
+      "git_blob_sha": "bf4d13b2b88cf734474c59d6bc3010a1f07c9c6e",
+      "size": 1551
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "git_blob_sha": "1a51fcf902bb20aadaefcaf8a64d2961a1979aaf",
+      "size": 2552
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "715b42cd6fe5d7073984ff7004b49dc8304adbcc",
+      "size": 1562
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob_sha": "42fc13bdcc3d6d5b8b1b69b6111aa4d948b7ca53",
+      "size": 9642
+    },
+    {
+      "path": "saleor/tests/settings.py",
+      "git_blob_sha": "bb614627c10ac4a2aa73d03a47a18e44f8f7883f",
+      "size": 4176
+    },
+    {
+      "path": "security/cybermarket/test_matrix.csv",
+      "git_blob_sha": "7e7974e7a07e5f756ec74c59b2d88d33681f0874",
+      "size": 4883
+    },
+    {
+      "path": "uv.lock",
+      "git_blob_sha": "2f26624141e4893e75ddc0bfccf217bf6aa715fa",
+      "size": 277005
+    }
+  ],
+  "current_head_workflow_runs": {
+    "queried_head_sha": "6af5fbad0101d3261055b2bcb089df3255fc1053",
+    "count": 0,
+    "note": "Consulta del HEAD de entrada; no se extrapolan resultados históricos."
+  },
+  "historical_execution": {
+    "branch_sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+    "checkout_sha": "b0604014dab69125a4a535f1ece5828be99ea3c8",
+    "focused_run_id": 39443927080,
+    "focused_job_id": 118701056304,
+    "outcomes": {
+      "product_pass": 59,
+      "product_expected_xfail": 2,
+      "evidence_validator_pass": 6
+    },
+    "runner_observed": "ubuntu-26.04",
+    "python_observed": "3.12.15",
+    "package_versions_observed": {
+      "django": "5.2.17",
+      "graphene": "2.1.9",
+      "graphql-core": "2.3.2",
+      "psycopg": "3.3.4",
+      "pyjwt": "2.14.0",
+      "pytest": "9.0.3",
+      "pytest-django": "4.12.0"
+    },
+    "image_digests_observed": {
+      "python:3.12": "sha256:42dc0ee40d7707e2f2ee506a1cbe52e09ab11c207c5b429342638f83177601fe",
+      "library/postgres:15-alpine": "sha256:f7d23353e1b15400d22ebe31189f4d314b87a4c129cc400c8c2d8d4ca127bf81",
+      "valkey/valkey:8.1-alpine": "sha256:081c2f5cb575efc901aa80ff9cdbd1ec6a301682fd35e1ebb4b0990a4a4a8507"
+    }
+  },
+  "historical_artifacts": [
+    {
+      "id": 12275735957,
+      "name": "cybermarket-security-junit",
+      "run_id": 39443927080,
+      "sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+      "expired": false,
+      "expires_at": "2026-11-19T15:05:06Z",
+      "digest_reported_by_github": "sha256:9df3dd37e29191e7b5de7eeb71d2c3e72e3622f377fc4fd87ba68e6ff978a892",
+      "size_in_bytes": 6190,
+      "archive_bytes_downloaded_this_stage": false
+    },
+    {
+      "id": 12274974418,
+      "name": "cybermarket-static-review",
+      "run_id": 39443927080,
+      "sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+      "expired": false,
+      "expires_at": "2026-11-19T14:58:10Z",
+      "digest_reported_by_github": "sha256:a36dca8030e8a363bfe46ee4fc7f4fdaff942cc88a72b78dff3da18af8c411ee",
+      "size_in_bytes": 1265,
+      "archive_bytes_downloaded_this_stage": false
+    },
+    {
+      "id": 12275832930,
+      "name": "pytest-results",
+      "run_id": 39443927003,
+      "sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+      "expired": false,
+      "expires_at": "2027-01-18T14:57:09Z",
+      "digest_reported_by_github": "sha256:767ba4d59e2f142e0509b7c23e63f47f232fd415c72e8998e26d4a9395bc07c6",
+      "size_in_bytes": 298475,
+      "archive_bytes_downloaded_this_stage": false
+    },
+    {
+      "id": 12275658303,
+      "name": "pytest-django-db-queries-results",
+      "run_id": 39443927003,
+      "sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+      "expired": false,
+      "expires_at": "2027-01-18T14:57:09Z",
+      "digest_reported_by_github": "sha256:836aa53cb25321117fa0782ea945052e05fff7030211dd92d9ec742bdf3d2c89",
+      "size_in_bytes": 2498,
+      "archive_bytes_downloaded_this_stage": false
+    }
+  ],
+  "local_runtime": {
+    "python_observed": "3.12.14",
+    "docker_cli_present": false,
+    "uv_cli_present": true,
+    "pre_commit_available": false,
+    "pre_commit_hooks_available": false,
+    "product_deployed": false,
+    "product_tests_executed": false
+  },
+  "settings_provenance": {
+    "path": "saleor/tests/settings.py",
+    "pytest_settings_module": "saleor.tests.settings",
+    "source_declared": {
+      "celery_eager": true,
+      "email_backend": "django.core.mail.backends.locmem.EmailBackend",
+      "plugins": [],
+      "password_hasher": "saleor.tests.dummy_password_hasher.DummyHasher"
+    },
+    "note": "Declaraciones de fuente y log histórico; no se exporta una configuración efectiva de despliegue ni credenciales."
+  },
+  "authorization": {
+    "basis": "Petición del usuario para trabajar en el fork y ensayos controlados; LICENSE BSD-3-Clause comprobada en el baseline.",
+    "target_scope": "Código y evidencia del fork. No se realizó despliegue o prueba contra servicios externos en A2-01."
+  },
+  "format_correction": {
+    "path": "security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md",
+    "old_blob_sha": "ea081aed61eb8d0684f518d3a232803c3d4384eb",
+    "removed_trailing_spaces_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      86
+    ],
+    "local_validation": "Comprobación de espacios finales y EOF; comparación del contenido normalizado.",
+    "remote_full_lint_revalidated": false,
+    "product_code_changed": false
+  },
+  "next_stage": "A2-02",
+  "limitations": [
+    "Versiones e imágenes registradas del run histórico; no son una ejecución nueva.",
+    "Digests de artefactos proceden de la API, no de descarga y hash independiente en esta etapa.",
+    "Asignación de personas del grupo pendiente; no bloquea conciliación documental.",
+    "C10 no desplegado; recursos concretos se deciden en A2-04/06.",
+    "Revalidación remota del nuevo SHA pendiente; no se reejecuta un run viejo para simular evaluación del HEAD nuevo."
+  ]
+}
