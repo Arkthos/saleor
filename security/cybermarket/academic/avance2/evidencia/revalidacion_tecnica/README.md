@@ -16,8 +16,8 @@ Fuente del retest: `f1f883d545b44cdd8699a33b3162b7d2486c080b`; checkout PR: `daf
 | E2E original | 211 PASS | e2e_41517858406_summary.json |
 | Estática | Semgrep 2.607 archivos, 0 hallazgos/errores; Bandit B105 cookie-name revisado | estatica_retest_04.json |
 | Linters | Diez hooks PASS; job SUCCESS | linters_retest_04.json |
-| Regresión general | PENDIENTE de conciliación | run 41517858482 |
-| Control heredado de licencias | FAILED_REVIEW_REQUIRED, mismo rechazo en base/HEAD y error stdin | licencias_resultado.json |
+| Regresión general | 17.613 PASS, 2 XFAIL, 0 FAIL/ERROR; XML y SHA verificados | general_41517858482_summary.json |
+| Control heredado de licencias | Base/HEAD: 502 entradas PASS; 6 límites PASS; GPL ajeno rechazado | licencias_retest_02_summary.json |
 
 La suite focal es subconjunto de la general; no sumar ambos conteos. PASS de caracterización no es cumplimiento normativo ni aprobación de P-ORDER-01.
 
@@ -36,3 +36,5 @@ La suite focal es subconjunto de la general; no sumar ambos conteos. PASS de car
 - Ambos alias DB comparten la base desechable: no se prueba replicación física. El forwarded-proto directo caracteriza una frontera de confianza; no certifica un proxy de producción.
 - No se prueba carga/estrés distribuido ni se afirma ausencia de vulnerabilidades por resultados de SAST. Los dictámenes formales y P-ORDER-01 permanecen sin adjudicar.
 - Los archivos ZIP originales archivados contienen evidencia ya depurada por CI. Sus bytes y SHA-256 se conservan; no se normaliza su whitespace.
+
+El fallo heredado de licencias se conserva como antecedente. El retest elige explícitamente la alternativa Artistic declarada para el wheel verificado y corrige stdin; no relaja las reglas. La suite general completa verificada corresponde a f1f883d5; los cambios posteriores se limitan al control de evidencia/licencias y están bajo retest de calidad actual.

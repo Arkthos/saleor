@@ -1,3 +1,5 @@
+**Actualización:** el retest 41521562337 ejecutó la selección Artistic acotada a versión/hash y stdin explícito: 502 entradas aprobadas por fuente, seis límites aprobados y GPL ajeno rechazado. [Resultado vigente](licencias_retest_02_summary.json). Se conserva a continuación el diagnóstico del fallo anterior.
+
 # Control heredado de licencias: diagnóstico técnico
 
 **Estado: FAILED_REVIEW_REQUIRED.** No se declara conformidad ni infracción jurídica. Run 41517859635, fuente f1f883d5. Reglas originales LGPL/GPL/proprietary conservadas; ninguna dependencia funcional nueva ni cambio de uv.lock.

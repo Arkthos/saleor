@@ -141,3 +141,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT-07 — colección aislada
 
 **2026-11-02 — VT-07 intento inicial conservado:** la colección aislada con uvx y config /dev/null no incorporaba la raíz del repositorio al sys.path. ModuleNotFoundError: security; aún no se analizó el SBOM. Se fija PYTHONPATH al workspace, sin instalar el producto ni sus servicios. La misma invocación se reproduce localmente antes del nuevo CI. No cambia la selección Artistic ni la política de licencias.
+
+## VT-07 — control de licencias verificado
+
+**2026-11-02 — VT-07 completada:** run 41521562337, selección Artistic-1.0-Perl del autor limitada a text-unidecode 1.3 y hash del wheel del lockfile. Base y HEAD: 502 entradas aprobadas, cero rechazadas; seis pruebas de límites aprobadas en cada fuente y control GPL ajeno denegado por la regla original. Stdin único eliminó el error espurio. Archivos originales y derivadas públicas con procedencia/hashes verificados; reglas LGPL/GPL/proprietary iguales. Se conserva el fallo de colección inicial. No se inventa aprobación grupal ni conformidad jurídica global. Conciliación final de calidad en curso; no se genera PDF/Word.

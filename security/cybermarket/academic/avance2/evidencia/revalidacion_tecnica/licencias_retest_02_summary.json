@@ -1,0 +1,43 @@
+{
+  "schema": "cybermarket.license.retest.v1",
+  "run_id": 41521562337,
+  "source_sha": "d5ed246a3ac6dd74f0e0a2628c51e905e600bc5f",
+  "implementation": "check-licenses.yaml + normalize_license_selection.py",
+  "decision": "Select author-declared Artistic-1.0-Perl alternative for exact text-unidecode 1.3 wheel and hash from uv.lock; not a human group approval or blanket legal compliance opinion.",
+  "unchanged_policy_patterns": [
+    "*lgpl* allow",
+    "*gpl* deny",
+    "*proprietary* deny"
+  ],
+  "single_stdin_input": "grant check - < bom.selected.json",
+  "roles": {
+    "head": {
+      "job_id": 125538604802,
+      "analyzed_sha": "d5ed246a3ac6dd74f0e0a2628c51e905e600bc5f",
+      "license_entries_passed": 502,
+      "license_entries_rejected": 0,
+      "boundary_tests_passed": 6,
+      "unrelated_gpl_negative_control": "PASS_EXPECTED_DENIAL",
+      "selected_license": "Artistic-1.0-Perl",
+      "original_artifact_id": 13177747933,
+      "original_archive_sha256": "ea1910c38408e43b7e48d6678345dc2318b1974af2c4aab62650214e08735890",
+      "public_archive_sha256": "1fcc96131b5a7dc5fab723daa74ae53eda0c1eb7e7a6a27ab771f797b83a1419",
+      "original_internal_checksums_verified": true
+    },
+    "base": {
+      "job_id": 125538604360,
+      "analyzed_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+      "license_entries_passed": 502,
+      "license_entries_rejected": 0,
+      "boundary_tests_passed": 6,
+      "unrelated_gpl_negative_control": "PASS_EXPECTED_DENIAL",
+      "selected_license": "Artistic-1.0-Perl",
+      "original_artifact_id": 13176734978,
+      "original_archive_sha256": "a1a49ab19003648f6c51ced0834bc8e1515574ebd696a5a7c6e5a78410d6987c",
+      "public_archive_sha256": "26409186ea8c0bcb5ccf215ede06ed3bfb1a1e183ed9f3cb78d93d5ef25c92d5",
+      "original_internal_checksums_verified": true
+    }
+  },
+  "original_failure_report": "licencias_resultado.json",
+  "first_retest_collection_failure": "licencias_intento_01.json"
+}

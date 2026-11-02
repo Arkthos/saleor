@@ -50,3 +50,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 **VT-06 completada:** [Regresión general 17.613 PASS/2 XFAIL](evidencia/revalidacion_tecnica/general_41517858482_summary.json), sin fallos inesperados. VT-07 prueba selección declarada Artistic acotada al wheel fijado y conserva la denegación GPL.
 
 VT-07 corrigió sys.path de la colección aislada; el primer run 41521406564 se conserva como intento sin análisis del SBOM.
+
+**VT-07 completada:** [Licencias y negativo GPL verificados](evidencia/revalidacion_tecnica/licencias_retest_02_summary.json). Todos los bloques previstos tienen evidencia; resta conciliación final de calidad actual.

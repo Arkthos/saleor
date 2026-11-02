@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.23",
+  "roadmap_version": "1.24",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "PRUEBAS_SEGURIDAD_COMPLETAS_CORRIGIENDO_CONTROL_LICENCIAS",
+  "status": "PRUEBAS_Y_LICENCIAS_COMPLETAS_REVISANDO_CALIDAD_FINAL",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.23",
+    "version": "1.24",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_23"
+    "status": "GUARDADA_VERSION_1_24"
   },
-  "last_completed_stage": "VT-06",
-  "next_stage": "VT-07",
-  "next_action": "Ejecutar corrección acotada de licencias: alternativa Artistic declarada y hash del wheel fijado, pruebas negativas y stdin explícito.",
+  "last_completed_stage": "VT-07",
+  "next_stage": "CONCILIACION_FINAL_TECNICA",
+  "next_action": "Conciliar linters y retests automáticos del control final; archivar originales y derivadas; mantener PDF/Word pausados.",
   "open_items": [
     {
       "id": "D-02",
@@ -51,13 +51,8 @@
     },
     {
       "id": "D-05",
-      "item": "Pruebas de seguridad previstas ejecutadas y conciliadas; control de licencias en retest",
-      "impact": "No generar entregable hasta cerrar el control final."
-    },
-    {
-      "id": "D-06",
-      "item": "Selección documentada de Artistic para text-unidecode 1.3, hash exacto del lockfile; reglas GPL preservadas y stdin corregido",
-      "impact": "Seis controles locales aprobados. Falta retest CI y control negativo GPL real."
+      "item": "Pruebas previstas y control de licencias completados; conciliación final de calidad en curso",
+      "impact": "Entregable sigue pausado durante la conciliación final."
     }
   ],
   "stages": [
@@ -279,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.23",
+  "last_replicated_document_version": "1.24",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -368,11 +363,11 @@
     {
       "id": "VT-07",
       "title": "Corrección acotada del control heredado de licencias",
-      "status": "RETEST_PREPARADO",
+      "status": "COMPLETADA",
       "evidence_refs": [
-        "security/cybermarket/tools/normalize_license_selection.py",
-        "tests/test_cybermarket_license_selection.py"
-      ]
+        "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json"
+      ],
+      "completed_on": "2026-11-02"
     }
   ],
   "technical_blocker": {
@@ -439,7 +434,7 @@
     "run_id": 41517859635,
     "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
     "report_job": 125526698949,
-    "status": "FAILED_REVIEW_REQUIRED",
+    "status": "RESOLVED_VERIFIED_ARTISTIC_SELECTION",
     "analyzer_setup_fixed": true,
     "report_entries_each": 504,
     "passed_entries_each": 502,
@@ -465,6 +460,8 @@
     "artifact_digests": {
       "head": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
       "base": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711"
-    }
+    },
+    "prior_status": "FAILED_REVIEW_REQUIRED",
+    "result_evidence": "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json"
   }
 }
