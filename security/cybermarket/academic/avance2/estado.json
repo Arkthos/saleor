@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "roadmap_version": "1.0",
+  "updated_on": "2026-11-02",
+  "project": "CyberMarket CR / Saleor",
+  "assignment": "Segundo avance CY-703",
+  "status": "PLANIFICACION_DOCUMENTADA",
+  "citation_style": "IEEE",
+  "due_at": null,
+  "due_timezone": "America/Costa_Rica",
+  "deadline_status": "PENDIENTE_DE_CONFIRMAR_EN_CAMPUS",
+  "group_roles": {},
+  "no_teacher_feedback_reported": true,
+  "repository": {
+    "name": "Arkthos/saleor",
+    "branch": "research/cybermarket-security-tests-v1",
+    "pr": 1,
+    "pr_status_at_plan": "OPEN_DRAFT",
+    "product_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+    "planning_parent_sha": "c442099bc0ebee5194a6e58354944563e92e0d28",
+    "note": "La publicación documental cambia HEAD. No atribuirle CI anterior sin una ejecución identificada."
+  },
+  "primary_assignment": {
+    "library_file_id": "libfile_a78770eba870819187a82a9dd430bbe6",
+    "sha256": "82719d0216f9088a4a5e922295450aa8ad4603e3b80a98f1dc0a812596273d1e",
+    "pages": 3,
+    "rubric_points": 12,
+    "minimum_findings_with_recommendations": 10
+  },
+  "project_copy": {
+    "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
+    "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
+    "version": "1.0",
+    "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
+    "saved_on": "2026-11-02",
+    "status": "GUARDADA_VERSION_1_0"
+  },
+  "last_completed_stage": "A2-00",
+  "next_stage": "A2-01",
+  "next_action": "Revisar HEAD/CI, fijar entorno y procedencia; incorporar fecha/hora del campus y roles cuando se confirmen.",
+  "open_items": [
+    {
+      "id": "D-01",
+      "item": "Fecha y hora límite del campus",
+      "impact": "Impide fijar calendario de entrega; no bloquea tareas independientes."
+    },
+    {
+      "id": "D-02",
+      "item": "Roles y disponibilidad reales del grupo",
+      "impact": "Asignación de ejecución y revisión pendiente."
+    },
+    {
+      "id": "D-03",
+      "item": "Estado de adopción de P-ORDER-01",
+      "impact": "Mantener juicio normativo provisional; no bloquea caracterización."
+    },
+    {
+      "id": "D-04",
+      "item": "Recursos y necesidad de C10 para esta entrega",
+      "impact": "Resolver en A2-04/06 según preguntas y alcance."
+    }
+  ],
+  "stages": [
+    {
+      "id": "A2-00",
+      "title": "Planificación y archivo documental",
+      "status": "COMPLETADA",
+      "depends_on": [],
+      "planned_outputs": [
+        "ROADMAP.md",
+        "MATRIZ_RUBRICA.csv",
+        "AJUSTES_AVANCE1.md",
+        "BITACORA.md"
+      ],
+      "evidence_refs": [
+        "ROADMAP.md",
+        "MATRIZ_RUBRICA.csv",
+        "AJUSTES_AVANCE1.md",
+        "BITACORA.md"
+      ],
+      "completed_on": "2026-11-02"
+    },
+    {
+      "id": "A2-01",
+      "title": "Línea base y organización",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-00"
+      ],
+      "planned_outputs": [
+        "evidencia/linea_base.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-02",
+      "title": "Requisitos e instrumentos",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-01"
+      ],
+      "planned_outputs": [
+        "evidencia/trazabilidad_avance2.csv",
+        "evidencia/criterios_y_oraculos.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-03",
+      "title": "Codificación y análisis estático",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-02"
+      ],
+      "planned_outputs": [
+        "evidencia/revision_codificacion.md",
+        "evidencia/analisis_estatico.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-04",
+      "title": "Diseño y clasificación de pruebas",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-02"
+      ],
+      "planned_outputs": [
+        "evidencia/plan_pruebas.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-05",
+      "title": "Ejecución y archivo CI",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-03",
+        "A2-04"
+      ],
+      "planned_outputs": [
+        "evidencia/resultados_ci_manifest.json"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-06",
+      "title": "Validación desplegada o exclusión motivada",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-04",
+        "A2-05"
+      ],
+      "planned_outputs": [
+        "evidencia/decision_c10.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-07",
+      "title": "Análisis y diez hallazgos como mínimo",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-03",
+        "A2-05",
+        "A2-06"
+      ],
+      "planned_outputs": [
+        "evidencia/hallazgos_avance2.csv",
+        "evidencia/analisis_resultados.md"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-08",
+      "title": "Manuscrito y anexos",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-07"
+      ],
+      "planned_outputs": [
+        "manuscrito/avance2.md",
+        "manuscrito/referencias.txt"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-09",
+      "title": "Auditoría y PDF",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-08"
+      ],
+      "planned_outputs": [
+        "manuscrito/auditoria_final.md",
+        "manuscrito/Avance2_revision.pdf"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    },
+    {
+      "id": "A2-10",
+      "title": "Revisión grupal y entrega",
+      "status": "PENDIENTE",
+      "depends_on": [
+        "A2-09"
+      ],
+      "planned_outputs": [
+        "manuscrito/entrega/manifest.json"
+      ],
+      "evidence_refs": [],
+      "completed_on": null
+    }
+  ],
+  "new_product_tests_executed_in_planning": false,
+  "new_academic_manuscript_written": false,
+  "delivery_status": "NO_PREPARADA",
+  "last_replicated_document_version": "1.0"
+}

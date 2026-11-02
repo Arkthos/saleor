@@ -1,5 +1,22 @@
 # CyberMarket CR — Reproducible software-security test suite
 
+## Current academic work — 2026-11-02
+
+Start with [Avance 2 roadmap](academic/avance2/ROADMAP.md) and
+[academic work index](academic/avance2/README.md). The specific rubric has been read;
+planning stage A2-00 is documented and A2-01 is next. IEEE is retained.
+Historical C2–C9 evidence records 27 IDs/61 variants, 59 PASS + 2 expected XFAIL;
+all 13 risk verdicts remain NO_DETERMINADO. C10 and week-7 expansions are plans.
+On the planning input SHA c442099bc0ebee5194a6e58354944563e92e0d28, the latest lint
+run failed on trailing whitespace in documentation. Do not apply old all-green
+claims to later HEADs. Publishing this documentation is not a new product test.
+
+The sections below preserve earlier experimental notes and counts as history; use
+the dated closure report, run-specific evidence and academic roadmap for current work.
+
+## Historical experimental notes
+
+
 **Status:** C8 fixture-backed suite VERIFIED: 22 identified cases, 38 invocations (36 PASS + 2 policy-specific XFAIL), 13/13 risks mapped without conformance claims. Static Bandit scan reviewed (one LOW B105 false positive). Repository-wide CI on final documentation/formatting head still requires confirmation. See [C8 checkpoint](experiment_C8_2026-10-18.md), [durable result snapshot](evidence_C8_snapshot.md) and [provisional policy](POLICY_ORDER_P01_PROVISIONAL.md).
 
 **Research baseline:** `4cb1609a90eade14b6275a407bc7a00c35698090` (do not silently rebase to a new Saleor version).

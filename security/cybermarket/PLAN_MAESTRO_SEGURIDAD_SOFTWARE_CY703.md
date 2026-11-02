@@ -1,5 +1,16 @@
 # CyberMarket CR — Plan maestro de aseguramiento de Seguridad de Software
 
+## Current assignment control — 2026-11-02
+
+The specific Avance 2 rubric is now available. Its scoped development roadmap is
+[academic/avance2/ROADMAP.md](academic/avance2/ROADMAP.md), with state, rubric mapping
+and academic work products in that folder. It takes precedence for this assignment
+over older prospective instructions below. Preserve IEEE from submitted Avance 1.
+The full-course deployment/maintenance/incident plan remains broader than Avance 2;
+C10 scope is decided explicitly and is not implied mandatory by the specific rubric.
+Update the roadmap and project copy at each completed stage as required by AGENTS.md.
+
+
 **Curso:** CY-703 Seguridad de Software, Universidad Fidélitas. **Fecha:** 2026-10-18. **Estado:** plan de cobertura y aceptación; NO sustituye ejecuciones. **Fuente:** currículo y requisitos del proyecto previamente documentados; verificar correspondencia final con rúbrica institucional antes de entregar.
 
 ## 1. Enfoque profesional
@@ -23,7 +34,7 @@ El trabajo debe evaluar **seguridad durante todo el ciclo de vida del software (
 
 ## 3. Plan de trabajo por gates
 
-**G0 — alcance:** objetivos Avance 1, rúbrica, hipótesis, entorno autorizado, políticas de negocio y aceptación. **G1 — diseño:** revisar arquitectura, módulos, dependencias, superficie GraphQL, modelado de amenazas y oráculos. **G2 — estática:** SAST, SCA, revisión manual, configuración, categorización de falsos positivos. **G3 — dinámica en CI:** C2–C9 + validador + pruebas de regresión + suite general + E2E + linters sobre mismo SHA. **G4 — vivo:** ejecutar C10 en contenedores aislados con HTTP y, si procede, HTTPS/browser/proxy; LIVE-01–LIVE-07. **G5 — juicio:** mapear cada evidencia a requisitos aplicables, distinguir comportamiento esperado, defecto de harness, debilidad de producto y política no aprobada. **G6 — cierre:** informe académico con método, resultados, limitaciones, riesgos priorizados, mitigaciones, trazabilidad, APA 7 y anexos reproducibles; revisión de integridad y aprobación final.
+**G0 — alcance:** objetivos Avance 1, rúbrica, hipótesis, entorno autorizado, políticas de negocio y aceptación. **G1 — diseño:** revisar arquitectura, módulos, dependencias, superficie GraphQL, modelado de amenazas y oráculos. **G2 — estática:** SAST, SCA, revisión manual, configuración, categorización de falsos positivos. **G3 — dinámica en CI:** C2–C9 + validador + pruebas de regresión + suite general + E2E + linters sobre mismo SHA. **G4 — vivo:** ejecutar C10 en contenedores aislados con HTTP y, si procede, HTTPS/browser/proxy; LIVE-01–LIVE-07. **G5 — juicio:** mapear cada evidencia a requisitos aplicables, distinguir comportamiento esperado, defecto de harness, debilidad de producto y política no aprobada. **G6 — cierre:** informe académico con método, resultados, limitaciones, riesgos priorizados, mitigaciones, trazabilidad, IEEE y anexos reproducibles; revisión de integridad y aprobación final.
 
 ## 4. Reglas de ejecución y resultados
 
@@ -36,7 +47,7 @@ Registrar PASS, FAIL, ERROR, SKIP, XFAIL, XPASS, BLOCKED por test y por gate. Lo
 3. Plan y manifest de pruebas de todas las capas; artefactos CI y C10.
 4. Registro de vulnerabilidades/debilidades con evidencia, severidad condicionada y acciones.
 5. Reporte de calidad del harness y regresiones.
-6. Informe final académico, referencias APA 7, limitaciones y anexos verificables.
+6. Informe final académico, referencias IEEE, limitaciones y anexos verificables.
 7. Checkpoint previo a redacción y handoff reproducible de C10.
 
 **Regla de cierre:** ningún informe se llamará «definitivo» mientras haya gates obligatorios sin ejecutar o sin justificación de exclusión, o falten evidencias verificadas. El informe C2–C9 existente es un cierre parcial del experimento, no la entrega integral del curso.

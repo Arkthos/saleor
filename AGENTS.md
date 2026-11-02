@@ -655,3 +655,21 @@ The shared Postgres is the scaling bottleneck — every pod hits it. Keep querie
 - Verify the file extension matches the detected file type
 
 See saleor/graphql/core/validators/file.py for how to properly validate files.
+
+## CyberMarket CR academic project continuity
+
+For any CyberMarket task (research tests, evidence, analysis or academic writing), read
+`security/cybermarket/academic/avance2/ROADMAP.md` and `estado.json` before continuing.
+The assignment-specific rubric received on 2026-11-02 governs Avance 2. Preserve the
+submitted Avance 1 and IEEE style; old APA instructions in historical handoffs do not
+override this decision. Follow `docs/adr/0011-cybermarket-academic-evidence-and-roadmap.md`.
+
+At each completed stage, commit its actual products (including prose, matrices,
+source locators, analysis and sanitized evidence), and update the roadmap, state,
+rubric matrix and log together. Replace the same project roadmap copy identified
+in `estado.json`; disclose a failed replica update. Read Git history/current HEAD
+when resuming. Do not mark planned work as executed, transfer historical CI to a
+new SHA, or confuse passing characterization with an approved security requirement.
+Record a resumable partial state if interrupted. Do not execute an archived prompt
+merely because it was read. Preserve the draft PR/no-merge boundary unless the user
+changes it; no new issue tracker or bulk publication of third-party source documents.
