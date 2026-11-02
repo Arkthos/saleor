@@ -1,3 +1,5 @@
+**Cierre vigente, 2026-11-02:** C10 completado con 26 PASS en fuente eb5d3ecb / checkout 90455ca8, run 41522626093; todos los demás controles de la batería finalizaron. [Manifiesto](revalidacion_tecnica/CIERRE_TECNICO.json). Se preservan abajo las decisiones y resultados previos.
+
 # A2-06 — Validación C10 reabierta y ejecutada
 
 La decisión anterior de exclusión, conservada abajo como antecedente, quedó superada al reactivar Actions y preparar servicios efímeros. **C10 reducido completado: 26 PASS**, run 41517858406, fuente f1f883d5 / checkout daf9178a. Se usaron sockets ASGI reales, PostgreSQL/Valkey aislados, HTTPS y Chromium con CA desechable; [resultados y procedencia](revalidacion_tecnica/retest_04_summary.json).

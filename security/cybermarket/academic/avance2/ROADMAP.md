@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.25. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** conciliación técnica final.
+**Versión:** 1.26. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** PRUEBAS FINALIZADAS; cierre técnico verificado en el alcance planificado. **Siguiente etapa:** A2-07, reanálisis e incorporación académica.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -97,12 +97,12 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 | A2-02 | Conciliación de requisitos, instrumentos y oráculos | A2-01 | COMPLETADA |
 | A2-03 | Revisión de codificación segura y análisis estático | A2-02 | COMPLETADA |
 | A2-04 | Plan de pruebas clasificado y selección de ampliaciones | A2-02 | COMPLETADA |
-| A2-05 | Ejecución/revalidación CI y conservación de evidencia | A2-03, A2-04 | REABIERTA |
-| A2-06 | Validación HTTP seleccionada o exclusión motivada del despliegue | A2-04, A2-05 | REABIERTA |
+| A2-05 | Ejecución/revalidación CI y conservación de evidencia | A2-03, A2-04 | COMPLETADA EN ALCANCE PLANIFICADO |
+| A2-06 | Validación HTTP seleccionada o exclusión motivada del despliegue | A2-04, A2-05 | COMPLETADA EN ALCANCE PLANIFICADO |
 | A2-07 | Interpretación, mínimo diez hallazgos y recomendaciones | A2-03, A2-05, resolución A2-06 | PENDIENTE_REANALISIS |
-| A2-08 | Borrador completo, tablas, figuras y referencias | A2-07 | PAUSADA_HASTA_CIERRE_TECNICO |
-| A2-09 | Auditoría de rúbrica/evidencia y PDF revisado | A2-08 | PAUSADA_HASTA_CIERRE_TECNICO |
-| A2-10 | Versión congelada y entrega registrada | A2-09 y revisión final del grupo | PAUSADA_HASTA_CIERRE_TECNICO |
+| A2-08 | Borrador completo, tablas, figuras y referencias | A2-07 | PENDIENTE ACTUALIZACIÓN ACADÉMICA |
+| A2-09 | Auditoría de rúbrica/evidencia y PDF revisado | A2-08 | PENDIENTE ACTUALIZACIÓN ACADÉMICA |
+| A2-10 | Versión congelada y entrega registrada | A2-09 y revisión final del grupo | PENDIENTE ACTUALIZACIÓN ACADÉMICA |
 
 ### A2-00 — Planificación y continuidad documental
 
@@ -246,9 +246,9 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-**Última ejecución validada:** [run 41517858406](https://github.com/Arkthos/saleor/actions/runs/41517858406), fuente `f1f883d545b44cdd8699a33b3162b7d2486c080b`, checkout `daf9178add04f18c148b84953a32159413e43ea5`. C10 26 PASS, focal 59 PASS/2 XFAIL, unidades/validadores 42 PASS. Regresión general, E2E y linters por conciliar; alerta heredada de licencias en revisión. Gate global abierto; entregable pausado.
+**Cierre técnico verificado:** fuente `eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7`, checkout `90455ca8abb7d72f707e0137e3ac80fab7a06dec`. General 17.613 PASS/2 XFAIL, focal 59 PASS/2 XFAIL, independientes 42 PASS, C10 26 PASS, E2E 211 PASS, diez hooks PASS y licencias aprobadas con negativo GPL efectivo. No hay ejecuciones de prueba pendientes. [Cierre y límites](CIERRE_PRUEBAS_TECNICAS.md); [manifiesto](evidencia/revalidacion_tecnica/CIERRE_TECNICO.json). Se requiere incorporar los resultados al texto académico antes de emitir otra versión del entregable.
 
-Por instrucción del usuario, completar todas las pruebas técnicas necesarias antes de generar otra versión del entregable. Se reabren A2-05/A2-06 y queda pendiente el reanálisis de A2-07. A2-08/A2-09/A2-10 quedan pausadas. Los PDF anteriores se conservan como fotografías del alcance anterior; no son una entrega técnicamente definitiva.
+Por instrucción del usuario, completar todas las pruebas técnicas necesarias antes de generar otra versión del entregable. A2-05/A2-06 quedan cerradas con la evidencia final y A2-07 requiere reanálisis. A2-08/A2-09/A2-10 continúan pendientes de actualización, revisión y entrega. Los PDF anteriores se conservan como fotografías del alcance anterior; no son una entrega técnicamente definitiva.
 
 | Bloque | Objetivo | Criterio de cierre |
 |---|---|---|
@@ -313,3 +313,7 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — VT-07 completada:** run 41521562337, selección Artistic-1.0-Perl del autor limitada a text-unidecode 1.3 y hash del wheel del lockfile. Base y HEAD: 502 entradas aprobadas, cero rechazadas; seis pruebas de límites aprobadas en cada fuente y control GPL ajeno denegado por la regla original. Stdin único eliminó el error espurio. Archivos originales y derivadas públicas con procedencia/hashes verificados; reglas LGPL/GPL/proprietary iguales. Se conserva el fallo de colección inicial. No se inventa aprobación grupal ni conformidad jurídica global. Conciliación final de calidad en curso; no se genera PDF/Word.
 
 **2026-11-02 — Revisión final del control externo:** se conserva el requisito de etiqueta de mantenedor Licenses Reviewed para contribuciones de otro repositorio. Se identifica externo por head.repo.full_name distinto de github.repository; repo.fork también es verdadero para este fork y no distingue sus propias ramas internas. No se añade etiqueta ni se inventa aprobación humana. Las reglas LGPL/GPL/proprietary y sus negativos siguen iguales. Se verificará el nuevo condicional en CI antes del cierre global.
+
+## 13. Cierre definitivo de la fase de pruebas
+
+**2026-11-02 — CIERRE TÉCNICO COMPLETADO:** última fuente eb5d3ecb, checkout 90455ca8; todos los workflows de pruebas/calidad seleccionados SUCCESS. XML, JSON y SHA-256 reconciliados: general 17.613 PASS/2 XFAIL; focal 59 PASS/2 XFAIL; independientes 42 PASS; C10 26 PASS; E2E 211 PASS; seis fronteras de licencias y 502 entradas aprobadas por fuente, negativo GPL vigente; diez hooks PASS. Cero fallos inesperados o bloqueos de pruebas. Artefactos completos conservados y derivadas públicas depuradas; fallos iniciales visibles. Los dos XFAIL de política provisional y límites ASVS permanecen explícitos. Roadmap, estado, matriz, bitácora y copia del proyecto conciliados. Siguiente: A2-07. Sin nuevo PDF/Word ni merge/campus.

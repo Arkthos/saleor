@@ -1,0 +1,14 @@
+{
+  "library_file_id": "libfile_60fd6d70464c8191b614fef4ecfeb497",
+  "archive_sha256": "2df1a0dfcb2ccb6f274168a956524d95f06d31d0ebb734022076230ea1c39cfa",
+  "size_bytes": 4981645,
+  "new_raw_originals": [
+    "general_original.zip",
+    "license_head_original.zip",
+    "license_base_original.zip",
+    "focal_original.zip"
+  ],
+  "prior_members_preserved": 27,
+  "academic_deliverable_generated": false,
+  "current_version_number": 3
+}

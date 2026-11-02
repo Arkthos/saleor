@@ -1,0 +1,546 @@
+{
+  "schema": "cybermarket.technical.closure.v1",
+  "closed_on": "2026-11-02",
+  "status": "CLOSED_PLANNED_SCOPE",
+  "source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+  "tested_checkout_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+  "source_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+  "functional_saleor_source_changes": 0,
+  "suites": {
+    "general": {
+      "total": 17615,
+      "pass": 17613,
+      "failure": 0,
+      "error": 0,
+      "xfail": 2,
+      "other_skipped": 0
+    },
+    "focal": {
+      "total": 61,
+      "pass": 59,
+      "failure": 0,
+      "error": 0,
+      "xfail": 2,
+      "other_skipped": 0
+    },
+    "independent_units_validators": {
+      "total": 42,
+      "pass": 42,
+      "failure": 0,
+      "error": 0,
+      "xfail": 0,
+      "other_skipped": 0
+    },
+    "live": {
+      "total": 26,
+      "pass": 26,
+      "failure": 0,
+      "error": 0,
+      "xfail": 0,
+      "other_skipped": 0
+    },
+    "e2e": {
+      "total": 211,
+      "pass": 211,
+      "failure": 0,
+      "error": 0,
+      "xfail": 0,
+      "other_skipped": 0
+    }
+  },
+  "independent_breakdown": {
+    "product_units": 30,
+    "evidence_validators": 12,
+    "license_boundary_tests": 6,
+    "duplicate_counting_note": "Focal subset of general. Separate focal artifact 36 = product units 30 + root validators 6; subset of lab 42. License 6 repeated on base/head; count once."
+  },
+  "runtime": {
+    "schema": "cybermarket.technical.environment.v1",
+    "checkout_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+    "event_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+    "run_id": "41522626093",
+    "python": "3.12.3",
+    "lock_sha256": "3e82809b249915e07d73fa5cf3d658ab421218417e727cfc2481f3fdd72d0fa3",
+    "packages": {
+      "Django": "5.2.17",
+      "graphene": "2.1.9",
+      "graphql-core": "2.3.2",
+      "PyJWT": "2.14.0",
+      "pytest": "9.0.3",
+      "uvicorn": "0.52.1",
+      "cryptography": "50.0.1"
+    },
+    "lab": {
+      "bind": "127.0.0.1",
+      "data": "synthetic",
+      "smtp": "locmem",
+      "plugins": [],
+      "usage_telemetry": false,
+      "browser_network": "loopback-only",
+      "tls_verification": "enabled with disposable CA",
+      "product_code_modified": false
+    }
+  },
+  "live_cases": [
+    {
+      "case": "LIVE-01",
+      "variant": "health-valid-malformed",
+      "observation": "REACHABLE",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-02",
+      "variant": "uuid:owner:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-02",
+      "variant": "uuid:peer:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-02",
+      "variant": "uuid:anonymous:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-03",
+      "variant": "legacy:owner:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-03",
+      "variant": "legacy:peer:three-fields",
+      "observation": "MASKED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-03",
+      "variant": "legacy:anonymous:three-fields",
+      "observation": "MASKED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-04",
+      "variant": "missing-uuid",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-04",
+      "variant": "missing-legacy",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-04",
+      "variant": "wrong-type",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-04",
+      "variant": "malformed",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "anonymous",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "customer",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "staff-without",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "staff-with",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "app-without",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "app-with",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "delegated-without-overlap",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "delegated-with-overlap",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:valid",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:missing",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:invalid",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-06",
+      "variant": "cors-and-direct-forwarded-proto",
+      "observation": "INGRESS_TRUST_BOUNDARY",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-07",
+      "variant": "owner-list-peer-list-shared-id-revocation",
+      "observation": "CAPABILITY_PERSISTS",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-05",
+      "variant": "strict-writer-profile",
+      "observation": "TEST_GUARD_DIAGNOSTIC",
+      "result": "PASS"
+    },
+    {
+      "case": "LIVE-06",
+      "variant": "chromium-trusted-ca-two-origins",
+      "observation": "CORS_COOKIE_CSRF_ENFORCED",
+      "result": "PASS"
+    }
+  ],
+  "static": {
+    "bandit_version": "1.8.6",
+    "bandit_loc": 4629,
+    "bandit_findings": 1,
+    "bandit_review": "B105 LOW/MEDIUM, saleor/core/jwt.py:23, literal refreshToken is a cookie name, not a password",
+    "semgrep_version": "1.153.0",
+    "semgrep_scanned_files": 2608,
+    "semgrep_findings": 0,
+    "semgrep_errors": 0,
+    "limit": "Repository rules/default ignores; rule fixtures excluded; pre-commit also passed. Not exhaustive vulnerability detection."
+  },
+  "linters": {
+    "run_id": 41522626126,
+    "job_id": 125542441955,
+    "conclusion": "success",
+    "hook_lines": [
+      "2026-11-02T20:50:03.8233238Z trim trailing whitespace.................................................Passed",
+      "2026-11-02T20:50:04.0682499Z fix end of files.........................................................Passed",
+      "2026-11-02T20:50:04.7205905Z ruff (legacy alias)......................................................Passed",
+      "2026-11-02T20:50:05.3989810Z ruff format..............................................................Passed",
+      "2026-11-02T20:51:13.0012506Z mypy.....................................................................Passed",
+      "2026-11-02T20:51:13.4421647Z deptry...................................................................Passed",
+      "2026-11-02T20:53:20.0220925Z semgrep..................................................................Passed",
+      "2026-11-02T20:53:20.2289278Z uv-lock..................................................................Passed",
+      "2026-11-02T20:53:41.3244993Z Check for uncreated migrations...........................................Passed",
+      "2026-11-02T20:53:49.9969959Z Check GraphQL schema is up to date.......................................Passed"
+    ]
+  },
+  "licenses": {
+    "run_id": 41522626105,
+    "source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+    "policy": "Original allow-lgpl / deny-gpl / deny-proprietary patterns preserved",
+    "selection": "Author-declared Artistic-1.0-Perl for text-unidecode 1.3 with exact wheel hash in uv.lock; no blanket GPL exception",
+    "stdin": "one explicit - input",
+    "external_review_gate": {
+      "head_repo": "Arkthos/saleor",
+      "base_repo": "Arkthos/saleor",
+      "head_repo_fork_flag": true,
+      "no_review_label_added": true,
+      "jobs": [
+        {
+          "id": 125542229871,
+          "conclusion": "success",
+          "review_gate": {
+            "name": "Require maintainer review for an external repository contribution",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 12
+          },
+          "policy": {
+            "name": "Apply original license rules to one explicit stdin input",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          "negative_control": {
+            "name": "Prove unrelated GPL-only metadata remains rejected",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          }
+        },
+        {
+          "id": 125542230398,
+          "conclusion": "success",
+          "review_gate": {
+            "name": "Require maintainer review for an external repository contribution",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 12
+          },
+          "policy": {
+            "name": "Apply original license rules to one explicit stdin input",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          "negative_control": {
+            "name": "Prove unrelated GPL-only metadata remains rejected",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          }
+        }
+      ]
+    },
+    "roles": {
+      "head": {
+        "analyzed_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+        "entries_passed": 502,
+        "entries_rejected": 0,
+        "boundary_tests": {
+          "total": 6,
+          "pass": 6,
+          "failure": 0,
+          "error": 0,
+          "xfail": 0,
+          "other_skipped": 0
+        },
+        "expected_gpl_denial_verified": true,
+        "original_artifact_id": 13178606119,
+        "original_archive_sha256": "01945b60f4133287b8f4e2389fd19973de8c66a0a2d7afb86b91bab7fbf75bd6",
+        "public_archive": {
+          "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_final/head/public.zip",
+          "sha256": "07b73656eec4219462f124eeb3396830f4a669ff68e6cd5452fa5b9dd99bd422",
+          "bytes": 11640,
+          "redactions": 0
+        }
+      },
+      "base": {
+        "analyzed_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+        "entries_passed": 502,
+        "entries_rejected": 0,
+        "boundary_tests": {
+          "total": 6,
+          "pass": 6,
+          "failure": 0,
+          "error": 0,
+          "xfail": 0,
+          "other_skipped": 0
+        },
+        "expected_gpl_denial_verified": true,
+        "original_artifact_id": 13177633548,
+        "original_archive_sha256": "3ab670f434f51e507407280022c0f37d408f02c8378424c09e6c5af6f3f78f67",
+        "public_archive": {
+          "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_final/base/public.zip",
+          "sha256": "23670013b1fa2ba46e3b503be8b6ca4d6619be6d1ed55054d0d45bd81119a806",
+          "bytes": 11637,
+          "redactions": 0
+        }
+      }
+    }
+  },
+  "ci_runs": [
+    {
+      "id": 41522626053,
+      "name": "Test Semgrep Rules",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 10,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626053/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626053/logs",
+      "workflow_id": 404929161
+    },
+    {
+      "id": 41522626105,
+      "name": "Check Licenses",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 8,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626105/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626105/logs",
+      "workflow_id": 404929173
+    },
+    {
+      "id": 41522626126,
+      "name": "Linters",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 115,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626126/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626126/logs",
+      "workflow_id": 388420672
+    },
+    {
+      "id": 41522626060,
+      "name": "TEST-ENV-DEPLOYMENT",
+      "status": "completed",
+      "conclusion": "skipped",
+      "run_number": 115,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626060/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626060/logs",
+      "workflow_id": 388421222
+    },
+    {
+      "id": 41522627356,
+      "name": "Publish for load test",
+      "status": "completed",
+      "conclusion": "skipped",
+      "run_number": 115,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522627356/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522627356/logs",
+      "workflow_id": 388421224
+    },
+    {
+      "id": 41522626075,
+      "name": "Changelog check",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 116,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626075/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626075/logs",
+      "workflow_id": 388420676
+    },
+    {
+      "id": 41522626093,
+      "name": "e2e suite",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 116,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626093/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626093/logs",
+      "workflow_id": 388420677
+    },
+    {
+      "id": 41522626285,
+      "name": "CyberMarket GraphQL security evidence",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 115,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626285/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626285/logs",
+      "workflow_id": 388420675
+    },
+    {
+      "id": 41522626061,
+      "name": "Tests",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 115,
+      "jobs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626061/jobs",
+      "logs_url": "https://api.github.com/repos/Arkthos/saleor/actions/runs/41522626061/logs",
+      "workflow_id": 388420673
+    }
+  ],
+  "artifact_verification": [
+    {
+      "id": 13178373551,
+      "run": 41522626061,
+      "directory": "final_general",
+      "sha256": "1a5d5176dbfba3f4d09031b6a42e3c5360ac4b3f713a2df41f0de5a382fb6302",
+      "internal_manifest": false
+    },
+    {
+      "id": 13179031175,
+      "run": 41522626093,
+      "directory": "final_lab",
+      "sha256": "d4e9571ec1876c5e692bc6cb020e7af51b4ed553ea525f0c64b7c87c7f85c3ce",
+      "internal_manifest": true
+    },
+    {
+      "id": 13178048647,
+      "run": 41522626093,
+      "directory": "final_e2e",
+      "sha256": "429c761ba05e945a721e62c353917a8cb826f19a2f72d38e4ab43335bf1332b5",
+      "internal_manifest": true
+    },
+    {
+      "id": 13179565373,
+      "run": 41522626285,
+      "directory": "final_focal",
+      "sha256": "10f2cd4e518e9a135a6a65dd4a89778c19500e6bdedcce5535f93f589e1ae147",
+      "internal_manifest": true
+    },
+    {
+      "id": 13178795668,
+      "run": 41522626285,
+      "directory": "final_static",
+      "sha256": "6bff96013adfddc446071811d5b13be21010d9f3afa2f8609cb331fdaa5a349f",
+      "internal_manifest": true
+    }
+  ],
+  "general_public_archive": {
+    "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_general/public.zip",
+    "sha256": "19f181f2b7cb147a9c68eb30b32173b1b08f365f8a9c5b382e5c437841ef3d62",
+    "bytes": 295584,
+    "redactions": 85
+  },
+  "case_inventory_validation": {
+    "cases": 27,
+    "executions": 61,
+    "validated": true
+  },
+  "xfail_interpretation": "Exactly two CM-T22 strict expected failures for provisional unapproved P-ORDER-01; not unexpected regressions or confirmed official Saleor vulnerabilities",
+  "scope_limits": [
+    "Private loopback synthetic lab, no public storefront or production deployment",
+    "Chromium origins differ by port on same host; not a third-party cross-site cookie validation",
+    "Both DB aliases use one disposable pytest DB; no physical replica validation",
+    "Direct forwarded-proto trust characterized; no production reverse-proxy certification",
+    "No distributed load/stress, full RS256 rotation, adopted audience policy or absolute/idle business-session guarantee",
+    "Formal risk and ASVS conformance remain unadjudicated"
+  ],
+  "remaining_test_blockers": [],
+  "new_academic_pdf_or_word_generated": false,
+  "private_original_archive": {
+    "library_file_id": "libfile_60fd6d70464c8191b614fef4ecfeb497",
+    "archive_sha256": "2df1a0dfcb2ccb6f274168a956524d95f06d31d0ebb734022076230ea1c39cfa",
+    "size_bytes": 4981645,
+    "new_raw_originals": [
+      "general_original.zip",
+      "license_head_original.zip",
+      "license_base_original.zip",
+      "focal_original.zip"
+    ],
+    "prior_members_preserved": 27,
+    "academic_deliverable_generated": false,
+    "current_version_number": 3
+  },
+  "focal_public_archive": {
+    "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_focal/public.zip",
+    "sha256": "cd261d747f23cbc35cf348244be7786c06873f91241814cba92da5255ed4df2a",
+    "bytes": 7962,
+    "redactions": 6
+  }
+}

@@ -1,3 +1,5 @@
+**Actualización de cierre, 2026-11-02:** pruebas actuales finalizadas y verificadas. [Cierre completo](../CIERRE_PRUEBAS_TECNICAS.md); [manifiesto vigente](revalidacion_tecnica/CIERRE_TECNICO.json). El contenido previo conservado abajo describe su fase anterior y será incorporado al reanálisis académico.
+
 # A2-05 — Ejecución local y verificación independiente de evidencia histórica
 
 ## Resultado nuevo

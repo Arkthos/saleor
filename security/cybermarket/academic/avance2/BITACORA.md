@@ -149,3 +149,11 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT-07 — conservación del gate de contribuciones externas
 
 **2026-11-02 — Revisión final del control externo:** se conserva el requisito de etiqueta de mantenedor Licenses Reviewed para contribuciones de otro repositorio. Se identifica externo por head.repo.full_name distinto de github.repository; repo.fork también es verdadero para este fork y no distingue sus propias ramas internas. No se añade etiqueta ni se inventa aprobación humana. Las reglas LGPL/GPL/proprietary y sus negativos siguen iguales. Se verificará el nuevo condicional en CI antes del cierre global.
+
+## Cierre definitivo de pruebas — 2026-11-02
+
+**2026-11-02 — CIERRE TÉCNICO COMPLETADO:** última fuente eb5d3ecb, checkout 90455ca8; todos los workflows de pruebas/calidad seleccionados SUCCESS. XML, JSON y SHA-256 reconciliados: general 17.613 PASS/2 XFAIL; focal 59 PASS/2 XFAIL; independientes 42 PASS; C10 26 PASS; E2E 211 PASS; seis fronteras de licencias y 502 entradas aprobadas por fuente, negativo GPL vigente; diez hooks PASS. Cero fallos inesperados o bloqueos de pruebas. Artefactos completos conservados y derivadas públicas depuradas; fallos iniciales visibles. Los dos XFAIL de política provisional y límites ASVS permanecen explícitos. Roadmap, estado, matriz, bitácora y copia del proyecto conciliados. Siguiente: A2-07. Sin nuevo PDF/Word ni merge/campus.
+
+La ejecución final reemplaza los estados parciales de supervisión. No se repiten suites tras cerrar: el siguiente commit solo incorpora documentos y evidencia; los resultados pertenecen al SHA probado.
+
+**Normalización documental:** cuatro filas previas de la matriz tenían comas sin delimitar en la observación final. Se reconstruyeron las 14 columnas y se verificaron las once obligaciones originales, sin alterar IDs ni requisitos.

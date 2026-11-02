@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.25",
+  "roadmap_version": "1.26",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "CONCILIACION_FINAL_CONTROL_REVISION_EXTERNA",
+  "status": "PRUEBAS_FINALIZADAS_CIERRE_TECNICO_VERIFICADO",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.25",
+    "version": "1.26",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_25"
+    "status": "GUARDADA_VERSION_1_26"
   },
-  "last_completed_stage": "VT-07",
-  "next_stage": "CONCILIACION_FINAL_TECNICA",
-  "next_action": "Verificar que el control externo se omite por identidad interna del repo y que los controles de política continúan aprobados. Conciliar CI final.",
+  "last_completed_stage": "CIERRE_TECNICO",
+  "next_stage": "A2-07",
+  "next_action": "Incorporar la evidencia final en el análisis de hallazgos y el manuscrito; no se generó PDF/Word en esta fase.",
   "open_items": [
     {
       "id": "D-02",
@@ -48,11 +48,6 @@
       "id": "D-03",
       "item": "P-ORDER-01 sigue provisional",
       "impact": "Límite técnico expreso, sin vulnerabilidad oficial atribuida ni cambio de política inferido."
-    },
-    {
-      "id": "D-05",
-      "item": "Pruebas previstas y control de licencias completados; conciliación final de calidad en curso",
-      "impact": "Entregable sigue pausado durante la conciliación final."
     }
   ],
   "stages": [
@@ -152,7 +147,7 @@
     {
       "id": "A2-05",
       "title": "Ejecución y archivo CI",
-      "status": "REABIERTA",
+      "status": "COMPLETADA_EN_ALCANCE_PLANIFICADO",
       "depends_on": [
         "A2-03",
         "A2-04"
@@ -164,7 +159,9 @@
         "evidencia/resultados_ejecucion.md",
         "evidencia/resultados_ci_manifest.json",
         "evidencia/ejecucion_local/isolated.xml",
-        "evidencia/historica_2026-10-20/archivo_verificado_manifest.json"
+        "evidencia/historica_2026-10-20/archivo_verificado_manifest.json",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ],
       "completed_on": "2026-11-02",
       "target_date": "2026-11-04",
@@ -173,7 +170,7 @@
     {
       "id": "A2-06",
       "title": "Validación desplegada o exclusión motivada",
-      "status": "REABIERTA",
+      "status": "COMPLETADA_EN_ALCANCE_PLANIFICADO",
       "depends_on": [
         "A2-04",
         "A2-05"
@@ -182,7 +179,9 @@
         "evidencia/decision_c10.md"
       ],
       "evidence_refs": [
-        "evidencia/decision_c10.md"
+        "evidencia/decision_c10.md",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ],
       "completed_on": "2026-11-02",
       "target_date": "2026-11-05",
@@ -206,13 +205,14 @@
         "evidencia/hallazgos_avance2.json",
         "evidencia/analisis_resultados.md"
       ],
-      "completed_on": "2026-11-02",
-      "target_date": "2026-11-05"
+      "completed_on": null,
+      "target_date": "2026-11-05",
+      "prior_snapshot_completed_on": "2026-11-02"
     },
     {
       "id": "A2-08",
       "title": "Manuscrito y anexos",
-      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
+      "status": "PENDIENTE_ACTUALIZACION_ACADEMICA",
       "depends_on": [
         "A2-07"
       ],
@@ -225,13 +225,14 @@
         "manuscrito/REFERENCIAS_IEEE.json",
         "manuscrito/generar_docx.py"
       ],
-      "completed_on": "2026-11-02",
-      "target_date": "2026-11-06"
+      "completed_on": null,
+      "target_date": "2026-11-06",
+      "prior_snapshot_completed_on": "2026-11-02"
     },
     {
       "id": "A2-09",
       "title": "Auditoría y PDF",
-      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
+      "status": "PENDIENTE_ACTUALIZACION_ACADEMICA",
       "depends_on": [
         "A2-08"
       ],
@@ -245,13 +246,14 @@
         "manuscrito/GUIA_DEFENSA.md",
         "manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf"
       ],
-      "completed_on": "2026-11-02",
-      "target_date": "2026-11-07"
+      "completed_on": null,
+      "target_date": "2026-11-07",
+      "prior_snapshot_completed_on": "2026-11-02"
     },
     {
       "id": "A2-10",
       "title": "Revisión grupal y entrega",
-      "status": "PAUSADA_HASTA_CIERRE_TECNICO",
+      "status": "PENDIENTE_REVISION_GRUPAL_Y_CAMPUS",
       "depends_on": [
         "A2-09"
       ],
@@ -273,8 +275,8 @@
   ],
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
-  "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.25",
+  "delivery_status": "PENDIENTE_REANALISIS_Y_ACTUALIZACION_ACADEMICA",
+  "last_replicated_document_version": "1.26",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -295,18 +297,22 @@
   "technical_reopening": {
     "requested_by_user": true,
     "source_head": "34891bfd8683b0364fa26b841aae8db3e48b25e7",
-    "artifact_generation_allowed": false,
-    "gate": "No generar nuevo entregable hasta cerrar toda la validación técnica necesaria."
+    "artifact_generation_allowed": true,
+    "gate": "No generar nuevo entregable hasta cerrar toda la validación técnica necesaria.",
+    "technical_precondition_met": true,
+    "academic_output_generated_in_testing_phase": false
   },
   "technical_stages": [
     {
       "id": "VT-01",
       "title": "Entorno y revalidación integrada actual",
-      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "status": "COMPLETADA",
       "preparation_status": "COMPLETADA",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/retest_04_summary.json",
-        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ],
       "completed_on": "2026-11-02"
     },
@@ -317,47 +323,57 @@
       "completed_on": "2026-11-02",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/estatica_retest_04.json",
-        "evidencia/revalidacion_tecnica/linters_retest_04.json"
+        "evidencia/revalidacion_tecnica/linters_retest_04.json",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ]
     },
     {
       "id": "VT-03",
       "title": "HTTP real actores campos y límites de acceso",
-      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "status": "COMPLETADA",
       "completed_on": "2026-11-02",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/retest_04_summary.json",
-        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ]
     },
     {
       "id": "VT-04",
       "title": "HTTPS navegador CSRF cookies CORS proxy",
-      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "status": "COMPLETADA",
       "completed_on": "2026-11-02",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/retest_04_summary.json",
-        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ]
     },
     {
       "id": "VT-05",
       "title": "Ciclo legítimo de UUID y seguridad de estado",
-      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "status": "COMPLETADA",
       "completed_on": "2026-11-02",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/retest_04_summary.json",
-        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ]
     },
     {
       "id": "VT-06",
       "title": "Regresión general E2E evidencia y cierre de laboratorio",
-      "status": "COMPLETADA_EJECUCION_SEGURIDAD",
+      "status": "COMPLETADA",
       "completed_on": "2026-11-02",
       "evidence_refs": [
         "evidencia/revalidacion_tecnica/general_41517858482_summary.json",
-        "evidencia/revalidacion_tecnica/e2e_41517858406_summary.json"
+        "evidencia/revalidacion_tecnica/e2e_41517858406_summary.json",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ]
     },
     {
@@ -365,7 +381,9 @@
       "title": "Corrección acotada del control heredado de licencias",
       "status": "COMPLETADA",
       "evidence_refs": [
-        "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json"
+        "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json",
+        "CIERRE_PRUEBAS_TECNICAS.md",
+        "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
       ],
       "completed_on": "2026-11-02"
     }
@@ -381,93 +399,52 @@
     "resolution": "Actions re-enabled in authenticated maintainer browser; manual dispatch verified by run ID."
   },
   "technical_execution": {
-    "run_id": 41517858406,
-    "tested_source_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
-    "workflow": "e2e.yml",
-    "event": "pull_request",
-    "status": "SECURITY_TESTS_COMPLETE_LICENSE_RETEST_PENDING",
-    "new_deliverable_generated": false,
-    "technical_job_status": "SUCCESS",
-    "failure_evidence": "evidencia/revalidacion_tecnica/intento_03_summary.json",
-    "latest_run": 41517858406,
-    "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
-    "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+    "status": "COMPLETADA_VERIFICADA",
+    "run_id": 41522626093,
+    "tested_source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+    "tested_checkout_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+    "general_run": 41522626061,
+    "focal_run": 41522626285,
+    "linters_run": 41522626126,
+    "license_run": 41522626105,
+    "general_pass": 17613,
+    "general_xfail": 2,
     "focal_pass": 59,
     "focal_xfail": 2,
     "units_validator_pass": 42,
     "live_pass": 26,
-    "live_fail": 0,
-    "e2e_independent_pass": 211,
-    "result_evidence": "evidencia/revalidacion_tecnica/retest_04_summary.json",
-    "e2e_run": 41517858406,
-    "linters": "SUCCESS",
-    "initial_run_id": 41512875410,
-    "general_regression": {
-      "run_id": 41517858482,
-      "job_id": 125526234857,
-      "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
-      "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
-      "total": 17615,
-      "pass": 17613,
-      "xfail": 2,
-      "failure": 0,
-      "error": 0,
-      "other_skipped": 0,
-      "artifact_id": 13176439237,
-      "original_archive_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
-      "original_internal_manifest_present": false,
-      "original_archive_digest_verified": true,
-      "sanitized_archive_sha256": "c98342b5cf286f11d5c107a168c1ec36ceaa49e1b570172ba6f3b44fdd776a05",
-      "sanitization": {
-        "original_artifact_sha256": "95dce5e1a4aac73d601313b1c85e44ed57775971afabf2d7c7d3a9193c1263ca",
-        "original_xml_sha256": "78e785d55b9b955ba44d7c4dc9bb97d02bc6a42ad0b8d1dd1e92ab3f9c0104ad",
-        "redacted_email_occurrences": 85,
-        "method": "Email values replaced by nonreversible SHA-256 labels; testcase counts and outcomes preserved; original retained separately",
-        "JWT_matches": 0,
-        "private_key_matches": 0
-      },
-      "duration_seconds": 1050.22,
-      "focal_is_subset": true
-    }
+    "e2e_pass": 211,
+    "unexpected_failure": 0,
+    "new_deliverable_generated": false,
+    "evidence": "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json"
   },
   "technical_license_check": {
-    "run_id": 41517859635,
-    "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
-    "report_job": 125526698949,
-    "status": "RESOLVED_VERIFIED_ARTISTIC_SELECTION",
-    "analyzer_setup_fixed": true,
-    "report_entries_each": 504,
-    "passed_entries_each": 502,
-    "rejected_entries_each": 2,
-    "rejections_identical_on_base_and_head": true,
-    "rejected_entries": [
-      {
-        "package": "text-unidecode",
-        "version": "1.3",
-        "license": "GPL-1.0-only"
-      },
-      {
-        "package": "text-unidecode",
-        "version": "1.3",
-        "license": "GPL-2.0-or-later"
-      }
-    ],
-    "additional_error": "Grant 0.2.9 detects CI stdin pipe and appends an extra input -, then fails to parse empty stdin; file results remain present. Source cmd/grant/cli/command/check.go runCheck confirms auto-append.",
-    "upstream_license_source": "https://github.com/kmike/text-unidecode/blob/1.3/README.rst",
-    "upstream_license_statement": "Author offers Artistic License or GPL/GPLv2+. SBOM lists separate Artistic name and two GPL IDs; grant reports each separately.",
-    "interpretation": "Inherited finding, not a newly introduced dependency and not an established license infringement. No automatic license-policy approval or exception.",
-    "next_action": "Review alternative-license metadata/election and fix the upstream stdin invocation in a separate bounded change; retain original rules and raw report.",
-    "artifact_digests": {
-      "head": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
-      "base": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711"
-    },
-    "prior_status": "FAILED_REVIEW_REQUIRED",
-    "result_evidence": "evidencia/revalidacion_tecnica/licencias_retest_02_summary.json"
+    "status": "SUCCESS_VERIFICADO",
+    "run_id": 41522626105,
+    "source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+    "passed_entries_per_source": 502,
+    "rejected_entries_per_source": 0,
+    "boundary_tests": 6,
+    "unrelated_gpl_negative_control": "EXPECTED_DENIAL_VERIFIED",
+    "external_review_gate_preserved": true,
+    "no_review_label_added": true,
+    "evidence": "evidencia/revalidacion_tecnica/LICENCIAS_FINALES.json",
+    "historical_failure_evidence": "evidencia/revalidacion_tecnica/licencias_resultado.json"
   },
   "technical_external_review_gate": {
     "requirement": "External repository contributions require Licenses Reviewed maintainer label",
     "predicate": "head.repo.full_name != github.repository",
     "reason": "repo.fork is true for Arkthos/saleor itself and does not identify whether a PR is external",
     "no_review_label_added": true
+  },
+  "technical_gate": {
+    "status": "CERRADO_EN_ALCANCE_PLANIFICADO",
+    "closed_on": "2026-11-02",
+    "source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+    "tested_checkout_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+    "unexpected_failures": 0,
+    "remaining_test_blockers": [],
+    "evidence": "evidencia/revalidacion_tecnica/CIERRE_TECNICO.json",
+    "academic_manuscript_matches_latest_evidence": false
   }
 }

@@ -1,6 +1,6 @@
 # C10 private ASGI validation laboratory
 
-**Status:** 26/26 C10 variants passed in run 41517858406 (branch f1f883d5, checkout daf9178a). Initial failures and all corrections remain archived. The global technical gate still awaits current general regression, E2E, quality checks and license review.
+**Status:** CLOSED within the planned private-lab scope. Source eb5d3ecb / checkout 90455ca8; run 41522626093: 26 C10, 42 independent and 211 E2E PASS, focal 59 PASS/2 expected XFAIL. Current general regression, static/quality and license checks also completed. See the academic-folder technical closure manifest; no new academic PDF/Word was generated.
 
 ## Run the prepared workflow
 

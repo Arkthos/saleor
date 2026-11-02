@@ -1,3 +1,5 @@
+**Actualización de cierre, 2026-11-02:** pruebas actuales finalizadas y verificadas. [Cierre completo](../CIERRE_PRUEBAS_TECNICAS.md); [manifiesto vigente](revalidacion_tecnica/CIERRE_TECNICO.json). El contenido previo conservado abajo describe su fase anterior y será incorporado al reanálisis académico.
+
 # A2-03 — Resultado del análisis estático local
 
 Se ejecutaron herramientas sobre las rutas seleccionadas, conservando código funcional y lockfile. El entorno local se instaló con uv sync --locked. El primer intento no pudo compilar pywatchman por ausencia de clang; repetir con CC=gcc permitió instalar las dependencias sin modificar versiones o archivos del proyecto. Esta adaptación de compilador no convierte el entorno local en réplica exacta de CI.

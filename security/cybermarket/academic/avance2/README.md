@@ -1,6 +1,6 @@
 # Segundo avance — archivo de trabajo académico
 
-**Estado:** VALIDACIÓN TÉCNICA EN EJECUCIÓN. Generación de entregable pausada hasta cerrar VT-01–VT-06. Los informes previos son fotografías del alcance anterior. Consultar [ROADMAP.md](ROADMAP.md) y [estado.json](estado.json).
+**Estado:** PRUEBAS FINALIZADAS EN ALCANCE PLANIFICADO. [Cierre técnico](CIERRE_PRUEBAS_TECNICAS.md) y [evidencia final](evidencia/revalidacion_tecnica/CIERRE_TECNICO.json). Siguiente: reanálisis A2-07 e incorporación al texto académico. Los PDF/Word previos conservan el alcance anterior; no se generó otro entregable.
 
 ## Accesos principales
 
@@ -54,3 +54,7 @@ VT-07 corrigió sys.path de la colección aislada; el primer run 41521406564 se 
 **VT-07 completada:** [Licencias y negativo GPL verificados](evidencia/revalidacion_tecnica/licencias_retest_02_summary.json). Todos los bloques previstos tienen evidencia; resta conciliación final de calidad actual.
 
 El control de revisión de licencias de contribuciones externas se conserva; la identidad del repositorio distingue las ramas internas de este fork, sin añadir etiquetas ni aprobar en nombre de otra persona.
+
+## Cierre técnico vigente
+
+**2026-11-02 — CIERRE TÉCNICO COMPLETADO:** última fuente eb5d3ecb, checkout 90455ca8; todos los workflows de pruebas/calidad seleccionados SUCCESS. XML, JSON y SHA-256 reconciliados: general 17.613 PASS/2 XFAIL; focal 59 PASS/2 XFAIL; independientes 42 PASS; C10 26 PASS; E2E 211 PASS; seis fronteras de licencias y 502 entradas aprobadas por fuente, negativo GPL vigente; diez hooks PASS. Cero fallos inesperados o bloqueos de pruebas. Artefactos completos conservados y derivadas públicas depuradas; fallos iniciales visibles. Los dos XFAIL de política provisional y límites ASVS permanecen explícitos. Roadmap, estado, matriz, bitácora y copia del proyecto conciliados. Siguiente: A2-07. Sin nuevo PDF/Word ni merge/campus.
