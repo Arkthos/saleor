@@ -125,3 +125,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT: entorno de revisión de licencias
 
 **2026-11-02 — Control heredado de licencias:** ambos análisis fallaron antes de emitir veredicto: Python 3.15 frente a PyO3/pydantic-core antiguo. Se revisó la comparación upstream y se fija el workflow reutilizable v1.13.1 por SHA 692d3282, que incorpora soporte compatible. Reglas LGPL/GPL/proprietary y uv.lock de Saleor permanecen iguales. Retest pendiente; no se declara revisión de licencias aprobada.
+
+## VT-01/03/04/05 — cierre del laboratorio privado
+
+**2026-11-02 — VT-01/03/04/05 completadas en laboratorio privado:** run 41517858406, fuente f1f883d5, checkout daf9178a: focal 59 PASS/2 XFAIL, independientes 42 PASS y C10 26 PASS/0 FAIL/0 ERROR. Verificados ZIP y hashes internos. HTTPS y Chromium con CA válida, CSRF/cookies/CORS y cierre de sockets/CA comprobados. No cubre storefront externo, proxy de producción ni replicación física. P-ORDER-01 sigue provisional. VT-02/06 continúan por linters/regresión/E2E. Licencias: instalación corregida, dos rechazos heredados idénticos en base/HEAD más error de stdin; revisión requerida, sin aprobación automática. Entregable pausado.

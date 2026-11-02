@@ -1,0 +1,17 @@
+{
+  "run_id": 41517858406,
+  "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+  "bandit": {
+    "version": "1.8.6",
+    "loc": 4629,
+    "findings": 1,
+    "manual_classification": "B105 LOW/MEDIUM at saleor/core/jwt.py:23; literal refreshToken cookie name, not a password."
+  },
+  "semgrep": {
+    "version": "1.153.0",
+    "scanned_files": 2607,
+    "findings": 0,
+    "errors": 0,
+    "scope_limit": "Repository rules and default ignores; .semgrep rule-test fixtures excluded. No claim of exhaustive vulnerability detection."
+  }
+}

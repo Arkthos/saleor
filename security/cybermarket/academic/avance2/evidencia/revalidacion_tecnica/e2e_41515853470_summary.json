@@ -1,0 +1,14 @@
+{
+  "run_id": 41515853470,
+  "job_id": 125519111220,
+  "branch_head_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
+  "tested_checkout_sha": "9395ab489056290d62ec885b40aa00bca2baffa5",
+  "total": 211,
+  "pass": 211,
+  "failure": 0,
+  "error": 0,
+  "skipped": 0,
+  "artifact_id": 13175193300,
+  "archive_sha256": "ba66a63c0a871e314dd63d7844fdbc5772a19bce18003c3d268657b030479c7a",
+  "inner_checksums_verified": true
+}

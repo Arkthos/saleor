@@ -1,6 +1,6 @@
 # C10 private ASGI validation laboratory
 
-**Status:** Actions re-enabled; runtime validation in progress. The initial laboratory setup failed on Ubuntu 26.04 and was corrected by pinning Ubuntu 24.04. No PostgreSQL-backed or Chromium result is accepted before the actual JUnit is reviewed.
+**Status:** 26/26 C10 variants passed in run 41517858406 (branch f1f883d5, checkout daf9178a). Initial failures and all corrections remain archived. The global technical gate still awaits current general regression, E2E, quality checks and license review.
 
 ## Run the prepared workflow
 
@@ -20,7 +20,7 @@ The lab job installs locked Saleor dependencies plus an explicitly pinned Playwr
 | LIVE-06 | HTTPS refresh cookie, missing/invalid/valid CSRF; actual Chromium across two origins | CA verification enabled, Secure/HttpOnly/SameSite, JS invisibility and CORS browser enforcement. Direct forwarded-proto handling is characterized as an ingress trust boundary |
 | LIVE-07 | Authenticated owner's order list, peer list, ID sharing, token revocation and reuse | The ID is obtained through a legitimate API flow. No external storefront was deployed; bearer-capability policy remains unapproved |
 
-The initial 25 variants executed with **23 PASS / 2 FAIL** in run 41515853470. Their output is preserved. The corrections add a strict-writer diagnostic, giving **26 planned variants pending the next CI run**. They use actual TCP ASGI requests, not Django's test client. The optional probe page exists only in the test wrapper for the browser's origin and is never added to Saleor product routes.
+The initial 25 variants executed with **23 PASS / 2 FAIL** in run 41515853470. Their output is preserved. The corrections add a strict-writer diagnostic, giving **26 variants, all passed in run 41517858406**. They use actual TCP ASGI requests, not Django's test client. The optional probe page exists only in the test wrapper for the browser's origin and is never added to Saleor product routes.
 
 The product middleware profile excludes only `restrict_writer_middleware`, which `saleor.tests.settings` adds as a SQL-routing diagnostic. SecurityMiddleware and JWT refresh-cookie middleware remain asserted. A separate real-HTTP case retains the stricter guard and its exact error; no product permissions or implementation are changed. Both genuine database aliases point to the disposable pytest database before serving threads start. This validates request-thread behavior, not physical replication.
 

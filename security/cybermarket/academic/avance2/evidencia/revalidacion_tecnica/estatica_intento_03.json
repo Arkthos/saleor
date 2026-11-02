@@ -1,0 +1,30 @@
+{
+  "run_id": 41515853470,
+  "branch_head_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
+  "tested_checkout_sha": "9395ab489056290d62ec885b40aa00bca2baffa5",
+  "bandit": {
+    "version": "1.8.6",
+    "scope": "Authentication, JWT helpers, authentication mutations and order schema/resolvers/types",
+    "loc": 4629,
+    "findings": 1,
+    "review": {
+      "test_id": "B105",
+      "severity": "LOW",
+      "confidence": "MEDIUM",
+      "file": "saleor/core/jwt.py",
+      "line": 23,
+      "classification": "FALSE_POSITIVE_COOKIE_NAME",
+      "evidence": "JWT_REFRESH_TOKEN_COOKIE_NAME is the literal refreshToken cookie name, not a password or credential."
+    }
+  },
+  "semgrep": {
+    "version": "1.153.0",
+    "files": 2607,
+    "findings": 0,
+    "errors": 0,
+    "rules": "Repository .semgrep rules",
+    "excluded": ".semgrep intentional rule-test fixtures; Semgrep default ignore applies. C10 harness separately checked with explicit files and pre-commit.",
+    "limit": "0 findings is limited to these rules and targets; not absence of all vulnerabilities."
+  },
+  "provenance": "raw/intento_03/original.zip"
+}

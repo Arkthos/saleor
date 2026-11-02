@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.19",
+  "roadmap_version": "1.20",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "VALIDACION_TECNICA_RETEST_C10_Y_LINTERS",
+  "status": "C10_COMPLETADO_REGRESION_Y_CALIDAD_EN_CURSO",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.19",
+    "version": "1.20",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_19"
+    "status": "GUARDADA_VERSION_1_20"
   },
-  "last_completed_stage": "A2-09",
-  "next_stage": "VT-01",
-  "next_action": "Ejecutar retest C10 de 26 variantes y comprobar regresión general, E2E y linters del mismo origen.",
+  "last_completed_stage": "VT-05",
+  "next_stage": "VT-02/VT-06",
+  "next_action": "Archivar regresión general, E2E y linters actuales; mantener licencias FAILED_REVIEW_REQUIRED.",
   "open_items": [
     {
       "id": "D-02",
@@ -51,8 +51,13 @@
     },
     {
       "id": "D-05",
-      "item": "C10 ejecutado con 23 PASS / 2 FAIL; correcciones preparadas, retest pendiente",
-      "impact": "No cerrar gate hasta completar C10, estática y regresión actuales."
+      "item": "C10 completado: 26 PASS; regresión general, E2E y linters actuales pendientes de conciliación",
+      "impact": "Gate técnico global abierto; informe pausado."
+    },
+    {
+      "id": "D-06",
+      "item": "Control heredado de licencias FAILED_REVIEW_REQUIRED",
+      "impact": "Dos entradas GPL de text-unidecode 1.3 idénticas en base/HEAD y error stdin del analizador; conservar alerta sin afirmar infracción."
     }
   ],
   "stages": [
@@ -274,7 +279,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.19",
+  "last_replicated_document_version": "1.20",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -302,37 +307,53 @@
     {
       "id": "VT-01",
       "title": "Entorno y revalidación integrada actual",
-      "status": "EN_EJECUCION",
+      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
       "preparation_status": "COMPLETADA",
       "evidence_refs": [
-        "evidencia/revalidacion_tecnica/preflight.json",
-        "security/cybermarket/live/README.md"
-      ]
+        "evidencia/revalidacion_tecnica/retest_04_summary.json",
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+      ],
+      "completed_on": "2026-11-02"
     },
     {
       "id": "VT-02",
       "title": "Estática y comprobaciones de calidad actualizadas",
-      "status": "PENDIENTE"
+      "status": "EN_EJECUCION"
     },
     {
       "id": "VT-03",
       "title": "HTTP real actores campos y límites de acceso",
-      "status": "PENDIENTE"
+      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "completed_on": "2026-11-02",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/retest_04_summary.json",
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+      ]
     },
     {
       "id": "VT-04",
       "title": "HTTPS navegador CSRF cookies CORS proxy",
-      "status": "PENDIENTE"
+      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "completed_on": "2026-11-02",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/retest_04_summary.json",
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+      ]
     },
     {
       "id": "VT-05",
       "title": "Ciclo legítimo de UUID y seguridad de estado",
-      "status": "PENDIENTE"
+      "status": "COMPLETADA_ALCANCE_LABORATORIO_PRIVADO",
+      "completed_on": "2026-11-02",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/retest_04_summary.json",
+        "evidencia/revalidacion_tecnica/raw/retest_04/original.zip"
+      ]
     },
     {
       "id": "VT-06",
       "title": "Regresión general E2E evidencia y cierre de laboratorio",
-      "status": "PENDIENTE"
+      "status": "EN_EJECUCION"
     }
   ],
   "technical_blocker": {
@@ -350,34 +371,51 @@
     "tested_source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
     "workflow": "e2e.yml",
     "event": "workflow_dispatch",
-    "status": "RETEST_PENDING",
+    "status": "C10_SUCCESS_OTHER_GATES_PENDING",
     "new_deliverable_generated": false,
-    "technical_job_status": "FAILED_2_CASES",
+    "technical_job_status": "SUCCESS",
     "failure_evidence": "evidencia/revalidacion_tecnica/intento_03_summary.json",
-    "latest_run": 41515853470,
-    "branch_head_sha": "958d6e8008f3abae31efc876e31a8ee67e3ec0c0",
-    "tested_checkout_sha": "9395ab489056290d62ec885b40aa00bca2baffa5",
+    "latest_run": 41517858406,
+    "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+    "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
     "focal_pass": 59,
     "focal_xfail": 2,
     "units_validator_pass": 42,
-    "live_pass": 23,
-    "live_fail": 2,
-    "e2e_independent_pass": 211
+    "live_pass": 26,
+    "live_fail": 0,
+    "e2e_independent_pass": 211,
+    "result_evidence": "evidencia/revalidacion_tecnica/retest_04_summary.json"
   },
   "technical_license_check": {
-    "run_id": 41515854889,
-    "failed_jobs": [
-      125519528278,
-      125519576421
+    "run_id": 41517859635,
+    "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+    "report_job": 125526698949,
+    "status": "FAILED_REVIEW_REQUIRED",
+    "analyzer_setup_fixed": true,
+    "report_entries_each": 504,
+    "passed_entries_each": 502,
+    "rejected_entries_each": 2,
+    "rejections_identical_on_base_and_head": true,
+    "rejected_entries": [
+      {
+        "package": "text-unidecode",
+        "version": "1.3",
+        "license": "GPL-1.0-only"
+      },
+      {
+        "package": "text-unidecode",
+        "version": "1.3",
+        "license": "GPL-2.0-or-later"
+      }
     ],
-    "phase": "Install Python Dependencies in external grant-license-checker",
-    "root_cause": "Python 3.15 selected by >3.12; locked pydantic-core 2.41.5 uses PyO3 0.26 supporting only up to 3.14. No license verdict produced.",
-    "old_reusable_sha": "d7b612674c6d2c0c04c9e946e5decfc483e2795a",
-    "fixed_reusable_sha": "692d3282b8edb0d64aecacb110b3732af71e9f6e",
-    "source_comparison": "https://github.com/saleor/saleor-internal-actions/compare/d7b612674c6d2c0c04c9e946e5decfc483e2795a...692d3282b8edb0d64aecacb110b3732af71e9f6e",
-    "verified_upstream_change": "v1.13.1 pins pydantic >=2.14.0 and locked pydantic-core 2.50.1 with Python 3.15 wheels; nested action reference updated.",
-    "status": "RETEST_PENDING",
-    "product_uv_lock_modified": false,
-    "license_rules_modified": false
+    "additional_error": "Grant 0.2.9 detects CI stdin pipe and appends an extra input -, then fails to parse empty stdin; file results remain present. Source cmd/grant/cli/command/check.go runCheck confirms auto-append.",
+    "upstream_license_source": "https://github.com/kmike/text-unidecode/blob/1.3/README.rst",
+    "upstream_license_statement": "Author offers Artistic License or GPL/GPLv2+. SBOM lists separate Artistic name and two GPL IDs; grant reports each separately.",
+    "interpretation": "Inherited finding, not a newly introduced dependency and not an established license infringement. No automatic license-policy approval or exception.",
+    "next_action": "Review alternative-license metadata/election and fix the upstream stdin invocation in a separate bounded change; retain original rules and raw report.",
+    "artifact_digests": {
+      "head": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
+      "base": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711"
+    }
   }
 }

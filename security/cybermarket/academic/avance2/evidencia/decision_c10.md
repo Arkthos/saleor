@@ -1,3 +1,11 @@
+# A2-06 — Validación C10 reabierta y ejecutada
+
+La decisión anterior de exclusión, conservada abajo como antecedente, quedó superada al reactivar Actions y preparar servicios efímeros. **C10 reducido completado: 26 PASS**, run 41517858406, fuente f1f883d5 / checkout daf9178a. Se usaron sockets ASGI reales, PostgreSQL/Valkey aislados, HTTPS y Chromium con CA desechable; [resultados y procedencia](revalidacion_tecnica/retest_04_summary.json).
+
+La política P-ORDER-01 sigue provisional. LIVE-07 recorre la API legítima del propietario y la revocación, sin desplegar un storefront externo. No se declara confianza de un proxy de producción, replicación física, resistencia a carga o seguridad de una tienda pública. El gate global permanece abierto por regresión/calidad y revisión del control heredado de licencias. No se genera otro entregable.
+
+## Antecedente reemplazado: decisión previa con recursos insuficientes
+
 # A2-06 — Decisión sobre validación desplegada
 
 **Decisión:** no ejecutar C10 en este segundo avance bajo los recursos comprobados de la sesión. Se completa la decisión de alcance y se mantienen LIVE-01–LIVE-07 como NOT_EXECUTED. No se marca ninguna prueba de despliegue como PASS o no aplicable por carecer del entorno.

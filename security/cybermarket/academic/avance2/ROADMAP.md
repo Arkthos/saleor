@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.19. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
+**Versión:** 1.20. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-02/VT-06.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -246,7 +246,7 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 
 ## 10. Próxima acción concreta
 
-**Ejecución activa:** Actions reactivado mediante la sesión de mantenedor. [Run 41512875410](https://github.com/Arkthos/saleor/actions/runs/41512875410), workflow e2e.yml, SHA probado `1c87cf5c36a8cba9922525d5b461df3d6948b450`. Revisar resultados y corregir hasta cerrar VT-01–06; entregable pausado. Los casos no adquieren PASS por haber iniciado el job.
+**Última ejecución validada:** [run 41517858406](https://github.com/Arkthos/saleor/actions/runs/41517858406), fuente `f1f883d545b44cdd8699a33b3162b7d2486c080b`, checkout `daf9178add04f18c148b84953a32159413e43ea5`. C10 26 PASS, focal 59 PASS/2 XFAIL, unidades/validadores 42 PASS. Regresión general, E2E y linters por conciliar; alerta heredada de licencias en revisión. Gate global abierto; entregable pausado.
 
 Por instrucción del usuario, completar todas las pruebas técnicas necesarias antes de generar otra versión del entregable. Se reabren A2-05/A2-06 y queda pendiente el reanálisis de A2-07. A2-08/A2-09/A2-10 quedan pausadas. Los PDF anteriores se conservan como fotografías del alcance anterior; no son una entrega técnicamente definitiva.
 
@@ -300,3 +300,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — Intento 03 conservado; retest preparado:** focal 59 PASS/2 XFAIL y unidades/validadores 42 PASS. HTTP/HTTPS/navegador 23 PASS/2 FAIL: se completa el contrato exacto de coste GraphQL y se distingue middleware normal del producto frente al guard de routing exclusivo de pruebas. Se añade un diagnóstico independiente que conserva ese error exacto; quedan 26 variantes para retest. Cliente HTTP acotado compatible con Semgrep, sin exclusión del código; evidencia estática inmutable excluida solo de reescrituras whitespace/EOF. E2E del mismo run terminó SUCCESS. Ruff, formato y Semgrep sobre seis archivos del harness aprobados localmente. Regresión general y linters siguen por comprobar. No cambia código funcional ni se genera entregable.
 
 **2026-11-02 — Control heredado de licencias:** ambos análisis fallaron antes de emitir veredicto: Python 3.15 frente a PyO3/pydantic-core antiguo. Se revisó la comparación upstream y se fija el workflow reutilizable v1.13.1 por SHA 692d3282, que incorpora soporte compatible. Reglas LGPL/GPL/proprietary y uv.lock de Saleor permanecen iguales. Retest pendiente; no se declara revisión de licencias aprobada.
+
+**2026-11-02 — VT-01/03/04/05 completadas en laboratorio privado:** run 41517858406, fuente f1f883d5, checkout daf9178a: focal 59 PASS/2 XFAIL, independientes 42 PASS y C10 26 PASS/0 FAIL/0 ERROR. Verificados ZIP y hashes internos. HTTPS y Chromium con CA válida, CSRF/cookies/CORS y cierre de sockets/CA comprobados. No cubre storefront externo, proxy de producción ni replicación física. P-ORDER-01 sigue provisional. VT-02/06 continúan por linters/regresión/E2E. Licencias: instalación corregida, dos rechazos heredados idénticos en base/HEAD más error de stdin; revisión requerida, sin aprobación automática. Entregable pausado.
