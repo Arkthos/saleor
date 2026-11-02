@@ -137,3 +137,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT-06 — regresión actual / VT-07 — corrección del control final
 
 **2026-11-02 — VT-06 completada; VT-07 en preparación de retest:** regresión actual 17.613 PASS/2 XFAIL, 0 fallos/errores en 1.050,22 s, reconciliada desde XML. Suite focal es subconjunto. Archivo público depura 85 correos de etiquetas de fixtures conservando huellas/identidad de casos y resultados; original queda separado. Para el último control heredado se selecciona la alternativa Artistic que ofrece el autor de text-unidecode 1.3, solo con hash de wheel del lockfile y declaración presente; no se modifica la política GPL. Seis pruebas verifican rechazo de metadatos no confirmados y conservación de GPL ajeno. Grant recibirá una única entrada stdin y un control negativo GPL real. CI pendiente; entregable pausado.
+
+## VT-07 — colección aislada
+
+**2026-11-02 — VT-07 intento inicial conservado:** la colección aislada con uvx y config /dev/null no incorporaba la raíz del repositorio al sys.path. ModuleNotFoundError: security; aún no se analizó el SBOM. Se fija PYTHONPATH al workspace, sin instalar el producto ni sus servicios. La misma invocación se reproduce localmente antes del nuevo CI. No cambia la selección Artistic ni la política de licencias.

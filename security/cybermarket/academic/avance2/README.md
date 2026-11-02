@@ -48,3 +48,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 **VT-02 completada:** [Linters y diez hooks aprobados](evidencia/revalidacion_tecnica/linters_retest_04.json); [E2E actual 211 PASS](evidencia/revalidacion_tecnica/e2e_41517858406_summary.json). VT-06 espera regresión general.
 
 **VT-06 completada:** [Regresión general 17.613 PASS/2 XFAIL](evidencia/revalidacion_tecnica/general_41517858482_summary.json), sin fallos inesperados. VT-07 prueba selección declarada Artistic acotada al wheel fijado y conserva la denegación GPL.
+
+VT-07 corrigió sys.path de la colección aislada; el primer run 41521406564 se conserva como intento sin análisis del SBOM.

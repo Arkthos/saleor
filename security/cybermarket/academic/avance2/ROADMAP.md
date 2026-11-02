@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.22. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-07.
+**Versión:** 1.23. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-07.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -307,3 +307,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — VT-02 completada:** SAST actual revisado y pre-commit completo SUCCESS en run 41517858278/job 125526067035: whitespace, EOF, Ruff, formato, mypy, deptry, Semgrep, uv-lock, migraciones y esquema GraphQL. E2E actual 211 PASS verificado desde XML y hashes, run 41517858406. Se conserva procedencia Playwright 1.56.0/Chromium 141.0.7390.37 build 1194. Queda VT-06 esperando regresión general y conciliación; control heredado de licencias en revisión, sin cambiar reglas ni adjudicar infracción. Entregable pausado.
 
 **2026-11-02 — VT-06 completada; VT-07 en preparación de retest:** regresión actual 17.613 PASS/2 XFAIL, 0 fallos/errores en 1.050,22 s, reconciliada desde XML. Suite focal es subconjunto. Archivo público depura 85 correos de etiquetas de fixtures conservando huellas/identidad de casos y resultados; original queda separado. Para el último control heredado se selecciona la alternativa Artistic que ofrece el autor de text-unidecode 1.3, solo con hash de wheel del lockfile y declaración presente; no se modifica la política GPL. Seis pruebas verifican rechazo de metadatos no confirmados y conservación de GPL ajeno. Grant recibirá una única entrada stdin y un control negativo GPL real. CI pendiente; entregable pausado.
+
+**2026-11-02 — VT-07 intento inicial conservado:** la colección aislada con uvx y config /dev/null no incorporaba la raíz del repositorio al sys.path. ModuleNotFoundError: security; aún no se analizó el SBOM. Se fija PYTHONPATH al workspace, sin instalar el producto ni sus servicios. La misma invocación se reproduce localmente antes del nuevo CI. No cambia la selección Artistic ni la política de licencias.

@@ -37,7 +37,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check selection boundaries
-        run: uvx --from pytest==9.0.3 pytest -c /dev/null --noconftest -o pythonpath=. tests/test_cybermarket_license_selection.py -q --junitxml=license-units.xml
+        run: PYTHONPATH="$GITHUB_WORKSPACE" uvx --from pytest==9.0.3 pytest -c /dev/null --noconftest tests/test_cybermarket_license_selection.py -q --junitxml=license-units.xml
       - name: Checkout analyzed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
