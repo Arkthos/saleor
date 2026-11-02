@@ -1,12 +1,12 @@
 # C10 private ASGI validation laboratory
 
-**Status:** implemented and locally preflighted; the PostgreSQL-backed cases and Chromium case have NOT been executed. GitHub currently displays that workflows on this fork are disabled because of Actions usage scale. A maintainer must restore execution before the technical gate can close.
+**Status:** Actions re-enabled; runtime validation in progress. The initial laboratory setup failed on Ubuntu 26.04 and was corrected by pinning Ubuntu 24.04. No PostgreSQL-backed or Chromium result is accepted before the actual JUnit is reviewed.
 
 ## Run the prepared workflow
 
-In Arkthos/saleor, open Actions and restore the disabled test workflow as a repository maintainer. Select **e2e suite**, choose **Run workflow**, and select branch **research/cybermarket-security-tests-v1**. This branch's workflow includes the original E2E job and the new **CyberMarket current integration and C10 loopback lab** job. Do not merge to main, deploy publicly, add secrets or enable a paid service as part of this procedure.
+The lab now runs automatically on pull requests to this fork. For an explicit rerun, open Actions. Select **e2e suite**, choose **Run workflow**, and select branch **research/cybermarket-security-tests-v1**. This branch's workflow includes the original E2E job and the new **CyberMarket current integration and C10 loopback lab** job. Do not merge to main, deploy publicly, add secrets or enable a paid service as part of this procedure.
 
-The lab job installs locked Saleor dependencies plus an explicitly pinned Playwright 1.56.0 overlay, starts disposable PostgreSQL 15 and Valkey 8.1 services, records checkout and image provenance, and runs focal integration, independent units/validators, C10, general regression, scoped SAST and pre-commit. Failed test steps retain a failed outcome while later independent checks still run. The original E2E job preserves a separate artifact. Results must be reconciled by source SHA and artifact hashes before any case is marked completed.
+The lab job installs locked Saleor dependencies plus an explicitly pinned Playwright 1.56.0 overlay, starts disposable PostgreSQL 15 and Valkey 8.1 services, records checkout and image provenance, and runs focal integration, independent units/validators, C10 and scoped SAST. Existing Tests and Linters workflows provide general regression and pre-commit on the same PR source. A manual include_regression input can additionally repeat them inside the laboratory job. Failed test steps retain a failed outcome while later independent checks still run. The original E2E job preserves a separate artifact. Results must be reconciled by source SHA and artifact hashes before any case is marked completed.
 
 ## Implemented matrix
 

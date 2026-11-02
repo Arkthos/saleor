@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.15",
+  "roadmap_version": "1.16",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "VALIDACION_TECNICA_CORRIGIENDO_ENTORNO",
+  "status": "VALIDACION_TECNICA_EN_EJECUCION",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.15",
+    "version": "1.16",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_15"
+    "status": "GUARDADA_VERSION_1_16"
   },
   "last_completed_stage": "A2-09",
   "next_stage": "VT-01",
-  "next_action": "Despachar laboratorio con ubuntu-24.04; supervisar E2E original y conservar ambos intentos.",
+  "next_action": "Supervisar nuevos runs automáticos del PR; C10 ahora se ejecuta también en pull_request.",
   "open_items": [
     {
       "id": "D-02",
@@ -274,7 +274,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.15",
+  "last_replicated_document_version": "1.16",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {

@@ -109,3 +109,7 @@ Acceso local autenticado al repositorio permitió confirmar el bloqueo y reactiv
 ## 2026-11-02 — Corrección del intento 01, roadmap 1.15
 
 Run 41512875410: preparación del laboratorio falló por Ubuntu 26.04 no soportado por Playwright fijado. C10 omitido, no fallos del producto. Se fija runner ubuntu-24.04 y se crea siempre carpeta de evidencia. E2E original sigue independiente. Nuevo input include_e2e evita repetir pruebas ajenas a la corrección del laboratorio. Se conserva intento_01_setup.json.
+
+## 2026-11-02 — C10 automático, roadmap 1.16
+
+Para evitar dependencia del despacho por navegador, se activa el laboratorio también en eventos pull_request. Runner ubuntu-24.04 y artefactos en fallos de setup conservados. General y linters quedan en sus workflows existentes sobre la misma fuente; opción include_regression permite repetirlos manualmente cuando corresponde. No se omiten pruebas requeridas ni se marca éxito de un job pendiente.
