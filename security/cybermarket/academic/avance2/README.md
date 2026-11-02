@@ -44,3 +44,5 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 [Control heredado de licencias](evidencia/revalidacion_tecnica/licencias_setup.json): corrección de compatibilidad upstream fijada por SHA; resultado pendiente.
 
 **C10 revisado:** [26 PASS](evidencia/revalidacion_tecnica/retest_04_summary.json), run 41517858406; [SAST actual](evidencia/revalidacion_tecnica/estatica_retest_04.json). VT-02/06 pendientes. [Licencias heredadas](evidencia/revalidacion_tecnica/licencias_resultado.json) requieren revisión.
+
+**VT-02 completada:** [Linters y diez hooks aprobados](evidencia/revalidacion_tecnica/linters_retest_04.json); [E2E actual 211 PASS](evidencia/revalidacion_tecnica/e2e_41517858406_summary.json). VT-06 espera regresión general.

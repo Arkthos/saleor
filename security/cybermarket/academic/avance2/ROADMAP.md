@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.20. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-02/VT-06.
+**Versión:** 1.21. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-06.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -302,3 +302,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — Control heredado de licencias:** ambos análisis fallaron antes de emitir veredicto: Python 3.15 frente a PyO3/pydantic-core antiguo. Se revisó la comparación upstream y se fija el workflow reutilizable v1.13.1 por SHA 692d3282, que incorpora soporte compatible. Reglas LGPL/GPL/proprietary y uv.lock de Saleor permanecen iguales. Retest pendiente; no se declara revisión de licencias aprobada.
 
 **2026-11-02 — VT-01/03/04/05 completadas en laboratorio privado:** run 41517858406, fuente f1f883d5, checkout daf9178a: focal 59 PASS/2 XFAIL, independientes 42 PASS y C10 26 PASS/0 FAIL/0 ERROR. Verificados ZIP y hashes internos. HTTPS y Chromium con CA válida, CSRF/cookies/CORS y cierre de sockets/CA comprobados. No cubre storefront externo, proxy de producción ni replicación física. P-ORDER-01 sigue provisional. VT-02/06 continúan por linters/regresión/E2E. Licencias: instalación corregida, dos rechazos heredados idénticos en base/HEAD más error de stdin; revisión requerida, sin aprobación automática. Entregable pausado.
+
+**2026-11-02 — VT-02 completada:** SAST actual revisado y pre-commit completo SUCCESS en run 41517858278/job 125526067035: whitespace, EOF, Ruff, formato, mypy, deptry, Semgrep, uv-lock, migraciones y esquema GraphQL. E2E actual 211 PASS verificado desde XML y hashes, run 41517858406. Se conserva procedencia Playwright 1.56.0/Chromium 141.0.7390.37 build 1194. Queda VT-06 esperando regresión general y conciliación; control heredado de licencias en revisión, sin cambiar reglas ni adjudicar infracción. Entregable pausado.

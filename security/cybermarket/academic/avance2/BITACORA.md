@@ -129,3 +129,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 ## VT-01/03/04/05 — cierre del laboratorio privado
 
 **2026-11-02 — VT-01/03/04/05 completadas en laboratorio privado:** run 41517858406, fuente f1f883d5, checkout daf9178a: focal 59 PASS/2 XFAIL, independientes 42 PASS y C10 26 PASS/0 FAIL/0 ERROR. Verificados ZIP y hashes internos. HTTPS y Chromium con CA válida, CSRF/cookies/CORS y cierre de sockets/CA comprobados. No cubre storefront externo, proxy de producción ni replicación física. P-ORDER-01 sigue provisional. VT-02/06 continúan por linters/regresión/E2E. Licencias: instalación corregida, dos rechazos heredados idénticos en base/HEAD más error de stdin; revisión requerida, sin aprobación automática. Entregable pausado.
+
+## VT-02 — estática y calidad actuales
+
+**2026-11-02 — VT-02 completada:** SAST actual revisado y pre-commit completo SUCCESS en run 41517858278/job 125526067035: whitespace, EOF, Ruff, formato, mypy, deptry, Semgrep, uv-lock, migraciones y esquema GraphQL. E2E actual 211 PASS verificado desde XML y hashes, run 41517858406. Se conserva procedencia Playwright 1.56.0/Chromium 141.0.7390.37 build 1194. Queda VT-06 esperando regresión general y conciliación; control heredado de licencias en revisión, sin cambiar reglas ni adjudicar infracción. Entregable pausado.

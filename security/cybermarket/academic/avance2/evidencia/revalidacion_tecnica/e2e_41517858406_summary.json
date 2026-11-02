@@ -1,0 +1,13 @@
+{
+  "run_id": 41517858406,
+  "job_id": 125525913036,
+  "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+  "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+  "pass": 211,
+  "failure": 0,
+  "error": 0,
+  "skipped": 0,
+  "artifact_id": 13177455474,
+  "archive_sha256": "a0a734fced9e35fa900b94b4666340d6325264c11463f566eff1ab127975cc40",
+  "inner_checksums_verified": true
+}

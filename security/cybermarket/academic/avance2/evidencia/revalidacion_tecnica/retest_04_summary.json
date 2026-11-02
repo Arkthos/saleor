@@ -216,5 +216,11 @@
     }
   ],
   "teardown": "26 cases completed without teardown errors; finite startup/shutdown and closed TCP port assertions; disposable Chromium CA removed; CI services stopped",
-  "remaining": "General regression, original E2E, linters, and inherited license-check diagnosis"
+  "remaining": "General regression and inherited license-check review",
+  "browser_install_provenance": {
+    "playwright": "1.56.0",
+    "chromium": "141.0.7390.37",
+    "playwright_build": "1194",
+    "source": "job 125525913676 installation log"
+  }
 }

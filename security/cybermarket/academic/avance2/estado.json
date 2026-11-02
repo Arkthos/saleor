@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.20",
+  "roadmap_version": "1.21",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "C10_COMPLETADO_REGRESION_Y_CALIDAD_EN_CURSO",
+  "status": "ESTATICA_C10_LISTOS_REGRESION_GENERAL_EN_CURSO",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.20",
+    "version": "1.21",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_20"
+    "status": "GUARDADA_VERSION_1_21"
   },
-  "last_completed_stage": "VT-05",
-  "next_stage": "VT-02/VT-06",
-  "next_action": "Archivar regresión general, E2E y linters actuales; mantener licencias FAILED_REVIEW_REQUIRED.",
+  "last_completed_stage": "VT-02",
+  "next_stage": "VT-06",
+  "next_action": "Revisar XML de regresión general 41517858482; mantener control heredado de licencias en revisión y entregable pausado.",
   "open_items": [
     {
       "id": "D-02",
@@ -279,7 +279,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PAUSADO_HASTA_CIERRE_TECNICO",
-  "last_replicated_document_version": "1.20",
+  "last_replicated_document_version": "1.21",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -318,7 +318,12 @@
     {
       "id": "VT-02",
       "title": "Estática y comprobaciones de calidad actualizadas",
-      "status": "EN_EJECUCION"
+      "status": "COMPLETADA",
+      "completed_on": "2026-11-02",
+      "evidence_refs": [
+        "evidencia/revalidacion_tecnica/estatica_retest_04.json",
+        "evidencia/revalidacion_tecnica/linters_retest_04.json"
+      ]
     },
     {
       "id": "VT-03",
@@ -384,7 +389,9 @@
     "live_pass": 26,
     "live_fail": 0,
     "e2e_independent_pass": 211,
-    "result_evidence": "evidencia/revalidacion_tecnica/retest_04_summary.json"
+    "result_evidence": "evidencia/revalidacion_tecnica/retest_04_summary.json",
+    "e2e_run": 41517858406,
+    "linters": "SUCCESS"
   },
   "technical_license_check": {
     "run_id": 41517859635,
