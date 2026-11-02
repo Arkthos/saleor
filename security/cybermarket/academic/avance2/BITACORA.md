@@ -105,3 +105,7 @@ Se cerró/reabrió el mismo PR borrador para comprobar activación; no hubo runs
 ## 2026-11-02 — CI reactivado, roadmap 1.14
 
 Acceso local autenticado al repositorio permitió confirmar el bloqueo y reactivar Actions. Se revisaron guards del fork en jobs programados para no lanzar despliegues heredados. Despachado workflow e2e.yml sobre research/cybermarket-security-tests-v1; run 41512875410 IN_PROGRESS, fuente 1c87cf5. Se conserva por separado la fuente probada y el commit documental. Ningún LIVE se declara aprobado todavía.
+
+## 2026-11-02 — Corrección del intento 01, roadmap 1.15
+
+Run 41512875410: preparación del laboratorio falló por Ubuntu 26.04 no soportado por Playwright fijado. C10 omitido, no fallos del producto. Se fija runner ubuntu-24.04 y se crea siempre carpeta de evidencia. E2E original sigue independiente. Nuevo input include_e2e evita repetir pruebas ajenas a la corrección del laboratorio. Se conserva intento_01_setup.json.

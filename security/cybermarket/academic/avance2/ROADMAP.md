@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.14. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
+**Versión:** 1.15. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** validación técnica en ejecución; Actions reactivado y entregable pausado. **Siguiente etapa:** VT-01.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -290,3 +290,5 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-02 — VT-01 preparación completada, ejecución BLOQUEADA:** implementadas 25 variantes C10 y workflow integral manual en e2e.yml. Ruff, formato, AST, YAML, lockfile y colección verificados. Smoke local HTTP/HTTPS con CA válida y teardown aprobado tras corregir un fallo inicial de cierre. No son resultados de casos GraphQL con DB ni del navegador. GitHub muestra workflows deshabilitados por escala de uso; requiere reactivación del mantenedor. Consultar [preflight](evidencia/revalidacion_tecnica/preflight.json) y [laboratorio](../../live/README.md). No se genera otro entregable hasta cerrar el gate técnico.
 
 **2026-11-02 — Bloqueo CI resuelto, validación en curso:** comprobados los guards de tareas programadas heredadas en el fork; Actions reactivado en sesión autenticada. Despachado manualmente e2e.yml sobre rama de investigación. Run 41512875410, fuente 1c87cf5. No hay resultados finales todavía y no se genera otro entregable.
+
+**2026-11-02 — Intento técnico 01 conservado:** job 125508906856 falló instalando Playwright 1.56.0 sobre ubuntu-latest, que resolvió a Ubuntu 26.04. Ningún C10 se ejecutó. Se fija Ubuntu 24.04 y se conserva evidencia incluso si el setup falla; la suite E2E del mismo run es independiente. Próximo: nueva ejecución del laboratorio, sin repetir E2E si ya aprobó sin cambios en su código.

@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 
 root = Path("technical-results")
+root.mkdir(exist_ok=True)
 patterns = [
     (r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+", "[REDACTED_JWT]"),
     (r"(?i)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", "[REDACTED_EMAIL]"),

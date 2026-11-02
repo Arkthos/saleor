@@ -2,6 +2,11 @@ name: e2e suite
 
 on:
   workflow_dispatch:
+    inputs:
+      include_e2e:
+        description: Run original E2E suite
+        type: boolean
+        default: true
   schedule:
     # At 2:00 AM UTC on Monday, Wednesday, and Friday
     - cron: "00 2 * * 1,3,5"
@@ -22,7 +27,7 @@ env:
 
 jobs:
   e2e-tests:
-    if: ${{ github.event_name != 'schedule' || github.repository == 'saleor/saleor' }}
+    if: ${{ (github.event_name != 'schedule' || github.repository == 'saleor/saleor') && (github.event_name != 'workflow_dispatch' || inputs.include_e2e) }}
     runs-on: ubuntu-22.04
     container: python:3.12
     name: Run E2E tests
@@ -89,7 +94,7 @@ jobs:
   cybermarket-technical-completion:
     name: CyberMarket current integration and C10 loopback lab
     if: github.event_name == 'workflow_dispatch' && github.repository == 'Arkthos/saleor'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 55
     permissions:
       contents: read
@@ -130,6 +135,8 @@ jobs:
       - name: Install laboratory dependencies
         id: lab_install
         run: |
+          mkdir -p technical-results
+          uname -a > technical-results/runner-platform.txt
           sudo apt-get update
           sudo apt-get install -y libpq-dev libnss3-tools
           uv sync --locked
