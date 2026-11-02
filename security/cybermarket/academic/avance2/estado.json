@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.8",
+  "roadmap_version": "1.9",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.8",
+    "version": "1.9",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_8"
+    "status": "GUARDADA_VERSION_1_9"
   },
-  "last_completed_stage": "A2-07",
-  "next_stage": "A2-08",
-  "next_action": "Continuar A2-08 conforme al roadmap y alcance documentado.",
+  "last_completed_stage": "A2-08",
+  "next_stage": "A2-09",
+  "next_action": "Continuar A2-09 conforme al roadmap y alcance documentado.",
   "open_items": [
     {
       "id": "D-02",
@@ -48,11 +48,6 @@
       "id": "D-03",
       "item": "Estado de adopción de P-ORDER-01",
       "impact": "Mantener juicio normativo provisional; no bloquea caracterización."
-    },
-    {
-      "id": "D-04",
-      "item": "Recursos y necesidad de C10 para esta entrega",
-      "impact": "Resolver en A2-04/06 según preguntas y alcance."
     }
   ],
   "stages": [
@@ -210,7 +205,7 @@
     {
       "id": "A2-08",
       "title": "Manuscrito y anexos",
-      "status": "PENDIENTE",
+      "status": "COMPLETADA",
       "depends_on": [
         "A2-07"
       ],
@@ -218,8 +213,12 @@
         "manuscrito/avance2.md",
         "manuscrito/referencias.txt"
       ],
-      "evidence_refs": [],
-      "completed_on": null,
+      "evidence_refs": [
+        "manuscrito/INFORME_AVANCE2.md",
+        "manuscrito/REFERENCIAS_IEEE.json",
+        "manuscrito/generar_docx.py"
+      ],
+      "completed_on": "2026-11-02",
       "target_date": "2026-11-06"
     },
     {
@@ -253,16 +252,16 @@
     }
   ],
   "new_product_tests_executed_in_planning": false,
-  "new_academic_manuscript_written": false,
-  "delivery_status": "NO_PREPARADA",
-  "last_replicated_document_version": "1.8",
+  "new_academic_manuscript_written": true,
+  "delivery_status": "MANUSCRITO_EN_AUDITORIA",
+  "last_replicated_document_version": "1.9",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
     "input_branch_sha": "6af5fbad0101d3261055b2bcb089df3255fc1053",
     "manifest": "evidencia/linea_base_manifest.json",
     "new_product_tests_executed": false,
-    "remote_ci_revalidation": "PENDIENTE_A2_05",
+    "remote_ci_revalidation": "NO_EJECUTADA_EN_HEAD_NUEVO",
     "local_docker_available": false,
     "format_fix": "Siete líneas sin espacios finales; validación local, sin claim de pre-commit completo."
   }

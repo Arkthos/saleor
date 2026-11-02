@@ -75,3 +75,9 @@ Productos: evidencia/decision_c10.md. Estado: COMPLETADA. Siguiente etapa: A2-07
 Analizadas tres capas de evidencia y elaborados catorce hallazgos sustantivos con recomendación y verificación propuesta, vinculados a H/R y casos. Se distinguen controles positivos, caracterización y brechas; no se inventan CVSS, correcciones de producto o aprobación de P-ORDER-01. Límites de CI integrado y C10 conservados.
 
 Productos: evidencia/hallazgos_avance2.csv, evidencia/hallazgos_avance2.json, evidencia/analisis_resultados.md. Estado: COMPLETADA. Siguiente etapa: A2-08. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.
+
+## 2026-11-02 — A2-08, roadmap 1.9
+
+Manuscrito integrado con metodología, tres apartados obligatorios, catorce hallazgos, doce referencias IEEE y anexos de instrumentos, 27 casos históricos, diez unidades nuevas y 23 requisitos. Se corrigieron dos localizadores de código sin alterar evidencia bruta.
+
+Productos: manuscrito/INFORME_AVANCE2.md, manuscrito/REFERENCIAS_IEEE.json, manuscrito/generar_docx.py. Estado: COMPLETADA. Siguiente etapa: A2-09. Publicación conjunta con roadmap, estado y matriz; consultar el commit de esta entrada. No se atribuye aprobación docente o humana inexistente.

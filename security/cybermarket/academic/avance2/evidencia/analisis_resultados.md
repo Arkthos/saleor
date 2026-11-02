@@ -26,7 +26,7 @@ Los 23 ASVS tienen disposición explícita. Dieciséis aparecen literalmente en 
 
 ## A2-H03 Respuesta ante credenciales inválidas
 
-**Condición y evidencia.** Las dos variantes históricas de cuenta conocida con contraseña errónea y cuenta inexistente producen el mismo código de error y no emiten credenciales. Referencias: CM-T09; saleor/graphql/tests/test_cybermarket_security_extended.py:116-143.
+**Condición y evidencia.** Las dos variantes históricas de cuenta conocida con contraseña errónea y cuenta inexistente producen el mismo código de error y no emiten credenciales. Referencias: CM-T09; saleor/graphql/tests/test_cybermarket_security_extended.py:90-114.
 
 **Interpretación y límites.** No se midieron distribución de tiempos, códigos HTTP comparados, recuperación de contraseña o registro. Igual código no demuestra ausencia completa de enumeración.
 
@@ -56,7 +56,7 @@ Los 23 ASVS tienen disposición explícita. Dieciséis aparecen literalmente en 
 
 ## A2-H06 CSRF según transporte del refresh
 
-**Condición y evidencia.** La cookie requiere csrfToken; la ruta por argumento explícito tiene un contrato distinto. La matriz histórica comprueba presencia/ausencia/error y la unidad nueva compara secretos iguales o distintos bajo máscaras válidas. Referencias: CM-T03;CM-U04; saleor/graphql/account/mutations/authentication/refresh_token.py:60-145; saleor/graphql/account/mutations/authentication/utils.py:61-70.
+**Condición y evidencia.** La cookie requiere csrfToken; la ruta por argumento explícito tiene un contrato distinto. La matriz histórica comprueba presencia/ausencia/error y la unidad nueva compara secretos iguales o distintos bajo máscaras válidas. Referencias: CM-T03;CM-U04; saleor/graphql/account/mutations/authentication/refresh_token.py:60-145; saleor/graphql/account/mutations/authentication/utils.py:55-65.
 
 **Interpretación y límites.** No se probó origen en navegador, preflight CORS, almacenamiento del frontend ni todos los formatos malformados. El resultado es de la condición implementada.
 
