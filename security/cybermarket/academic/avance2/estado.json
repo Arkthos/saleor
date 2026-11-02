@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.0",
+  "roadmap_version": "1.1",
   "updated_on": "2026-11-02",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
   "status": "PLANIFICACION_DOCUMENTADA",
   "citation_style": "IEEE",
-  "due_at": null,
+  "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
-  "deadline_status": "PENDIENTE_DE_CONFIRMAR_EN_CAMPUS",
+  "deadline_status": "FIJADA_POR_USUARIO",
   "group_roles": {},
   "no_teacher_feedback_reported": true,
   "repository": {
@@ -30,20 +30,15 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.0",
+    "version": "1.1",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-02",
-    "status": "GUARDADA_VERSION_1_0"
+    "status": "GUARDADA_VERSION_1_1"
   },
   "last_completed_stage": "A2-00",
   "next_stage": "A2-01",
-  "next_action": "Revisar HEAD/CI, fijar entorno y procedencia; incorporar fecha/hora del campus y roles cuando se confirmen.",
+  "next_action": "Iniciar A2-01 y A2-02 según calendario: fijar baseline/entorno y responsables reales; fecha límite 2026-11-08 18:00 America/Costa_Rica.",
   "open_items": [
-    {
-      "id": "D-01",
-      "item": "Fecha y hora límite del campus",
-      "impact": "Impide fijar calendario de entrega; no bloquea tareas independientes."
-    },
     {
       "id": "D-02",
       "item": "Roles y disponibilidad reales del grupo",
@@ -78,7 +73,8 @@
         "AJUSTES_AVANCE1.md",
         "BITACORA.md"
       ],
-      "completed_on": "2026-11-02"
+      "completed_on": "2026-11-02",
+      "target_date": "2026-11-02"
     },
     {
       "id": "A2-01",
@@ -91,7 +87,8 @@
         "evidencia/linea_base.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-02"
     },
     {
       "id": "A2-02",
@@ -105,7 +102,8 @@
         "evidencia/criterios_y_oraculos.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-02"
     },
     {
       "id": "A2-03",
@@ -119,7 +117,8 @@
         "evidencia/analisis_estatico.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-03"
     },
     {
       "id": "A2-04",
@@ -132,7 +131,8 @@
         "evidencia/plan_pruebas.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-03"
     },
     {
       "id": "A2-05",
@@ -146,7 +146,8 @@
         "evidencia/resultados_ci_manifest.json"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-04"
     },
     {
       "id": "A2-06",
@@ -160,7 +161,8 @@
         "evidencia/decision_c10.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-05"
     },
     {
       "id": "A2-07",
@@ -176,7 +178,8 @@
         "evidencia/analisis_resultados.md"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-05"
     },
     {
       "id": "A2-08",
@@ -190,7 +193,8 @@
         "manuscrito/referencias.txt"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-06"
     },
     {
       "id": "A2-09",
@@ -204,7 +208,8 @@
         "manuscrito/Avance2_revision.pdf"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-07"
     },
     {
       "id": "A2-10",
@@ -217,11 +222,14 @@
         "manuscrito/entrega/manifest.json"
       ],
       "evidence_refs": [],
-      "completed_on": null
+      "completed_on": null,
+      "target_date": "2026-11-08"
     }
   ],
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": false,
   "delivery_status": "NO_PREPARADA",
-  "last_replicated_document_version": "1.0"
+  "last_replicated_document_version": "1.1",
+  "due_at_utc": "2026-11-09T00:00:00Z",
+  "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica."
 }

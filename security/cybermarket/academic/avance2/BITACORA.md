@@ -18,6 +18,14 @@
 
 **Siguiente acción:** A2-01, confirmar baseline actual, condiciones de ejecución y conservación; incorporar fecha/roles cuando se disponga y preparar A2-02. Si una publicación o réplica falla, registrar el estado parcial y no anunciar cierre documental completo.
 
+## 2026-11-02 — Fecha límite y calendario, versión 1.1
+
+El usuario fijó la fecha límite para el domingo siguiente a las 18:00. Desde la fecha de esta sesión (lunes 2 de noviembre), corresponde al **domingo 8 de noviembre de 2026, 18:00, America/Costa_Rica (UTC−06:00)**; equivalente 9 de noviembre, 00:00 UTC. La fecha se registra por instrucción del usuario, sin presentarla como una verificación del campus.
+
+Se actualizaron ROADMAP.md y estado.json con la fecha y metas diarias hasta la entrega. El sábado se reserva para auditoría y PDF; el domingo para revisión final, congelación y carga, con margen de 15:00 a 18:00. Se mantiene A2-00 cerrada y A2-01–A2-10 pendientes: asignar fechas no acredita ejecución. Se conserva la identidad de la copia del roadmap del proyecto.
+
+Validación: calendario y día de semana comprobados, zona horaria y conversión UTC verificadas; versiones coincidentes y estados preservados. Esta actualización no crea recordatorios ni confirma una carga al campus.
+
 ## Formato para las próximas entradas
 
 Cada entrada debe identificar fecha, etapa, solicitud/objetivo, productos, cambios en evidencia o criterios, comprobaciones realmente ejecutadas, resultados y límites, decisiones, referencias al commit/run cuando existan, estado y punto exacto de reanudación. Añadir entradas; no reescribir el pasado para atribuirle conocimiento posterior.

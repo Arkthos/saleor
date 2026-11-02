@@ -1,6 +1,8 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.0. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** planificación establecida; desarrollo de la entrega pendiente. **Etapa cerrada:** A2-00. **Siguiente etapa:** A2-01.
+**Versión:** 1.1. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** planificación establecida; desarrollo de la entrega pendiente. **Etapa cerrada:** A2-00. **Siguiente etapa:** A2-01.
+
+**Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
 ## 1. Propósito y fuentes de control
 
@@ -86,7 +88,7 @@ No se asigna una nota anticipada. La columna de revisión de MATRIZ_RUBRICA.csv 
 
 ## 6. Etapas y dependencias
 
-Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIFICADA. Solo una etapa con productos y comprobaciones verificadas puede cerrarse. Una exclusión no satisface automáticamente un requisito obligatorio. El calendario por fecha se fija cuando se confirme la fecha y hora del campus.
+Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIFICADA. Solo una etapa con productos y comprobaciones verificadas puede cerrarse. Una exclusión no satisface automáticamente un requisito obligatorio. El calendario de la sección 7 usa la fecha límite fijada por el usuario: 8 de noviembre, 18:00, hora de Costa Rica.
 
 | Etapa | Producto principal | Dependencia | Estado inicial |
 |---|---|---|---|
@@ -110,11 +112,11 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 
 ### A2-01 — Congelar la línea base de la entrega y organizar recursos
 
-**Hacer:** registrar hashes del Word presentado, rúbrica, código base y lockfile; comprobar rama/PR/CI al retomar; completar inventario I01 de Python, servicios y settings no secretos; dejar documentado el uso académico del fork bajo su LICENSE y el laboratorio controlado. Registrar fecha/hora de entrega y distribución real de responsabilidades cuando el grupo las confirme. Reservar tiempo para análisis y PDF.
+**Hacer:** registrar hashes del Word presentado, rúbrica, código base y lockfile; comprobar rama/PR/CI al retomar; completar inventario I01 de Python, servicios y settings no secretos; dejar documentado el uso académico del fork bajo su LICENSE y el laboratorio controlado. Aplicar la fecha límite del 8 de noviembre a las 18:00, hora de Costa Rica, y registrar la distribución real de responsabilidades cuando el grupo la confirme. Reservar tiempo para análisis y PDF.
 
 **Resolver:** fallo documental de espacios finales y su revalidación pertinente; localizar artefactos históricos necesarios antes de depender de su disponibilidad. No volver a ejecutar todas las suites solo para corregir un documento si no aporta evidencia; distinguir checks de formato de la posterior revalidación experimental.
 
-**Productos:** evidencia/linea_base.md, manifiesto de fuentes/entorno, calendario y roles en estado.json. **Cierre:** versiones y recursos identificados, autorización del entorno documentada, riesgos de acceso/retención anotados y siguiente fase ejecutable. La falta de una fecha no impide trabajo técnico independiente, pero bloquea promesas de calendario final.
+**Productos:** evidencia/linea_base.md, manifiesto de fuentes/entorno, calendario y roles en estado.json. **Cierre:** versiones y recursos identificados, autorización del entorno documentada, riesgos de acceso/retención anotados y siguiente fase ejecutable. La fecha del plan está fijada por el usuario; el reparto de responsabilidades aún debe registrar personas y disponibilidad reales.
 
 ### A2-02 — Conciliar requisitos, riesgos y expectativas
 
@@ -192,16 +194,21 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 
 ## 7. Secuencia de trabajo y prioridad
 
-La fecha y hora del campus están PENDIENTES; no se inventa una fecha a partir de la semana del programa. Al confirmarlas, A2-01 convertirá esta secuencia en fechas y responsables reales.
+**Calendario de trabajo acordado:** del lunes 2 al domingo 8 de noviembre de 2026. Todas las horas indicadas corresponden a Costa Rica. Son metas de planificación; las etapas siguen pendientes hasta cumplir sus criterios y registrar evidencia.
 
-| Bloque de trabajo propuesto | Etapas | Condición para pasar al siguiente |
+| Fecha objetivo | Etapas | Resultado esperado al cierre de la jornada |
 |---|---|---|
-| Preparación | A2-01–02 | Baseline y expectativas claras |
-| Revisión y diseño | A2-03–04 | Prácticas y plan de pruebas trazables |
-| Evidencia | A2-05 y decisión A2-06 | Resultados conservados y límites decididos |
-| Análisis | A2-07 | Catálogo y recomendaciones sustentados |
-| Escritura | A2-08 | Borrador completo y anexos coherentes |
-| Calidad y entrega | A2-09–10 | PDF revisado, grupo conforme y carga confirmada |
+| Lunes 2 de noviembre | A2-00; A2-01–02 | Plan publicado; preparar baseline, recursos, requisitos y oráculos. Solo A2-00 está cerrada al actualizar este calendario. |
+| Martes 3 de noviembre | A2-03–04 | Revisión de codificación/estática y plan de pruebas clasificado, con ampliaciones justificadas |
+| Miércoles 4 de noviembre | A2-05 | Ejecución/revalidación pertinente, resultados reconciliados y evidencia conservada |
+| Jueves 5 de noviembre | A2-06–07 | Resolver C10 con alcance viable o exclusión motivada; catálogo de diez o más hallazgos y recomendaciones sustentados |
+| Viernes 6 de noviembre | A2-08 | Borrador completo, referencias, tablas y anexos |
+| Sábado 7 de noviembre | A2-09 | Auditoría de rúbrica/evidencia, correcciones y PDF revisado visualmente |
+| Domingo 8, 09:00–12:00 | A2-10 | Revisión final del grupo y resolución de observaciones |
+| Domingo 8, 12:00–15:00 | A2-10 | Congelar PDF/versión/hash y preparar entrega |
+| Domingo 8, 15:00–18:00 | A2-10 | Margen para carga y comprobación; fecha límite 18:00. Solo marcar ENTREGADO con confirmación verificable. |
+
+**Puntos de control:** al terminar el miércoles revisar brechas de evidencia; al terminar el jueves resolver qué entra en el manuscrito; el viernes priorizar la redacción completa; reservar el sábado para auditoría y el domingo para revisión/carga. Si una meta se retrasa, actualizar fechas de las tareas y alcance de ampliaciones sin mover la fecha límite por cuenta propia.
 
 **Si el plazo se acorta:** proteger primero las obligaciones de la consigna, la calidad del análisis de evidencia ya disponible y el tiempo de revisión del PDF. Reducir ampliaciones exploratorias y justificar C10 parcial/excluido antes de eliminar un apartado obligatorio. No fabricar ejecución ni reciclar resultados de otro SHA para ahorrar tiempo. A2-03 y A2-04 pueden avanzar en paralelo como actividades si hay personas disponibles; las dependencias de interpretación y cierre siguen vigentes.
 
@@ -231,12 +238,12 @@ Esta es una regla operativa persistida, no una sincronización automática en se
 | Política de pedidos indefinida | Separar caracterización de juicio normativo y resolver/adoptar supuestos explícitos en A2-02 |
 | Exigir todo el curso en avance 2 | Usar la consigna específica; reservar despliegue integral, mantenimiento e incidentes para el alcance que corresponda |
 | Reescritura silenciosa del avance 1 | Original preservado, registro de ajustes y versión nueva |
-| Falta de plazo o disponibilidad | Calendario abierto y priorización del núcleo; registrar recursos reales en A2-01 |
+| Retrasos o disponibilidad insuficiente | Fecha límite fijada al 8 de noviembre, 18:00; proteger auditoría/carga y reducir ampliaciones justificadamente, registrando recursos reales |
 | GitHub contiene solo código o resúmenes | Versionar también matrices, razonamiento, borradores, anexos y auditorías propias |
 | Publicar material ajeno o datos innecesarios | Conservar originales donde ya están; publicar referencias, hashes y productos propios depurados |
 
 ## 10. Próxima acción concreta
 
-Iniciar A2-01: comprobar HEAD/CI al retomar, registrar fecha/hora del campus y responsables cuando estén disponibles, fijar entorno y procedencia, y preparar la conciliación de A2-02. No empezar por volver a redactar la justificación del avance 1 ni ejecutar automáticamente todo C10.
+Iniciar A2-01: comprobar HEAD/CI al retomar, aplicar el calendario hasta el domingo 8 a las 18:00 y registrar responsables cuando estén disponibles, fijar entorno y procedencia, y preparar la conciliación de A2-02. No empezar por volver a redactar la justificación del avance 1 ni ejecutar automáticamente todo C10.
 
 **Referencias de continuidad:** [rúbrica original](https://chatgpt.com/library?file_id=libfile_a78770eba870819187a82a9dd430bbe6&account_id=personal), [primer avance presentado](https://chatgpt.com/library?file_id=libfile_df58994acdec819181215cec7155ca14&account_id=personal), [matriz histórica de pruebas](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/test_matrix.csv), [cierre experimental](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md), [plan de semana 7](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md), [plan C10](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/C10_live_validation_roadmap_team_handoff.md), [contexto curricular](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Contexto_Curricular_CY703_2026-11-02.md) y [revisión del checkpoint](https://github.com/Arkthos/saleor/blob/research/cybermarket-security-tests-v1/security/cybermarket/academic/avance2/antecedentes/Revision_Checkpoint_CyberMarket_2026-11-02.md). Los dos últimos informes preceden a la recepción de la rúbrica específica: su antigua ausencia queda resuelta en esta planificación.
