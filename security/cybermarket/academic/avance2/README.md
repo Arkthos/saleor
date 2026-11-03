@@ -62,3 +62,7 @@ El control de revisión de licencias de contribuciones externas se conserva; la 
 ## Documento acumulativo
 
 Por aclaración del usuario del 2026-11-03, la segunda entrega continúa el Word del primer avance. [Revisión del contenido y cambios propuestos](REVISION_CONTINUIDAD_AVANCE1.md). Pregunta y objetivos se conservan; se actualizan los estados de evidencia y se desarrolla el método existente. Los borradores independientes previos y sus auditorías son material auxiliar, no la continuación definitiva. El original no se ha modificado.
+
+## Textos listos para actualizar la continuación
+
+[Veinte bloques y ubicaciones de inserción](manuscrito/TEXTOS_ACTUALIZADOS_AVANCE1.md). Redacción preparada, no aplicada al Word. La guía conserva pregunta/objetivos y actualiza antecedentes temporales, método, actores, entorno, riesgos y anexos. No sustituye el reanálisis A2-07.

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "roadmap_version": "1.27",
+  "roadmap_version": "1.28",
   "updated_on": "2026-11-03",
   "project": "CyberMarket CR / Saleor",
   "assignment": "Segundo avance CY-703",
-  "status": "CONTINUIDAD_DOCUMENTAL_REVISADA_AJUSTES_PROPUESTOS",
+  "status": "TEXTOS_CONTINUIDAD_PREPARADOS_PENDIENTES_INSERCION",
   "citation_style": "IEEE",
   "due_at": "2026-11-08T18:00:00-06:00",
   "due_timezone": "America/Costa_Rica",
@@ -30,14 +30,14 @@
   "project_copy": {
     "library_file_id": "libfile_52ff5e37305c8191a731a90b6798b246",
     "file_name": "Roadmap_Segundo_Avance_CyberMarket.md",
-    "version": "1.27",
+    "version": "1.28",
     "sync_policy": "Reemplazar el mismo archivo al cerrar cada etapa; si falla, registrar divergencia.",
     "saved_on": "2026-11-03",
-    "status": "GUARDADA_VERSION_1_27"
+    "status": "GUARDADA_VERSION_1_28"
   },
-  "last_completed_stage": "REVISION_CONTINUIDAD_AVANCE1",
+  "last_completed_stage": "REDACCION_TEXTOS_CONTINUIDAD",
   "next_stage": "A2-07",
-  "next_action": "Aplicar ajustes puntuales al primer avance en su continuación acumulativa e integrar los resultados y hallazgos; conservar pregunta y objetivos.",
+  "next_action": "Insertar los veinte bloques de actualización en la continuación del primer avance y completar A2-07 con análisis y trazabilidad de hallazgos.",
   "open_items": [
     {
       "id": "D-02",
@@ -276,7 +276,7 @@
   "new_product_tests_executed_in_planning": false,
   "new_academic_manuscript_written": true,
   "delivery_status": "PENDIENTE_REANALISIS_Y_ACTUALIZACION_ACADEMICA",
-  "last_replicated_document_version": "1.27",
+  "last_replicated_document_version": "1.28",
   "due_at_utc": "2026-11-09T00:00:00Z",
   "deadline_source": "Solicitud del usuario: domingo que viene a las 6 pm; resuelta desde 2026-11-02 en America/Costa_Rica.",
   "baseline_review": {
@@ -457,6 +457,8 @@
     "original_preserved": true,
     "review_proposals_applied_to_word": false,
     "review": "REVISION_CONTINUIDAD_AVANCE1.md",
-    "standalone_prior_drafts": "AUXILIARY_CONTENT_ONLY_NOT_FINAL_CONTINUATION"
+    "standalone_prior_drafts": "AUXILIARY_CONTENT_ONLY_NOT_FINAL_CONTINUATION",
+    "prepared_texts": "manuscrito/TEXTOS_ACTUALIZADOS_AVANCE1.md",
+    "prepared_blocks": 20
   }
 }

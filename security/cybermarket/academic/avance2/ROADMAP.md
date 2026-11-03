@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.27. **Actualizado:** 2026-11-03. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** PRUEBAS FINALIZADAS; cierre técnico verificado en el alcance planificado. **Siguiente etapa:** A2-07, reanálisis e incorporación académica.
+**Versión:** 1.28. **Actualizado:** 2026-11-03. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** PRUEBAS FINALIZADAS; cierre técnico verificado en el alcance planificado. **Siguiente etapa:** A2-07, reanálisis e incorporación académica.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -323,3 +323,7 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 **2026-11-03 — REVISIÓN DE CONTINUIDAD COMPLETADA:** el usuario aclara que el segundo avance amplía el primero en un único documento acumulativo. El Word (5) coincide por SHA con la entrega (4): c8f98d51. Se revisaron sus 505 párrafos con texto y páginas clave de la exportación; trece propuestas puntuales quedan registradas, sin modificar el original. Conservar problema, pregunta y objetivos; desarrollar método ya existente, actualizar pruebas antes pendientes, actores, entorno, riesgos, H01-H15 y anexos. Corregir atribución de código CSRF entre C.2/C.3 y comprobar maquetación. Los borradores independientes de trece páginas pasan a material auxiliar. La fase técnica permanece cerrada. Siguiente A2-07 y edición acumulativa; sin nuevo Word/PDF académico.
 
 La regla de contenido es conservar y desarrollar el trabajo existente. [Revisión de cambios](REVISION_CONTINUIDAD_AVANCE1.md) y [estructura acumulativa](manuscrito/ESTRUCTURA.md). Las propuestas no se presentan como correcciones docentes ni como cambios ya aplicados al Word.
+
+## 15. Textos de actualización del primer avance preparados
+
+**2026-11-03 — REDACCIÓN DE CONTINUIDAD COMPLETADA:** se preparan veinte bloques de reemplazo con frases de búsqueda y localizadores del Word base, cambios para Tablas III/V y anexos A-C, código CSRF corregido en la guía y tabla de procedencia de resultados. [Textos e instrucciones de inserción](manuscrito/TEXTOS_ACTUALIZADOS_AVANCE1.md) y registro estructurado JSON. El contenido está listo para inserción manual; no se aplicó al Word ni se generó otro PDF/DOCX. Pregunta y objetivos se conservan. Cifras reconciliadas con CIERRE_TECNICO.json y SHA del Word original comprobado. Esta redacción no cierra A2-07 ni adjudica riesgos/ASVS o confirma una política provisional. Sin pruebas nuevas o merge. Siguiente: aplicar textos a la continuación e integrar el análisis de hallazgos.

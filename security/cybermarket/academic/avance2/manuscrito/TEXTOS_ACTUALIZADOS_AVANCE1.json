@@ -1,0 +1,263 @@
+{
+  "status": "TEXTOS_PREPARADOS_NO_APLICADOS_AL_WORD",
+  "source_sha256": "c8f98d51b40ef7571f0cefaa092ae7c9504b3d5e4cd89db0f5d28c885c014d65",
+  "source_modified": false,
+  "technical_tests_rerun": false,
+  "patches": [
+    {
+      "id": "ED01",
+      "title": "Resumen y palabras clave",
+      "location": "Antes de PLANTEAMIENTO DE LA INVESTIGACIÓN. Buscar «Este primer avance prepara».",
+      "action": "Reemplazar el resumen completo y conservar las palabras clave.",
+      "text": "Resumen— Este trabajo evalúa los mecanismos de autenticación, gestión de tokens y autorización del backend de Saleor mediante un fork versionado y un escenario empresarial ficticio denominado CyberMarket CR. El alcance comprende seis operaciones GraphQL y sus dependencias de código. A partir de la arquitectura lógica, los límites de confianza, trece escenarios de riesgo y quince observaciones estáticas identificados en la etapa inicial, se desarrolla una evaluación que adapta SQUARE, OWASP ASVS 5.0.0 y WSTG 4.2 para organizar requisitos, casos y evidencias. La metodología combina revisión de prácticas de codificación segura, análisis estático con Bandit y Semgrep, y pruebas dinámicas positivas y negativas en un laboratorio aislado con datos sintéticos. La batería focal registra 59 pruebas aprobadas y dos fallos esperados vinculados a una política de acceso provisional; adicionalmente, se completan 26 verificaciones mediante HTTP, HTTPS y Chromium. Las ejecuciones permiten caracterizar la revocación de tokens, los permisos por actor y los controles de cookies, CSRF y CORS, conservando evidencia de resultados y limitaciones. Los comportamientos observados sustentan la revisión de riesgos y recomendaciones, pero no equivalen por sí solos a vulnerabilidades confirmadas ni a una declaración de cumplimiento. Las conclusiones se restringen a los componentes, configuraciones y condiciones efectivamente examinados.\n\nPalabras clave— Autenticación, autorización, desarrollo seguro, GraphQL, gestión de tokens, modelado de amenazas, Saleor.",
+      "source_paragraphs": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "ED02",
+      "title": "Introducción: versión, alcance y continuidad",
+      "location": "INTRODUCCIÓN. Desde «Se seleccionó Saleor como objeto de estudio» hasta el final del párrafo «La investigación parte de una revisión documental».",
+      "action": "Reemplazar esos tres párrafos; conservar los tres párrafos introductorios anteriores.",
+      "text": "Se seleccionó Saleor como objeto de estudio por tratarse de una plataforma de comercio electrónico de código abierto que expone sus funcionalidades mediante una API GraphQL. Su documentación distingue entre clientes, personal administrativo y aplicaciones externas, así como entre autenticación y autorización [3]. El estudio utiliza el fork Arkthos/saleor y conserva como línea base del producto el commit 4cb1609a90eade14b6275a407bc7a00c35698090 [4]. CyberMarket CR proporciona el escenario empresarial ficticio para representar actores, información protegida y operaciones comerciales. La documentación funcional se contrasta con el código de esta versión y con la configuración registrada del laboratorio.\n\nEl alcance comprende tokenCreate, tokenRefresh, tokensDeactivateAll, me, user y order. Estas operaciones permiten examinar el establecimiento de identidad, la renovación y revocación de credenciales y las decisiones de acceso a cuentas y pedidos. OWASP ASVS 5.0.0 [5] orienta la formulación de requisitos y WSTG 4.2 [6] la selección de procedimientos de verificación, sin asumir una equivalencia automática entre ambos referentes.\n\nLa etapa inicial reconstruyó la arquitectura y documentó escenarios de riesgo y observaciones estáticas. La segunda etapa incorpora revisión de codificación segura, herramientas de análisis estático y pruebas controladas de autenticación, autorización y sesiones. Se mantiene una distinción entre mecanismos identificados, comportamientos reproducidos y requisitos cuya conformidad todavía no se ha determinado. El propósito es reducir incertidumbre mediante evidencia verificable, con conclusiones limitadas a las condiciones examinadas.",
+      "source_paragraphs": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "ED03",
+      "title": "Planteamiento del problema: situación inicial y evidencia actual",
+      "location": "PLANTEAMIENTO DEL PROBLEMA. Buscar «Actualmente, la investigación cuenta».",
+      "action": "Reemplazar solo ese párrafo. Conservar inmediatamente después la pregunta de investigación sin cambios.",
+      "text": "En la etapa inicial, la investigación disponía de documentación técnica y una revisión estática preliminar, pero carecía de pruebas controladas que contrastaran los mecanismos identificados. Esta situación originó la necesidad de establecer una correspondencia verificable entre los requisitos del escenario CyberMarket CR, los controles de las operaciones seleccionadas y su comportamiento efectivo. La segunda etapa aporta ejecuciones reproducibles y evidencia de laboratorio para examinar esa correspondencia. El problema de evaluación sigue vigente en las condiciones no cubiertas y en los requisitos cuya aplicabilidad o conformidad todavía no se ha adjudicado; por ello, los riesgos hipotéticos, las caracterizaciones de comportamiento y las desviaciones respecto de una política definida deben mantenerse separados.",
+      "source_paragraphs": [
+        21
+      ]
+    },
+    {
+      "id": "ED04",
+      "title": "Antecedentes: alcance efectivo de SQUARE",
+      "location": "Antecedentes del problema → Evolución del diseño seguro y la ingeniería de requisitos. Buscar «SQUARE fue concebida».",
+      "action": "Reemplazar ese párrafo para actualizar su aplicación; conservar su cita.",
+      "text": "SQUARE fue concebida para involucrar a ingenieros de requisitos y partes interesadas del proyecto [8]. En CyberMarket CR no existen representantes de una empresa operativa que puedan validar necesidades comerciales reales. Por ello, se adaptaron los elementos compatibles con el alcance académico: definición de activos y objetivos de protección, artefactos arquitectónicos, escenarios de amenaza y priorización de requisitos. Los supuestos del caso se mantienen explícitos, sin presentarlos como decisiones empresariales aprobadas ni afirmar la ejecución íntegra de los nueve pasos de la metodología.",
+      "source_paragraphs": [
+        42
+      ]
+    },
+    {
+      "id": "ED05",
+      "title": "Marco metodológico: tipo y enfoque",
+      "location": "MARCO METODOLÓGICO → Tipo y enfoque de investigación. Desde «La investigación se desarrollará» hasta «procedimientos que puedan repetirse bajo las mismas condiciones».",
+      "action": "Reemplazar los cinco párrafos de esta subsección.",
+      "text": "La investigación adopta un enfoque aplicado, con alcance descriptivo y evaluativo. Examina cómo se establecen y aplican los mecanismos de autenticación, gestión de tokens y autorización en seis operaciones de Saleor. El componente descriptivo reconstruye la arquitectura, las dependencias y los controles; el evaluativo contrasta su comportamiento con expectativas y requisitos definidos para las condiciones seleccionadas.\n\nSe combinaron revisión documental, inspección de código y configuración, análisis estático automatizado y pruebas dinámicas en un laboratorio aislado. Estas fuentes cumplen funciones diferentes: el código permite explicar rutas de implementación; las herramientas detectan patrones según sus reglas; y las ejecuciones aportan evidencia del comportamiento bajo configuraciones concretas. Ninguna de ellas demuestra por sí sola la seguridad global del sistema.\n\nEl objeto empírico es un artefacto de software, no una empresa en operación. CyberMarket CR es ficticia y las condiciones de evaluación fueron establecidas en el laboratorio. Se adoptan las recomendaciones de Runeson y Höst [11] sobre delimitación, planificación y cadena de evidencia, sin equiparar este diseño con un estudio empresarial en su contexto natural.\n\nSe adaptaron elementos de SQUARE [8] para organizar activos, objetivos de protección, amenazas y prioridades. ASVS 5.0.0 [5] y WSTG 4.2 [6] sirven como referentes para requisitos y procedimientos, respectivamente. No se simularon consultas con representantes empresariales ni se atribuyó aprobación a las políticas provisionales del caso.\n\nLa selección intencional permite estudiar mecanismos concretos, pero no estimar estadísticamente la frecuencia de vulnerabilidades de Saleor. Las conclusiones dependen de la versión, los actores, los recursos, los campos y la configuración examinados.",
+      "source_paragraphs": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "id": "ED06",
+      "title": "Muestra, actores y unidades de análisis",
+      "location": "Población, muestra y unidades de análisis. Conservar la definición de población.",
+      "action": "Cambiar «Se empleará» por «Se empleó» en el muestreo; en las tres viñetas usar «permiten examinar», «sirven para estudiar» y «permite analizar». Reemplazar desde «La unidad de análisis no será» hasta el final de esta subsección por el texto siguiente.",
+      "text": "La unidad de análisis combina actor, operación, recurso, campo solicitado, estado de autenticación y configuración relevante. Dos consultas sobre una misma operación pueden representar condiciones distintas según la propiedad del objeto y los permisos del solicitante.\n\nSe utilizaron identidades y datos sintéticos para representar solicitudes anónimas, dos clientes independientes, personal con permisos diferenciados, aplicaciones y credenciales delegadas. El inventario efectivo sustituyó la previsión inicial de dieciséis escenarios: la batería focal comprende 27 identificadores y 61 variantes ejecutadas, de las cuales 59 aprobaron y dos quedaron como fallos esperados estrictos. Estos últimos corresponden a la política provisional P-ORDER-01 y no se interpretan como vulnerabilidades oficiales de Saleor.\n\nLas 61 variantes focales forman parte de la regresión general; no se contabilizan como casos adicionales al sumar esa suite. Las verificaciones HTTP, HTTPS y de navegador se registran separadamente, al igual que las pruebas unitarias, los validadores de evidencia y la suite E2E. Esta separación evita confundir identificadores, variantes y conjuntos superpuestos.\n\nNo se seleccionaron participantes humanos ni se recopilaron datos de clientes reales. Los resultados se restringen a las condiciones registradas y no se generalizan automáticamente a otros módulos, versiones o despliegues.",
+      "source_paragraphs": [
+        79,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    {
+      "id": "ED07",
+      "title": "Instrumentos: arquitectura y entorno observado",
+      "location": "Descripción de los instrumentos → Caracterización arquitectónica del sistema. Buscar «Quedan fuera de la caracterización verificada, por el momento».",
+      "action": "Reemplazar ese párrafo y el siguiente. Mantener la Fig. 1 como modelo conceptual.",
+      "text": "La segunda etapa incorporó un entorno verificable con PostgreSQL 15 y Valkey 8.1 efímeros, solicitudes TCP hacia la aplicación ASGI en loopback y verificaciones HTTPS con una autoridad certificadora desechable. Chromium utilizó confianza temporal en ese certificado, sin desactivar su validación. Se emplearon cuentas y datos sintéticos, integraciones desactivadas y correo en memoria. Las versiones y condiciones efectivas se conservaron en los manifiestos de ejecución.\n\nEste entorno complementa el modelo lógico de la Fig. 1; no convierte sus límites analíticos en segmentos físicos ni sus flechas en un orden universal de ejecución. No se verificaron un storefront público, un proxy de producción o replicación física de la base de datos. Los dos orígenes del navegador se diferenciaron por puerto dentro del mismo host, por lo que no representan una comprobación de cookies de terceros entre sitios distintos.",
+      "source_paragraphs": [
+        96,
+        97
+      ]
+    },
+    {
+      "id": "ED08",
+      "title": "Instrumentos de recolección y medición",
+      "location": "Instrumentos de recolección y medición. Buscar «La recolección se apoyará» y «Durante la fase documental».",
+      "action": "En los párrafos que presentan la Tabla II utilizar presente: «se apoya», «presenta», «permiten», «sirve», «convierte», «documenta», «debe incluir», «registra», «relacionan», «permite». Conservar I01-I07 y sus funciones. Reemplazar el último párrafo por el siguiente.",
+      "text": "Los registros preliminares de amenazas, requisitos y observaciones se complementaron con manifiestos de entorno, resultados JUnit y JSON, registros de herramientas, identificadores de ejecuciones y comprobaciones SHA-256. Los artefactos originales se conservaron junto con los intentos fallidos y las correcciones del entorno de pruebas. Las versiones públicas depuradas se distinguen de sus originales mediante procedencia y hashes propios. La existencia de un resultado automatizado no sustituye la interpretación técnica requerida en el registro de hallazgos ni la adjudicación individual de requisitos.",
+      "source_paragraphs": [
+        99,
+        100,
+        102,
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "id": "ED09",
+      "title": "Procedimiento de investigación y verificación",
+      "location": "Procedimiento de investigación y verificación. Desde «El procedimiento se organizará» hasta antes de «Criterios de análisis y validez».",
+      "action": "Sustituir la introducción y los seis apartados por esta versión; mantener los seis títulos como subtítulos del mismo nivel.",
+      "text": "El procedimiento conserva las seis etapas planteadas inicialmente e incorpora las actividades efectivamente realizadas y sus límites.\n\nFijación de la línea base y reconocimiento técnico. Se mantuvo el commit 4cb1609a90eade14b6275a407bc7a00c35698090 como referencia del producto [4]. La fuente utilizada en el ciclo final de pruebas fue eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7 y el checkout de integración de Actions fue 90455ca8abb7d72f707e0137e3ac80fab7a06dec. Estos identificadores distinguen el código base, la incorporación de pruebas y el entorno de ejecución. No se modificaron archivos funcionales de Saleor respecto de la línea base; los commits documentales posteriores no heredan automáticamente los resultados de ese checkout.\n\nIdentificación de activos y modelado de amenazas. Se identificaron cuentas, credenciales, permisos, información personal, pedidos y disponibilidad de la API. STRIDE [12] permitió organizar trece escenarios hipotéticos de riesgo. Sus prioridades expresan el interés de investigación, no frecuencias observadas ni severidades de vulnerabilidades confirmadas.\n\nDerivación de requisitos y diseño de pruebas. Se organizaron veintitrés requisitos candidatos de ASVS 5.0.0 [5] y procedimientos orientados por WSTG 4.2 [6]. Se definieron precondiciones, actores, solicitudes y oráculos para distinguir aceptación, rechazo, datos devueltos y efectos sobre el estado. La relación entre ambos referentes requiere justificación individual; la ejecución de una prueba no adjudica por sí sola el cumplimiento de un requisito.\n\nEjecución de pruebas controladas. Se combinaron inspección manual, Bandit 1.8.6, Semgrep 1.153.0 y pruebas automatizadas. La evaluación dinámica incluyó escenarios positivos y negativos de autenticación, tokens, usuarios y pedidos, además de solicitudes HTTP y HTTPS y comprobaciones con Chromium. La interpretación examinó datos y errores GraphQL y, según el caso, código, mensaje, ruta, máscaras y ausencia de cambios indebidos, en lugar de limitarse al estado HTTP. Los resultados de regresión, batería focal, laboratorio y E2E se registraron como conjuntos diferenciados.\n\nAnálisis de evidencia y formulación de hallazgos. Se conciliaron resultados JUnit y JSON con sus inventarios y hashes. Las alertas estáticas requirieron revisión contextual: el B105 de Bandit corresponde al literal que nombra la cookie de renovación, clasificado como falso positivo de contraseña incrustada. Semgrep no produjo hallazgos con las reglas y exclusiones utilizadas, resultado que no demuestra ausencia universal de vulnerabilidades. Los resultados se incorporan al análisis mediante la distinción entre controles observados, caracterizaciones, brechas de evidencia y posibles desviaciones respecto de requisitos aplicables.\n\nReevaluación y documentación de limitaciones. Se corrigieron y reejecutaron problemas del entorno, del harness y de CI hasta cerrar la batería planificada sin fallos inesperados. Se conservaron dos XFAIL estrictos vinculados a P-ORDER-01, política provisional del escenario. Estas correcciones no constituyen mitigaciones de vulnerabilidades funcionales de Saleor. Las recomendaciones de producto que permanezcan propuestas deben identificarse como tales; su eventual implementación requerirá una modificación concreta y una comprobación antes y después.",
+      "source_paragraphs": [
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128
+      ]
+    },
+    {
+      "id": "ED10",
+      "title": "Criterios de análisis: cobertura y alcance",
+      "location": "Criterios de análisis y validez. Después de la explicación de la fórmula de cobertura.",
+      "action": "Conservar la fórmula y los cuatro estados del análisis. Insertar este párrafo después de «no demostrará cumplimiento de todas las disposiciones de ASVS».",
+      "text": "En esta etapa no se informa un porcentaje de conformidad o cobertura de requisitos: debe adjudicarse individualmente la aplicabilidad de los candidatos y la suficiencia de su evidencia antes de establecer el denominador y el numerador. Los 27 identificadores focales, sus 61 variantes y los resultados de regresión describen ejecución, no un porcentaje de seguridad. El estado PASS significa que se satisfizo el oráculo de una prueba; no implica automáticamente conformidad con ASVS ni aprobación de una política empresarial.",
+      "source_paragraphs": [
+        134
+      ]
+    },
+    {
+      "id": "ED11",
+      "title": "Principios: permisos delegados y revocación",
+      "location": "Principios fundamentales identificados. Dos sustituciones dentro de los apartados existentes.",
+      "action": "Reemplazar el párrafo «La misma orientación puede observarse» y el párrafo «El Apéndice A documenta», respectivamente, por estos textos; no cambiar los títulos.",
+      "text": "La generación de tokens de terceros en saleor/core/jwt.py restringe los permisos mediante la intersección de los asociados con el usuario y los concedidos a la aplicación [4]. La segunda etapa complementó esta inspección con solicitudes de aplicaciones y credenciales delegadas que ejercitan condiciones de autorización. La evidencia respalda únicamente las combinaciones ejecutadas; no demuestra la protección de todos los consumidores posibles ni equivale al principio clásico de autorizaciones independientes.\n\nEl Apéndice A conserva las funciones que relacionan el cambio de jwt_token_key con la validación de identidad [4] y se amplía con pruebas de uso de credenciales antes y después de la revocación. La evidencia dinámica complementa el comportamiento previsto en el código, sin extender la conclusión a tipos de token, campos o rutas que no formen parte de los casos registrados.",
+      "source_paragraphs": [
+        142,
+        153
+      ]
+    },
+    {
+      "id": "ED12",
+      "title": "Principios: síntesis de evidencia",
+      "location": "Tabla III y párrafo que comienza «En conjunto, la revisión estática muestra».",
+      "action": "Actualizar la tercera columna de la Tabla III con la tabla de la guía y reemplazar el párrafo final por el siguiente.",
+      "text": "La revisión identifica mecanismos relacionados con los principios de diseño seguro y las pruebas aportan evidencia adicional sobre ciertas rutas de ejecución. La diferenciación de permisos, la revocación y los controles de renovación cuentan ahora con comprobaciones controladas. Sin embargo, esa evidencia no establece una política universal de denegación por defecto, mediación completa en toda la plataforma, independencia de autorizaciones o aislamiento de todos los componentes compartidos. Las correspondencias se interpretan como propiedades localizadas y límites de evaluación, no como una certificación integral.",
+      "source_paragraphs": [
+        161
+      ]
+    },
+    {
+      "id": "ED13",
+      "title": "Riesgos: activos y priorización",
+      "location": "Análisis de riesgos. Buscar «Se consideran también las credenciales delegadas» y «Se identificaron trece escenarios hipotéticos».",
+      "action": "En el párrafo de activos, sustituir la frase condicional sobre aplicaciones por la primera oración siguiente. Reemplazar el párrafo completo de priorización por el segundo.",
+      "text": "Se incluyen las credenciales delegadas de aplicaciones externas, incorporadas mediante identidades sintéticas y combinaciones de permisos en el laboratorio.\n\nSe identificaron trece escenarios hipotéticos: nueve con prioridad alta de investigación y cuatro con prioridad media. Esta clasificación inicial considera la sensibilidad de los activos, las consecuencias plausibles y su relación con las seis operaciones seleccionadas. Se conservan los identificadores R01–R13 para mantener la trazabilidad. Las prioridades no representan riesgo residual, frecuencia de ocurrencia ni puntuaciones CVSS. Aunque ya existen resultados experimentales, estos no permiten estimar la probabilidad operativa en una empresa ficticia ni en un despliegue productivo no evaluado. Por ello, no se modifica esa probabilidad a partir del número de pruebas aprobadas.",
+      "source_paragraphs": [
+        164,
+        169
+      ]
+    },
+    {
+      "id": "ED14",
+      "title": "Riesgos: tokens y sesiones",
+      "location": "Gestión de tokens y continuidad de las sesiones. Desde «Por ejemplo, tokensDeactivateAll» hasta antes de «Autorización de operaciones, objetos y campos».",
+      "action": "Reemplazar los tres párrafos explicativos conservando el párrafo introductorio de R04–R08.",
+      "text": "En R07, la inspección de tokensDeactivateAll y de la comparación de jwt_token_key se complementó con uso de credenciales antes y después de la revocación. La conclusión se limita a las rutas y tipos de credencial incluidos en las pruebas. El acceso a un recurso mediante un identificador compartido constituye una cuestión diferente: la comprobación de que el ID de pedido sigue resolviendo después de revocar no se interpreta como aceptación del token revocado ni como verificación de todos los campos del pedido.\n\nPara R06 se ejecutaron verificaciones de renovación con cookies, valores CSRF válidos, ausentes e incorrectos y condiciones HTTPS y de navegador. Se comprobaron atributos de cookies y CORS en el laboratorio. Los dos orígenes utilizados difieren por puerto en el mismo host; por ello, el resultado no demuestra protección de cookies de terceros entre sitios distintos ni la seguridad integral de la sesión en producción.\n\nLas comprobaciones de tipo y propósito de token aportan evidencia para las condiciones seleccionadas de R05. R04 y R08 conservan límites relacionados con una política de vida absoluta e inactividad no adoptada, rotación y ramas criptográficas no cubiertas completamente, y validación del destinatario. Conservar un valor de audiencia en un token no demuestra por sí mismo que todos sus receptores lo validen. Los resultados no autorizan a declarar conformidad general de estos escenarios.",
+      "source_paragraphs": [
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "id": "ED15",
+      "title": "Riesgos: objetos, disponibilidad y delegación",
+      "location": "Autorización de operaciones, objetos y campos; Disponibilidad y permisos delegados.",
+      "action": "Reemplazar «El riesgo R11 consiste» por el primer párrafo. Reemplazar los dos párrafos de R12/R13 por los dos siguientes. Reemplazar el último párrafo de Análisis de riesgos por el cuarto.",
+      "text": "La evaluación de R10 y R11 compara actores con permisos diferentes y solicitudes sobre recursos propios y ajenos, distinguiendo autorización de operación, acceso al objeto y restricciones de campos. Para pedidos se incluyen identificadores UUID y legacy y un flujo de obtención legítima del UUID mediante la API. Las respuestas se interpretan según la ruta y el contrato aplicable. La política P-ORDER-01 continúa provisional; sus dos fallos esperados no se atribuyen a Saleor como vulnerabilidades oficiales ni demuestran enumeración de identificadores.\n\nPara R12 se verificaron condiciones funcionales seleccionadas de complejidad y validación de solicitudes GraphQL con entradas acotadas. Los valores y configuraciones del laboratorio se registraron como parte de la evidencia. Estas verificaciones no constituyen pruebas de carga o estrés ni permiten demostrar resistencia frente a agotamiento distribuido de recursos.\n\nR13 dejó de depender de una incorporación futura de aplicaciones: se ejecutaron combinaciones de cliente, personal, aplicación y delegación con permisos diferenciados. La evidencia permite estudiar el consumo de permisos en esas rutas, sin extenderse a todos los mecanismos de integración o destinatarios de tokens.\n\nLa trazabilidad mantiene la secuencia amenaza, requisito, componente, procedimiento y resultado. Los trece escenarios conservan su función de registro de riesgos, con evidencia de ejecución y límites explícitos. Su dictamen formal requiere analizar individualmente el requisito aplicable y las consecuencias del comportamiento observado; no se convierten en un inventario de vulnerabilidades por haber completado la batería de pruebas.",
+      "source_paragraphs": [
+        185,
+        187,
+        188,
+        190
+      ]
+    },
+    {
+      "id": "ED16",
+      "title": "Arquitectura: datos y actualización del modelo",
+      "location": "Arquitectura → Límites de confianza y párrafo de cierre anterior a «Síntesis de observaciones».",
+      "action": "Reemplazar «El tercer límite, T3» por el primer párrafo; reemplazar «En consecuencia, el diseño documentado» por el segundo.",
+      "text": "El tercer límite, T3, separa la lógica de aplicación de los datos y servicios que utiliza. En el laboratorio se identificaron PostgreSQL 15 y Valkey 8.1 efímeros. Los alias de base de datos utilizados por los hilos ASGI apuntaron a la misma base de pytest; esta configuración permite interpretar los casos ejecutados, pero no reproduce replicación física ni acredita aislamiento equivalente al de una infraestructura productiva. La evidencia describe el acceso y el estado de los recursos dentro del entorno controlado.\n\nEl diseño documentado se complementa con la configuración y las ejecuciones del laboratorio. Las Figs. 1 y 2 permanecen como modelos lógicos; no representan un storefront público ni la topología de producción. La aplicación directa de cabeceras reenviadas se estudió en condiciones controladas y no certifica la política de confianza de un proxy real. Las conclusiones arquitectónicas se restringen a los componentes y relaciones observados.",
+      "source_paragraphs": [
+        207,
+        218
+      ]
+    },
+    {
+      "id": "ED17",
+      "title": "Quince observaciones iniciales: continuidad y recomendaciones",
+      "location": "Síntesis de observaciones documentales y recomendaciones. Antes y después de la Tabla V.",
+      "action": "Reemplazar el párrafo anterior a la tabla por el primero y los tres posteriores por el segundo. Conservar H01–H15; aplicar los ajustes de recomendaciones indicados en la guía.",
+      "text": "La inspección inicial registró quince observaciones sobre autenticación, tokens, autorización, configuración y protección de la API [4]. Se conservan H01–H15 como antecedentes técnicos y no como quince vulnerabilidades confirmadas. La segunda etapa complementa estas observaciones con análisis estático automatizado y ejecuciones controladas. La Tabla V mantiene los mecanismos identificados; sus recomendaciones se interpretan a la luz de la evidencia posterior y de los límites que persisten.\n\nLas pruebas permiten actualizar las recomendaciones inicialmente formuladas como verificaciones futuras. Allí donde existe evidencia, corresponde conservar el caso como regresión y precisar las condiciones que demuestra; donde persisten brechas, la recomendación debe indicar la comprobación o decisión pendiente. El catálogo de hallazgos de la segunda etapa debe explicar los enlaces y agrupaciones respecto de H01–H15, sin sustituir sus identificadores ni asumir una correspondencia uno a uno. Un resultado favorable, una caracterización y una desviación frente a una política provisional requieren interpretaciones diferentes.",
+      "source_paragraphs": [
+        220,
+        222,
+        223,
+        224
+      ]
+    },
+    {
+      "id": "ED18",
+      "title": "Apéndice A: revocación",
+      "location": "Apéndice A. Desde «Alcance de la evidencia» hasta antes de «Trazabilidad».",
+      "action": "Reemplazar los dos párrafos de alcance y verificación pendiente. Conservar código, fuente base e identificador EV-H08.",
+      "text": "Verificación realizada: La inspección de las funciones de revocación se complementó con pruebas controladas que ejercitan credenciales antes y después de tokensDeactivateAll. Se conservaron los resultados y las precondiciones de las rutas seleccionadas en la batería focal y en el laboratorio HTTP.\n\nAlcance y limitaciones: La evidencia se refiere a las credenciales y operaciones efectivamente verificadas. Revocar una credencial no implica necesariamente invalidar un identificador de pedido que el diseño permita compartir. En el flujo LIVE-07, la aserción posterior a revocación comprueba que el ID del pedido sigue resolviendo; no demuestra por sí sola el comportamiento de todos sus campos. No se generaliza la conclusión a modalidades o rutas no ensayadas.",
+      "source_paragraphs": [
+        248,
+        249
+      ]
+    },
+    {
+      "id": "ED19",
+      "title": "Apéndice B: permisos y pedidos",
+      "location": "Apéndice B. Buscar «Limitaciones: No se han ejecutado pruebas cruzadas» y «Verificación pendiente: Preparar consultas equivalentes».",
+      "action": "Sustituir ambos párrafos. Conservar EV-H10, EV-H11 y EV-H12 y los listados existentes.",
+      "text": "Verificación realizada: Se ejecutaron consultas con actores y permisos diferenciados, incluidas cuentas propietarias y ajenas, solicitudes anónimas, personal, aplicaciones y delegación. Los casos examinan acceso a usuarios y pedidos, rutas UUID y legacy, restricciones de campos y un flujo de obtención legítima del UUID por la API. La interpretación considera los datos y errores GraphQL, no únicamente el estado HTTP.\n\nLimitaciones: No se verificaron todos los campos de Order ni todos los recorridos de autorización de la plataforma. Las dos XFAIL de CM-T22 expresan la diferencia respecto de P-ORDER-01, política provisional del escenario. No constituyen dos vulnerabilidades oficiales, no establecen facilidad de adivinar UUID y no acreditan explotación de datos de clientes reales. Las conclusiones se restringen a las combinaciones documentadas.",
+      "source_paragraphs": [
+        283,
+        284
+      ]
+    },
+    {
+      "id": "ED20",
+      "title": "Apéndice C: HTTPS, cookies y CSRF",
+      "location": "Apéndice C. Desde «Limitaciones: No se ha verificado el comportamiento del middleware» hasta antes de «Trazabilidad».",
+      "action": "Reemplazar los dos párrafos. Conservar EV-H05–EV-H07 y el análisis estático que los precede.",
+      "text": "Verificación realizada: Se ejecutaron solicitudes HTTP y HTTPS y comprobaciones con Chromium en un laboratorio con datos sintéticos. Los casos de renovación incluyeron CSRF válido, ausente e incorrecto y la inspección de Secure, HttpOnly y SameSite. El navegador utilizó una autoridad certificadora desechable instalada temporalmente, sin ignorar errores TLS. Se comprobaron también condiciones CORS y se verificó el cierre del entorno y el retiro de la confianza temporal.\n\nLimitaciones: Los dos orígenes del navegador difieren por puerto dentro del mismo host. La evidencia no equivale a una prueba de cookies de terceros entre sitios distintos, un storefront público o una política integral de sesiones en producción. Las condiciones de confianza de un proxy productivo, la vida absoluta y los tiempos de inactividad de negocio permanecen fuera de esta demostración.",
+      "source_paragraphs": [
+        354,
+        355
+      ]
+    }
+  ]
+}
