@@ -1,10 +1,10 @@
 # Continuidad y ajustes respecto del primer avance
 
-**Fecha:** 2026-11-02. **Naturaleza:** decisiones de planificación y actualización para una versión nueva, no correcciones ya aplicadas al Word presentado. **Retroalimentación docente comunicada:** ninguna.
+**Fecha inicial:** 2026-11-02. **Actualizado:** 2026-11-03. **Naturaleza:** decisiones de planificación y actualización para una versión nueva, no correcciones ya aplicadas al Word presentado. **Retroalimentación docente comunicada:** ninguna.
 
 | ID | Punto | Decisión para avance 2 | Motivo y comprobación | Etapa |
 |---|---|---|---|---|
-| AJ-01 | Documento original | Preservar Proyecto final - primer avance(4).docx; trabajar en copia nueva | Entrega identificada por el usuario; hash en inventario | A2-01, A2-08 |
+| AJ-01 | Documento original | Preservar la entrega original; ampliar su contenido en la versión acumulativa. El archivo (5) recibido coincide por SHA con (4) | Entrega identificada por el usuario; hash en inventario | A2-01, A2-08 |
 | AJ-02 | Observaciones del profesor | Registrar que no se recibieron; incorporar cada una si llega | No convertir notas propias o auditorías antiguas en feedback docente | A2-01, A2-09 |
 | AJ-03 | Problema y objetivos | Mantener un general y tres específicos, con desarrollo operativo | Evitar reformular la investigación solo para acomodar resultados | A2-02, A2-08 |
 | AJ-04 | Estado de ejecución | Actualizar la narrativa con C2–C9, fechas y alcance sintético | La ausencia de pruebas corresponde al estado anterior; los resultados posteriores tienen runs y SHAs | A2-05, A2-08 |
@@ -18,6 +18,10 @@
 | AJ-12 | Codificación segura | Aplicar prácticas a módulos, invariantes, permisos y manejo de errores | R2 requiere prácticas pertinentes y rigurosas, no un glosario genérico de SOLID | A2-03 |
 | AJ-13 | Referencias | Conservar IEEE y numerar según manuscrito vigente | El primer avance usa IEEE; los planes antiguos con APA 7 quedan superados para esta entrega | A2-08, A2-09 |
 | AJ-14 | Bibliografía histórica | No copiar numeración, cifras o diagnósticos sin cotejo | Auditorías de borradores y OWASP 2021 no sustituyen referencias de la entrega posterior | A2-08 |
-| AJ-15 | Formato y autoría | Nuevo PDF propio del grupo con revisión visual y de contenido | No hay máximo de páginas indicado en la consigna recibida; verificar futuras instrucciones | A2-09, A2-10 |
+| AJ-15 | Formato y autoría | PDF acumulativo del mismo trabajo ampliado, con revisión visual y de contenido | No hay máximo de páginas indicado en la consigna recibida; verificar futuras instrucciones | A2-09, A2-10 |
 
 No se propone corregir retrospectivamente el avance 1 ni alterar código de producto para satisfacer una expectativa sin autoridad. Si aparece una desviación demostrada, registrar requisito, alcance, corrección propuesta y retest como trabajo identificado.
+
+## Aclaración vinculante de continuidad — 2026-11-03
+
+Por instrucción explícita del usuario, la segunda entrega continúa el primer avance. El documento presentado es la base de contenido; los borradores independientes previos son material auxiliar. [Revisión concreta](REVISION_CONTINUIDAD_AVANCE1.md): trece puntos propuestos de conservación, actualización y corrección; el Word permanece intacto. No se requiere cambiar los objetivos para acomodar las pruebas.

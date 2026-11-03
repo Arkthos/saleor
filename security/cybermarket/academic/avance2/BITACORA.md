@@ -157,3 +157,7 @@ Fuente de rama 94383be; checkout real 03b3de3e1be39f1c4d796186284cfd5ebeaa86f6. 
 La ejecución final reemplaza los estados parciales de supervisión. No se repiten suites tras cerrar: el siguiente commit solo incorpora documentos y evidencia; los resultados pertenecen al SHA probado.
 
 **Normalización documental:** cuatro filas previas de la matriz tenían comas sin delimitar en la observación final. Se reconstruyeron las 14 columnas y se verificaron las once obligaciones originales, sin alterar IDs ni requisitos.
+
+## Revisión del primer avance para su continuación — 2026-11-03
+
+**2026-11-03 — REVISIÓN DE CONTINUIDAD COMPLETADA:** el usuario aclara que el segundo avance amplía el primero en un único documento acumulativo. El Word (5) coincide por SHA con la entrega (4): c8f98d51. Se revisaron sus 505 párrafos con texto y páginas clave de la exportación; trece propuestas puntuales quedan registradas, sin modificar el original. Conservar problema, pregunta y objetivos; desarrollar método ya existente, actualizar pruebas antes pendientes, actores, entorno, riesgos, H01-H15 y anexos. Corregir atribución de código CSRF entre C.2/C.3 y comprobar maquetación. Los borradores independientes de trece páginas pasan a material auxiliar. La fase técnica permanece cerrada. Siguiente A2-07 y edición acumulativa; sin nuevo Word/PDF académico.

@@ -30,8 +30,8 @@ No se usa un issue tracker para estas actividades. Este archivo es el índice de
 
 ## Productos para revisión
 
-- [Informe completo en Markdown](manuscrito/INFORME_AVANCE2.md).
-- [PDF público de revisión](manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf).
+- [Borrador auxiliar previo en Markdown](manuscrito/INFORME_AVANCE2.md).
+- [PDF auxiliar previo de revisión](manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf).
 - [Auditoría de rúbrica y evidencia](manuscrito/auditoria_final.md).
 - [Guía de defensa](manuscrito/GUIA_DEFENSA.md).
 - [Archivos privados e instrucciones de entrega](manuscrito/entrega/INSTRUCCIONES_ENTREGA.md).
@@ -58,3 +58,7 @@ El control de revisión de licencias de contribuciones externas se conserva; la 
 ## Cierre técnico vigente
 
 **2026-11-02 — CIERRE TÉCNICO COMPLETADO:** última fuente eb5d3ecb, checkout 90455ca8; todos los workflows de pruebas/calidad seleccionados SUCCESS. XML, JSON y SHA-256 reconciliados: general 17.613 PASS/2 XFAIL; focal 59 PASS/2 XFAIL; independientes 42 PASS; C10 26 PASS; E2E 211 PASS; seis fronteras de licencias y 502 entradas aprobadas por fuente, negativo GPL vigente; diez hooks PASS. Cero fallos inesperados o bloqueos de pruebas. Artefactos completos conservados y derivadas públicas depuradas; fallos iniciales visibles. Los dos XFAIL de política provisional y límites ASVS permanecen explícitos. Roadmap, estado, matriz, bitácora y copia del proyecto conciliados. Siguiente: A2-07. Sin nuevo PDF/Word ni merge/campus.
+
+## Documento acumulativo
+
+Por aclaración del usuario del 2026-11-03, la segunda entrega continúa el Word del primer avance. [Revisión del contenido y cambios propuestos](REVISION_CONTINUIDAD_AVANCE1.md). Pregunta y objetivos se conservan; se actualizan los estados de evidencia y se desarrolla el método existente. Los borradores independientes previos y sus auditorías son material auxiliar, no la continuación definitiva. El original no se ha modificado.

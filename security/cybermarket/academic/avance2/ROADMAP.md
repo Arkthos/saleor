@@ -1,6 +1,6 @@
 # Roadmap del segundo avance — CyberMarket CR / Saleor
 
-**Versión:** 1.26. **Actualizado:** 2026-11-02. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** PRUEBAS FINALIZADAS; cierre técnico verificado en el alcance planificado. **Siguiente etapa:** A2-07, reanálisis e incorporación académica.
+**Versión:** 1.27. **Actualizado:** 2026-11-03. **Curso:** CY-703 Seguridad de Software. **Entrega:** segundo avance, valor 15 %. **Estado:** PRUEBAS FINALIZADAS; cierre técnico verificado en el alcance planificado. **Siguiente etapa:** A2-07, reanálisis e incorporación académica.
 
 **Fecha límite fijada por el usuario:** domingo **8 de noviembre de 2026, 18:00**, zona America/Costa_Rica (UTC−06:00). Equivalente UTC: 9 de noviembre, 00:00. Es la fecha acordada para este plan; no se atribuye a una verificación del campus.
 
@@ -172,7 +172,7 @@ Estados permitidos: PENDIENTE, EN_CURSO, BLOQUEADA, COMPLETADA y EXCLUIDA_JUSTIF
 
 ### A2-08 — Construir el manuscrito y sus anexos
 
-**Hacer:** redactar sobre una copia nueva, conservando objetivos y primera entrega. Usar la estructura acordada en manuscrito/ESTRUCTURA.md. Integrar prácticas, métodos, resultados y discusión; el cuerpo debe ser comprensible sin abrir GitHub. Llevar tablas extensas, fichas y trazas a anexos con llamadas explícitas desde el texto.
+**Hacer:** ampliar y actualizar el contenido del primer avance en un único documento acumulativo, conservando la instantánea presentada, su pregunta y sus objetivos. Los borradores independientes anteriores son material auxiliar. Usar la estructura acordada en manuscrito/ESTRUCTURA.md. Integrar prácticas, métodos, resultados y discusión; el cuerpo debe ser comprensible sin abrir GitHub. Llevar tablas extensas, fichas y trazas a anexos con llamadas explícitas desde el texto.
 
 **Fuentes y estilo:** EvidenceSynth MAP/GAP/AUDIT para afirmaciones materiales; IEEE continuo; redacción técnica accesible y revisión de naturalidad sin borrar matices. Verificar versión y pasaje antes de incorporar nuevas fuentes. Los informes anteriores son productos del proyecto y apuntan a evidencia primaria; no sustituyen por sí solos las fuentes científicas o normativas.
 
@@ -317,3 +317,9 @@ Cada bloque debe conservar fallos e intentos iniciales, correcciones y retest. U
 ## 13. Cierre definitivo de la fase de pruebas
 
 **2026-11-02 — CIERRE TÉCNICO COMPLETADO:** última fuente eb5d3ecb, checkout 90455ca8; todos los workflows de pruebas/calidad seleccionados SUCCESS. XML, JSON y SHA-256 reconciliados: general 17.613 PASS/2 XFAIL; focal 59 PASS/2 XFAIL; independientes 42 PASS; C10 26 PASS; E2E 211 PASS; seis fronteras de licencias y 502 entradas aprobadas por fuente, negativo GPL vigente; diez hooks PASS. Cero fallos inesperados o bloqueos de pruebas. Artefactos completos conservados y derivadas públicas depuradas; fallos iniciales visibles. Los dos XFAIL de política provisional y límites ASVS permanecen explícitos. Roadmap, estado, matriz, bitácora y copia del proyecto conciliados. Siguiente: A2-07. Sin nuevo PDF/Word ni merge/campus.
+
+## 14. Continuación acumulativa del primer avance
+
+**2026-11-03 — REVISIÓN DE CONTINUIDAD COMPLETADA:** el usuario aclara que el segundo avance amplía el primero en un único documento acumulativo. El Word (5) coincide por SHA con la entrega (4): c8f98d51. Se revisaron sus 505 párrafos con texto y páginas clave de la exportación; trece propuestas puntuales quedan registradas, sin modificar el original. Conservar problema, pregunta y objetivos; desarrollar método ya existente, actualizar pruebas antes pendientes, actores, entorno, riesgos, H01-H15 y anexos. Corregir atribución de código CSRF entre C.2/C.3 y comprobar maquetación. Los borradores independientes de trece páginas pasan a material auxiliar. La fase técnica permanece cerrada. Siguiente A2-07 y edición acumulativa; sin nuevo Word/PDF académico.
+
+La regla de contenido es conservar y desarrollar el trabajo existente. [Revisión de cambios](REVISION_CONTINUIDAD_AVANCE1.md) y [estructura acumulativa](manuscrito/ESTRUCTURA.md). Las propuestas no se presentan como correcciones docentes ni como cambios ya aplicados al Word.
