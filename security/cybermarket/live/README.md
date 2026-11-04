@@ -1,3 +1,16 @@
+# Laboratorio C10 — guía de acceso actual
+
+Las pruebas están cerradas en el alcance planificado. Para recuperarlas o
+repetirlas usar [la guía de reproducción](../../../reproduction/README.md).
+Los workflows activos del repositorio limpio solo verifican integridad.
+La configuración histórica está en `reproduction/reference/workflows/e2e.yml`.
+
+El texto siguiente conserva la descripción y los procedimientos de la
+instantánea del 2 de noviembre de 2026. Sus instrucciones de rama/Actions
+son históricas; no describen la interfaz actual de ejecución.
+
+---
+
 # C10 private ASGI validation laboratory
 
 **Status:** CLOSED within the planned private-lab scope. Source eb5d3ecb / checkout 90455ca8; run 41522626093: 26 C10, 42 independent and 211 E2E PASS, focal 59 PASS/2 expected XFAIL. Current general regression, static/quality and license checks also completed. See the academic-folder technical closure manifest; no new academic PDF/Word was generated.

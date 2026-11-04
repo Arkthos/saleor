@@ -1,0 +1,872 @@
+{
+  "source_head": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+  "original_files": 4822,
+  "retained_original_paths": 138,
+  "removed_from_tree": 4684,
+  "removed_by_top_level": {
+    ".claude": 9,
+    ".devcontainer": 5,
+    ".dockerignore": 1,
+    ".editorconfig": 1,
+    ".env.example": 1,
+    ".gitattributes": 1,
+    ".github": 33,
+    ".gitignore": 1,
+    ".pre-commit-config.yaml": 1,
+    ".release-it.json": 1,
+    ".vscode": 3,
+    ".worktree-container": 3,
+    "AGENTS.md": 1,
+    "CHANGELOG.md": 1,
+    "CLAUDE.md": 1,
+    "CONTRIBUTING.md": 1,
+    "Dockerfile": 1,
+    "README.md": 1,
+    "SECURITY.md": 1,
+    "conftest.py": 1,
+    "deployment": 1,
+    "docs": 13,
+    "manage.py": 1,
+    "package-lock.json": 1,
+    "package.json": 1,
+    "pyproject.toml": 1,
+    "saleor": 4561,
+    "scripts": 1,
+    "security": 26,
+    "setup.cfg": 1,
+    "socket.yml": 1,
+    "templates": 7,
+    "uv.lock": 1
+  },
+  "retained_files": [
+    {
+      "path": ".semgrep/Makefile",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "f8bb226fd2194a14694af03e70a80412549fac59f706a8fe4f56217342af078f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/best-practice/add-index-concurrently.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "a1a5034a00dae46bacc6bac5dc4fd5637cce94905ff70349045009e8307c1a1e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/best-practice/add-index-concurrently.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "75fb2db68a0ccf5f3223febcdd3ce41113151899d8a81130c572d14800143039",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/celery/celery-migration-task-missing-dedicated-queue.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "722c9429935a0afe2e2764360728700692ef9733c3f29d02cc6a53de2d340ec7",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/celery/celery-migration-task-missing-dedicated-queue.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ea01793296a0b7b1d6aeb13a10f0d37173b51eaa3a862eb625998cfaa3bfbbb3",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/celery/task-logger-without-suffix.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "75e5896fbcbc21a6a0b4c44e930d47c405e9c888bb0fc69036176cf189202ab3",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/celery/task-logger-without-suffix.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "16cdf9dab66c570c73f536f11f61253e5a3bb1217b3c2783ed8160af40c77fb2",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/django/django-migration-wrong-app-config.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3520f646f23247e39e9e12fe3cde257ddddd68cc7fcc21555965f355d6aa9b4a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/django/django-migration-wrong-app-config.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "bbb3eeca54da694f52909457e90994f39363c8f72d339a40356e9a611a9d2e4d",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/django/django-no-default-token-generator.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "a5400ed214ff0fe13eafbd2acd416efdbe33e36ec61502daf551150949907a4d",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/correctness/django/django-no-default-token-generator.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b6c371e1a6f9991a77ead9561422a81df2ee59fadec24ad48e7ba63484d071eb",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/security/logging/exception-object-in-logger-extra.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "a4f0f40f941c71f11fb00046e83bfae0fec8c644811ad88e05faf777a6b8426e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/security/logging/exception-object-in-logger-extra.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3cdecee9441ab3b74d5ba556ef3a12a9f743454d3a64810079323606c3f404b4",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/security/requests/no-use-requests-lib.fixed.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "5bd4016b4f625c649759a02c5b8767fae8f3a9bdc6030e7506279d2e6e4b454d",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/security/requests/no-use-requests-lib.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "30e6ca71f0722c26990bd28ba31a18a135f816a59b29c44a33a84ff46a96fe93",
+      "note": "original bytes retained"
+    },
+    {
+      "path": ".semgrep/security/requests/no-use-requests-lib.yaml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "069f2b6f67d7b86152dfbb53c37bd81690fca5aeee1ee72703256d2f96def566",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "LICENSE",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "70e2aa4451206e213dc32078c07ca703c7c2b6e9a8e63803ee11db4deea7313b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "saleor/graphql/tests/test_cybermarket_security_c9.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "23bf3c6fa27d1534e613720987439cfff9a1388bff496649a0d762d66331a1e8",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "saleor/graphql/tests/test_cybermarket_security_contracts.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9507f29d4720b463bdcd9371101dbe55b254f8c36d8c249992eb59aa3426f235",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "saleor/graphql/tests/test_cybermarket_security_extended.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "0c9272ff77cf7e58e38f3b622d986072f1c596a0b02b754b3f1917d175db4bef",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "saleor/graphql/tests/test_cybermarket_security_trust_boundaries.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b8928fe00ddcecf682feac54a71e8aadee2da18619868101ae1d359f1bd5a680",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/C10_live_validation_plan.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "c742e6120159b6d0eb0571ff4e3cb4923202279e6c52e1dcfdf932855f82089e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/C10_live_validation_roadmap_team_handoff.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d0cab22e9a9f940b6091684c358f81e3f50119ff58310e08e0fe9f37b0cc8e5e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/C9_QA_REMEDIATION_CHECKPOINT_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "87eed39bf444b6793e01fb0909f9052df4475d03bf19814ab95b51a90034ae91",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/C9_R1_CI_CHECKPOINT_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d3ede6cdfb35c2af9f723fe482c8d4ae46e8a6936d8b3fa8b04c3391de485cf9",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/C9_closure_matrix.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "790b103c7c6f4ddd48d9b6469e39aeb7c3847820766d9ac7c282a701422eaed7",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/CHECKPOINT_PRE_REDACCION_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "6616edcfd2af20ad321a847bbf0e8cc861f8bb508146d75a40522f0567cc5e61",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/CHECKPOINT_SEMANA7_PRUEBAS_MULTINIVEL_2026-10-20.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b694834ff082797a42127f33c666c6f6b1a98de29c192f703c697303a9528782",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/INFORME_CIERRE_C2_C9_AUDITADO_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "15f7b0e9b2350c213c3d5f7eaa37b358e808b999cfcaabfb22b4c5f90ba8bb81",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/PLAN_MAESTRO_SEGURIDAD_SOFTWARE_CY703.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "2e9881fd334581e8394a2eb85eef45bc0f9de36f980e4e5325d25cdcbf220f10",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/POLICY_ORDER_P01_PROVISIONAL.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "933bee7c2269f95e73570f313e20c1c2a9f26322160f9096f4de3ce4201b00b0",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/README.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "4c8b8713671c6d6b23ddda26c7cd3278a8f05d088b1c443af122653b63fc3a7b",
+      "note": "current index replaces historical index"
+    },
+    {
+      "path": "security/cybermarket/REPORTE_INGENIERIA_ASEGURAMIENTO_C2_C9_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "c735f5aab377f628815cc596e3c48b64f9fe7a5ef7975f86c8ddc9b5b5b5afe9",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/CIERRE_PRUEBAS_TECNICAS.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "5e5231d2bd9e6a137e51e13a06806f5bc8ff152a0ca710dd79334dc98c54dea6",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/README.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "071b85099692b3872580cdac3192fa43a2795cdf4670dec69df6b6a480871e59",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/analisis_estatico.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "5dfa21cfd46d5c9d1e7125279d2ba8888e41d185b8d10cd2d0bdc325d209934b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/analisis_resultados.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "eb6c48b305c5a13f3abf3aec4d2a60d2b2cbad0e8efb8b1e00feacf97d3a66d5",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/clasificacion_pruebas.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e4be327999d5b3fca158c8665a7a24c05bd1fa9ce3684e2e366a4e91eb925079",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/criterios_y_oraculos.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "86244b3f91b4fd346d3fca0f414aa3f4b991ceed42987cb7302e02eecdc8f279",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/decision_c10.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "57b22af5eb427c7aaaf46e68dfadaf667f6ec883ccc0aec510e6a501c16064b0",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/ejecucion_local/SHA256SUMS",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "84a33b93bf992efdcc94f1094aa391f423b5fe9370ebfa73629e20f32d51039d",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/ejecucion_local/isolated.xml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "41279c7dc9b2246fcdc5366a00c37e3881646c8397dae5867ed4883f84dd3447",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/ejecucion_local/units_initial.xml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "53e7feae7d733066e4f6826ad3115767062bd4482dcab4d55e31f3181b8f7c4f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/ejecucion_local/validator_isolation_diagnostic_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "4683d128665352b0afe33cbcfe75a33410e19856131616ef2b86019110abdfdd",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/ejecucion_local/validator_preflight_errors_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "35d843e9c9dd72b5e6d1fdd59176aaa88f419df9137488eade15ab4cb9bd27e8",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/estatica/SHA256SUMS",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b37148c411f9abd95ae9a79bfe2eb2b2c94cbaa08865faf62b4c0406c34b105b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/estatica/bandit.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "7a6f0a188c9cebe53016ed4673ef408baf7ac6734cf050e29135e30aa60611c9",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/estatica/run_manifest.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "a8927d9a866b0620687759305fa6b9f7b5874edb62a18289037091b1afcc2157",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/estatica/semgrep.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "5a1200b6c0859b3757b1bad0dd78967a27f47c5e07f3d77a153633ade8680463",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/hallazgos_avance2.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e038d611673e6edb4781c52748148579991f483b12a044600661c5016105949d",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/hallazgos_avance2.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "f89ba960e51dc2621d6c7acea63a888b044e0f6ba155a14d74350ac405d08ceb",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/SHA256SUMS",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9c60b1fee502877e55b6163e02aab3bbf73e6070f7e7a68b0d915573e5f2ad92",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/archivo_verificado_manifest.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "2aa7425cd453060b61595921ddac1e3fb89a6a35238a243eb365d3b98cc3d0f5",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/cybermarket-coverage.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ba1700f663ff0ef44645e2c1948bd54a652f07da30646e51b54ebab7c6ca350f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/cybermarket-junit.xml",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "60c5168a3bba6657827c576f7ea0638ba55dd7dbf9d2e6e85dd5a06eef6f3a40",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/cybermarket-summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "82c1174668ca708657a21bddbd39a2458033f7b20e03d1a58644c7ea9ae90cf0",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/historical_bandit-run.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "4e3ccc4367e9639eba970d1d03bd6fe8c1a6e281157390c198abb344217fbfef",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/historica_2026-10-20/historical_bandit.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "4f88cbcfa8b2f21faeb3b49cb6e591c1dec15c61781c36ed6ff02503f772cab4",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/linea_base.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ffaf64364887634543d780467de146d3c24e78fadf9f1baea874af58782c863f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/linea_base_manifest.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "68312d5acc8f92ffcda33a6982c215cac768248cce6341db71874438dfa81bec",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/plan_pruebas.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "efee35bbdafa12930d18861671065ae1cfeadde45f18a43d829aefd0e882d661",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/resultados_ci_manifest.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3d2fc36a02380d8d1bd57012b7e9b6246b40dc5b9d855725df3836ce642ebf2e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/resultados_ejecucion.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e7f79abcee77aaa58005a23698fa9388bae9065c6831f57af8d0073f3d537711",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/ARCHIVO_ORIGINALES_FINAL.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3b90a8897228f7fcca410f96fa72e0227e1e8298065ac4fe5ee3413281b0150c",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/CIERRE_TECNICO.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "47cd375c5eb9abdbc74956859bcb4077d75f1950ab2bd4c3586cc44226a08441",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/LICENCIAS_FINALES.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "25f574cc6e47fb71d716eafa5d5d51e466318b6b083ea08254ec15df84f9ce0b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/LINTERS_FINALES.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ff8777082389526ada18fd6afc5edc8750a70cd609098eb5188322bc2d7865a8",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/README.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "69d4190e4b0db84d513521e385c95c4d521129b193af5db19b60f5389df22b07",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/conciliacion_hallazgos_tecnicos.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "7480b8c72177cd6ba105436c1b238c5c3e6c040e67094751e14a23b99cff62ea",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/conciliacion_hallazgos_tecnicos.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9d0a958d7c4345ba29f5e472bed7ef754b8ac9e16771795e758ae6ef1b0a041c",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/conciliacion_hallazgos_tecnicos.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e502d41702d15033c97e7723553f6ec112f123aa8bed3d02c56673a113905d70",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/e2e_41512875410_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "884487518a3da00440571a05f301b451a001b3c33f46ca52620b87b71561fcac",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/e2e_41515853470_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e45dc5fdc4ff2ed3ded99bfa954f0b93d2a99817d66709337014d1edde541c0a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/e2e_41517858406_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "c430f28f9db79f6021eb3b858f3a2ad2d7e99391dc5c4c67c52e486cb660528f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/estatica_intento_03.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "20743d4b5200c82b130d36f6c18256be463fb1c2c444464beaeb09ed2267e40c",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/estatica_retest_04.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d818c2036fe3e8b3518f03661efa98d3e8443d07e7a60bcf48df3829d1fb5a4b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/general_41517858482_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "fbab79f8eeb6747909dbc0700e23a1fe8217987bc4ba8eb1934953218b569397",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/intento_01_setup.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "fc7109624483b6a086a0efe4592f2ae2d348db2d79a4c3a92e4892f9165084c4",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/intento_02_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3a254422ee846afb7fea0cd702971c53547b4035d9e76d2cb2bcecc16420f8eb",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/intento_03_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "0f6e40fd97f0908f96baf384022f48c60b8f64a24fc15817acf525459113b589",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_diagnostico.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "91afc4b862944c7891d42fd2d5771699664eb9412fcb123268609477d0037136",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_intento_01.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b2198e4dd48443949168deafa350df7f060011ec7aefb305b13b5c726594ac62",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_resultado.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "174422a772886c5d6703890f05b17292c22a6e710a7576b34e614fe1355d33bc",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_retest_02_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "bfd670eedc5e4fb2c652ac29c82bd714f8369cce12acf1723b7eab732e7ef813",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/licencias_setup.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9bd2157349dafe6b1355d007717c6351a0b29df732f8a253b7ca0211fc2e57a9",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/linters_retest_04.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "cf577f6c32f60cf10549ef51f3205e943c9c3f5de6603997fb8b79f5ad8b1fde",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/preflight.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ef7909c83e9bc894bf3ad2c1779cd64b728bcb7d03018bc9e4434aaaf1dc122c",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/preflight_retest_04.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "542d961b69388b9da4419231ada61a9223e8365243b70a06ed1b778a9743349f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/e2e_41515853470/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ba66a63c0a871e314dd63d7844fdbc5772a19bce18003c3d268657b030479c7a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/e2e_41517858406/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "a0a734fced9e35fa900b94b4666340d6325264c11463f566eff1ab127975cc40",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_e2e/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "429c761ba05e945a721e62c353917a8cb826f19a2f72d38e4ab43335bf1332b5",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_focal/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "cd261d747f23cbc35cf348244be7786c06873f91241814cba92da5255ed4df2a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_general/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "19f181f2b7cb147a9c68eb30b32173b1b08f365f8a9c5b382e5c437841ef3d62",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_lab/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d4e9571ec1876c5e692bc6cb020e7af51b4ed553ea525f0c64b7c87c7f85c3ce",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/final_static/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "6bff96013adfddc446071811d5b13be21010d9f3afa2f8609cb331fdaa5a349f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/general_41517858482/sanitized.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "c98342b5cf286f11d5c107a168c1ec36ceaa49e1b570172ba6f3b44fdd776a05",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/intento_02/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e5c1e204aa6da6c5f8e4906f3000046a78dc307e091d4fed8a85230311fcdc9c",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/intento_03/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "ae01f9b9a66bbe6ba35fce43ada62343b0b9dcde9ea5f186491a96fd14120bb7",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias/grant_base/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias/grant_head/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_final/base/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "23670013b1fa2ba46e3b503be8b6ca4d6619be6d1ed55054d0d45bd81119a806",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_final/head/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "07b73656eec4219462f124eeb3396830f4a669ff68e6cd5452fa5b9dd99bd422",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_retest/base/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "26409186ea8c0bcb5ccf215ede06ed3bfb1a1e183ed9f3cb78d93d5ef25c92d5",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/licencias_retest/head/public.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "1fcc96131b5a7dc5fab723daa74ae53eda0c1eb7e7a6a27ab771f797b83a1419",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/raw/retest_04/original.zip",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "bd37100ea5c27d67793cf82af6cf5ee83cb8629eb5f01500aeaaa369523873b1",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/retest_04_summary.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9e92dd116ca13510c7aa1f7ce8f50497ad3ad90c196093de3d6bd95ed35b5dea",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/source_bridge.json",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "63999424efd3edae6cb687b19f8a1aa3654bde6795c5fa5af06cc0c8b6b2ce76",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revision_codificacion.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "8112be4b56cffb19fb1d7d118a4aa144041d8e69670148bf3d3cf77018328993",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/revision_manual.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "51c17f2b7710fb85527aedbaf195e9e7732ce70cbd46d67479b5a02518d72532",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/tecnicas_avance2.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d9df27191900ba70ddc05499e6c775db8af04980268efd19b419a9c78139e268",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/academic/avance2/evidencia/trazabilidad_avance2.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9a0034b293c9b5d9a8a958b8ad72ece158ce206f977b33e6af91b6a29153715b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/build_coverage.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "3546a0c365c69ae66994730310f5bc26134edf22f57ee80b481f92b2c610ee25",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/evidence_C8_snapshot.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "417c684e677b69175ce9a5db9a2b9585d1cd0cae9758beb89cda3d5056a7e9a8",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/evidence_C9_snapshot.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "583921b957f2cd4165d10fedb7f2b28aa1ecee12b47a4ff57951a7e56378aaf6",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C2_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "0cbad4e6468e0b75a6e7ca9a0c67dd13f7e60fb894116800debe6ea42ebec5dc",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C3_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d1b52fdee67abd0fd246c905ede345dacbe4177ac40c6bcaef04692464bc01e7",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C4_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "cded7cc42c23a1e769ca91cf4f30621b46aaaf01654a45b3c8e02a36b85576dc",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C5_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "50becc2346e4d16bfc7319f8290bec166c92ff078ec7e1c4d576d2f42e99fa1a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C6_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e42c9958d1bdd734d009d79ae6555eb319e5446bd16e3528e69c4ccb19432272",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C7_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "f3849c2b02330cf2cd77f4fadb5a81d2365d3f54e0fb0af6bbedd50b41f14818",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C8_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "312cc791fd13c3d9631d067ddd50cf8426abc538b31610b2613c229a3e57046b",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C9_audit_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "0bc460a993900873209895d8095264c6ffb0b9ad797efa3a3bb5ed488237785e",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/experiment_C9_final_2026-10-18.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "e9a06e1f381cd8fc77c31432d1a8301d7d98e36b8dd73db939b41313b3bb8831",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/README.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "0fb5f4ee1e4032478eb070df5061794fed630196f4abf708ad26255379427e38",
+      "note": "current index replaces historical index"
+    },
+    {
+      "path": "security/cybermarket/live/tests/__init__.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "2c5bcf1c99ce698cdb3a24dc8fe40d967c8c8e9e1b8f5758d46374fefd2d4787",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/tests/collect_environment.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "2f6e2ec661a53ae3fefa537b3e2e70f084555ea49da0d5be59ca2b4f3576c58f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/tests/conftest.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "08cace96a5e740adaba10f221a2334213d5d626695148da664fb4e0920b12eca",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/tests/sanitize_evidence.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d1a79ae56f04dc29bf979bda5483c70643913b601df729f3430eafb09f104ceb",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/tests/test_browser_transport.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "52fe2c78f805795411e352fb63645546a43c606bfca92e8b11a679243563907f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/live/tests/test_http_security.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "391e517260ef42df86b2c3855fc2d6efc1ca398c47cd65d9f79a626320336e9f",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/summarize_junit.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "fd02688016862b1c7d136b57bb1a1ac4d1948a36761c94e9aab0cfb685922e18",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/test_matrix.csv",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "5d61c29ea6665fdcafb332094b7aa72f4c3f067b4f728c822d46a87addeeb9e4",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/test_validate_evidence.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "be4de039d760a3a2853c193edaceb499b6b595049792006671a90e625b2610ee",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/tools/normalize_license_selection.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "d429dd39142107649eb09280bbeb57df4f40cf790b14bc90fc0b087369faf139",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "security/cybermarket/validate_evidence.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "c41ac3a6a4baeec460004834f900476144a32c3996bbbbf29c7f973417552809",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "tests/test_cybermarket_evidence_validator.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "eaecd0f4bca9f49628c111f2012b609eb3ea92cd44cafd6f2bbc83ff910ce92a",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "tests/test_cybermarket_license_selection.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "9fee259d2659fd4f6ecbee794264068de580e9905ab5bb45d05271600cc603d4",
+      "note": "original bytes retained"
+    },
+    {
+      "path": "tests/test_cybermarket_security_units.py",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "eb829274cdc04747a6eb18dc44ee2eb6e5b03c82935bfda66ecc28874282b695",
+      "note": "original bytes retained"
+    }
+  ],
+  "scope": "Inventario del árbol previo; los archivos nuevos de consolidación figuran en SHA256SUMS. Los dos índices técnicos se actualizaron; las evidencias y pruebas no se modificaron."
+}

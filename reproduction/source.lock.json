@@ -1,0 +1,29 @@
+{
+  "schema": "cybermarket.reproduction.source.v1",
+  "repository": "https://github.com/Arkthos/saleor.git",
+  "product_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+  "test_source_sha": "eb5d3ecbac104b32b42145f6c4a3db5c5fd8f2e7",
+  "test_source_tree": "88e6724197429188854e110806c6ca56a747c223",
+  "historical_actions_checkout_sha": "90455ca8abb7d72f707e0137e3ac80fab7a06dec",
+  "uv_lock_sha256": "3e82809b249915e07d73fa5cf3d658ab421218417e727cfc2481f3fdd72d0fa3",
+  "evidence_source_head": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+  "reproduction_note": "Recupera el source SHA de las pruebas, no el merge checkout efímero de Actions. Los resultados de 2026-11-02 pertenecen a sus ejecuciones históricas; una reproducción genera evidencia nueva.",
+  "retained_test_files": [
+    "saleor/graphql/tests/test_cybermarket_security_c9.py",
+    "saleor/graphql/tests/test_cybermarket_security_contracts.py",
+    "saleor/graphql/tests/test_cybermarket_security_extended.py",
+    "saleor/graphql/tests/test_cybermarket_security_trust_boundaries.py",
+    "security/cybermarket/live/tests/__init__.py",
+    "security/cybermarket/live/tests/collect_environment.py",
+    "security/cybermarket/live/tests/conftest.py",
+    "security/cybermarket/live/tests/sanitize_evidence.py",
+    "security/cybermarket/live/tests/test_browser_transport.py",
+    "security/cybermarket/live/tests/test_http_security.py",
+    "security/cybermarket/test_validate_evidence.py",
+    "security/cybermarket/tools/normalize_license_selection.py",
+    "security/cybermarket/validate_evidence.py",
+    "tests/test_cybermarket_evidence_validator.py",
+    "tests/test_cybermarket_license_selection.py",
+    "tests/test_cybermarket_security_units.py"
+  ]
+}
