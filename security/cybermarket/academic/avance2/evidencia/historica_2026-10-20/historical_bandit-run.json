@@ -1,0 +1,1 @@
+{"schema":"cybermarket.sast.run.v1","scanner":"bandit","version":"1.8.6","exit_code":0,"interpretation":"alerts require manual triage"}

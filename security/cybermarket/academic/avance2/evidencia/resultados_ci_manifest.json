@@ -1,0 +1,116 @@
+{
+  "schema": "cybermarket.avance2.execution.v1",
+  "collected_at_utc": "2026-11-02T15:58:15.402146+00:00",
+  "local_checkout_base": "5f4d416971bb17f13068477820a950f2319c4f51",
+  "published_unit_source_commit": "5c7e4233ba24412ed80e3cd9a76a2ee18e4990a9",
+  "unit_source_sha256": "eb829274cdc04747a6eb18dc44ee2eb6e5b03c82935bfda66ecc28874282b695",
+  "lockfile_sha256": "3e82809b249915e07d73fa5cf3d658ab421218417e727cfc2481f3fdd72d0fa3",
+  "command": "SECRET_KEY=<synthetic bootstrap> uv run pytest tests/test_cybermarket_security_units.py security/cybermarket/test_validate_evidence.py tests/test_cybermarket_evidence_validator.py --noconftest -q -n 0 --tb=short --junitxml=<isolated.xml> -o junit_family=legacy",
+  "product_unit_ids": [
+    "CM-U01",
+    "CM-U02",
+    "CM-U03",
+    "CM-U04",
+    "CM-U05",
+    "CM-U06",
+    "CM-U07",
+    "CM-U08",
+    "CM-U09",
+    "CM-U10"
+  ],
+  "product_unit_executions": 30,
+  "validator_executions": 12,
+  "total_executions": 42,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "warnings_in_final_run": 0,
+  "historical_archives_verified": [
+    {
+      "archive": "cybermarket-security-junit_39443927080.zip",
+      "sha256_verified": "9df3dd37e29191e7b5de7eeb71d2c3e72e3622f377fc4fd87ba68e6ff978a892",
+      "bytes": 6190,
+      "component_checksums_verified": 3,
+      "files": [
+        "SHA256SUMS",
+        "cybermarket-coverage.json",
+        "cybermarket-junit.xml",
+        "cybermarket-summary.json"
+      ],
+      "xml_stats": [
+        {
+          "name": "cybermarket-junit.xml",
+          "testcases": 61,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 2,
+          "skip_types": {
+            "pytest.xfail": 2
+          }
+        }
+      ]
+    },
+    {
+      "archive": "cybermarket-static-review_39443927080.zip",
+      "sha256_verified": "a36dca8030e8a363bfe46ee4fc7f4fdaff942cc88a72b78dff3da18af8c411ee",
+      "bytes": 1265,
+      "component_checksums_verified": 2,
+      "files": [
+        "SHA256SUMS",
+        "bandit.json",
+        "bandit-run.json"
+      ],
+      "xml_stats": []
+    },
+    {
+      "archive": "pytest-results_39443927003.zip",
+      "sha256_verified": "767ba4d59e2f142e0509b7c23e63f47f232fd415c72e8998e26d4a9395bc07c6",
+      "bytes": 298475,
+      "component_checksums_verified": 0,
+      "files": [
+        "test-results.xml"
+      ],
+      "xml_stats": [
+        {
+          "name": "test-results.xml",
+          "testcases": 17615,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 2,
+          "skip_types": {
+            "pytest.xfail": 2
+          }
+        }
+      ]
+    }
+  ],
+  "integrated_ci_revalidation": "NOT_EXECUTED_NO_CURRENT_HEAD_RUNS",
+  "deployment": "NOT_DEPLOYED",
+  "initial_attempts": [
+    {
+      "description": "uv sync --locked failed to compile pywatchman without clang",
+      "resolution": "CC=gcc uv sync --locked succeeded; lockfile unchanged"
+    },
+    {
+      "description": "Default fixtures caused six validator setup errors without PostgreSQL",
+      "resolution": "Separate pure validator/unit layer via --noconftest; no GraphQL integration PASS claimed"
+    },
+    {
+      "description": "Initial 30 units passed with short-key warnings from test settings; Ruff required specific ValueError match",
+      "resolution": "Synthetic >=32-byte key in test fixture; specific exception message; final 42 tests passed without warnings"
+    }
+  ],
+  "limitations": [
+    "No new complete GraphQL/general/E2E run or remote lint result.",
+    "HS256 tests do not cover all RS256/key lifecycle cases.",
+    "No branch/line coverage measured.",
+    "Historical and local counts must not be summed as independent coverage or security verdicts."
+  ],
+  "durable_evidence_package": {
+    "library_file_id": "libfile_60fd6d70464c8191b614fef4ecfeb497",
+    "name": "CyberMarket_Evidencias_Verificadas_Avance2.zip",
+    "scope": "Original historical archives and local evidence; no live deployment",
+    "sha256": "69e1170bff8c2cd4302a3e09f2f7931316475da85c718fe4b4494f218bb48297",
+    "bytes": 403944
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "reviewed_on": "2026-11-03",
+  "document_model": "CONTINUACION_ACUMULATIVA",
+  "source_file_name": "Proyecto final - primer avance(5).docx",
+  "source_library_file_id": "libfile_516a3f0130ec8191a4e0a119b2722f38",
+  "source_sha256": "c8f98d51b40ef7571f0cefaa092ae7c9504b3d5e4cd89db0f5d28c885c014d65",
+  "same_as_previously_recorded_submission": true,
+  "source_modified": false,
+  "content_changes_applied": false,
+  "proposals": [
+    {
+      "id": "RC-01",
+      "section": "Resumen",
+      "internal_paragraph_locator": "P007",
+      "action": "ACTUALIZAR",
+      "observed_condition": "Se presenta solo como primer avance y declara que no incluye dinámica.",
+      "proposed_change": "Reescribir el resumen de la versión acumulativa para cubrir diseño, método aplicado y resultados de la segunda etapa. Conservar la ausencia de una certificación global.",
+      "limit": "No trasladar porcentajes o PASS a cumplimiento ASVS."
+    },
+    {
+      "id": "RC-02",
+      "section": "Problema e introducción",
+      "internal_paragraph_locator": "P014-P022",
+      "action": "AJUSTAR_MARCO_TEMPORAL",
+      "observed_condition": "Actualmente y varios futuros describen una etapa sin pruebas.",
+      "proposed_change": "Expresar esa carencia como situación inicial; conservar la pregunta y explicar que la segunda etapa aporta verificación controlada.",
+      "limit": "No cambiar la pregunta para hacer coincidir una conclusión favorable."
+    },
+    {
+      "id": "RC-03",
+      "section": "Objetivos",
+      "internal_paragraph_locator": "P031-P035",
+      "action": "CONSERVAR_Y_PRECISAR_EVIDENCIA",
+      "observed_condition": "Objetivo general y tres específicos ya contemplan revisión, pruebas y diez observaciones con recomendaciones.",
+      "proposed_change": "Mantener los objetivos. Al evaluar el tercero distinguir recomendaciones y tratamiento propuesto de mitigaciones de producto realmente aplicadas y retesteadas.",
+      "limit": "Corregir harness/CI no demuestra mitigación de un defecto funcional de Saleor."
+    },
+    {
+      "id": "RC-04",
+      "section": "Marco metodológico y procedimiento",
+      "internal_paragraph_locator": "P070-P137",
+      "action": "DESARROLLAR_SECCION_EXISTENTE",
+      "observed_condition": "Enfoque, instrumentos I01-I07 y seis etapas están formulados principalmente como protocolo futuro.",
+      "proposed_change": "Consolidar el marco metodológico ya escrito con selección real, niveles de prueba, herramientas/versiones, configuración, oráculos, ejecuciones y análisis.",
+      "limit": "Cambiar a pasado/presente solo lo efectivamente ejecutado; mantener propuestas como propuestas."
+    },
+    {
+      "id": "RC-05",
+      "section": "Muestra y actores",
+      "internal_paragraph_locator": "P080-P087",
+      "action": "ACTUALIZAR",
+      "observed_condition": "Se prevén dieciséis escenarios y apps solo si el laboratorio incorpora ese mecanismo.",
+      "proposed_change": "Conciliar el inventario real por IDs y variantes, incluyendo apps/delegación, pruebas focales, unidades, C10 y E2E en conjuntos separados.",
+      "limit": "No sumar subconjuntos o convertir conteos de tests en cobertura de requisitos."
+    },
+    {
+      "id": "RC-06",
+      "section": "Arquitectura y límites del entorno",
+      "internal_paragraph_locator": "P089-P097;P191-P218",
+      "action": "AMPLIAR_SIN_SUSTITUIR_MODELO",
+      "observed_condition": "TLS, navegador, base/caché y otros elementos figuran como desconocidos o pendientes.",
+      "proposed_change": "Conservar figuras conceptuales y añadir el entorno ejecutado: CI privado, PostgreSQL/Valkey efímeros, ASGI loopback, HTTPS/CA/Chromium y configuraciones registradas.",
+      "limit": "No afirmar storefront público, proxy productivo, replicación física o carga/estrés."
+    },
+    {
+      "id": "RC-07",
+      "section": "Principios fundamentales identificados y Tabla III",
+      "internal_paragraph_locator": "P138-P161",
+      "action": "ACTUALIZAR_ESTADO_DE_EVIDENCIA",
+      "observed_condition": "La tabla clasifica varios mecanismos como pendientes de pruebas.",
+      "proposed_change": "Vincular mínimo privilegio, revocación y controles de cookie/CSRF con las evidencias actuales. Mantener sin adjudicar las propiedades no cubiertas.",
+      "limit": "La presencia o el PASS de un mecanismo no certifica el principio en toda la plataforma."
+    },
+    {
+      "id": "RC-08",
+      "section": "Riesgos R01-R13 y Tabla IV",
+      "internal_paragraph_locator": "P162-P190",
+      "action": "CONSERVAR_REGISTRO_Y_ACTUALIZAR",
+      "observed_condition": "Se justifica incertidumbre porque todavía no existen resultados experimentales.",
+      "proposed_change": "Mantener IDs y distinguir prioridad inicial de investigación del estado actual de evidencia. Actualizar esa justificación: sí hay resultados, pero no estimación de probabilidad operativa o riesgo residual.",
+      "limit": "No transformar automáticamente los trece escenarios en vulnerabilidades o CVSS."
+    },
+    {
+      "id": "RC-09",
+      "section": "Observaciones H01-H15 y Tabla V",
+      "internal_paragraph_locator": "P219-P224",
+      "action": "PRESERVAR_Y_TRAZAR",
+      "observed_condition": "Quince observaciones documentales sirven como punto de partida de una validación futura.",
+      "proposed_change": "Conservar los identificadores originales y enlazarlos al catálogo A2-Hxx y las recomendaciones actualizadas; explicar agrupaciones y nuevas observaciones.",
+      "limit": "Quince observaciones iniciales y catorce candidatas actuales no son conteos de vulnerabilidades ni cantidades intercambiables."
+    },
+    {
+      "id": "RC-10",
+      "section": "Anexos A-C",
+      "internal_paragraph_locator": "P241-P380",
+      "action": "ACTUALIZAR_CON_VERIFICACIONES",
+      "observed_condition": "La revocación, pruebas cruzadas y HTTPS/navegador se declaran no ejecutados.",
+      "proposed_change": "Añadir verificación realizada, evidencia y límites restantes. Mantener los listados como inspección de la base y las figuras conceptuales como tales.",
+      "limit": "No reemplazar esas limitaciones por afirmaciones universales sobre consumidores, sesiones o producción."
+    },
+    {
+      "id": "RC-11",
+      "section": "Listados C.2 y C.3",
+      "internal_paragraph_locator": "P363-P375",
+      "action": "CORREGIR_UBICACION_DE_CODIGO",
+      "observed_condition": "El bloque if need_csrf / clean_csrf_token aparece bajo el listado C.3 atribuido al middleware.",
+      "proposed_change": "Asociar ese bloque a C.2, de refresh_token.py; dejar HttpOnly/Secure/SameSite bajo C.3, del middleware.",
+      "limit": "Corrección editorial de atribución; no modificar el código del producto."
+    },
+    {
+      "id": "RC-12",
+      "section": "Referencias y llamadas internas",
+      "internal_paragraph_locator": "P225-P237 y leyendas",
+      "action": "MANTENER_IEEE_CONTINUO",
+      "observed_condition": "Hay doce referencias del documento original y anexos ya citados.",
+      "proposed_change": "Mantener una sola bibliografía y numeración coherente de tablas, figuras, listados y anexos en el documento acumulado. Verificar las fuentes al integrar afirmaciones nuevas.",
+      "limit": "No copiar la numeración del borrador independiente ni reiniciar referencias en la segunda parte."
+    },
+    {
+      "id": "RC-13",
+      "section": "Jerarquía y maquetación",
+      "internal_paragraph_locator": "Secciones Word y exportación de revisión",
+      "action": "REVISAR_ANTES_DEL_PDF",
+      "observed_condition": "El archivo contiene secciones de tres, cuatro y dos columnas; la revisión renderizada muestra tabla IV muy estrecha y Fig. C.1 recortada.",
+      "proposed_change": "Revisar saltos de sección, tablas y anchura de figuras al ensamblar la continuación; comprobar el PDF final completo.",
+      "limit": "La observación de maquetación corresponde a esta exportación de revisión, no es retroalimentación atribuida al profesor."
+    }
+  ],
+  "rendered_review_pages": 23,
+  "page_specific_layout_observations_are_review_export_only": true
+}

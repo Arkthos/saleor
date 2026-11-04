@@ -1,0 +1,38 @@
+{
+  "schema": "cybermarket.static.run.v1",
+  "collected_at_utc": "2026-11-02T15:47:47.108229+00:00",
+  "checkout_source_sha": "5f4d416971bb17f13068477820a950f2319c4f51",
+  "functional_product_changes": false,
+  "runs": [
+    {
+      "tool": "Bandit",
+      "version": "1.8.6",
+      "exit_code": 1,
+      "report": "bandit.json",
+      "flags": [
+        "-l",
+        "-ii"
+      ],
+      "loc": 4629,
+      "alerts": 1,
+      "interpretation": "B105 LOW/MEDIUM en nombre de cookie refreshToken; falso positivo revisado, no suprimido."
+    },
+    {
+      "tool": "Semgrep",
+      "version": "1.153.0",
+      "exit_code": 0,
+      "config": ".semgrep/",
+      "rules_executed": 5,
+      "targets_scanned": 21,
+      "findings": 0,
+      "errors": 0,
+      "report": "semgrep.json",
+      "interpretation": "Sin coincidencias de estas cinco reglas en los 21 objetivos; no ausencia global de vulnerabilidades."
+    }
+  ],
+  "limitations": [
+    "Ejecución local acotada; no es suite global de linters.",
+    "No se efectuó SCA ni se infiere estado de CVE de dependencias.",
+    "Las reglas no prueban la semántica completa de autorización."
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "schema": "cybermarket.technical.retest.v1",
+  "run_id": 41517858406,
+  "job_id": 125525913676,
+  "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+  "tested_checkout_sha": "daf9178add04f18c148b84953a32159413e43ea5",
+  "artifact_id": 13176731807,
+  "archive_sha256": "bd37100ea5c27d67793cf82af6cf5ee83cb8629eb5f01500aeaaa369523873b1",
+  "inner_checksums_verified": true,
+  "focal": {
+    "total": 61,
+    "pass": 59,
+    "failure": 0,
+    "error": 0,
+    "xfail": 2,
+    "skipped": 0
+  },
+  "independent_units_and_validators": {
+    "total": 42,
+    "pass": 42,
+    "failure": 0,
+    "error": 0,
+    "xfail": 0,
+    "skipped": 0
+  },
+  "live": {
+    "total": 26,
+    "pass": 26,
+    "failure": 0,
+    "error": 0,
+    "xfail": 0,
+    "skipped": 0
+  },
+  "live_cases": [
+    {
+      "test": "test_live_01_health_and_real_http",
+      "case": "LIVE-01",
+      "variant": "health-valid-malformed",
+      "observation": "REACHABLE",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[uuid-owner]",
+      "case": "LIVE-02",
+      "variant": "uuid:owner:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[uuid-peer]",
+      "case": "LIVE-02",
+      "variant": "uuid:peer:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[uuid-anonymous]",
+      "case": "LIVE-02",
+      "variant": "uuid:anonymous:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[legacy-owner]",
+      "case": "LIVE-03",
+      "variant": "legacy:owner:three-fields",
+      "observation": "RAW",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[legacy-peer]",
+      "case": "LIVE-03",
+      "variant": "legacy:peer:three-fields",
+      "observation": "MASKED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_02_03_actor_fields[legacy-anonymous]",
+      "case": "LIVE-03",
+      "variant": "legacy:anonymous:three-fields",
+      "observation": "MASKED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_04_invalid_ids[missing-uuid-T3JkZXI6MDAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAw]",
+      "case": "LIVE-04",
+      "variant": "missing-uuid",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_04_invalid_ids[missing-legacy-T3JkZXI6LTE=]",
+      "case": "LIVE-04",
+      "variant": "missing-legacy",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_04_invalid_ids[wrong-type-VXNlcjotMQ==]",
+      "case": "LIVE-04",
+      "variant": "wrong-type",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_04_invalid_ids[malformed-not-valid-global-id]",
+      "case": "LIVE-04",
+      "variant": "malformed",
+      "observation": "NO_ORDER",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[anonymous-anonymous-False-False]",
+      "case": "LIVE-05",
+      "variant": "anonymous",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[customer-customer-False-False]",
+      "case": "LIVE-05",
+      "variant": "customer",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[staff-without-staff-False-False]",
+      "case": "LIVE-05",
+      "variant": "staff-without",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[staff-with-staff-True-True]",
+      "case": "LIVE-05",
+      "variant": "staff-with",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[app-without-app-False-False]",
+      "case": "LIVE-05",
+      "variant": "app-without",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[app-with-app-True-True]",
+      "case": "LIVE-05",
+      "variant": "app-with",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[delegated-without-overlap-delegated-False-False]",
+      "case": "LIVE-05",
+      "variant": "delegated-without-overlap",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_entitlements[delegated-with-overlap-delegated-True-True]",
+      "case": "LIVE-05",
+      "variant": "delegated-with-overlap",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_06_https_cookie_csrf[valid-valid-None]",
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:valid",
+      "observation": "ALLOWED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_06_https_cookie_csrf[missing-missing-REQUIRED]",
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:missing",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_06_https_cookie_csrf[invalid-invalid-JWT_INVALID_CSRF_TOKEN]",
+      "case": "LIVE-06",
+      "variant": "https-cookie-csrf:invalid",
+      "observation": "DENIED",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_06_origins_and_forwarded_scheme",
+      "case": "LIVE-06",
+      "variant": "cors-and-direct-forwarded-proto",
+      "observation": "INGRESS_TRUST_BOUNDARY",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_07_legitimate_id_and_revocation",
+      "case": "LIVE-07",
+      "variant": "owner-list-peer-list-shared-id-revocation",
+      "observation": "CAPABILITY_PERSISTS",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_05_strict_writer_diagnostic",
+      "case": "LIVE-05",
+      "variant": "strict-writer-profile",
+      "observation": "TEST_GUARD_DIAGNOSTIC",
+      "result": "PASS"
+    },
+    {
+      "test": "test_live_06_browser_cors_cookie_csrf",
+      "case": "LIVE-06",
+      "variant": "chromium-trusted-ca-two-origins",
+      "observation": "CORS_COOKIE_CSRF_ENFORCED",
+      "result": "PASS"
+    }
+  ],
+  "teardown": "26 cases completed without teardown errors; finite startup/shutdown and closed TCP port assertions; disposable Chromium CA removed; CI services stopped",
+  "remaining": "General regression and inherited license-check review",
+  "browser_install_provenance": {
+    "playwright": "1.56.0",
+    "chromium": "141.0.7390.37",
+    "playwright_build": "1194",
+    "source": "job 125525913676 installation log"
+  }
+}

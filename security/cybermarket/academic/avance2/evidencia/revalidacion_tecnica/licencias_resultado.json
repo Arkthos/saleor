@@ -1,0 +1,39 @@
+{
+  "run_id": 41517859635,
+  "branch_head_sha": "f1f883d545b44cdd8699a33b3162b7d2486c080b",
+  "report_job": 125526698949,
+  "status": "FAILED_REVIEW_REQUIRED",
+  "analyzer_setup_fixed": true,
+  "report_entries_each": 504,
+  "passed_entries_each": 502,
+  "rejected_entries_each": 2,
+  "rejections_identical_on_base_and_head": true,
+  "rejected_entries": [
+    {
+      "package": "text-unidecode",
+      "version": "1.3",
+      "license": "GPL-1.0-only"
+    },
+    {
+      "package": "text-unidecode",
+      "version": "1.3",
+      "license": "GPL-2.0-or-later"
+    }
+  ],
+  "additional_error": "Grant 0.2.9 detects CI stdin pipe and appends an extra input -, then fails to parse empty stdin; file results remain present. Source cmd/grant/cli/command/check.go runCheck confirms auto-append.",
+  "upstream_license_source": "https://github.com/kmike/text-unidecode/blob/1.3/README.rst",
+  "upstream_license_statement": "Author offers Artistic License or GPL/GPLv2+. SBOM lists separate Artistic name and two GPL IDs; grant reports each separately.",
+  "interpretation": "Inherited finding, not a newly introduced dependency and not an established license infringement. No automatic license-policy approval or exception.",
+  "next_action": "Review alternative-license metadata/election and fix the upstream stdin invocation in a separate bounded change; retain original rules and raw report.",
+  "artifact_digests": {
+    "head": "693933f27d73c7cbf10fb710470630343c5824e527deba9da664857020ff0a52",
+    "base": "d0fc5097404e9b88966fd03d92578e093befa039a8317fdb6505d2d027f22711"
+  },
+  "source_fingerprints": {
+    "text_unidecode_1_3_readme_sha256": "36c543976acf07b2da4bbfa6ba062f5a25bd7655cd7bbaf1639b33844d225251",
+    "grant_0_2_9_check_go_sha256": "a6ee2cea69fee9f7a0dcd44f9e10c05db3f1ab3589b903011650884eb82ccfd2"
+  },
+  "grant_input_source": "https://github.com/anchore/grant/blob/v0.2.9/cmd/grant/cli/command/check.go",
+  "all_normalized_entries_identical_on_base_and_head": true,
+  "normalized_entries_sha256": "9da23c5aea0fb55b3d6aecbfdd9b9e3b8528fee1a059c2ab8ec68dad396f9875"
+}

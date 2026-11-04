@@ -1,0 +1,66 @@
+{
+  "schema": "cybermarket.technical.preflight.v1",
+  "date": "2026-11-02",
+  "source_parent_sha": "342216a9c66395f4f5e106c2b09256e0bef19481",
+  "status": "PREPARADO_BLOQUEADO_POR_CI_DESHABILITADO",
+  "academic_artifact_generation": "PAUSADA",
+  "checks": {
+    "ruff_check": "PASS",
+    "ruff_format": "PASS",
+    "python_ast": "PASS",
+    "workflow_yaml": "PASS",
+    "uv_lock_check_offline": "PASS",
+    "pytest_collection": {
+      "collected": 25,
+      "runtime_cases_executed": 0,
+      "warnings": [
+        "PytestAssertRewriteWarning for previously imported fixture module"
+      ]
+    },
+    "infrastructure_smoke": {
+      "initial": {
+        "HTTP_health": 200,
+        "HTTPS_health_verified_CA": 200,
+        "teardown": "FAIL_HTTPS_worker_alive"
+      },
+      "correction": "Explicit bounded graceful shutdown/keepalive and connection close",
+      "final": {
+        "HTTP_health": 200,
+        "HTTPS_health_verified_CA": 200,
+        "HTTP_teardown": "PASS",
+        "HTTPS_teardown": "PASS"
+      },
+      "not_claimed": [
+        "DB-backed GraphQL readiness",
+        "C10 security case execution",
+        "Chromium runtime"
+      ]
+    }
+  },
+  "blocker": {
+    "source": "Visible GitHub Actions repository page",
+    "url": "https://github.com/Arkthos/saleor/actions",
+    "message": "Workflows are not currently being run on this fork due to the scale of GitHub Actions usage. A repository maintainer can choose to re-enable these.",
+    "observed_signed_in": false,
+    "connector_dispatch_available": false,
+    "local_postgresql_or_docker_available": false
+  },
+  "files_sha256": {
+    "security/cybermarket/live/tests/test_browser_transport.py": "52fe2c78f805795411e352fb63645546a43c606bfca92e8b11a679243563907f",
+    "security/cybermarket/live/tests/__init__.py": "2c5bcf1c99ce698cdb3a24dc8fe40d967c8c8e9e1b8f5758d46374fefd2d4787",
+    "security/cybermarket/live/tests/test_http_security.py": "1cfb817a4192803c326f04c5ee98a03ea23d2a6fb70a8dd49937d2d4b1082b1e",
+    "security/cybermarket/live/tests/conftest.py": "08cace96a5e740adaba10f221a2334213d5d626695148da664fb4e0920b12eca",
+    "security/cybermarket/live/tests/collect_environment.py": "2f6e2ec661a53ae3fefa537b3e2e70f084555ea49da0d5be59ca2b4f3576c58f",
+    "security/cybermarket/live/tests/sanitize_evidence.py": "a597b8586790289552d41451695e75bbb4f3446338e7ed0e3e0fd48d6568ae11"
+  },
+  "live_case_status": {
+    "LIVE-01": "NOT_EXECUTED",
+    "LIVE-02": "NOT_EXECUTED",
+    "LIVE-03": "NOT_EXECUTED",
+    "LIVE-04": "NOT_EXECUTED",
+    "LIVE-05": "NOT_EXECUTED",
+    "LIVE-06": "NOT_EXECUTED",
+    "LIVE-07": "NOT_EXECUTED"
+  },
+  "next_action": "Maintainer restores workflow execution and runs e2e.yml against research/cybermarket-security-tests-v1; resume by inspecting resulting source SHA and downloading artifacts."
+}

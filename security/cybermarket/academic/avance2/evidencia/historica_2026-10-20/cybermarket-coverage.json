@@ -1,0 +1,771 @@
+{
+  "cases": [
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T01",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H11"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R10"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-02"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-7.4.1"
+      ],
+      "case_id": "CM-T02",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H08"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R07"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-SESS-06"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-3.5.1",
+        "v5.0.0-9.2.2"
+      ],
+      "case_id": "CM-T03",
+      "evidence_type": "security_contract",
+      "execution_count": 4,
+      "observation_ids": [
+        "H05",
+        "H06",
+        "H07"
+      ],
+      "outcomes": {
+        "PASS": 4
+      },
+      "risk_ids": [
+        "R06"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-SESS-05"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.1"
+      ],
+      "case_id": "CM-T04",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R09"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-02"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T05",
+      "evidence_type": "characterization_only",
+      "execution_count": 1,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T06",
+      "evidence_type": "characterization_only",
+      "execution_count": 1,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T07",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-9.2.1",
+        "v5.0.0-9.2.2",
+        "v5.0.0-9.2.3"
+      ],
+      "case_id": "CM-T08",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H03",
+        "H04",
+        "H09"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R04",
+        "R08"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-SESS-07"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-6.3.8"
+      ],
+      "case_id": "CM-T09",
+      "evidence_type": "security_contract",
+      "execution_count": 2,
+      "observation_ids": [
+        "H03"
+      ],
+      "outcomes": {
+        "PASS": 2
+      },
+      "risk_ids": [
+        "R03"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-IDNT-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-9.2.2"
+      ],
+      "case_id": "CM-T10",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H05",
+        "H09"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R05"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHN-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-9.2.3"
+      ],
+      "case_id": "CM-T11",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H05",
+        "H09"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R08"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHN-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2"
+      ],
+      "case_id": "CM-T12",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H11"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R10"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T13",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H11"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R10"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-02"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-3.3.1",
+        "v5.0.0-3.3.2",
+        "v5.0.0-3.3.4"
+      ],
+      "case_id": "CM-T14",
+      "evidence_type": "characterization_only",
+      "execution_count": 2,
+      "observation_ids": [
+        "H07"
+      ],
+      "outcomes": {
+        "PASS": 2
+      },
+      "risk_ids": [
+        "R06"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-SESS-02"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-4.3.1"
+      ],
+      "case_id": "CM-T15",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H13"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R12"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-APIT-01"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-4.3.1"
+      ],
+      "case_id": "CM-T16",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H13"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R12"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-APIT-01"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-6.1.3"
+      ],
+      "case_id": "CM-T17",
+      "evidence_type": "characterization_only",
+      "execution_count": 3,
+      "observation_ids": [
+        "H01"
+      ],
+      "outcomes": {
+        "PASS": 3
+      },
+      "risk_ids": [
+        "R01"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHN-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-6.3.1"
+      ],
+      "case_id": "CM-T18",
+      "evidence_type": "characterization_only",
+      "execution_count": 3,
+      "observation_ids": [
+        "H14"
+      ],
+      "outcomes": {
+        "PASS": 3
+      },
+      "risk_ids": [
+        "R01",
+        "R02"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHN-03"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-6.3.1"
+      ],
+      "case_id": "CM-T19",
+      "evidence_type": "security_contract",
+      "execution_count": 6,
+      "observation_ids": [
+        "H02"
+      ],
+      "outcomes": {
+        "PASS": 6
+      },
+      "risk_ids": [
+        "R02"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHN-03"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.1"
+      ],
+      "case_id": "CM-T20",
+      "evidence_type": "security_contract",
+      "execution_count": 2,
+      "observation_ids": [
+        "H15"
+      ],
+      "outcomes": {
+        "PASS": 2
+      },
+      "risk_ids": [
+        "R13"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHZ-02"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-9.1.2"
+      ],
+      "case_id": "CM-T21",
+      "evidence_type": "security_contract",
+      "execution_count": 1,
+      "observation_ids": [
+        "H09"
+      ],
+      "outcomes": {
+        "PASS": 1
+      },
+      "risk_ids": [
+        "R08"
+      ],
+      "status": "CONTRACT_PASSED_REVIEW_PENDING",
+      "wstg_ids": [
+        "WSTG-ATHN-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T22",
+      "evidence_type": "proposed_policy_expected_fail",
+      "execution_count": 2,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "XFAIL": 2
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "PROPOSED_POLICY_XFAIL_NOT_CONFORMANT",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T23",
+      "evidence_type": "characterization_only",
+      "execution_count": 6,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 6
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T24",
+      "evidence_type": "characterization_only",
+      "execution_count": 3,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 3
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T25",
+      "evidence_type": "characterization_only",
+      "execution_count": 6,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 6
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T26",
+      "evidence_type": "characterization_only",
+      "execution_count": 2,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 2
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    },
+    {
+      "asvs_ids": [
+        "v5.0.0-8.2.2",
+        "v5.0.0-8.2.3"
+      ],
+      "case_id": "CM-T27",
+      "evidence_type": "characterization_only",
+      "execution_count": 6,
+      "observation_ids": [
+        "H12"
+      ],
+      "outcomes": {
+        "PASS": 6
+      },
+      "risk_ids": [
+        "R11"
+      ],
+      "status": "OBSERVED_NOT_CERTIFIED",
+      "wstg_ids": [
+        "WSTG-ATHZ-04"
+      ]
+    }
+  ],
+  "executed_cases": 27,
+  "executions": 61,
+  "junit_sha256": "60c5168a3bba6657827c576f7ea0638ba55dd7dbf9d2e6e85dd5a06eef6f3a40",
+  "mapped_risks": 13,
+  "outcomes": {
+    "ERROR": 0,
+    "FAIL": 0,
+    "PASS": 59,
+    "SKIP": 0,
+    "XFAIL": 2
+  },
+  "risk_count": 13,
+  "risks": [
+    {
+      "cases": [
+        "CM-T17",
+        "CM-T18"
+      ],
+      "characterizations": 2,
+      "classification": "CHARACTERIZED_ONLY",
+      "contracts": 0,
+      "risk_id": "R01",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T18",
+        "CM-T19"
+      ],
+      "characterizations": 1,
+      "classification": "MIXED_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R02",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T09"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R03",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T08"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R04",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T10"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R05",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T03",
+        "CM-T14"
+      ],
+      "characterizations": 1,
+      "classification": "MIXED_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R06",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T02"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R07",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T08",
+        "CM-T11",
+        "CM-T21"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 3,
+      "risk_id": "R08",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T04"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R09",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T01",
+        "CM-T12",
+        "CM-T13"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 3,
+      "risk_id": "R10",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T05",
+        "CM-T06",
+        "CM-T07",
+        "CM-T22",
+        "CM-T23",
+        "CM-T24",
+        "CM-T25",
+        "CM-T26",
+        "CM-T27"
+      ],
+      "characterizations": 7,
+      "classification": "PROPOSED_POLICY_GAP_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R11",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 1
+    },
+    {
+      "cases": [
+        "CM-T15",
+        "CM-T16"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 2,
+      "risk_id": "R12",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    },
+    {
+      "cases": [
+        "CM-T20"
+      ],
+      "characterizations": 0,
+      "classification": "CONTRACT_EVIDENCE_REVIEW_PENDING",
+      "contracts": 1,
+      "risk_id": "R13",
+      "security_verdict": "NO_DETERMINADO",
+      "unmet_proposed_policy_cases": 0
+    }
+  ],
+  "schema": "cybermarket.coverage.v1",
+  "tested_merge_commit": "b0604014dab69125a4a535f1ece5828be99ea3c8",
+  "warning": "Presence of tests and PASS do not establish full control coverage, successful exploitation, ASVS conformance or residual risk."
+}

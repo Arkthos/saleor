@@ -1,0 +1,86 @@
+{
+  "release_id": "avance2-revision-2026-11-02-v1",
+  "frozen_on": "2026-11-02",
+  "status": "LISTO_PARA_REVISION_GRUPAL",
+  "source_and_public_pdf_commit": "2c7f03d4a2a4ac35667f3af62f9e14cf3901f915",
+  "product_baseline_sha": "4cb1609a90eade14b6275a407bc7a00c35698090",
+  "new_unit_source_sha": "5c7e4233ba24412ed80e3cd9a76a2ee18e4990a9",
+  "deadline_local": "2026-11-08T18:00:00-06:00",
+  "deadline_timezone": "America/Costa_Rica",
+  "files": [
+    {
+      "name": "CyberMarket_Segundo_Avance.pdf",
+      "role": "PDF privado de revisión con nombres suministrados",
+      "size_bytes": 349347,
+      "sha256": "372a5e619f5b30dada18de3c4f0b383e2abec97f447c91e1303eaa9e66f749c5",
+      "library_file_id": "libfile_f7e6586107e481918200193ed8021350",
+      "pages": 13
+    },
+    {
+      "name": "CyberMarket_Segundo_Avance.docx",
+      "role": "Editable privado de revisión con nombres suministrados",
+      "size_bytes": 61395,
+      "sha256": "8e2a7c2156642b06c052ddfcebeb4547bdc677f952996313bcf69bcf8503d682",
+      "library_file_id": "libfile_4ebf709873288191b44e058ed83df0ef"
+    },
+    {
+      "name": "CyberMarket_Segundo_Avance_publico.pdf",
+      "role": "PDF público con nombre del equipo, mismo cuerpo técnico",
+      "size_bytes": 348780,
+      "sha256": "e51cac0e4988ea73eb608ef6721d8f7a2861ffae8a536ef2a6885d4aa7f07f0d",
+      "repository_path": "security/cybermarket/academic/avance2/manuscrito/entrega/CyberMarket_Segundo_Avance_publico.pdf",
+      "git_blob_sha": "970f8545f752bf494abede0d6102268775183f30",
+      "pages": 13
+    },
+    {
+      "name": "INFORME_AVANCE2.md",
+      "role": "Fuente pública completa",
+      "size_bytes": 53219,
+      "sha256": "42a9bec314e0b0eaae40f0527c2d24b113886ab078bc5dae43989d027afc4182"
+    },
+    {
+      "name": "REFERENCIAS_IEEE.json",
+      "role": "Referencias numeradas",
+      "size_bytes": 3402,
+      "sha256": "91cc2978b5f249f299d077839179da33ace9e6edc3b2544c3c2bce128c621b7a"
+    },
+    {
+      "name": "generar_docx.py",
+      "role": "Generador público",
+      "size_bytes": 8526,
+      "sha256": "2605d7e829ae9c294f6074c2ae61ea7a68b265af23a6f129d273d5eb0a73a58d"
+    },
+    {
+      "name": "auditoria_final.json",
+      "role": "Auditoría técnica y documental",
+      "size_bytes": 1876,
+      "sha256": "ea7fc1466b470843540b436b30ee7da6c5023ea3716d9d1bf5313149c7d55e95"
+    },
+    {
+      "name": "GUIA_DEFENSA.md",
+      "role": "Guía para estudiar y revisar",
+      "size_bytes": 3550,
+      "sha256": "dabfef4c4caabd71188aebf36feae15274ec4894f1ed39192bf30c3ed03805e4"
+    }
+  ],
+  "evidence_package": {
+    "library_file_id": "libfile_60fd6d70464c8191b614fef4ecfeb497",
+    "sha256": "69e1170bff8c2cd4302a3e09f2f7931316475da85c718fe4b4494f218bb48297"
+  },
+  "group_review": {
+    "status": "PENDIENTE",
+    "reviewed_by": [],
+    "approved_at": null
+  },
+  "campus_submission": {
+    "status": "NO_REALIZADA",
+    "submitted_at": null,
+    "receipt": null
+  },
+  "limitations": [
+    "Nueva integración del HEAD no ejecutada",
+    "C10 siete casos NOT_EXECUTED",
+    "P-ORDER-01 provisional; no modificación funcional atribuida al producto"
+  ],
+  "update_rule": "Toda modificación del informe requiere nueva versión, regeneración, revisión visual y hashes; conservar esta versión y registrar los cambios."
+}

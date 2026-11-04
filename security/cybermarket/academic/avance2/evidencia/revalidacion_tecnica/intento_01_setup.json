@@ -1,0 +1,17 @@
+{
+  "run_id": 41512875410,
+  "source_sha": "1c87cf5c36a8cba9922525d5b461df3d6948b450",
+  "technical_job_id": 125508906856,
+  "status": "FAILED_SETUP",
+  "cause": "Playwright 1.56.0 does not support chromium on ubuntu26.04-x64; ubuntu-latest moved to 26.04",
+  "live_cases_executed": 0,
+  "follow_on_errors": [
+    "technical-results absent prevented sanitizer/hash and artifact upload"
+  ],
+  "corrections": [
+    "Pin live runner to ubuntu-24.04",
+    "Always create technical-results even on setup failure",
+    "Allow avoiding redundant E2E reruns when only lab infrastructure changes"
+  ],
+  "original_e2e_job": "Independent job remains in execution; inspect its final result separately."
+}

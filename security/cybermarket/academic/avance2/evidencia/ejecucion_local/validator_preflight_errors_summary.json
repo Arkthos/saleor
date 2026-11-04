@@ -1,0 +1,7 @@
+{
+  "source_diagnostic": "validator_preflight_errors.xml",
+  "testcases": 6,
+  "failures": 0,
+  "errors": 6,
+  "reason": "Root fixtures attempted unavailable PostgreSQL"
+}

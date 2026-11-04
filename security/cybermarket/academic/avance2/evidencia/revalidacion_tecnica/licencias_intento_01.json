@@ -1,0 +1,10 @@
+{
+  "run_id": 41521406564,
+  "jobs": [
+    125538073195,
+    125538073685
+  ],
+  "result": "COLLECTION_ERROR_NO_SBOM_ANALYZED",
+  "cause": "uvx pytest config /dev/null omitted repository root from import path",
+  "correction": "Explicit PYTHONPATH=$GITHUB_WORKSPACE; unchanged product/dependencies/policy"
+}
