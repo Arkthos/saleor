@@ -1,8 +1,8 @@
 {
   "source_head": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
   "original_files": 4822,
-  "retained_original_paths": 138,
-  "removed_from_tree": 4684,
+  "retained_original_paths": 140,
+  "removed_from_tree": 4682,
   "removed_by_top_level": {
     ".claude": 9,
     ".devcontainer": 5,
@@ -16,12 +16,10 @@
     ".release-it.json": 1,
     ".vscode": 3,
     ".worktree-container": 3,
-    "AGENTS.md": 1,
     "CHANGELOG.md": 1,
     "CLAUDE.md": 1,
     "CONTRIBUTING.md": 1,
     "Dockerfile": 1,
-    "README.md": 1,
     "SECURITY.md": 1,
     "conftest.py": 1,
     "deployment": 1,
@@ -136,10 +134,22 @@
       "note": "original bytes retained"
     },
     {
+      "path": "AGENTS.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "4832fe2c71b0bdbdba430b92267e3a7be02727d86e61c779208275005e2c1955",
+      "note": "replaced with current delivery index/instructions"
+    },
+    {
       "path": "LICENSE",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
       "sha256": "70e2aa4451206e213dc32078c07ca703c7c2b6e9a8e63803ee11db4deea7313b",
       "note": "original bytes retained"
+    },
+    {
+      "path": "README.md",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "8f592b534ac92202c6fd97e4723415b2b54b7ad3957b1f9c24de69d511ef81a7",
+      "note": "replaced with current delivery index/instructions"
     },
     {
       "path": "saleor/graphql/tests/test_cybermarket_security_c9.py",
@@ -868,5 +878,5 @@
       "note": "original bytes retained"
     }
   ],
-  "scope": "Inventario del árbol previo; los archivos nuevos de consolidación figuran en SHA256SUMS. Los dos índices técnicos se actualizaron; las evidencias y pruebas no se modificaron."
+  "scope": "Inventario del árbol previo; 136 archivos conservan los bytes originales y cuatro índices/instrucciones se sustituyen. Veintiuna rutas nuevas de consolidación/configuración de referencia figuran en SHA256SUMS. Las evidencias y pruebas no se modificaron."
 }
