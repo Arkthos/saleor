@@ -1,8 +1,38 @@
 {
   "source_head": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
   "original_files": 4822,
-  "retained_original_paths": 140,
-  "removed_from_tree": 4682,
+  "retained_original_paths": 141,
+  "unchanged_original_bytes": 136,
+  "replaced_original_paths": [
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "security/cybermarket/README.md",
+    "security/cybermarket/live/README.md"
+  ],
+  "removed_from_tree": 4681,
+  "added_paths": [
+    ".github/workflows/evidence-integrity.yml",
+    "SHA256SUMS",
+    "docs/CONSOLIDACION.md",
+    "docs/INVENTARIO_CONSOLIDACION.json",
+    "docs/RESULTADOS_Y_ALCANCE.md",
+    "reproduction/README.md",
+    "reproduction/prepare_source.py",
+    "reproduction/reference/.pre-commit-config.yaml",
+    "reproduction/reference/pyproject.toml",
+    "reproduction/reference/uv.lock",
+    "reproduction/reference/workflows/changelog-check.yml",
+    "reproduction/reference/workflows/check-licenses.yaml",
+    "reproduction/reference/workflows/cybermarket-security.yaml",
+    "reproduction/reference/workflows/e2e.yml",
+    "reproduction/reference/workflows/linters.yaml",
+    "reproduction/reference/workflows/test-semgrep-rules.yml",
+    "reproduction/reference/workflows/tests.yaml",
+    "reproduction/run_suite.py",
+    "reproduction/source.lock.json",
+    "scripts/verify_delivery.py"
+  ],
   "removed_by_top_level": {
     ".claude": 9,
     ".devcontainer": 5,
@@ -11,7 +41,6 @@
     ".env.example": 1,
     ".gitattributes": 1,
     ".github": 33,
-    ".gitignore": 1,
     ".pre-commit-config.yaml": 1,
     ".release-it.json": 1,
     ".vscode": 3,
@@ -37,6 +66,12 @@
     "uv.lock": 1
   },
   "retained_files": [
+    {
+      "path": ".gitignore",
+      "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
+      "sha256": "b5927be151ee86d095c51ddc3ab7b8d1e6abb2d668104c4461e344cda7c7e2b3",
+      "note": "current index/instructions replace upstream text"
+    },
     {
       "path": ".semgrep/Makefile",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
@@ -137,7 +172,7 @@
       "path": "AGENTS.md",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
       "sha256": "4832fe2c71b0bdbdba430b92267e3a7be02727d86e61c779208275005e2c1955",
-      "note": "replaced with current delivery index/instructions"
+      "note": "current index/instructions replace upstream text"
     },
     {
       "path": "LICENSE",
@@ -149,7 +184,7 @@
       "path": "README.md",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
       "sha256": "8f592b534ac92202c6fd97e4723415b2b54b7ad3957b1f9c24de69d511ef81a7",
-      "note": "replaced with current delivery index/instructions"
+      "note": "current index/instructions replace upstream text"
     },
     {
       "path": "saleor/graphql/tests/test_cybermarket_security_c9.py",
@@ -239,7 +274,7 @@
       "path": "security/cybermarket/README.md",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
       "sha256": "4c8b8713671c6d6b23ddda26c7cd3278a8f05d088b1c443af122653b63fc3a7b",
-      "note": "current index replaces historical index"
+      "note": "current index/instructions replace upstream text"
     },
     {
       "path": "security/cybermarket/REPORTE_INGENIERIA_ASEGURAMIENTO_C2_C9_2026-10-18.md",
@@ -791,7 +826,7 @@
       "path": "security/cybermarket/live/README.md",
       "source_sha": "c66c34d0c4d639c2e4dc09b9ef7e86ff1cfb29e7",
       "sha256": "0fb5f4ee1e4032478eb070df5061794fed630196f4abf708ad26255379427e38",
-      "note": "current index replaces historical index"
+      "note": "current index/instructions replace upstream text"
     },
     {
       "path": "security/cybermarket/live/tests/__init__.py",
@@ -878,5 +913,5 @@
       "note": "original bytes retained"
     }
   ],
-  "scope": "Inventario del árbol previo; 136 archivos conservan los bytes originales y cuatro índices/instrucciones se sustituyen. Veintiuna rutas nuevas de consolidación/configuración de referencia figuran en SHA256SUMS. Las evidencias y pruebas no se modificaron."
+  "scope": "Comparación exacta por rutas y objetos Git; las evidencias y pruebas conservan sus bytes originales. SHA256SUMS cubre el paquete actual."
 }
