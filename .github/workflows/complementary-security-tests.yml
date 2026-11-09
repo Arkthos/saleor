@@ -1,0 +1,97 @@
+name: CyberMarket - Pruebas complementarias
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  complementary-tests:
+    name: Ejecutar PC-03 y PC-04
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: saleor
+          POSTGRES_USER: saleor
+          POSTGRES_PASSWORD: saleor
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U saleor"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      cache:
+        image: valkey/valkey:8.1-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "valkey-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgres://saleor:saleor@127.0.0.1:5432/saleor
+      CACHE_URL: redis://127.0.0.1:6379/0
+      SECRET_KEY: cybermarket-complementary-ci-test
+      SEND_USAGE_TELEMETRY: "False"
+
+    steps:
+      - name: Obtener archivos del repositorio
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Preparar Python y uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      - name: Instalar dependencias del sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev
+
+      - name: Recuperar código fuente verificado
+        run: |
+          python reproduction/prepare_source.py /tmp/cybermarket-lab
+
+      - name: Incorporar pruebas complementarias
+        run: |
+          mkdir -p /tmp/cybermarket-lab/saleor/graphql/tests
+          cp saleor/graphql/tests/test_pc03_concurrent_authentication.py \
+            /tmp/cybermarket-lab/saleor/graphql/tests/
+          cp saleor/graphql/tests/test_pc04_jwt_key_rotation.py \
+            /tmp/cybermarket-lab/saleor/graphql/tests/
+
+      - name: Instalar dependencias de Saleor
+        working-directory: /tmp/cybermarket-lab
+        run: |
+          uv sync --locked
+
+      - name: Ejecutar PC-03 y PC-04
+        working-directory: /tmp/cybermarket-lab
+        run: |
+          mkdir -p technical-results
+          uv run pytest \
+            saleor/graphql/tests/test_pc03_concurrent_authentication.py \
+            saleor/graphql/tests/test_pc04_jwt_key_rotation.py \
+            -q -n 0 --reuse-db \
+            --junitxml=technical-results/complementary-tests.xml \
+            -o junit_family=legacy \
+            --tb=short
+
+      - name: Guardar evidencias
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: cybermarket-complementary-test-results
+          path: /tmp/cybermarket-lab/technical-results/
+          if-no-files-found: warn
+          retention-days: 30
