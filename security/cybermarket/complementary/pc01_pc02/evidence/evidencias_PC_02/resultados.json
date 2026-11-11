@@ -1,0 +1,52 @@
+{
+    "prueba": "PC-02",
+    "correo_existente": "pc01-prueba01@example.com",
+    "correo_nuevo": "pc02-auto-a52634f4a0@example.com",
+    "respuesta_existente": {
+        "data": {
+            "accountRegister": {
+                "user": {
+                    "id": "",
+                    "email": "pc01-prueba01@example.com"
+                },
+                "errors": []
+            }
+        },
+        "extensions": {
+            "cost": {
+                "requestedQueryCost": 0,
+                "maximumAvailable": 50000
+            }
+        }
+    },
+    "respuesta_nueva": {
+        "data": {
+            "accountRegister": {
+                "user": {
+                    "id": "",
+                    "email": "pc02-auto-a52634f4a0@example.com"
+                },
+                "errors": []
+            }
+        },
+        "extensions": {
+            "cost": {
+                "requestedQueryCost": 0,
+                "maximumAvailable": 50000
+            }
+        }
+    },
+    "comparacion_existente": {
+        "user_presente": true,
+        "user_id": "",
+        "errores_registro": [],
+        "errores_generales": []
+    },
+    "comparacion_nueva": {
+        "user_presente": true,
+        "user_id": "",
+        "errores_registro": [],
+        "errores_generales": []
+    },
+    "conclusion": "RESPUESTAS_EQUIVALENTES"
+}

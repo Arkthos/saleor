@@ -17,6 +17,8 @@ evaluada. El documento académico se entrega por separado.
    [análisis estático](security/cybermarket/academic/avance2/evidencia/analisis_estatico.md)
    y [conciliación de hallazgos](security/cybermarket/academic/avance2/evidencia/revalidacion_tecnica/conciliacion_hallazgos_tecnicos.md).
 5. [Reproducción](reproduction/README.md) y [respaldo y consolidación](docs/CONSOLIDACION.md).
+6. [Pruebas complementarias PC-01 y PC-02](security/cybermarket/complementary/pc01_pc02/README.md):
+   scripts originales, respuestas JSON y límites de la evidencia recibida.
 
 ## Resultados conservados del 2 de noviembre de 2026
 
@@ -48,6 +50,7 @@ adjudicar. El alcance y las limitaciones están en el informe enlazado arriba.
 | `tests/test_cybermarket_*.py` | Unidades, validadores y controles de licencias |
 | `security/cybermarket/live/tests/` | Pruebas C10, transporte, entorno y depuración de evidencia |
 | `security/cybermarket/academic/avance2/evidencia/` | Matrices, análisis, manifiestos, JUnit y ZIP conservados |
+| `security/cybermarket/complementary/pc01_pc02/` | Scripts y respuestas recibidas de PC-01/PC-02, con procedencia y hashes propios |
 | `security/cybermarket/` | Herramientas de validación y evidencia histórica fechada |
 | `.semgrep/` | Reglas y fixtures de prueba del análisis estático; algunos fixtures son deliberadamente inseguros |
 | `reproduction/` | Fuente fijada, preparación de laboratorio, ejecución y configuraciones históricas |
